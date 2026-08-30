@@ -3,6 +3,7 @@ dist/
 .playwright-cli/
 output/
 public/apple-touch-icon.png
+public/assets/
 public/icons/
 public/map-icons/
 public/places.json

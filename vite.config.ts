@@ -31,7 +31,7 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: `${basePath}index.html`,
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff2}'],
+        globPatterns: ['**/*.{js,mjs,css,html,ico,png,svg,json,woff2}'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/tile\.openstreetmap\.org\//,
