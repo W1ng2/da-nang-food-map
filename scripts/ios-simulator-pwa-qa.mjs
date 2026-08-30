@@ -351,6 +351,8 @@ async function verifyStandaloneCoreFlows(sessionId) {
       googleMaps: dialog.querySelector('a[href*="google.com/maps"]')?.href ?? null,
       appleMaps: dialog.querySelector('a[href*="maps.apple.com"]')?.href ?? null,
       photoAlt: dialog.querySelector('.place-sheet__photo img')?.alt ?? null,
+      photoKind: dialog.querySelector('.place-sheet__photo-kind')?.textContent?.trim() ?? null,
+      arrivalNote: dialog.querySelector('.place-sheet__arrival-note')?.textContent?.trim() ?? null,
       booking: dialog.querySelector('.contact-actions a[href*="mocseafood.com/dat-ban"]')?.href ?? null,
     }
   `)
@@ -362,6 +364,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
   if (detailContract.hash !== '#place=michelin-moc-quan-seafood') throw new Error(`Unexpected deep link ${detailContract.hash}`)
   if (!detailContract.googleMaps || !detailContract.appleMaps) throw new Error('Restaurant navigation links are missing')
   if (!detailContract.photoAlt?.includes('夜間門面')) throw new Error('MỘC identifying photo is missing')
+  if (detailContract.photoKind !== '餐廳門面' || !detailContract.arrivalNote?.includes('26 號門牌')) throw new Error('MỘC arrival-identification guidance is missing')
   if (!detailContract.booking) throw new Error('MỘC official booking action is missing')
 
   const detailActions = await findElements(sessionId, 'css selector', '.place-sheet .quick-actions button')
@@ -395,10 +398,19 @@ async function verifyStandaloneCoreFlows(sessionId) {
     const source = [...(dialog?.querySelectorAll('.audit-note a') || [])].find(link => link.textContent.includes('核對來源'))
     const photo = dialog?.querySelector('.place-sheet__photo img')
     return dialog?.textContent.includes('每日晚餐 18:30–21:00') && dialog?.textContent.includes('2026-08-31') && source && photo?.complete && photo.naturalWidth > 0
-      ? { text: dialog.textContent, source: source.href, photoAlt: photo.alt, photoWidth: photo.naturalWidth }
+      ? {
+          text: dialog.textContent,
+          source: source.href,
+          photoAlt: photo.alt,
+          photoWidth: photo.naturalWidth,
+          photoKind: dialog.querySelector('.place-sheet__photo-kind')?.textContent?.trim() ?? null,
+          arrivalNote: dialog.querySelector('.place-sheet__arrival-note')?.textContent?.trim() ?? null,
+        }
       : null
   `, 20_000)
-  if (!officialEnrichmentContract.photoAlt.includes('黑白法式餐廳內部')) throw new Error('La Maison 1888 identifying photo is missing')
+  if (!officialEnrichmentContract.photoAlt.includes('白色法式大宅外觀')) throw new Error('La Maison 1888 exterior photo is missing')
+  if (officialEnrichmentContract.photoKind !== '餐廳門面') throw new Error('La Maison 1888 exterior photo badge is missing')
+  if (!officialEnrichmentContract.arrivalNote.includes('白色大宅')) throw new Error('La Maison 1888 arrival note is missing')
   await screenshot(sessionId, '08c-official-photo-and-source.png')
   const closeLaMaison = await findElement(sessionId, 'css selector', '.place-sheet__close')
   if (!closeLaMaison) throw new Error('La Maison 1888 detail close button was not found')

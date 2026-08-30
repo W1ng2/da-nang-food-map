@@ -8,8 +8,10 @@
     "phone": "+842363938888",
     "website": "https://www.danang.intercontinental.com/dining/la-maison-1888/",
     "photo": {
-      "url": "https://www.danang.intercontinental.com/wp-content/uploads/2026/06/LMS-cover-michelin-2026.jpg-1024x529.jpeg",
-      "alt": "La Maison 1888 黑白法式餐廳內部，拱窗、吊燈及整齊餐桌清晰可辨",
+      "url": "https://www.danang.intercontinental.com/wp-content/uploads/2024/10/La-Maison-3-1024x683.jpg",
+      "alt": "La Maison 1888 白色法式大宅外觀，黑色窗框、中央入口與山坡建築清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意山坡上的白色大宅、黑色窗框及中央門廊；餐廳位於 InterContinental Danang 內。",
       "credit": "InterContinental Danang 官方網站",
       "sourceUrl": "https://www.danang.intercontinental.com/dining/la-maison-1888/",
       "rightsNotice": "© InterContinental Danang；遠端顯示，未儲存於本 App"
@@ -24,11 +26,13 @@
     "phone": "+842363839888",
     "website": "https://indianaromadanang.com/",
     "photo": {
-      "url": "https://indianaromadanang.com/assets/indian-aroma-interior-entrance-C7S-YttS.jpg",
-      "alt": "Indian Aroma 暖色餐廳內部，紅橙曲線天花、印度式吊燈及玻璃入口清晰可辨",
-      "credit": "Indian Aroma 官方網站",
-      "sourceUrl": "https://indianaromadanang.com/",
-      "rightsNotice": "© Indian Aroma；遠端顯示，未儲存於本 App"
+      "url": "https://images.monandanang.vn/photos/google_maps/ChIJeaoZL80ZQjER-P1160MSdeI/p_002_medium.webp",
+      "alt": "Indian Aroma 現址門面上方的黃色 MUMTAZ 舊名招牌及越文「Nhà hàng Ấn Độ」字樣",
+      "kind": "storefront",
+      "arrivalNote": "餐廳已改名 Indian Aroma，但現址門面仍可見黃色「MUMTAZ」舊名招牌。",
+      "credit": "Món Ăn Đà Nẵng（Google Maps 公開相片）",
+      "sourceUrl": "https://monandanang.vn/en/restaurant/g_ChIJeaoZL80ZQjER-P1160MSdeI-indian-aroma-restaurant-first-michelin-select-former-mumtaz-indian",
+      "rightsNotice": "© 原相片上載者；第三方遠端顯示，未儲存於本 App"
     }
   },
   "michelin-le-comptoir": {
@@ -40,8 +44,10 @@
     "phone": "+84708040560",
     "website": "https://lecomptoirdng.com/en/",
     "photo": {
-      "url": "https://lecomptoirdng.com/wp-content/uploads/2025/02/BOMM0102-4.webp",
-      "alt": "Le Comptoir 開放式廚房，黑板招牌、藍色花磚及廚師工作區清晰可辨",
+      "url": "https://lecomptoirdng.com/wp-content/uploads/2025/02/BOMM0044.webp",
+      "alt": "Le Comptoir 玻璃門面，手寫店名招牌、入口與 Michelin 標誌清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意整幅玻璃門、白色手寫 Le Comptoir 招牌及入口旁的 Michelin 標誌。",
       "credit": "Le Comptoir 官方網站",
       "sourceUrl": "https://lecomptoirdng.com/en/",
       "rightsNotice": "© Le Comptoir；遠端顯示，未儲存於本 App"
@@ -56,11 +62,13 @@
     "phone": "+84847148866",
     "website": "https://restaurantnen.com/nen-danang-restaurant/",
     "photo": {
-      "url": "https://restaurantnen.com/wp-content/uploads/2026/05/NT-Atmosphere-95-scaled.jpg",
-      "alt": "Nén Danang 暖色餐廳內部，三幅拱形壁畫、木桌及米色座椅清晰可辨",
-      "credit": "Nén 官方網站",
-      "sourceUrl": "https://restaurantnen.com/nen-danang-restaurant/",
-      "rightsNotice": "© Nén；遠端顯示，未儲存於本 App"
+      "url": "https://axwwgrkdco.cloudimg.io/v7/__gmpics3__/06de8e3c12ae48acb9acad7025ccc32a.jpeg",
+      "alt": "Nén Danang 夜間綠意門面，紅色 Nén 招牌、入口階梯與戶外木桌清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意被樹木包圍的兩層門面、入口階梯及紅色 Nén 招牌。",
+      "credit": "MICHELIN Guide",
+      "sourceUrl": "https://guide.michelin.com/en/da-nang-region/da-nang_2984390/restaurant/nen-danang",
+      "rightsNotice": "© MICHELIN Guide；遠端顯示，未儲存於本 App"
     }
   },
   "michelin-olivia-s-prime": {
@@ -72,8 +80,10 @@
     "phone": "+84908163352",
     "website": "https://oliviasprime.com/locations/oliviasprime-steakhouse-da-nang",
     "photo": {
-      "url": "https://oliviasprime.com/web/image/845-76c46bec/Olivias-Prime-Steakhouse-main-entrance.jpg",
+      "url": "https://oliviasprime.com/web/image/845-76c46bec/Olivias-Prime-Steakhouse-main-entrance.jpg?width=1200",
       "alt": "Olivia's Prime 黑色門面，金色 PRIME 字樣、入口與戶外座位清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意全黑門面、金色 PRIME 字樣及入口右側的戶外座位。",
       "credit": "Olivia's Prime 官方網站",
       "sourceUrl": "https://oliviasprime.com/locations/oliviasprime-steakhouse-da-nang",
       "rightsNotice": "© Olivia's Prime；遠端顯示，未儲存於本 App"
@@ -88,8 +98,10 @@
     "phone": "+84817952552",
     "website": "https://thetemptation.com.vn/about-us",
     "photo": {
-      "url": "https://thetemptation.com.vn/uploads/category/about-us-1734145869.jpg",
-      "alt": "The Temptation 法式餐廳內部，白色牆身、綠色座椅及庭院入口清晰可辨",
+      "url": "https://thetemptation.com.vn/uploads/photos/full-1733931677_2787_f0094b991ca9ac3defccf4b1128a2bd0.webp",
+      "alt": "The Temptation 綠白色門面與玻璃入口，門頂店名招牌及前庭花槽清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意綠白配色外牆、玻璃門及門頂 The Temptation 招牌。",
       "credit": "The Temptation 官方網站",
       "sourceUrl": "https://thetemptation.com.vn/about-us",
       "rightsNotice": "© The Temptation；遠端顯示，未儲存於本 App"
@@ -106,6 +118,8 @@
     "photo": {
       "url": "https://mocseafood.com/wp-content/uploads/z7235788088089_ac9cd0ac4063691123ae52e1d1f00944.webp",
       "alt": "MỘC Quán Seafood 夜間門面，紅黃燈籠、戶外座位及 26 號招牌清晰可見",
+      "kind": "storefront",
+      "arrivalNote": "留意掛滿紅黃燈籠的開放式門面，以及入口旁的 26 號門牌。",
       "credit": "Mộc Seafood 官方網站",
       "sourceUrl": "https://mocseafood.com/moc-da-nang",
       "rightsNotice": "© Hải sản Mộc quán；遠端顯示，未儲存於本 App"
@@ -120,11 +134,13 @@
     "phone": "19006043",
     "website": "https://pizza4ps.com/vn/location/944/?lang=english",
     "photo": {
-      "url": "https://pizza4ps.com/wp-content/uploads/2023/07/78034719_2721643444539354_2592835004560048128_n.jpg",
-      "alt": "Pizza 4P’s Indochina 峴港店室內，藍色靛染窗簾、木桌與水泥柱可作辨認",
-      "credit": "Pizza 4P’s 官方網站",
-      "sourceUrl": "https://pizza4ps.com/vn/location/944/?lang=english",
-      "rightsNotice": "© Pizza 4P’s；遠端顯示，未儲存於本 App"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/One_view_of_Bach_Dang_street%2C_Da_Nang%2C_Vietnam_-_Indochina_Riverside.jpg/1280px-One_view_of_Bach_Dang_street%2C_Da_Nang%2C_Vietnam_-_Indochina_Riverside.jpg",
+      "alt": "Pizza 4P’s 所在的 Indochina Riverside Towers 河畔雙塔外觀，大樓名稱清晰可辨",
+      "kind": "building-entrance",
+      "arrivalNote": "先找 74 Bạch Đằng 的 Indochina Riverside Towers；由商場入口進入後前往 2 樓。",
+      "credit": "Fa2f／Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:One_view_of_Bach_Dang_street,_Da_Nang,_Vietnam_-_Indochina_Riverside.jpg",
+      "rightsNotice": "CC BY 3.0；未修改，遠端顯示"
     }
   },
   "high-rating-gypsy-rooftop-restaurant-bar": {
@@ -134,11 +150,13 @@
     "phone": "+84767194074",
     "website": "https://thegypsydng.com/en/",
     "photo": {
-      "url": "https://thegypsydng.com/wp-content/uploads/2024/12/FIRERED-9440-2.webp",
-      "alt": "Gypsy Rooftop 露台在日落時俯瞰峴港市景，玻璃圍欄與餐桌清晰可辨",
-      "credit": "The Gypsy 官方網站",
-      "sourceUrl": "https://thegypsydng.com/en/",
-      "rightsNotice": "© The Gypsy；遠端顯示，未儲存於本 App"
+      "url": "https://images.squarespace-cdn.com/content/v1/5f9bdbe0209d9a7ee6ea8797/9277bc8a-3cfd-45d1-8950-a259be7cdd0c/Screenshot+2023-12-05+at+11.20.30+AM.png?format=750w",
+      "alt": "Gypsy 所在的 New Orient Hotel 正門，銀色 NEW ORIENT hotel 大型招牌與玻璃入口清晰可辨",
+      "kind": "building-entrance",
+      "arrivalNote": "由 New Orient Hotel 正門進入，再乘升降機前往 10 樓的 Gypsy Rooftop。",
+      "credit": "Jovel Chan",
+      "sourceUrl": "https://jovelchan.com/blog/hotel-review-new-orient-hotel-gypsy-kitchen-bar-danang",
+      "rightsNotice": "© Jovel Chan；第三方遠端顯示，未儲存於本 App"
     }
   },
   "high-rating-bistecca-italian-restaurant-in-da-nang": {
@@ -150,11 +168,13 @@
     "phone": "+84702663456",
     "website": "https://bisteccadanang.com/",
     "photo": {
-      "url": "https://cdn.neworienthoteldanang.com/1785915059758-5p84k6-657323485-1255809356666255-7310737945189.webp",
-      "alt": "Bistecca 7 樓餐廳池畔露台，橙色拱門、白色座椅及泳池清晰可辨",
-      "credit": "Bistecca 官方網站",
-      "sourceUrl": "https://bisteccadanang.com/",
-      "rightsNotice": "© Bistecca／New Orient Hotel；遠端顯示，未儲存於本 App"
+      "url": "https://images.squarespace-cdn.com/content/v1/5f9bdbe0209d9a7ee6ea8797/9277bc8a-3cfd-45d1-8950-a259be7cdd0c/Screenshot+2023-12-05+at+11.20.30+AM.png?format=750w",
+      "alt": "Bistecca 所在的 New Orient Hotel 正門，銀色 NEW ORIENT hotel 大型招牌與玻璃入口清晰可辨",
+      "kind": "building-entrance",
+      "arrivalNote": "由 New Orient Hotel 正門進入，再乘升降機前往 7 樓的 Bistecca。",
+      "credit": "Jovel Chan",
+      "sourceUrl": "https://jovelchan.com/blog/hotel-review-new-orient-hotel-gypsy-kitchen-bar-danang",
+      "rightsNotice": "© Jovel Chan；第三方遠端顯示，未儲存於本 App"
     }
   },
   "breakfast-2-ladies-kitchen-banh-mi-coffee": {
@@ -166,6 +186,8 @@
     "photo": {
       "url": "https://2ladieskitchen.com/wp-content/uploads/2024/04/21-42.jpg",
       "alt": "2 Ladies Kitchen 白色門面，紅色店名、花棚及開放入口清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意白色小屋、紅色 2 Ladies Kitchen 店名及門前花棚。",
       "credit": "2 Ladies Kitchen 官方網站",
       "sourceUrl": "https://2ladieskitchen.com/",
       "rightsNotice": "© 2 Ladies Kitchen；遠端顯示，未儲存於本 App"

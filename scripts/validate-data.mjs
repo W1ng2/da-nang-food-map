@@ -6,6 +6,7 @@ const places = JSON.parse(await readFile(resolve(root, 'public', 'places.json'),
 const required = ['id', 'name', 'address', 'collection', 'iconType', 'description', 'priceVnd', 'signature', 'mapsUrl', 'verifiedAt']
 const failures = []
 const MINIMUM_VERIFIED_PHOTOS = 11
+const ARRIVAL_PHOTO_KINDS = new Set(['storefront', 'building-entrance'])
 
 if (places.length !== 97) failures.push(`Expected 97 places, found ${places.length}`)
 if (new Set(places.map((place) => place.id)).size !== places.length) failures.push('Place IDs are not unique')
@@ -22,9 +23,10 @@ for (const place of places) {
   if (!place.rating) failures.push(`${place.name}: missing Google rating`)
   if (!place.reviewCount) failures.push(`${place.name}: missing Google review count`)
   if (place.photo) {
-    for (const field of ['url', 'alt', 'credit', 'sourceUrl', 'rightsNotice']) {
+    for (const field of ['url', 'alt', 'kind', 'arrivalNote', 'credit', 'sourceUrl', 'rightsNotice']) {
       if (!place.photo[field]) failures.push(`${place.name}: photo missing ${field}`)
     }
+    if (!ARRIVAL_PHOTO_KINDS.has(place.photo.kind)) failures.push(`${place.name}: photo is not an arrival-identification image`)
     if (!/^https?:\/\//.test(place.photo.sourceUrl)) failures.push(`${place.name}: invalid photo source URL`)
     if (!place.enrichmentVerifiedAt) failures.push(`${place.name}: photo without enrichment verification date`)
   }
@@ -36,11 +38,13 @@ for (const place of places) {
 
 const coverage = {
   photos: places.filter((place) => place.photo).length,
+  arrivalPhotos: places.filter((place) => ARRIVAL_PHOTO_KINDS.has(place.photo?.kind)).length,
   sourcedHours: places.filter((place) => place.hours && place.hoursSourceUrl).length,
   officialBooking: places.filter((place) => place.bookingUrl).length,
   officialWebsite: places.filter((place) => place.website).length
 }
 if (coverage.photos < MINIMUM_VERIFIED_PHOTOS) failures.push(`Expected at least ${MINIMUM_VERIFIED_PHOTOS} verified restaurant photos, found ${coverage.photos}`)
+if (coverage.arrivalPhotos < MINIMUM_VERIFIED_PHOTOS) failures.push(`Expected at least ${MINIMUM_VERIFIED_PHOTOS} arrival-identification photos, found ${coverage.arrivalPhotos}`)
 
 if (failures.length) {
   console.error(failures.join('\n'))

@@ -31,6 +31,8 @@ const place: Place = {
   photo: {
     url: 'https://restaurant.example/entrance.jpg',
     alt: '餐廳門面及入口',
+    kind: 'storefront',
+    arrivalNote: '留意黑色招牌及玻璃入口。',
     credit: '餐廳官方網站',
     sourceUrl: 'https://restaurant.example/gallery',
     rightsNotice: '遠端顯示，未儲存於本 App'
@@ -62,6 +64,8 @@ describe('餐廳官方資料顯示合約', () => {
     )
 
     expect(markup).toContain('餐廳門面及入口')
+    expect(markup).toContain('餐廳門面')
+    expect(markup).toContain('到場辨認：</b>留意黑色招牌及玻璃入口。')
     expect(markup).toContain('相片：餐廳官方網站')
     expect(markup).toContain('每日 11:00–22:00')
     expect(markup).toContain('營業／聯絡資料：</b>2026-08-31')

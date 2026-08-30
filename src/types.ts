@@ -3,6 +3,8 @@ export type CollectionId = 'michelin' | 'high-rating' | 'cafe-dessert' | 'breakf
 export interface PlacePhoto {
   url: string
   alt: string
+  kind: 'storefront' | 'building-entrance'
+  arrivalNote: string
   credit: string
   sourceUrl: string
   rightsNotice: string

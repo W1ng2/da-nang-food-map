@@ -21,14 +21,18 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
       <div className="place-sheet__grabber" />
       <button className="place-sheet__close" type="button" onClick={onClose} aria-label="關閉" autoFocus>×</button>
       {photoUrl && place.photo && (
-        <figure className="place-sheet__photo">
-          <img src={photoUrl} alt={place.photo.alt} decoding="async" referrerPolicy="no-referrer"
-            onError={(event) => { event.currentTarget.closest('figure')?.setAttribute('hidden', '') }} />
-          <figcaption>
-            <a href={place.photo.sourceUrl} target="_blank" rel="noreferrer">相片：{place.photo.credit}</a>
-            <span>{place.photo.rightsNotice}</span>
-          </figcaption>
-        </figure>
+        <div className="place-sheet__photo-block">
+          <figure className="place-sheet__photo">
+            <img src={photoUrl} alt={place.photo.alt} decoding="async" referrerPolicy="no-referrer"
+              onError={(event) => { event.currentTarget.closest('.place-sheet__photo-block')?.setAttribute('hidden', '') }} />
+            <span className="place-sheet__photo-kind">{place.photo.kind === 'storefront' ? '餐廳門面' : '所在大廈入口'}</span>
+            <figcaption>
+              <a href={place.photo.sourceUrl} target="_blank" rel="noreferrer">相片：{place.photo.credit}</a>
+              <span>{place.photo.rightsNotice}</span>
+            </figcaption>
+          </figure>
+          <p className="place-sheet__arrival-note"><b>到場辨認：</b>{place.photo.arrivalNote}</p>
+        </div>
       )}
       <div className="place-sheet__headline">
         <span className="place-sheet__icon" aria-hidden="true">{iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}</span>
