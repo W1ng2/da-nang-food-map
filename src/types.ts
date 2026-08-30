@@ -27,6 +27,8 @@ export interface Place {
   priceHkdMax: number | null
   signature: string
   hours: string
+  hoursSourceUrl: string
+  enrichmentVerifiedAt: string
   bookingAdvice: string
   bookingUrl: string
   phone: string

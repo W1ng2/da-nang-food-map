@@ -30,6 +30,8 @@ const place: Place = {
   reviewCountVerifiedAt: '2026-08-30',
   address: 'Da Nang',
   hours: '08:00-22:00',
+  hoursSourceUrl: '',
+  enrichmentVerifiedAt: '',
   bookingAdvice: '',
   bookingUrl: '',
   phone: '',

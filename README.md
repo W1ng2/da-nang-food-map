@@ -19,7 +19,7 @@ npm run build
 
 `scripts/build-data.mjs` 把四組經篩選 CSV 合併為 `public/places.json`。餐廳評分、評論、價錢及營業時間會隨時間改變，出發前應再次核對 Google Maps 及最新菜單。
 
-餐廳相片、官方訂座及聯絡資料集中在 `data/place-enrichment.json`。加入新相片前請依照 `CONTRIBUTING_PHOTOS.md` 核對分店、出處及使用權；沒有可靠相片的餐廳會保留精準菜式圖標。
+餐廳相片、官方訂座及聯絡資料集中在 `data/place-enrichment.json`。加入新相片前請依照 `CONTRIBUTING_PHOTOS.md` 核對分店、出處及使用權；沒有可靠相片的餐廳會保留精準菜式圖標。營業時間另記來源網址及核對日期，詳情頁可直接打開來源複核。
 
 ## 資料與地圖來源
 

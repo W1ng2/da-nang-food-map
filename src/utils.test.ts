@@ -6,7 +6,7 @@ const place = (overrides: Partial<Place> = {}): Place => ({
   id: 'banh-xeo', name: 'Bánh Xèo Bà Dưỡng', address: 'Đà Nẵng', collection: 'michelin',
   iconType: '🍽️ 越南菜', icon: '🍽️', type: '越南菜', michelin: '必比登', rating: 4.3,
   reviewCount: 1000, reviewCountVerifiedAt: '2026-08-18', description: '越式煎餅', priceVnd: '₫100,000', priceHkd: '約 HK$30',
-  priceHkdMin: 30, priceHkdMax: 30, signature: 'Bánh xèo', hours: '', bookingAdvice: '', bookingUrl: '', phone: '', website: '', photo: null,
+  priceHkdMin: 30, priceHkdMax: 30, signature: 'Bánh xèo', hours: '', hoursSourceUrl: '', enrichmentVerifiedAt: '', bookingAdvice: '', bookingUrl: '', phone: '', website: '', photo: null,
   mapsUrl: 'https://maps.google.com', criteria: '', reviewAudit: '',
   verifiedAt: '2026-08-18', priceNote: '', notes: '', lat: 16.0589, lng: 108.2162,
   geocodeSource: 'Nominatim / OpenStreetMap', ...overrides

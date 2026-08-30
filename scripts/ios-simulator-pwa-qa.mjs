@@ -380,6 +380,30 @@ async function verifyStandaloneCoreFlows(sessionId) {
   if (!close) throw new Error('Restaurant detail close button was not found')
   await clickElement(sessionId, close)
   await clearElement(sessionId, search)
+
+  await typeElement(sessionId, search, 'La Maison 1888')
+  await assertMapCount(sessionId, 1)
+  const selectedLaMaison = await execute(sessionId, `
+    const button = document.querySelector('button.map-place-accessible[aria-label^="La Maison 1888"]')
+    if (!button) return false
+    button.click()
+    return true
+  `)
+  if (!selectedLaMaison) throw new Error('La Maison 1888 map action was not found after searching')
+  const officialEnrichmentContract = await waitForScript(sessionId, `
+    const dialog = document.querySelector('.place-sheet')
+    const source = [...(dialog?.querySelectorAll('.audit-note a') || [])].find(link => link.textContent.includes('核對來源'))
+    const photo = dialog?.querySelector('.place-sheet__photo img')
+    return dialog?.textContent.includes('每日晚餐 18:30–21:00') && dialog?.textContent.includes('2026-08-31') && source && photo?.complete && photo.naturalWidth > 0
+      ? { text: dialog.textContent, source: source.href, photoAlt: photo.alt, photoWidth: photo.naturalWidth }
+      : null
+  `, 20_000)
+  if (!officialEnrichmentContract.photoAlt.includes('黑白法式餐廳內部')) throw new Error('La Maison 1888 identifying photo is missing')
+  await screenshot(sessionId, '08c-official-photo-and-source.png')
+  const closeLaMaison = await findElement(sessionId, 'css selector', '.place-sheet__close')
+  if (!closeLaMaison) throw new Error('La Maison 1888 detail close button was not found')
+  await clickElement(sessionId, closeLaMaison)
+  await clearElement(sessionId, search)
   await assertMapCount(sessionId, 36)
 
   let filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
@@ -439,6 +463,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
     fastDrag: dragContract,
     search: { query: 'MỘC Quán Seafood', count: 1 },
     detail: detailContract,
+    officialEnrichment: officialEnrichmentContract,
     storage: storedContract,
     collections: { michelin: 36, highRating: 38, cafeDessert: 12, breakfast: 11, total: 97 },
     list: listContract,

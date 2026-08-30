@@ -143,6 +143,8 @@ for (const source of sources) {
       priceHkdMax: parsedHkd.max,
       signature: clean(row['餐廳名物'] || row['招牌項目']),
       hours: clean(enrichment.hours || row['早餐／營業時間']),
+      hoursSourceUrl: clean(enrichment.hoursSourceUrl),
+      enrichmentVerifiedAt: clean(enrichment.enrichmentVerifiedAt),
       bookingAdvice: clean(enrichment.bookingAdvice),
       bookingUrl: clean(enrichment.bookingUrl),
       phone: clean(enrichment.phone),

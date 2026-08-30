@@ -49,13 +49,14 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
         <div><span>地址</span><strong>{place.address}</strong></div>
       </div>
 
-      {(place.reviewAudit || place.notes) && (
+      {(place.reviewAudit || place.notes || place.enrichmentVerifiedAt) && (
         <details className="audit-note">
           <summary>資料核對與備註</summary>
           {place.reviewAudit && <p><b>反誘評抽查：</b>{place.reviewAudit}</p>}
           {place.notes && <p><b>用餐提示：</b>{place.notes}</p>}
           {place.priceNote && <p><b>價格：</b>{place.priceNote}</p>}
           <p>資料核對：{place.verifiedAt}</p>
+          {place.enrichmentVerifiedAt && <p><b>營業／聯絡資料：</b>{place.enrichmentVerifiedAt}{place.hoursSourceUrl && <> · <a href={place.hoursSourceUrl} target="_blank" rel="noreferrer">核對來源</a></>}</p>}
         </details>
       )}
 

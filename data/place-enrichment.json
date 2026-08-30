@@ -1,6 +1,104 @@
 {
+  "michelin-la-maison-1888": {
+    "hours": "每日晚餐 18:30–21:00；最後點餐 21:00",
+    "hoursSourceUrl": "https://www.danang.intercontinental.com/dining/la-maison-1888/",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "座位有限，官方要求確認訂座後每位支付 ₫1,000,000 訂金；同日 11:00 後取消會收取同額費用。",
+    "bookingUrl": "https://www.tablecheck.com/en/intercontinental-danang-la-maison/reserve/landing?utm_source=website",
+    "phone": "+842363938888",
+    "website": "https://www.danang.intercontinental.com/dining/la-maison-1888/",
+    "photo": {
+      "url": "https://www.danang.intercontinental.com/wp-content/uploads/2026/06/LMS-cover-michelin-2026.jpg-1024x529.jpeg",
+      "alt": "La Maison 1888 黑白法式餐廳內部，拱窗、吊燈及整齊餐桌清晰可辨",
+      "credit": "InterContinental Danang 官方網站",
+      "sourceUrl": "https://www.danang.intercontinental.com/dining/la-maison-1888/",
+      "rightsNotice": "© InterContinental Danang；遠端顯示，未儲存於本 App"
+    }
+  },
+  "michelin-indian-aroma": {
+    "hours": "每日 11:00–22:30",
+    "hoursSourceUrl": "https://indianaromadanang.com/",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "官方網站提供訂座入口；亦可致電或 WhatsApp 聯絡。",
+    "bookingUrl": "https://indianaromadanang.com/",
+    "phone": "+842363839888",
+    "website": "https://indianaromadanang.com/",
+    "photo": {
+      "url": "https://indianaromadanang.com/assets/indian-aroma-interior-entrance-C7S-YttS.jpg",
+      "alt": "Indian Aroma 暖色餐廳內部，紅橙曲線天花、印度式吊燈及玻璃入口清晰可辨",
+      "credit": "Indian Aroma 官方網站",
+      "sourceUrl": "https://indianaromadanang.com/",
+      "rightsNotice": "© Indian Aroma；遠端顯示，未儲存於本 App"
+    }
+  },
+  "michelin-le-comptoir": {
+    "hours": "每日兩輪晚餐；第一輪 17:00／17:30／18:00，第二輪 20:00／20:30",
+    "hoursSourceUrl": "https://lecomptoirdng.com/en/",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "建議預約；20:00 前的訂座用餐時間為 2 小時 30 分鐘。",
+    "bookingUrl": "https://www.tablecheck.com/en/le-comptoir-danang/reserve/landing?utm_source=website",
+    "phone": "+84708040560",
+    "website": "https://lecomptoirdng.com/en/",
+    "photo": {
+      "url": "https://lecomptoirdng.com/wp-content/uploads/2025/02/BOMM0102-4.webp",
+      "alt": "Le Comptoir 開放式廚房，黑板招牌、藍色花磚及廚師工作區清晰可辨",
+      "credit": "Le Comptoir 官方網站",
+      "sourceUrl": "https://lecomptoirdng.com/en/",
+      "rightsNotice": "© Le Comptoir；遠端顯示，未儲存於本 App"
+    }
+  },
+  "michelin-nen-danang": {
+    "hours": "午餐：一、三、五 10:30–14:00；晚餐：每日 17:30–20:45（所列結束時間為最後點餐）",
+    "hoursSourceUrl": "https://restaurantnen.com/nen-danang-restaurant/",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "以體驗式套餐為主，建議預約並預先告知食物敏感。",
+    "bookingUrl": "https://restaurantnen.com/reservation/",
+    "phone": "+84847148866",
+    "website": "https://restaurantnen.com/nen-danang-restaurant/",
+    "photo": {
+      "url": "https://restaurantnen.com/wp-content/uploads/2026/05/NT-Atmosphere-95-scaled.jpg",
+      "alt": "Nén Danang 暖色餐廳內部，三幅拱形壁畫、木桌及米色座椅清晰可辨",
+      "credit": "Nén 官方網站",
+      "sourceUrl": "https://restaurantnen.com/nen-danang-restaurant/",
+      "rightsNotice": "© Nén；遠端顯示，未儲存於本 App"
+    }
+  },
+  "michelin-olivia-s-prime": {
+    "hours": "每日 11:00–23:00；最後點餐 22:00",
+    "hoursSourceUrl": "https://oliviasprime.com/locations/oliviasprime-steakhouse-da-nang",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "可經官方表格預約；10 人以上請直接聯絡餐廳。",
+    "bookingUrl": "https://oliviasprime.com/make-a-reservation?reservation_location=danang",
+    "phone": "+84908163352",
+    "website": "https://oliviasprime.com/locations/oliviasprime-steakhouse-da-nang",
+    "photo": {
+      "url": "https://oliviasprime.com/web/image/845-76c46bec/Olivias-Prime-Steakhouse-main-entrance.jpg",
+      "alt": "Olivia's Prime 黑色門面，金色 PRIME 字樣、入口與戶外座位清晰可辨",
+      "credit": "Olivia's Prime 官方網站",
+      "sourceUrl": "https://oliviasprime.com/locations/oliviasprime-steakhouse-da-nang",
+      "rightsNotice": "© Olivia's Prime；遠端顯示，未儲存於本 App"
+    }
+  },
+  "michelin-the-temptation": {
+    "hours": "星期一 18:00–22:00；星期二至日 11:00–14:00、18:00–22:00（最後點餐分別 13:30、21:30）",
+    "hoursSourceUrl": "https://thetemptation.com.vn/about-us",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "訂座需付 ₫1,000,000 訂金；特別日子為每位 ₫1,000,000。",
+    "bookingUrl": "https://thetemptation.com.vn/contact",
+    "phone": "+84817952552",
+    "website": "https://thetemptation.com.vn/about-us",
+    "photo": {
+      "url": "https://thetemptation.com.vn/uploads/category/about-us-1734145869.jpg",
+      "alt": "The Temptation 法式餐廳內部，白色牆身、綠色座椅及庭院入口清晰可辨",
+      "credit": "The Temptation 官方網站",
+      "sourceUrl": "https://thetemptation.com.vn/about-us",
+      "rightsNotice": "© The Temptation；遠端顯示，未儲存於本 App"
+    }
+  },
   "michelin-moc-quan-seafood": {
     "hours": "每日 10:30–23:45；最後點餐 22:30",
+    "hoursSourceUrl": "https://mocseafood.com/moc-da-nang",
+    "enrichmentVerifiedAt": "2026-08-31",
     "bookingAdvice": "建議預約，尤其晚餐及多人用餐。",
     "bookingUrl": "https://mocseafood.com/dat-ban",
     "phone": "+84905665058",
@@ -15,6 +113,8 @@
   },
   "high-rating-pizza-4p-s": {
     "hours": "星期一至五 11:00–22:00；星期六、日 10:00–22:00；最後點餐 21:30",
+    "hoursSourceUrl": "https://pizza4ps.com/vn/location/944/?lang=english",
+    "enrichmentVerifiedAt": "2026-08-31",
     "bookingAdvice": "熱門時段經常滿座，建議預約。",
     "bookingUrl": "https://booking.pizza4ps.com/?restaurants=5fa947ed79c7bd001515effb&getLatLng=dn&utm_source=corp",
     "phone": "19006043",
@@ -25,6 +125,50 @@
       "credit": "Pizza 4P’s 官方網站",
       "sourceUrl": "https://pizza4ps.com/vn/location/944/?lang=english",
       "rightsNotice": "© Pizza 4P’s；遠端顯示，未儲存於本 App"
+    }
+  },
+  "high-rating-gypsy-rooftop-restaurant-bar": {
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "官方預約表格可填寫日期、時段及座位偏好。",
+    "bookingUrl": "https://thegypsydng.com/en/reservation/",
+    "phone": "+84767194074",
+    "website": "https://thegypsydng.com/en/",
+    "photo": {
+      "url": "https://thegypsydng.com/wp-content/uploads/2024/12/FIRERED-9440-2.webp",
+      "alt": "Gypsy Rooftop 露台在日落時俯瞰峴港市景，玻璃圍欄與餐桌清晰可辨",
+      "credit": "The Gypsy 官方網站",
+      "sourceUrl": "https://thegypsydng.com/en/",
+      "rightsNotice": "© The Gypsy；遠端顯示，未儲存於本 App"
+    }
+  },
+  "high-rating-bistecca-italian-restaurant-in-da-nang": {
+    "hours": "每日 16:00–22:00；最後點餐 21:30",
+    "hoursSourceUrl": "https://bisteccadanang.com/",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "bookingAdvice": "餐廳位於 New Orient Hotel 7 樓；可經官方表格預約。",
+    "bookingUrl": "https://bisteccadanang.com/",
+    "phone": "+84702663456",
+    "website": "https://bisteccadanang.com/",
+    "photo": {
+      "url": "https://cdn.neworienthoteldanang.com/1785915059758-5p84k6-657323485-1255809356666255-7310737945189.webp",
+      "alt": "Bistecca 7 樓餐廳池畔露台，橙色拱門、白色座椅及泳池清晰可辨",
+      "credit": "Bistecca 官方網站",
+      "sourceUrl": "https://bisteccadanang.com/",
+      "rightsNotice": "© Bistecca／New Orient Hotel；遠端顯示，未儲存於本 App"
+    }
+  },
+  "breakfast-2-ladies-kitchen-banh-mi-coffee": {
+    "hours": "每日 07:30–22:30",
+    "hoursSourceUrl": "https://www.foodtourdanang.vn/en/2-ladies-kitchen?food=106",
+    "enrichmentVerifiedAt": "2026-08-31",
+    "phone": "+84905866194",
+    "website": "https://2ladieskitchen.com/",
+    "photo": {
+      "url": "https://2ladieskitchen.com/wp-content/uploads/2024/04/21-42.jpg",
+      "alt": "2 Ladies Kitchen 白色門面，紅色店名、花棚及開放入口清晰可辨",
+      "credit": "2 Ladies Kitchen 官方網站",
+      "sourceUrl": "https://2ladieskitchen.com/",
+      "rightsNotice": "© 2 Ladies Kitchen；遠端顯示，未儲存於本 App"
     }
   }
 }
