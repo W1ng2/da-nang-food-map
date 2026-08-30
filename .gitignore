@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.playwright-cli/
+output/
+public/apple-touch-icon.png
+public/icons/
+public/map-icons/
+public/places.json
+vite.config.js
+vite.config.d.ts
+*.tsbuildinfo
+*.log
+.DS_Store

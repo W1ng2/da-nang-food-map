@@ -1,0 +1,32 @@
+{
+  "Rang": {
+    "lat": 16.043,
+    "lng": 108.247966,
+    "source": "Google Maps address match",
+    "matchedAddress": "384 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam"
+  },
+  "Hoang’s Kitchen Đà Nẵng - Vietnamese & Vegan Food": {
+    "lat": 16.0669036,
+    "lng": 108.2442227,
+    "source": "Google Maps address match",
+    "matchedAddress": "40 Hà Bổng, An Hải, Đà Nẵng 550000, Vietnam"
+  },
+  "Vị Brewhouse": {
+    "lat": 16.074872,
+    "lng": 108.2210984,
+    "source": "Google Maps address match",
+    "matchedAddress": "37 Quang Trung, Hải Châu, Đà Nẵng 550000, Vietnam"
+  },
+  "Bánh Bèo Nóng - 197 Núi Thành": {
+    "lat": 16.0456902,
+    "lng": 108.2213109,
+    "source": "Google Maps address match",
+    "matchedAddress": "197 Núi Thành, Hòa Cường, Đà Nẵng 550000, Vietnam"
+  },
+  "Bánh mì Bà Lan": {
+    "lat": 16.0596327,
+    "lng": 108.2218006,
+    "source": "Google Maps address match",
+    "matchedAddress": "62 Trưng Nữ Vương, Hải Châu, Đà Nẵng 550000, Vietnam"
+  }
+}

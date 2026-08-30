@@ -1,0 +1,686 @@
+{
+  "La Maison 1888": {
+    "lat": 16.1221007,
+    "lng": 108.3060176,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "La Maison 1888, Đường Hoàng Sa, Phường Sơn Trà, Thành phố Đà Nẵng, Việt Nam"
+  },
+  "Ăn Thôi": {
+    "lat": 16.0683105,
+    "lng": 108.2249176,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "An Thoi, 114, Đường Bạch Đằng, Tổ dân phố 32 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Bà Đông": {
+    "lat": 16.069817,
+    "lng": 108.2449948,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Ngã ba Võ Nguyên Giáp - Phạm Văn Đồng, Đường Võ Nguyên Giáp, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Bé Ni 2": {
+    "lat": 16.0667909,
+    "lng": 108.2449525,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Bé Ni 2, Đường Võ Nguyên Giáp, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Bún Chả Cá 109": {
+    "lat": 16.0743887,
+    "lng": 108.2207958,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Bún chả cá 109, Đường Nguyễn Chí Thanh, Tổ dân phố 28 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Bún Chả Cá Hờn": {
+    "lat": 16.0740827,
+    "lng": 108.2212407,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Bún chả cá Hờn, 3, Kiệt 113 Nguyễn Chí Thanh, Tổ dân phố 27 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Indian Aroma": {
+    "lat": 16.0470764,
+    "lng": 108.2455404,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Mumtaz - Indian Aroma Restaurant, Đường An Thượng 6, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Mỳ Quảng Sứa Hồng Vân": {
+    "lat": 16.0661233,
+    "lng": 108.229693,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Mỳ Quảng Cô Sáu, 389, Đường Trần Hưng Đạo, Tổ dân phố An Thị, Phường An Hải, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Phú Hồng": {
+    "lat": 16.0691035,
+    "lng": 108.2229133,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Phú Hồng, 19, Đường Yên Bái, Tổ dân phố 29 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Quán Nhân": {
+    "lat": 16.0462457,
+    "lng": 108.2455441,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Quán Nhân, 83, Đường Phan Tứ, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Rang": {
+    "lat": 16.043,
+    "lng": 108.247966,
+    "source": "Google Maps address match",
+    "matchedAddress": "384 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam"
+  },
+  "Thìa Gỗ": {
+    "lat": 16.0532123,
+    "lng": 108.24153,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Thia Go, Đường Phan Thúc Duyện, Tổ dân phố An Cư 4, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Bánh Xèo Bà Dưỡng": {
+    "lat": 16.0588034,
+    "lng": 108.2160349,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Bánh Xèo Bà Dưỡng, 23, Kiệt 280 Hoàng Diệu, Tổ dân phố 49 Bình Hiên, Phường Hải Châu, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Bếp Cuốn": {
+    "lat": 16.0578779,
+    "lng": 108.2452275,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Bếp Cuốn, Đường Trần Bạch Đằng, Tổ dân phố Mỹ Tân, Phường An Hải, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Bếp Hên": {
+    "lat": 16.0639909,
+    "lng": 108.2210351,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Bếp Hên, 47, Đường Lê Hồng Phong, Phước Ninh, Tổ dân phố 42 Phước Ninh, Phường Hải Châu, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Bún Chả Cá Bà Hoa": {
+    "lat": 16.0641849,
+    "lng": 108.2192738,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Đường Lê Hồng Phong, Tổ dân phố 41 Phước Ninh, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Le Comptoir": {
+    "lat": 16.0426768,
+    "lng": 108.245455,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Le Comptoir, 16, Đường Chế Lan Viên, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Luk Lak": {
+    "lat": 16.0786668,
+    "lng": 108.2236675,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Luk Lak, 28, Đường Bạch Đằng, Tổ dân phố 22 Thạch Thang, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Madame Lân": {
+    "lat": 16.0813554,
+    "lng": 108.2229668,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Madame Lan, Đường Trần Phú, Tổ dân phố 19 Thạch Thang, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "MỘC Quán Seafood": {
+    "lat": 16.0639457,
+    "lng": 108.2414873,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Mộc Quán, 26, Đường Tô Hiến Thành, Tổ dân phố Mỹ Khê, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "My Hanh Seafood": {
+    "lat": 16.0653174,
+    "lng": 108.2460409,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "My Hanh Seafood, Đường Võ Nguyên Giáp, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Mỳ Quảng Cô Sáu": {
+    "lat": 16.0661233,
+    "lng": 108.229693,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Mỳ Quảng Cô Sáu, 389, Đường Trần Hưng Đạo, Tổ dân phố An Thị, Phường An Hải, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Năm Đảnh Seafood": {
+    "lat": 16.102266,
+    "lng": 108.2534494,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Nam Danh, Đường Trần Quang Khải, Phường Sơn Trà, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Olivia's Prime": {
+    "lat": 16.0701323,
+    "lng": 108.2241747,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Olivia's Prime, Đường Phan Đình Phùng, Tổ dân phố 29 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Si Dining": {
+    "lat": 16.0302522,
+    "lng": 108.2379864,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Si Dining, 1, Đường Giang Châu 2, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Pizza 4P’s": {
+    "lat": 16.0698498,
+    "lng": 108.2248855,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Pizza 4P's, Kiệt 83 Trần Phú, Tổ dân phố 29 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Vietnom Local Eatery": {
+    "lat": 16.047867,
+    "lng": 108.2438751,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Vietnom Local Eatery, 97, Mai Thúc Lân, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 55000, Việt Nam"
+  },
+  "Riverside Terrace Restaurant": {
+    "lat": 16.0631261,
+    "lng": 108.2302807,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Riverside Terrace Restaurant, 493, Đường Trần Hưng Đạo, Tổ dân phố An Mỹ 2, Phường An Hải, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Thèm Hải Sản": {
+    "lat": 16.0570065,
+    "lng": 108.2454016,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Them Hai San, Đường Trần Bạch Đằng, Tổ dân phố Mỹ Tân, Phường An Hải, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Nhà Bếp Xưa Restaurant": {
+    "lat": 16.0661748,
+    "lng": 108.2442395,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Nhà Bếp Xưa, 64B, Đường Hà Bổng, Tổ dân phố Mỹ Thạnh, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Burger House Da Nang": {
+    "lat": 16.0696038,
+    "lng": 108.2358758,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Burger House Da Nang, Đường Dương Đình Nghệ, Tổ dân phố An Nhơn 1, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Miss NHI": {
+    "lat": 16.0511722,
+    "lng": 108.2457346,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Miss Nhi, Đường An Thượng 30, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Nhà hàng NHÀ BẾP CHỢ HÀN": {
+    "lat": 16.0687635,
+    "lng": 108.2243297,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Nhà hàng NHÀ BÊP CHÓ HÀN, 22, Đường Hùng Vương, Tổ dân phố 29 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "MAAZI Da Nang": {
+    "lat": 16.062239,
+    "lng": 108.2231411,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Maazi, Kiệt 268 Trần Phú, Tổ dân phố 39 Phước Ninh, Phường Hải Châu, Thành phố Đà Nẵng, 02363, Việt Nam"
+  },
+  "Butcher Steak": {
+    "lat": 16.0508781,
+    "lng": 108.2451984,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Butcher Steak, 64, Đường Lê Quang Đạo, Tổ dân phố An Cư 5, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Rainbowl Poke": {
+    "lat": 16.0479151,
+    "lng": 108.2438673,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Rainbowl Poke, 95, Mai Thúc Lân, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Nhà hàng Mr.Anh": {
+    "lat": 16.0677685,
+    "lng": 108.2137837,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Nha Hang Mr.Anh, Đường Ông Ích Khiêm, Tổ dân phố 16 Vĩnh Trung, Phường Thanh Khê, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Trình cà phê": {
+    "lat": 16.0673434,
+    "lng": 108.2215887,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Trình cà phê, Đường Phạm Hồng Thái, Tổ dân phố 32 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "Outta da Blue Đà Nẵng": {
+    "lat": 16.0697234,
+    "lng": 108.2177394,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Outta Da Blue Specialty Coffee, Đường Pasteur, Tổ dân phố 30 Hải Châu, Phường Hải Châu, Thành phố Đà Nẵng, 50207, Việt Nam"
+  },
+  "O2o First Roast": {
+    "lat": 16.0457422,
+    "lng": 108.2446755,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "O2O First Roast Coffee, Đường Phan Tứ, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "Kem bơ Bé Huệ": {
+    "lat": 16.0506693,
+    "lng": 108.2445233,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "Kem bơ Bé Huệ, Đường An Thượng 38, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng, 50507, Việt Nam"
+  },
+  "An's Cafe": {
+    "lat": 16.073485,
+    "lng": 108.2422327,
+    "source": "Nominatim / OpenStreetMap",
+    "displayName": "An's Cafe, 78, Đường Loseby, Tổ dân phố An Cư 2, Phường An Hải, Thành phố Đà Nẵng, 50408, Việt Nam"
+  },
+  "Bánh Xèo 76": {
+    "lat": 16.0416482,
+    "lng": 108.2400885,
+    "source": "Google Maps name match",
+    "displayName": "Bánh Xèo 76",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%A1nh+X%C3%A8o+76,+85A+L%C3%AA+V%C4%83n+H%C6%B0u,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0416482,108.2400885,3834a,13.1y/data=!4m2!3m1!1s0x31421763362926cb:0xbecd0b08f8e85ea4",
+    "matchScore": 1
+  },
+  "Bún Bò Bà Rơi (Hải Châu)": {
+    "lat": 16.053718099999998,
+    "lng": 108.2214331,
+    "source": "Google Maps name match",
+    "displayName": "Bún Bò Bà Rơi",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%BAn+B%C3%B2+B%C3%A0+R%C6%A1i,+5+Phan+Th%C3%A0nh+T%C3%A0i,+H%C3%B2a+C%C6%B0%E1%BB%9Dng,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0537181,108.2214331,3834a,13.1y/data=!4m2!3m1!1s0x314219a36393cfd5:0x47f6c1f0cc797cce",
+    "matchScore": 0.85
+  },
+  "Bún Bò Huế Bà Thương": {
+    "lat": 16.0661111,
+    "lng": 108.2230556,
+    "source": "Google Maps name match",
+    "displayName": "Bún Bò Huế Bà Thương",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%BAn+B%C3%B2+Hu%E1%BA%BF+B%C3%A0+Th%C6%B0%C6%A1ng,+23+Tr%E1%BA%A7n+Qu%E1%BB%91c+To%E1%BA%A3n,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0661111,108.2230556,3834a,13.1y/data=!4m2!3m1!1s0x31421832fca39fb5:0xc23c71936418aa7",
+    "matchScore": 1
+  },
+  "Quê Xưa": {
+    "lat": 16.046879999999998,
+    "lng": 108.2212191,
+    "source": "Google Maps name match",
+    "displayName": "Mỳ Quảng Quê Xưa",
+    "mapsUrl": "https://www.google.com/maps/preview/place/M%E1%BB%B3+Qu%E1%BA%A3ng+Qu%C3%AA+X%C6%B0a,+165+N%C3%BAi+Th%C3%A0nh,+H%C3%B2a+C%C6%B0%E1%BB%9Dng,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.04688,108.2212191,3834a,13.1y/data=!4m2!3m1!1s0x314219c3f6aa5647:0x2e423e1b7c86909b",
+    "matchScore": 0.85
+  },
+  "Bà Diệu (Trần Tống)": {
+    "lat": 16.0585293,
+    "lng": 108.2108655,
+    "source": "Google Maps name match",
+    "displayName": "Quán Bún Bà Diệu",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Qu%C3%A1n+B%C3%BAn+B%C3%A0+Di%E1%BB%87u,+17+Tr%E1%BA%A7n+T%E1%BB%91ng,+Thanh+Kh%C3%AA,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0585293,108.2108655,3834a,13.1y/data=!4m2!3m1!1s0x314219b687b7bf77:0xbe2ac94cdef1de30",
+    "matchScore": 0.5
+  },
+  "Bánh Canh Yến": {
+    "lat": 16.0576436,
+    "lng": 108.2131653,
+    "source": "Google Maps name match",
+    "displayName": "Bánh canh Yến",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%A1nh+canh+Y%E1%BA%BFn,+253+Nguy%E1%BB%85n+Ho%C3%A0ng,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0576436,108.2131653,3834a,13.1y/data=!4m2!3m1!1s0x3142192651c15a71:0xa2d6994dbbdad8e4",
+    "matchScore": 1
+  },
+  "Bún Riêu Cua 39": {
+    "lat": 16.063851,
+    "lng": 108.2212605,
+    "source": "Google Maps name match",
+    "displayName": "Bún Riêu Cua 39",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%BAn+Ri%C3%AAu+Cua+39,+39+L%C3%AA+H%E1%BB%93ng+Phong,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.063851,108.2212605,3834a,13.1y/data=!4m2!3m1!1s0x314219ccb52113c9:0x2954e741b966a56b",
+    "matchScore": 1
+  },
+  "Cơm Gà Lan": {
+    "lat": 16.0487794,
+    "lng": 108.2131326,
+    "source": "Google Maps name match",
+    "displayName": "CƠM GÀ LAN",
+    "mapsUrl": "https://www.google.com/maps/preview/place/C%C6%A0M+G%C3%80+LAN,+520+Tr%C6%B0ng+N%E1%BB%AF+V%C6%B0%C6%A1ng,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0487794,108.2131326,3834a,13.1y/data=!4m2!3m1!1s0x314219c5fbc2d0a3:0xf2d91cb86f27183d",
+    "matchScore": 1
+  },
+  "Nén Danang": {
+    "lat": 16.0346026,
+    "lng": 108.2395581,
+    "source": "Google Maps name match",
+    "displayName": "Nén Danang",
+    "mapsUrl": "https://www.google.com/maps/preview/place/N%C3%A9n+Danang,+16+%C4%91%C6%B0%E1%BB%9Dng+M%E1%BB%B9+%C4%90a+T%C3%A2y+2,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0346026,108.2395581,3835a,13.1y/data=!4m2!3m1!1s0x3142175f35c9eb37:0x76acf6f5e208c735",
+    "matchScore": 1
+  },
+  "Nu Đồ Kitchen": {
+    "lat": 16.0409798,
+    "lng": 108.2454259,
+    "source": "Google Maps name match",
+    "displayName": "NU ĐỒ",
+    "mapsUrl": "https://www.google.com/maps/preview/place/NU+%C4%90%E1%BB%92,+11%2F1+L%C6%B0u+Quang+Thu%E1%BA%ADn,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0409798,108.2454259,3834a,13.1y/data=!4m2!3m1!1s0x314217a406bacafb:0x372fde174d5d33fa",
+    "matchScore": 0.85
+  },
+  "The Temptation": {
+    "lat": 16.0734565,
+    "lng": 108.2431275,
+    "source": "Google Maps name match",
+    "displayName": "The Temptation",
+    "mapsUrl": "https://www.google.com/maps/preview/place/The+Temptation,+125+H%E1%BB%93+Nghinh,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0734565,108.2431275,3834a,13.1y/data=!4m2!3m1!1s0x3142175a37ec6177:0xe5b70d45f6bbd6d7",
+    "matchScore": 1
+  },
+  "Nhà hàng Nhà Gỗ Việt Đà Nẵng": {
+    "lat": 16.0679495,
+    "lng": 108.2232911,
+    "source": "Google Maps name match",
+    "displayName": "Nhà hàng Nhà Gỗ Việt Đà Nẵng",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Nh%C3%A0+h%C3%A0ng+Nh%C3%A0+G%E1%BB%97+Vi%E1%BB%87t+%C4%90%C3%A0+N%E1%BA%B5ng,+49+Nguy%E1%BB%85n+Th%C3%A1i+H%E1%BB%8Dc,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0679495,108.2232911,3834a,13.1y/data=!4m2!3m1!1s0x3142196e455d2b63:0xafc2ec3a033d5eeb",
+    "matchScore": 1
+  },
+  "All Seasons Buffet Da Nang": {
+    "lat": 16.055459,
+    "lng": 108.2430332,
+    "source": "Google Maps name match",
+    "displayName": "All Seasons Buffet Da Nang",
+    "mapsUrl": "https://www.google.com/maps/preview/place/All+Seasons+Buffet+Da+Nang,+193+Nguy%E1%BB%85n+V%C4%83n+Tho%E1%BA%A1i,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.055459,108.2430332,3834a,13.1y/data=!4m2!3m1!1s0x3142177abb885d07:0x8a7c9d0d632f15d9",
+    "matchScore": 1
+  },
+  "Nhà hàng Làn Gió": {
+    "lat": 16.0666296,
+    "lng": 108.2238222,
+    "source": "Google Maps name match",
+    "displayName": "Nhà hàng Làn Gió",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Nh%C3%A0+h%C3%A0ng+L%C3%A0n+Gi%C3%B3,+169+Tr%E1%BA%A7n+Ph%C3%BA,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0666296,108.2238222,3834a,13.1y/data=!4m2!3m1!1s0x314219d1a3a91435:0x57b4d75446272396",
+    "matchScore": 1
+  },
+  "Vietnam Daily Cuisine": {
+    "lat": 16.052260399999998,
+    "lng": 108.24598019999999,
+    "source": "Google Maps name match",
+    "displayName": "Vietnam Daily Cuisine",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Vietnam+Daily+Cuisine,+10+An+Th%C6%B0%E1%BB%A3ng+29,+st,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0522604,108.2459802,3834a,13.1y/data=!4m2!3m1!1s0x314217ea514786c3:0xec7343f37dc6ecf7",
+    "matchScore": 1
+  },
+  "Gypsy Rooftop Restaurant & Bar": {
+    "lat": 16.0825896,
+    "lng": 108.22085,
+    "source": "Google Maps name match",
+    "displayName": "Gypsy Rooftop Restaurant & Bar",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Gypsy+Rooftop+Restaurant+%26+Bar,+20+%C4%90%E1%BB%91ng+%C4%90a,+Street,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0825896,108.22085,3834a,13.1y/data=!4m2!3m1!1s0x3142190c4beda5ef:0x14568ecf8256aa25",
+    "matchScore": 1
+  },
+  "Bistecca - Italian Restaurant in Da Nang": {
+    "lat": 16.0826174,
+    "lng": 108.22082569999999,
+    "source": "Google Maps name match",
+    "displayName": "Bistecca Restaurant",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Bistecca+Restaurant,+20+%C4%90%E1%BB%91ng+%C4%90a,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0826174,108.2208257,3834a,13.1y/data=!4m2!3m1!1s0x3142196de9ccba2f:0x7233cc1778c9e453",
+    "matchScore": 0.85
+  },
+  "Hùng 68 Restaurant - Food and Drink": {
+    "lat": 16.0019307,
+    "lng": 108.26697449999999,
+    "source": "Google Maps name match",
+    "displayName": "Hùng 68 Restaurant - Food and Drink",
+    "mapsUrl": "https://www.google.com/maps/preview/place/H%C3%B9ng+68+Restaurant+-+Food+and+Drink,+110+Tr%C6%B0%E1%BB%9Dng+Sa,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0019307,108.2669745,3835a,13.1y/data=!4m2!3m1!1s0x314211003e4c753b:0xe1e19795f19483ce",
+    "matchScore": 1
+  },
+  "NGON DA NANG - VIETNAMESE CUISINE RESTAURANT": {
+    "lat": 16.0494988,
+    "lng": 108.2456527,
+    "source": "Google Maps name match",
+    "displayName": "NGON DA NANG - VIETNAMESE CUISINE RESTAURANT",
+    "mapsUrl": "https://www.google.com/maps/preview/place/NGON+DA+NANG+-+VIETNAMESE+CUISINE+RESTAURANT,+88B+L%C3%AA+Quang+%C4%90%E1%BA%A1o,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0494988,108.2456527,3834a,13.1y/data=!4m2!3m1!1s0x3142178f48e403f1:0x89d75755edeabfa5",
+    "matchScore": 1
+  },
+  "Cá Gỗ Vietnamese Restaurant": {
+    "lat": 16.0530767,
+    "lng": 108.24752219999999,
+    "source": "Google Maps name match",
+    "displayName": "Cá Gỗ Vietnamese Restaurant",
+    "mapsUrl": "https://www.google.com/maps/preview/place/C%C3%A1+G%E1%BB%97+Vietnamese+Restaurant,+278+V%C3%B5+Nguy%C3%AAn+Gi%C3%A1p,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0530767,108.2475222,3834a,13.1y/data=!4m2!3m1!1s0x314217c8ff6f55b9:0xafb8783ad3587c76",
+    "matchScore": 1
+  },
+  "MAMA MASALA INDIAN CUISINE Da Nang": {
+    "lat": 16.052244899999998,
+    "lng": 108.232812,
+    "source": "Google Maps name match",
+    "displayName": "MAMA MASALA INDIAN CUISINE Da Nang",
+    "mapsUrl": "https://www.google.com/maps/preview/place/MAMA+MASALA+INDIAN+CUISINE+Da+Nang,+376+%C4%90.+Tr%E1%BA%A7n+H%C6%B0ng+%C4%90%E1%BA%A1o,+Street,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0522449,108.232812,3834a,13.1y/data=!4m2!3m1!1s0x3142194fdd675491:0x4bf4f8d8cc2f52ed",
+    "matchScore": 1
+  },
+  "Gravel House BBQ Restaurant Da Nang": {
+    "lat": 16.0695393,
+    "lng": 108.2240999,
+    "source": "Google Maps name match",
+    "displayName": "자갈집 Gravel House BBQ Restaurant Da Nang",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Vietnam,+%C4%90%C3%A0+N%E1%BA%B5ng,+H%E1%BA%A3i+Ch%C3%A2u,+Tr%E1%BA%A7n+Ph%C3%BA,+%EC%9E%90%EA%B0%88%EC%A7%91+Gravel+House+BBQ+Restaurant+Da+Nang/@16.0695393,108.2240999,3834a,13.1y/data=!4m2!3m1!1s0x314219007a7136df:0xd671ec33525b6835",
+    "matchScore": 1
+  },
+  "ClayPot Bar and Restaurant": {
+    "lat": 16.0738608,
+    "lng": 108.2440405,
+    "source": "Google Maps name match",
+    "displayName": "ClayPot Bar and Restaurant",
+    "mapsUrl": "https://www.google.com/maps/preview/place/ClayPot+Bar+and+Restaurant,+32+Vo%CC%83+Nghi%CC%83a,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0738608,108.2440405,3834a,13.1y/data=!4m2!3m1!1s0x31421714248f8d59:0xfadb6d0edf2e1fe4",
+    "matchScore": 1
+  },
+  "Ky Vat - Vietnamese Restaurant": {
+    "lat": 16.0641718,
+    "lng": 108.2205424,
+    "source": "Google Maps name match",
+    "displayName": "Ky Vat - Vietnamese Restaurant",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Ky+Vat+-+Vietnamese+Restaurant,+56a+L%C3%AA+H%E1%BB%93ng+Phong,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0641718,108.2205424,3834a,13.1y/data=!4m2!3m1!1s0x3142194df1643ca9:0xee7a23ab95fd09c1",
+    "matchScore": 1
+  },
+  "Nhà hàng Thiên Kim": {
+    "lat": 16.0666255,
+    "lng": 108.22468939999999,
+    "source": "Google Maps name match",
+    "displayName": "Nhà hàng Thiên Kim",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Nh%C3%A0+h%C3%A0ng+Thi%C3%AAn+Kim,+166+B%E1%BA%A1ch+%C4%90%E1%BA%B1ng,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0666255,108.2246894,3834a,13.1y/data=!4m2!3m1!1s0x3134534782f65cc3:0xf8dabd543067b250",
+    "matchScore": 1
+  },
+  "LoCo Restaurant - Danang Seafood Restaurant": {
+    "lat": 16.0715002,
+    "lng": 108.2241655,
+    "source": "Google Maps name match",
+    "displayName": "LoCo Restaurant - Danang Seafood Restaurant - 다낭 레스토랑",
+    "mapsUrl": "https://www.google.com/maps/preview/place/LoCo+Restaurant+-+Danang+Seafood+Restaurant+-+%EB%8B%A4%EB%82%AD+%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91,+1C+L%C3%AA+Du%E1%BA%A9n,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0715002,108.2241655,3834a,13.1y/data=!4m2!3m1!1s0x31421977569bbd1f:0xa664a343c71a38a1",
+    "matchScore": 1
+  },
+  "Nhà An - Vietnamese local food restaurant and vegan": {
+    "lat": 16.0749852,
+    "lng": 108.2430715,
+    "source": "Google Maps name match",
+    "displayName": "Nhà An - Vietnamese local food restaurant and vegan",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Nh%C3%A0+An+-+Vietnamese+local+food+restaurant+and+vegan,+101+H%E1%BB%93+Nghinh,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0749852,108.2430715,3834a,13.1y/data=!4m2!3m1!1s0x3142170d14f5ea4f:0x1eaf14f4ee0f185f",
+    "matchScore": 1
+  },
+  "EMO'S HOMECOOKED VIETNAMESE CUISINE": {
+    "lat": 16.0581755,
+    "lng": 108.24547349999999,
+    "source": "Google Maps name match",
+    "displayName": "EMO'S HOMECOOKED VIETNAMESE CUISINE",
+    "mapsUrl": "https://www.google.com/maps/preview/place/EMO'S+HOMECOOKED+VIETNAMESE+CUISINE,+16,+%C4%90%C6%B0%E1%BB%9Dng+M%E1%BB%B9+Kh%C3%AA+4,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0581755,108.2454735,3834a,13.1y/data=!4m2!3m1!1s0x314217641a07b4ef:0xe08cfd4c0fee906f",
+    "matchScore": 1
+  },
+  "BHOJAN INDIAN RESTAURANT": {
+    "lat": 16.0530004,
+    "lng": 108.24455449999999,
+    "source": "Google Maps name match",
+    "displayName": "BHOJAN INDIAN RESTAURANT",
+    "mapsUrl": "https://www.google.com/maps/preview/place/BHOJAN+INDIAN+RESTAURANT,+20-22+L%C3%AA+Quang+%C4%90%E1%BA%A1o,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+50000,+Vietnam/@16.0530004,108.2445545,3834a,13.1y/data=!4m2!3m1!1s0x314217ab53629645:0x2b064dc1af16dc4b",
+    "matchScore": 1
+  },
+  "Bếp Lụa Vietnamese Restaurant": {
+    "lat": 16.0690879,
+    "lng": 108.22487369999999,
+    "source": "Google Maps name match",
+    "displayName": "Bếp Lụa vietnamese restaurant ( 볩루아 베트남식당 )",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%E1%BA%BFp+L%E1%BB%A5a+vietnamese+restaurant+(+%EB%B3%A9%EB%A3%A8%EC%95%84+%EB%B2%A0%ED%8A%B8%EB%82%A8%EC%8B%9D%EB%8B%B9+),+94+B%E1%BA%A1ch+%C4%90%E1%BA%B1ng,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0690879,108.2248737,3834a,13.1y/data=!4m2!3m1!1s0x3142191ebdca7959:0xbaa53fbdb20921d1",
+    "matchScore": 1
+  },
+  "Nazaare - Indian Beach Restaurant and Bar": {
+    "lat": 16.0656431,
+    "lng": 108.2460701,
+    "source": "Google Maps name match",
+    "displayName": "Nazaare- Indian beach restaurant and bar",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Nazaare-+Indian+beach+restaurant+and+bar,+L%C3%B4+02+V%C3%B5+Nguy%C3%AAn+Gi%C3%A1p,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0656431,108.2460701,3834a,13.1y/data=!4m2!3m1!1s0x314217000179c67d:0x7d925e2055dd39d9",
+    "matchScore": 1
+  },
+  "MiRi Hôm Vietnamese Cuisine": {
+    "lat": 16.055609999999998,
+    "lng": 108.24338159999999,
+    "source": "Google Maps name match",
+    "displayName": "MiRi Hôm Vietnamese Cuisine",
+    "mapsUrl": "https://www.google.com/maps/preview/place/MiRi+H%C3%B4m+Vietnamese+Cuisine,+199+Nguy%E1%BB%85n+V%C4%83n+Tho%E1%BA%A1i,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.05561,108.2433816,3834a,13.1y/data=!4m2!3m1!1s0x314217003d6a11e5:0x71672a1dcaf08f91",
+    "matchScore": 1
+  },
+  "MANVAR Rasoi Indian Restaurant": {
+    "lat": 16.0423085,
+    "lng": 108.24647499999999,
+    "source": "Google Maps name match",
+    "displayName": "MANVAR Rasoi Indian Restaurant",
+    "mapsUrl": "https://www.google.com/maps/preview/place/MANVAR+Rasoi+Indian+Restaurant,+37+Ch%E1%BA%BF+Lan+Vi%C3%AAn,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+50000,+Vietnam/@16.0423085,108.246475,3834a,13.1y/data=!4m2!3m1!1s0x3142176c64f33b9f:0x83ca3584dd4f419b",
+    "matchScore": 1
+  },
+  "Sky View Restaurant": {
+    "lat": 16.0676095,
+    "lng": 108.24477979999999,
+    "source": "Google Maps name match",
+    "displayName": "Sky View Restaurant",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Sky+View+Restaurant,+216+V%C3%B5+Nguy%C3%AAn+Gi%C3%A1p,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0676095,108.2447798,3834a,13.1y/data=!4m2!3m1!1s0x3142179ce12f3489:0xe9d21eb1e28da76e",
+    "matchScore": 1
+  },
+  "DOM Bistro": {
+    "lat": 16.080802,
+    "lng": 108.221425,
+    "source": "Google Maps name match",
+    "displayName": "DOM Bistro",
+    "mapsUrl": "https://www.google.com/maps/preview/place/DOM+Bistro,+3+Phan+B%E1%BB%99i+Ch%C3%A2u,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.080802,108.221425,3834a,13.1y/data=!4m2!3m1!1s0x3142183bf3461ced:0x6c3d9cbe37c8233e",
+    "matchScore": 1
+  },
+  "Roost Coffee Roasters | Da Nang": {
+    "lat": 16.0433923,
+    "lng": 108.2440618,
+    "source": "Google Maps name match",
+    "displayName": "Roost Coffee Roasters | Da Nang",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Roost+Coffee+Roasters+%7C+Da+Nang,+57+B%C3%A0+Huy%E1%BB%87n+Thanh+Quan,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+50700,+Vietnam/@16.0433923,108.2440618,3834a,13.1y/data=!4m2!3m1!1s0x31421724b9f30a89:0x8cbb28ee01d72686",
+    "matchScore": 1
+  },
+  "ACACIA coffee and more": {
+    "lat": 16.0740525,
+    "lng": 108.24192579999999,
+    "source": "Google Maps name match",
+    "displayName": "ACACIA coffee and more",
+    "mapsUrl": "https://www.google.com/maps/preview/place/ACACIA+coffee+and+more,+05+An+C%C6%B0+5,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0740525,108.2419258,3834a,13.1y/data=!4m2!3m1!1s0x314217d1fac2c311:0x94c5c423146d01af",
+    "matchScore": 1
+  },
+  "Passport Coffee Lab | Specialty Coffee & Brunch": {
+    "lat": 16.0522833,
+    "lng": 108.24209839999999,
+    "source": "Google Maps name match",
+    "displayName": "Passport Coffee Lab | Specialty Coffee & Brunch",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Passport+Coffee+Lab+%7C+Specialty+Coffee+%26+Brunch,+78+Mai+Th%C3%BAc+L%C3%A2n,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+50003,+Vietnam/@16.0522833,108.2420984,3834a,13.1y/data=!4m2!3m1!1s0x314217000f57260f:0xc032da1776a3c1e9",
+    "matchScore": 1
+  },
+  "[91cc] 91 Concept Coffee": {
+    "lat": 16.0662557,
+    "lng": 108.2204201,
+    "source": "Google Maps name match",
+    "displayName": "[91cc] 91 Concept Coffee",
+    "mapsUrl": "https://www.google.com/maps/preview/place/%5B91cc%5D+91+Concept+Coffee,+91+Tr%E1%BA%A7n+Qu%E1%BB%91c+To%E1%BA%A3n,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0662557,108.2204201,3834a,13.1y/data=!4m2!3m1!1s0x3142191f8be5e55d:0xf5ebb1da982cd4c7",
+    "matchScore": 1
+  },
+  "Freezedom Da Nang": {
+    "lat": 16.047973,
+    "lng": 108.24338309999999,
+    "source": "Google Maps name match",
+    "displayName": "Freezedom Da Nang",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Freezedom+Da+Nang,+156+Mai+Th%C3%BAc+L%C3%A2n,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+55000,+Vietnam/@16.047973,108.2433831,3834a,13.1y/data=!4m2!3m1!1s0x314217cb925d4f8b:0x5fe6293a78b5ea5e",
+    "matchScore": 1
+  },
+  "Nang Ngot Patisserie": {
+    "lat": 16.0794298,
+    "lng": 108.2213604,
+    "source": "Google Maps name match",
+    "displayName": "Nang Ngot Patisserie",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Nang+Ngot+Patisserie,+20+Phan+B%E1%BB%99i+Ch%C3%A2u,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0794298,108.2213604,3834a,13.1y/data=!4m2!3m1!1s0x314219f67ac66ca9:0x6456ab0f55f5e9df",
+    "matchScore": 1
+  },
+  "GioiA Gelati - Gelati are joy": {
+    "lat": 16.048451699999998,
+    "lng": 108.2476191,
+    "source": "Google Maps name match",
+    "displayName": "GioiA Gelati - Gelati are joy",
+    "mapsUrl": "https://www.google.com/maps/preview/place/GioiA+Gelati+-+Gelati+are+joy,+59+An+Th%C6%B0%E1%BB%A3ng+2,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+849000,+Vietnam/@16.0484517,108.2476191,3834a,13.1y/data=!4m2!3m1!1s0x3142179eab52b313:0xb40c145d8b80bc48",
+    "matchScore": 1
+  },
+  "Little Mango": {
+    "lat": 16.0469816,
+    "lng": 108.2422582,
+    "source": "Google Maps name match",
+    "displayName": "Little Mango",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Little+Mango,+15+Ng%C3%B4+Th%C3%AC+S%C4%A9,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0469816,108.2422582,3834a,13.1y/data=!4m2!3m1!1s0x31421900318c00f3:0x7731646f55f6b82a",
+    "matchScore": 1
+  },
+  "Oh la la! Breakfast, Brunch, Lunch": {
+    "lat": 16.052747399999998,
+    "lng": 108.242076,
+    "source": "Google Maps name match",
+    "displayName": "Oh la la! Breakfast, Brunch, Lunch",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Oh+la+la!+Breakfast,+Brunch,+Lunch,+64A+Mai+Th%C3%BAc+L%C3%A2n,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0527474,108.242076,3834a,13.1y/data=!4m2!3m1!1s0x31421700194f6e6d:0xc7e3e51e9dc4213d",
+    "matchScore": 1
+  },
+  "Puna Specialty Coffee & Eatery": {
+    "lat": 16.0470279,
+    "lng": 108.2464341,
+    "source": "Google Maps name match",
+    "displayName": "Puna Specialty Coffee & Eatery",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Puna+Specialty+Coffee+%26+Eatery,+132+L%C3%AA+Quang+%C4%90%E1%BA%A1o,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0470279,108.2464341,3834a,13.1y/data=!4m2!3m1!1s0x314217b40e3ba8cf:0xf38defa772589f89",
+    "matchScore": 1
+  },
+  "Xôi, Bún măng gà bà Vui": {
+    "lat": 16.063862999999998,
+    "lng": 108.2209008,
+    "source": "Google Maps name match",
+    "displayName": "Xôi, Bún măng gà bà Vui",
+    "mapsUrl": "https://www.google.com/maps/preview/place/X%C3%B4i,+B%C3%BAn+m%C4%83ng+g%C3%A0+b%C3%A0+Vui,+55+L%C3%AA+H%E1%BB%93ng+Phong,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.063863,108.2209008,3834a,13.1y/data=!4m2!3m1!1s0x314219ccb2b87edf:0x27a8877a195ac477",
+    "matchScore": 1
+  },
+  "Quán Bò Né Quốc Minh": {
+    "lat": 16.070502299999998,
+    "lng": 108.2220383,
+    "source": "Google Maps name match",
+    "displayName": "Quán Bò Né Quốc Minh",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Qu%C3%A1n+B%C3%B2+N%C3%A9+Qu%E1%BB%91c+Minh,+28+Phan+%C4%90%C3%ACnh+Ph%C3%B9ng,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0705023,108.2220383,3834a,13.1y/data=!4m2!3m1!1s0x314218319123ad61:0x8c43f5b9440d71f9",
+    "matchScore": 1
+  },
+  "Bánh cuốn Tiến Hưng": {
+    "lat": 16.064621,
+    "lng": 108.22339,
+    "source": "Google Maps name match",
+    "displayName": "Bánh cuốn Tiến Hưng",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%A1nh+cu%E1%BB%91n+Ti%E1%BA%BFn+H%C6%B0ng,+190+Tr%E1%BA%A7n+Ph%C3%BA,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.064621,108.22339,3834a,13.1y/data=!4m2!3m1!1s0x31421832dc7bedc5:0xaac337f0a42ec1d",
+    "matchScore": 1
+  },
+  "2 Ladies Kitchen - Banh mi & coffee": {
+    "lat": 16.0484489,
+    "lng": 108.2464085,
+    "source": "Google Maps name match",
+    "displayName": "2 Ladies Kitchen - Banh mi & coffee",
+    "mapsUrl": "https://www.google.com/maps/preview/place/2+Ladies+Kitchen+-+Banh+mi+%26+coffee,+28+An+Th%C6%B0%E1%BB%A3ng+4,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0484489,108.2464085,3834a,13.1y/data=!4m2!3m1!1s0x3142177f276fce63:0x3bed99c46a9df61f",
+    "matchScore": 1
+  },
+  "Bánh mì Happy Bread Mì AA": {
+    "lat": 16.0686888,
+    "lng": 108.22467789999999,
+    "source": "Google Maps name match",
+    "displayName": "Bánh mì Happy Bread Mì AA",
+    "mapsUrl": "https://www.google.com/maps/preview/place/B%C3%A1nh+m%C3%AC+Happy+Bread+M%C3%AC+AA,+10+H%C3%B9ng+V%C6%B0%C6%A1ng,+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0686888,108.2246779,3834a,13.1y/data=!4m2!3m1!1s0x314218321798d9f3:0x6684eb666d2f4531",
+    "matchScore": 1
+  },
+  "Heo nướng lu Ông Phú Đạt": {
+    "lat": 16.056035899999998,
+    "lng": 108.2404364,
+    "source": "Google Maps name match",
+    "displayName": "Heo nướng lu Ông Phú Đạt",
+    "mapsUrl": "https://www.google.com/maps/preview/place/Heo+n%C6%B0%E1%BB%9Bng+lu+%C3%94ng+Ph%C3%BA+%C4%90%E1%BA%A1t,+128+Nguy%E1%BB%85n+Duy+Hi%E1%BB%87u,+An+H%E1%BA%A3i,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vietnam/@16.0560359,108.2404364,3834a,13.1y/data=!4m2!3m1!1s0x314217992a53daff:0xed6226207a724f1f",
+    "matchScore": 1
+  },
+  "Hoang’s Kitchen Đà Nẵng - Vietnamese & Vegan Food": {
+    "lat": 16.0669036,
+    "lng": 108.2442227,
+    "source": "Google Maps address match",
+    "matchedAddress": "40 Hà Bổng, An Hải, Đà Nẵng 550000, Vietnam"
+  },
+  "Vị Brewhouse": {
+    "lat": 16.074872,
+    "lng": 108.2210984,
+    "source": "Google Maps address match",
+    "matchedAddress": "37 Quang Trung, Hải Châu, Đà Nẵng 550000, Vietnam"
+  },
+  "Bánh Bèo Nóng - 197 Núi Thành": {
+    "lat": 16.0456902,
+    "lng": 108.2213109,
+    "source": "Google Maps address match",
+    "matchedAddress": "197 Núi Thành, Hòa Cường, Đà Nẵng 550000, Vietnam"
+  },
+  "Bánh mì Bà Lan": {
+    "lat": 16.0596327,
+    "lng": 108.2218006,
+    "source": "Google Maps address match",
+    "matchedAddress": "62 Trưng Nữ Vương, Hải Châu, Đà Nẵng 550000, Vietnam"
+  }
+}

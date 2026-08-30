@@ -1,0 +1,362 @@
+{
+  "La Maison 1888": {
+    "reviewCount": 1347,
+    "ratingObserved": 4.1,
+    "matchedName": "La Maison 1888",
+    "matchedAddress": "InterContinental Danang Sun Peninsula Resort, Bãi Bắc, Sơn Trà, Đà Nẵng 550000 ベトナム",
+    "lat": 16.122005599999998,
+    "lng": 108.3061278,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Ăn Thôi": {
+    "reviewCount": 17941,
+    "ratingObserved": 4.8,
+    "matchedName": "Ăn Thôi",
+    "matchedAddress": "114 Bạch Đằng, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0682463,
+    "lng": 108.2248133,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bà Đông": {
+    "reviewCount": 271,
+    "ratingObserved": 4.1,
+    "matchedName": "Bún Mắm Bà Đông",
+    "matchedAddress": "Huỳnh Thúc Kháng/145 Bình Hiên, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0573962,
+    "lng": 108.2182213,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bánh Xèo 76": {
+    "reviewCount": 948,
+    "ratingObserved": 4.6,
+    "matchedName": "Bánh Xèo 76",
+    "matchedAddress": "85A Lê Văn Hưu, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0416482,
+    "lng": 108.2400885,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bé Ni 2": {
+    "reviewCount": 14105,
+    "ratingObserved": 4.8,
+    "matchedName": "Bé Ni 2",
+    "matchedAddress": "228 Võ Nguyên Giáp, An Hải, Đà Nẵng 550000 ベトナム",
+    "lat": 16.066801599999998,
+    "lng": 108.2449953,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bún Bò Bà Rơi (Hải Châu)": {
+    "reviewCount": 1045,
+    "ratingObserved": 4.5,
+    "matchedName": "Bún Bò Bà Rơi",
+    "matchedAddress": "5 Phan Thành Tài, Hòa Cường, Đà Nẵng 550000 ベトナム",
+    "lat": 16.053718099999998,
+    "lng": 108.2214331,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bún Bò Huế Bà Thương": {
+    "reviewCount": 374,
+    "ratingObserved": 4.1,
+    "matchedName": "Bún Bò Huế Bà Thương",
+    "matchedAddress": "23 Trần Quốc Toản, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0661111,
+    "lng": 108.2230556,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bún Chả Cá 109": {
+    "reviewCount": 2434,
+    "ratingObserved": 4.2,
+    "matchedName": "ブンチャーカー109",
+    "matchedAddress": "109 Nguyễn Chí Thanh, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0744219,
+    "lng": 108.2208132,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bún Chả Cá Hờn": {
+    "reviewCount": 1441,
+    "ratingObserved": 4.3,
+    "matchedName": "Hờn Fishcake Noodle Soup",
+    "matchedAddress": "113/3 Nguyễn Chí Thanh, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.074101199999998,
+    "lng": 108.221255,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Indian Aroma": {
+    "reviewCount": 1382,
+    "ratingObserved": 4.7,
+    "matchedName": "Indian Aroma Restaurant- First Michelin Select( former Mumtaz Indian)",
+    "matchedAddress": "69 Hoài Thanh, Ngũ Hành Sơn, Đà Nẵng 55000 ベトナム",
+    "lat": 16.0485206,
+    "lng": 108.23710799999999,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Mỳ Quảng Sứa Hồng Vân": {
+    "reviewCount": 386,
+    "ratingObserved": 4.4,
+    "matchedName": "Mì Quảng Hồng Vân",
+    "matchedAddress": "59C Lê Hồng Phong, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.063975799999998,
+    "lng": 108.2205721,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Phú Hồng": {
+    "reviewCount": 2933,
+    "ratingObserved": 4.8,
+    "matchedName": "Quán Phú Hồng",
+    "matchedAddress": "19 Yên Bái, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0695677,
+    "lng": 108.2229792,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Quán Nhân": {
+    "reviewCount": 525,
+    "ratingObserved": 4.7,
+    "matchedName": "Quán nhân - Cháo Vịt",
+    "matchedAddress": "83 Phan Tứ, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0463208,
+    "lng": 108.2455588,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Quê Xưa": {
+    "reviewCount": 1977,
+    "ratingObserved": 4.2,
+    "matchedName": "Mỳ Quảng Quê Xưa",
+    "matchedAddress": "165 Núi Thành, Hòa Cường, Đà Nẵng 550000 ベトナム",
+    "lat": 16.046879999999998,
+    "lng": 108.2212191,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Rang": {
+    "reviewCount": 4264,
+    "ratingObserved": 4.9,
+    "matchedName": "Rang",
+    "matchedAddress": "384 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.043,
+    "lng": 108.24796599999999,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Thìa Gỗ": {
+    "reviewCount": 9027,
+    "ratingObserved": 4.7,
+    "matchedName": "Thìa Gỗ ダナンレストラン",
+    "matchedAddress": "53 Phan Thúc Duyện, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.052986699999998,
+    "lng": 108.2415777,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bà Diệu (Trần Tống)": {
+    "reviewCount": 371,
+    "ratingObserved": 4.1,
+    "matchedName": "Quán Bún Bà Diệu",
+    "matchedAddress": "17 Trần Tống, Thanh Khê, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0585293,
+    "lng": 108.2108655,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bánh Canh Yến": {
+    "reviewCount": 275,
+    "ratingObserved": 4.4,
+    "matchedName": "Bánh canh Yến",
+    "matchedAddress": "253 Nguyễn Hoàng, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0576436,
+    "lng": 108.2131653,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bánh Xèo Bà Dưỡng": {
+    "reviewCount": 13005,
+    "ratingObserved": 4.3,
+    "matchedName": "バインセオ・バーユン",
+    "matchedAddress": "280/23 Hoàng Diệu, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.058877199999998,
+    "lng": 108.216166,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bếp Cuốn": {
+    "reviewCount": 21396,
+    "ratingObserved": 4.9,
+    "matchedName": "Bếp Cuốn Đà Nẵng - Michelin Selected 2025-2026",
+    "matchedAddress": "31-33 Trần Bạch Đằng, An Hải, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0579628,
+    "lng": 108.2451505,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bếp Hên": {
+    "reviewCount": 3106,
+    "ratingObserved": 4.4,
+    "matchedName": "Bep Hen",
+    "matchedAddress": "47 Lê Hồng Phong, Hải Châu, Đà Nẵng 84236 ベトナム",
+    "lat": 16.0639161,
+    "lng": 108.22103609999999,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bún Chả Cá Bà Hoa": {
+    "reviewCount": 544,
+    "ratingObserved": 4.2,
+    "matchedName": "Bún chả cá Bà Hoa",
+    "matchedAddress": "27 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0638499,
+    "lng": 108.2215014,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Bún Riêu Cua 39": {
+    "reviewCount": 138,
+    "ratingObserved": 4.4,
+    "matchedName": "Bún Riêu Cua 39",
+    "matchedAddress": "39 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.063851,
+    "lng": 108.2212605,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Cơm Gà Lan": {
+    "reviewCount": 347,
+    "ratingObserved": 4.3,
+    "matchedName": "CƠM GÀ LAN",
+    "matchedAddress": "520 Trưng Nữ Vương, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0487794,
+    "lng": 108.2131326,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Le Comptoir": {
+    "reviewCount": 7696,
+    "ratingObserved": 4.9,
+    "matchedName": "Le Comptoir",
+    "matchedAddress": "16 Chế Lan Viên, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.042674599999998,
+    "lng": 108.2454296,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Luk Lak": {
+    "reviewCount": 4797,
+    "ratingObserved": 4.6,
+    "matchedName": "LUK LAK",
+    "matchedAddress": "28 Bạch Đằng, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0786949,
+    "lng": 108.2237004,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Madame Lân": {
+    "reviewCount": 29300,
+    "ratingObserved": 4.2,
+    "matchedName": "マダムラン",
+    "matchedAddress": "04 Bạch Đằng, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.081406299999998,
+    "lng": 108.2232528,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "MỘC Quán Seafood": {
+    "reviewCount": 54539,
+    "ratingObserved": 4.8,
+    "matchedName": "Mộc quán Seafood Đà Nẵng",
+    "matchedAddress": "26 Tô Hiến Thành, An Hải, Đà Nẵng 550000 ベトナム",
+    "lat": 16.063997,
+    "lng": 108.2415015,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "My Hanh Seafood": {
+    "reviewCount": 7529,
+    "ratingObserved": 4.7,
+    "matchedName": "My Hanh Seafood",
+    "matchedAddress": "03-05 Võ Nguyên Giáp, An Hải, Đà Nẵng 550000 ベトナム",
+    "lat": 16.065402499999998,
+    "lng": 108.24616979999999,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Mỳ Quảng Cô Sáu": {
+    "reviewCount": 2478,
+    "ratingObserved": 4.6,
+    "matchedName": "Mỳ Quảng Cô Sáu",
+    "matchedAddress": "397 Đ. Trần Hưng Đạo, An Hải, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0661787,
+    "lng": 108.2296635,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Năm Đảnh Seafood": {
+    "reviewCount": 10501,
+    "ratingObserved": 4.1,
+    "matchedName": "ナムダン",
+    "matchedAddress": "139/59/38 Trần Quang Khải, Phường, Sơn Trà, Đà Nẵng, ベトナム",
+    "lat": 16.1022967,
+    "lng": 108.2533986,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Nén Danang": {
+    "reviewCount": 2250,
+    "ratingObserved": 4.4,
+    "matchedName": "ネン ダナン",
+    "matchedAddress": "16 đường Mỹ Đa Tây 2, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0346026,
+    "lng": 108.2395581,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Nu Đồ Kitchen": {
+    "reviewCount": 1940,
+    "ratingObserved": 4.8,
+    "matchedName": "NU ĐỒ",
+    "matchedAddress": "11/1 Lưu Quang Thuận, Ngũ Hành Sơn, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0409798,
+    "lng": 108.2454259,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Olivia's Prime": {
+    "reviewCount": 4051,
+    "ratingObserved": 4.6,
+    "matchedName": "Olivia's Prime Steakhouse",
+    "matchedAddress": "Indochina Mall, 74 Bach Dang, Lot G1-G4, The Ground Floor, Hải Châu, Đà Nẵng 550000 ベトナム",
+    "lat": 16.070167299999998,
+    "lng": 108.2242232,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "Si Dining": {
+    "reviewCount": 2867,
+    "ratingObserved": 4.8,
+    "matchedName": "Si Dining Restaurant",
+    "matchedAddress": "01 Giang Châu 2, Ngũ Hành Sơn, Đà Nẵng 50500 ベトナム",
+    "lat": 16.0301883,
+    "lng": 108.23804229999999,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  },
+  "The Temptation": {
+    "reviewCount": 3181,
+    "ratingObserved": 4.5,
+    "matchedName": "The Temptation",
+    "matchedAddress": "125 Hồ Nghinh, An Hải, Đà Nẵng 550000 ベトナム",
+    "lat": 16.0734565,
+    "lng": 108.2431275,
+    "verifiedAt": "2026-08-30",
+    "source": "Google Maps public place result"
+  }
+}
