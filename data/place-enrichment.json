@@ -53,6 +53,18 @@
       "rightsNotice": "© Le Comptoir；遠端顯示，未儲存於本 App"
     }
   },
+  "michelin-phu-hong": {
+    "enrichmentVerifiedAt": "2026-08-31",
+    "photo": {
+      "url": "https://liveyounglivewell.com/wp-content/uploads/2026/03/Vietnam-2026-92-scaled.jpg",
+      "alt": "Phú Hồng 白色街舖門面，19 號門牌、酒紅色 Michelin 招牌及門前燒烤餐車清晰可辨",
+      "kind": "storefront",
+      "arrivalNote": "留意 19 號白色門面、上方大型酒紅色 Michelin 招牌，以及門前寫有 Phú Hồng 的燒烤餐車。",
+      "credit": "Li Yang／Live Young Live Well",
+      "sourceUrl": "https://liveyounglivewell.com/quan-phu-hong-da-nang-review/",
+      "rightsNotice": "© Li Yang；第三方遠端顯示，未儲存於本 App"
+    }
+  },
   "michelin-nen-danang": {
     "hours": "午餐：一、三、五 10:30–14:00；晚餐：每日 17:30–20:45（所列結束時間為最後點餐）",
     "hoursSourceUrl": "https://restaurantnen.com/nen-danang-restaurant/",
