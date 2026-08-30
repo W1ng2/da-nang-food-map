@@ -492,6 +492,13 @@ async function installFromSafari() {
   await execFileAsync('xcrun', ['simctl', 'openurl', simulatorUdid, pwaUrl])
   await pause(2_000)
   await execute(browserSession, 'mobile: activateApp', [{ bundleId: 'com.apple.mobilesafari' }])
+
+  const educationClose = await findVisibleByLabels(browserSession, ['Close'])
+  if (educationClose) {
+    await clickElement(browserSession, educationClose)
+    await pause(500)
+  }
+
   const { contexts } = await waitForWebContext(browserSession)
   const webContext = contexts.find(context => context !== 'NATIVE_APP')
   await switchContext(browserSession, webContext)
@@ -518,12 +525,6 @@ async function installFromSafari() {
 
   await switchContext(browserSession, 'NATIVE_APP')
   await source(browserSession, '02-safari-native-source.xml')
-
-  const educationClose = await findVisibleByLabels(browserSession, ['Close'])
-  if (educationClose) {
-    await clickElement(browserSession, educationClose)
-    await pause(500)
-  }
 
   let share = await findVisibleByLabels(browserSession, ['Share', 'Share Menu', '分享'], true)
   if (!share) {
