@@ -26,6 +26,15 @@ jobs:
         with:
           node-version: 22
 
+      - name: Restore iOS automation cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ~/.appium
+            ~/Library/Developer/Xcode/DerivedData/WebDriverAgent-*
+          key: ios-simulator-${{ runner.os }}-${{ runner.arch }}-xcode26.6-appium3.7-xcuitest12.8.2
+
       - name: Select an installed iPhone Simulator
         run: |
           set -euo pipefail
@@ -57,8 +66,8 @@ jobs:
       - name: Install Appium XCUITest driver
         run: |
           set -euo pipefail
-          npm install --global appium@3
-          appium driver install xcuitest
+          npm install --global appium@3.7.0
+          appium driver list --installed | grep -q 'xcuitest@12.8.2' || appium driver install xcuitest@12.8.2
           appium driver doctor xcuitest
 
       - name: Start Appium

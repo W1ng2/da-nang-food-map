@@ -90,6 +90,10 @@ async function screenshot(sessionId, name) {
   await writeFile(path.join(artifactDir, name), Buffer.from(base64, 'base64'))
 }
 
+async function simulatorScreenshot(name) {
+  await execFileAsync('xcrun', ['simctl', 'io', simulatorUdid, 'screenshot', path.join(artifactDir, name)])
+}
+
 async function source(sessionId, name) {
   const value = await command(sessionId, 'GET', '/source')
   await saveText(name, value)
@@ -168,6 +172,18 @@ async function waitForVisibleByLabels(sessionId, labels, partial = false, timeou
     await pause(500)
   }
   return null
+}
+
+async function findVisibleShareAction(sessionId, labels) {
+  const clauses = labels.map(label => {
+    const escaped = label.replaceAll("'", "\\'")
+    return `label CONTAINS[c] '${escaped}'`
+  })
+  return findElement(
+    sessionId,
+    '-ios predicate string',
+    `visible == 1 AND name == 'actionGroupCell' AND (${clauses.join(' OR ')})`,
+  )
 }
 
 async function nativeSwipeUp(sessionId) {
@@ -262,22 +278,32 @@ async function installFromSafari() {
     if (!more) throw new Error('Safari More menu button was not found')
     await clickElement(browserSession, more)
     await pause(750)
-    await screenshot(browserSession, '02-more-menu.png')
+    await simulatorScreenshot('02-more-menu.png')
     await source(browserSession, '03-more-menu-source.xml')
     share = await waitForVisibleByLabels(browserSession, ['Share', 'Share Menu', '分享'], true)
   }
   if (!share) throw new Error('Safari Share button was not found')
   await clickElement(browserSession, share)
   await pause(1_000)
-  await screenshot(browserSession, '04-share-sheet.png')
+  await simulatorScreenshot('04-share-sheet.png')
   await source(browserSession, '04-share-sheet-source.xml')
 
-  let addToHome = await findVisibleByLabels(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'], true)
+  let addToHome = await findVisibleShareAction(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'])
+  if (!addToHome) {
+    const viewMore = await findVisibleByLabels(browserSession, ['View More'])
+    if (viewMore) {
+      await clickElement(browserSession, viewMore)
+      await pause(750)
+      await simulatorScreenshot('05-share-sheet-view-more.png')
+      await source(browserSession, '05-share-sheet-view-more-source.xml')
+      addToHome = await findVisibleShareAction(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'])
+    }
+  }
   for (let attempt = 0; !addToHome && attempt < 5; attempt += 1) {
     await nativeSwipeUp(browserSession)
     await pause(500)
-    await screenshot(browserSession, `05-share-sheet-scroll-${attempt + 1}.png`)
-    addToHome = await findVisibleByLabels(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'], true)
+    await simulatorScreenshot(`05-share-sheet-scroll-${attempt + 1}.png`)
+    addToHome = await findVisibleShareAction(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'])
   }
   if (!addToHome) {
     await source(browserSession, '05-share-sheet-final-source.xml')
@@ -286,7 +312,7 @@ async function installFromSafari() {
 
   await clickElement(browserSession, addToHome)
   await pause(1_000)
-  await screenshot(browserSession, '06-add-to-home-screen-dialog.png')
+  await simulatorScreenshot('06-add-to-home-screen-dialog.png')
   await source(browserSession, '06-add-dialog-source.xml')
 
   const add = await findVisibleByLabels(browserSession, ['Add', '加入', '新增'])
