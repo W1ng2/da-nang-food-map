@@ -12,3 +12,4 @@ vite.config.d.ts
 *.tsbuildinfo
 *.log
 .DS_Store
+.gstack/

@@ -61,6 +61,7 @@ async function createSession(extraCapabilities = {}) {
         'appium:webviewConnectTimeout': 30_000,
         'appium:includeSafariInWebviews': true,
         'appium:enableAsyncExecuteFromHttps': true,
+        'appium:autoAcceptAlerts': true,
         ...extraCapabilities,
       },
     },
@@ -140,6 +141,36 @@ async function clickElement(sessionId, element) {
   const id = elementId(element)
   if (!id) throw new Error('Element has no WebDriver id')
   await command(sessionId, 'POST', `/element/${encodeURIComponent(id)}/click`, {})
+}
+
+async function clearElement(sessionId, element) {
+  const id = elementId(element)
+  if (!id) throw new Error('Element has no WebDriver id')
+  await command(sessionId, 'POST', `/element/${encodeURIComponent(id)}/clear`, {})
+}
+
+async function typeElement(sessionId, element, value) {
+  const id = elementId(element)
+  if (!id) throw new Error('Element has no WebDriver id')
+  await command(sessionId, 'POST', `/element/${encodeURIComponent(id)}/value`, {
+    text: value,
+    value: Array.from(value),
+  })
+}
+
+async function findElements(sessionId, using, value) {
+  return command(sessionId, 'POST', '/elements', { using, value })
+}
+
+async function waitForScript(sessionId, script, timeout = 15_000) {
+  const deadline = Date.now() + timeout
+  let lastResult
+  while (Date.now() < deadline) {
+    lastResult = await execute(sessionId, script)
+    if (lastResult) return lastResult
+    await pause(500)
+  }
+  throw new Error(`Timed out waiting for web contract: ${JSON.stringify(lastResult)}`)
 }
 
 async function findByLabels(sessionId, labels, partial = false) {
@@ -232,6 +263,140 @@ async function waitForWebContract(sessionId) {
     await pause(1_000)
   }
   throw new Error(`PWA web contract did not become ready: ${JSON.stringify(lastResult)}`)
+}
+
+async function assertMapCount(sessionId, expected) {
+  return waitForScript(sessionId, `
+    const count = Number(document.querySelector('.map-status strong')?.textContent)
+    return count === ${expected} && document.querySelectorAll('.map-marker').length === ${expected}
+      ? { count, markerCount: document.querySelectorAll('.map-marker').length }
+      : null
+  `)
+}
+
+async function verifyStandaloneCoreFlows(sessionId) {
+  await execute(sessionId, `
+    localStorage.removeItem('danang-food-map:favorites')
+    localStorage.removeItem('danang-food-map:visited')
+    location.hash = ''
+    setTimeout(() => location.reload(), 0)
+    return true
+  `)
+  await pause(1_500)
+  const initialContract = await waitForWebContract(sessionId)
+  await assertMapCount(sessionId, 36)
+
+  const search = await findElement(sessionId, 'css selector', 'input[aria-label="搜尋餐廳"]')
+  if (!search) throw new Error('Restaurant search input was not found')
+  await clearElement(sessionId, search)
+  await typeElement(sessionId, search, 'MỘC Quán Seafood')
+  await assertMapCount(sessionId, 1)
+
+  const mocMarker = await findElement(sessionId, 'css selector', 'button.map-marker[aria-label^="MỘC Quán Seafood"]')
+  if (!mocMarker) throw new Error('MỘC Quán Seafood marker was not found after searching')
+  await clickElement(sessionId, mocMarker)
+
+  const detailContract = await waitForScript(sessionId, `
+    const dialog = document.querySelector('.place-sheet')
+    if (!dialog || !dialog.textContent.includes('MỘC Quán Seafood')) return null
+    return {
+      text: dialog.textContent,
+      hash: location.hash,
+      googleMaps: dialog.querySelector('a[href*="google.com/maps"]')?.href ?? null,
+      appleMaps: dialog.querySelector('a[href*="maps.apple.com"]')?.href ?? null,
+    }
+  `)
+  for (const requiredText of ['蒜香牛油龍蝦', '400,000–900,000 VND', 'HK$120–270']) {
+    if (!detailContract.text.includes(requiredText)) {
+      throw new Error(`MỘC detail is missing ${requiredText}`)
+    }
+  }
+  if (detailContract.hash !== '#place=michelin-moc-quan-seafood') throw new Error(`Unexpected deep link ${detailContract.hash}`)
+  if (!detailContract.googleMaps || !detailContract.appleMaps) throw new Error('Restaurant navigation links are missing')
+
+  const detailActions = await findElements(sessionId, 'css selector', '.place-sheet .quick-actions button')
+  if (detailActions.length !== 3) throw new Error(`Expected 3 detail actions, found ${detailActions.length}`)
+  await clickElement(sessionId, detailActions[0])
+  await clickElement(sessionId, detailActions[1])
+  const storedContract = await waitForScript(sessionId, `
+    const favorite = JSON.parse(localStorage.getItem('danang-food-map:favorites') || '[]')
+    const visited = JSON.parse(localStorage.getItem('danang-food-map:visited') || '[]')
+    return favorite.includes('michelin-moc-quan-seafood') && visited.includes('michelin-moc-quan-seafood')
+      ? { favorite, visited }
+      : null
+  `)
+
+  const close = await findElement(sessionId, 'css selector', '.place-sheet__close')
+  if (!close) throw new Error('Restaurant detail close button was not found')
+  await clickElement(sessionId, close)
+  await clearElement(sessionId, search)
+  await assertMapCount(sessionId, 36)
+
+  let filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  if (filterButtons.length !== 4) throw new Error(`Expected 4 collection filters, found ${filterButtons.length}`)
+  await clickElement(sessionId, filterButtons[1])
+  await assertMapCount(sessionId, 74)
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  await clickElement(sessionId, filterButtons[0])
+  await assertMapCount(sessionId, 38)
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  await clickElement(sessionId, filterButtons[2])
+  await assertMapCount(sessionId, 50)
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  await clickElement(sessionId, filterButtons[1])
+  await assertMapCount(sessionId, 12)
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  await clickElement(sessionId, filterButtons[3])
+  await assertMapCount(sessionId, 23)
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  await clickElement(sessionId, filterButtons[2])
+  await assertMapCount(sessionId, 11)
+
+  const tabs = await findElements(sessionId, 'css selector', '.tabbar button')
+  if (tabs.length !== 3) throw new Error(`Expected 3 primary tabs, found ${tabs.length}`)
+  await clickElement(sessionId, tabs[1])
+  const listContract = await waitForScript(sessionId, `
+    const cards = [...document.querySelectorAll('.place-card')]
+    return cards.length === 11 && cards[0]?.textContent.includes("An's Cafe")
+      ? { cardCount: cards.length, firstCard: cards[0].textContent }
+      : null
+  `)
+
+  const currentTabs = await findElements(sessionId, 'css selector', '.tabbar button')
+  await clickElement(sessionId, currentTabs[2])
+  const favoritesContract = await waitForScript(sessionId, `
+    const cards = [...document.querySelectorAll('.place-card')]
+    return cards.length === 1 && cards[0]?.textContent.includes('MỘC Quán Seafood')
+      ? { cardCount: cards.length, text: cards[0].textContent }
+      : null
+  `)
+
+  const favoriteTabs = await findElements(sessionId, 'css selector', '.tabbar button')
+  await clickElement(sessionId, favoriteTabs[0])
+  const locate = await findElement(sessionId, 'css selector', '.locate-button')
+  if (!locate) throw new Error('Current-location button was not found')
+  await clickElement(sessionId, locate)
+  const locationContract = await waitForScript(sessionId, `
+    const marker = document.querySelector('.user-location-marker')
+    const button = document.querySelector('.locate-button')
+    return marker && button?.textContent.includes('重新定位')
+      ? { markerLabel: marker.getAttribute('aria-label'), buttonText: button.textContent }
+      : null
+  `, 25_000)
+
+  const coreContract = {
+    initial: { standalone: initialContract.standalone, count: 36 },
+    search: { query: 'MỘC Quán Seafood', count: 1 },
+    detail: detailContract,
+    storage: storedContract,
+    collections: { michelin: 36, highRating: 38, cafeDessert: 12, breakfast: 11, total: 97 },
+    list: listContract,
+    favorites: favoritesContract,
+    location: locationContract,
+  }
+  await saveJson('08-core-flows-contract.json', coreContract)
+  await screenshot(sessionId, '08-core-flows-final.png')
+  return coreContract
 }
 
 async function installFromSafari() {
@@ -352,7 +517,9 @@ async function launchFromHomeScreen() {
       const standaloneContract = await waitForWebContract(homeSession)
       await saveJson('07-standalone-contract.json', { contexts, ...standaloneContract })
       if (!standaloneContract.standalone) throw new Error('Installed PWA did not report standalone display mode')
-      return standaloneContract
+      await execFileAsync('xcrun', ['simctl', 'location', simulatorUdid, 'set', '16.067,108.223'])
+      const coreContract = await verifyStandaloneCoreFlows(homeSession)
+      return { ...standaloneContract, coreContract }
     }
     await pause(1_000)
   }
@@ -364,7 +531,7 @@ try {
   console.log(`Validating ${pwaUrl} on ${simulatorName}, iOS ${simulatorVersion} (${simulatorUdid})`)
   await installFromSafari()
   const standaloneContract = await launchFromHomeScreen()
-  console.log(`PASS: ${expectedAppName} installed and launched in standalone mode at ${standaloneContract.url}`)
+  console.log(`PASS: ${expectedAppName} installed, launched, and passed core flows in standalone mode at ${standaloneContract.url}`)
 } catch (error) {
   await saveText('failure.txt', `${error.stack ?? error}\n`)
   throw error
