@@ -6,6 +6,7 @@ public/apple-touch-icon.png
 public/assets/
 public/icons/
 public/map-icons/
+public/map-pins/
 public/places.json
 vite.config.js
 vite.config.d.ts

@@ -1,5 +1,12 @@
 import { useEffect, useRef } from 'react'
-import { AttributionControl, Map as LibreMap, Marker as LibreMarker, NavigationControl, type Marker } from 'maplibre-gl'
+import {
+  AttributionControl,
+  Map as LibreMap,
+  NavigationControl,
+  type GeoJSONSource,
+  type MapLayerMouseEvent,
+  type SymbolLayerSpecification
+} from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { MAP_ICON_FILES } from '../config'
 import type { Place, UserLocation } from '../types'
@@ -11,39 +18,140 @@ interface MapViewProps {
   userLocation: UserLocation | null
 }
 
-export function createPlaceMarkerElement(place: Place, isSelected: boolean, onSelect: (place: Place) => void) {
-  const button = document.createElement('button')
-  button.type = 'button'
-  button.className = `map-marker${isSelected ? ' is-selected' : ''}`
-  button.style.transition = 'none'
-  button.setAttribute('aria-label', `${place.name}，${place.iconType}`)
+interface RestaurantMarkerProperties {
+  placeId: string
+  imageId: string
+  selected: boolean
+}
 
-  const visual = document.createElement('span')
-  visual.className = `map-pin map-pin--${place.collection}${isSelected ? ' is-selected' : ''}`
-  const iconFile = MAP_ICON_FILES[place.iconType]
-  if (iconFile) {
-    const image = document.createElement('img')
-    image.src = `${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`
-    image.alt = ''
-    visual.append(image)
-  } else {
-    const fallback = document.createElement('span')
-    fallback.textContent = place.icon
-    visual.append(fallback)
+interface RestaurantFeatureCollection {
+  type: 'FeatureCollection'
+  features: Array<{
+    type: 'Feature'
+    id: string
+    geometry: { type: 'Point'; coordinates: [number, number] }
+    properties: RestaurantMarkerProperties
+  }>
+}
+
+interface UserLocationFeatureCollection {
+  type: 'FeatureCollection'
+  features: Array<{
+    type: 'Feature'
+    geometry: { type: 'Point'; coordinates: [number, number] }
+    properties: Record<string, never>
+  }>
+}
+
+const RESTAURANT_SOURCE_ID = 'restaurant-places'
+const RESTAURANT_LAYER_ID = 'restaurant-pins'
+const SELECTED_RESTAURANT_LAYER_ID = 'restaurant-pins-selected'
+const USER_LOCATION_SOURCE_ID = 'user-location'
+const USER_LOCATION_HALO_LAYER_ID = 'user-location-halo'
+const USER_LOCATION_DOT_LAYER_ID = 'user-location-dot'
+
+export const RESTAURANT_LAYER_IDS = [RESTAURANT_LAYER_ID, SELECTED_RESTAURANT_LAYER_ID] as const
+
+export function restaurantMarkerImageId(place: Pick<Place, 'collection' | 'iconType'>) {
+  const iconFile = MAP_ICON_FILES[place.iconType] ?? 'vietnam'
+  return `restaurant-pin-${place.collection}-${iconFile}`
+}
+
+export function restaurantMarkerAssetPath(place: Pick<Place, 'collection' | 'iconType'>) {
+  const iconFile = MAP_ICON_FILES[place.iconType] ?? 'vietnam'
+  return `map-pins/${place.collection}-${iconFile}.png`
+}
+
+export function createRestaurantFeatureCollection(places: Place[], selectedId: string | null): RestaurantFeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: places.map((place) => ({
+      type: 'Feature',
+      id: place.id,
+      geometry: { type: 'Point', coordinates: [place.lng, place.lat] },
+      properties: {
+        placeId: place.id,
+        imageId: restaurantMarkerImageId(place),
+        selected: selectedId === place.id
+      }
+    }))
   }
-  button.append(visual)
-  button.addEventListener('click', () => onSelect(place))
-  return button
+}
+
+export function createUserLocationFeatureCollection(location: UserLocation | null): UserLocationFeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: location ? [{
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [location.lng, location.lat] },
+      properties: {}
+    }] : []
+  }
+}
+
+export function restaurantLayerSpecifications(): SymbolLayerSpecification[] {
+  const commonLayout: NonNullable<SymbolLayerSpecification['layout']> = {
+    'icon-image': ['get', 'imageId'],
+    'icon-anchor': 'bottom',
+    'icon-allow-overlap': true,
+    'icon-ignore-placement': true
+  }
+
+  return [
+    {
+      id: RESTAURANT_LAYER_ID,
+      type: 'symbol',
+      source: RESTAURANT_SOURCE_ID,
+      filter: ['==', ['get', 'selected'], false],
+      layout: { ...commonLayout, 'icon-size': 1 }
+    },
+    {
+      id: SELECTED_RESTAURANT_LAYER_ID,
+      type: 'symbol',
+      source: RESTAURANT_SOURCE_ID,
+      filter: ['==', ['get', 'selected'], true],
+      layout: { ...commonLayout, 'icon-size': 1.26 }
+    }
+  ]
+}
+
+async function ensureRestaurantImages(
+  map: LibreMap,
+  places: Place[],
+  pendingImages: Map<string, Promise<void>>
+) {
+  const uniquePlaces = new Map(places.map((place) => [restaurantMarkerImageId(place), place]))
+  await Promise.all([...uniquePlaces].map(async ([imageId, place]) => {
+    if (map.hasImage(imageId)) return
+    let pending = pendingImages.get(imageId)
+    if (!pending) {
+      pending = map.loadImage(`${import.meta.env.BASE_URL}${restaurantMarkerAssetPath(place)}`).then(({ data }) => {
+        if (!map.hasImage(imageId)) map.addImage(imageId, data, { pixelRatio: 2 })
+      }).finally(() => pendingImages.delete(imageId))
+      pendingImages.set(imageId, pending)
+    }
+    await pending
+  }))
 }
 
 export function MapView({ places, selected, onSelect, userLocation }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<LibreMap | null>(null)
-  const markerRefs = useRef<Marker[]>([])
-  const userMarkerRef = useRef<Marker | null>(null)
+  const placesRef = useRef(places)
+  const selectedRef = useRef(selected)
+  const onSelectRef = useRef(onSelect)
+  const userLocationRef = useRef(userLocation)
+  const pendingImagesRef = useRef(new Map<string, Promise<void>>())
+  const placeSyncVersionRef = useRef(0)
+
+  placesRef.current = places
+  selectedRef.current = selected
+  onSelectRef.current = onSelect
+  userLocationRef.current = userLocation
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
+    let disposed = false
     const map = new LibreMap({
       container: containerRef.current,
       style: {
@@ -65,18 +173,87 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
     map.addControl(new AttributionControl({ compact: true }), 'top-right')
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right')
     mapRef.current = map
-    return () => { map.remove(); mapRef.current = null }
+    let completedMoveCount = 0
+    containerRef.current.dataset.mapMoveCount = '0'
+    map.on('moveend', () => {
+      completedMoveCount += 1
+      if (containerRef.current) containerRef.current.dataset.mapMoveCount = String(completedMoveCount)
+    })
+
+    const handleRestaurantClick = (event: MapLayerMouseEvent) => {
+      const placeId = String(event.features?.[0]?.properties?.placeId ?? '')
+      const place = placesRef.current.find((candidate) => candidate.id === placeId)
+      if (place) onSelectRef.current(place)
+    }
+    const showPointer = () => { map.getCanvas().style.cursor = 'pointer' }
+    const hidePointer = () => { map.getCanvas().style.cursor = '' }
+
+    const initialiseWebGlMarkers = async () => {
+      await ensureRestaurantImages(map, placesRef.current, pendingImagesRef.current)
+      if (disposed) return
+
+      map.addSource(RESTAURANT_SOURCE_ID, {
+        type: 'geojson',
+        data: createRestaurantFeatureCollection(placesRef.current, selectedRef.current?.id ?? null)
+      })
+      for (const layer of restaurantLayerSpecifications()) map.addLayer(layer)
+
+      map.addSource(USER_LOCATION_SOURCE_ID, {
+        type: 'geojson',
+        data: createUserLocationFeatureCollection(userLocationRef.current)
+      })
+      map.addLayer({
+        id: USER_LOCATION_HALO_LAYER_ID,
+        type: 'circle',
+        source: USER_LOCATION_SOURCE_ID,
+        paint: { 'circle-radius': 14, 'circle-color': '#177ad8', 'circle-opacity': 0.18 }
+      })
+      map.addLayer({
+        id: USER_LOCATION_DOT_LAYER_ID,
+        type: 'circle',
+        source: USER_LOCATION_SOURCE_ID,
+        paint: {
+          'circle-radius': 7,
+          'circle-color': '#177ad8',
+          'circle-stroke-width': 4,
+          'circle-stroke-color': '#ffffff'
+        }
+      })
+
+      for (const layerId of RESTAURANT_LAYER_IDS) {
+        map.on('click', layerId, handleRestaurantClick)
+        map.on('mouseenter', layerId, showPointer)
+        map.on('mouseleave', layerId, hidePointer)
+      }
+      containerRef.current?.setAttribute('data-restaurant-marker-renderer', 'webgl-symbol')
+      containerRef.current?.setAttribute('data-user-location-renderer', 'webgl-circle')
+      containerRef.current?.setAttribute('data-user-location-visible', String(Boolean(userLocationRef.current)))
+    }
+
+    map.once('load', () => {
+      initialiseWebGlMarkers().catch((error) => {
+        console.error('Failed to initialise restaurant marker layers', error)
+      })
+    })
+
+    return () => {
+      disposed = true
+      map.remove()
+      pendingImagesRef.current.clear()
+      mapRef.current = null
+    }
   }, [])
 
   useEffect(() => {
     const map = mapRef.current
-    if (!map) return
-    markerRefs.current.forEach((marker) => marker.remove())
-    markerRefs.current = places.map((place) => {
-      const button = createPlaceMarkerElement(place, selected?.id === place.id, onSelect)
-      return new LibreMarker({ element: button, anchor: 'bottom' }).setLngLat([place.lng, place.lat]).addTo(map)
-    })
-  }, [places, selected, onSelect])
+    const source = map?.getSource(RESTAURANT_SOURCE_ID) as GeoJSONSource | undefined
+    if (!map || !source) return
+    const syncVersion = ++placeSyncVersionRef.current
+    ensureRestaurantImages(map, places, pendingImagesRef.current).then(() => {
+      if (placeSyncVersionRef.current !== syncVersion || mapRef.current !== map) return
+      source.setData(createRestaurantFeatureCollection(places, selected?.id ?? null))
+    }).catch((error) => console.error('Failed to update restaurant marker layers', error))
+  }, [places, selected])
 
   useEffect(() => {
     const map = mapRef.current
@@ -86,15 +263,29 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
 
   useEffect(() => {
     const map = mapRef.current
-    if (!map || !userLocation) return
-    if (!userMarkerRef.current) {
-      const marker = document.createElement('div')
-      marker.className = 'user-location-marker'
-      marker.setAttribute('aria-label', '我的位置')
-      userMarkerRef.current = new LibreMarker({ element: marker }).setLngLat([userLocation.lng, userLocation.lat]).addTo(map)
-    } else userMarkerRef.current.setLngLat([userLocation.lng, userLocation.lat])
-    map.flyTo({ center: [userLocation.lng, userLocation.lat], zoom: 14.5, duration: 800 })
+    const source = map?.getSource(USER_LOCATION_SOURCE_ID) as GeoJSONSource | undefined
+    if (!map || !source) return
+    source.setData(createUserLocationFeatureCollection(userLocation))
+    containerRef.current?.setAttribute('data-user-location-visible', String(Boolean(userLocation)))
+    if (userLocation) map.flyTo({ center: [userLocation.lng, userLocation.lat], zoom: 14.5, duration: 800 })
   }, [userLocation])
 
-  return <div className="map-canvas" ref={containerRef} aria-label="峴港餐廳地圖" />
+  return (
+    <div className="map-view">
+      <div className="map-canvas" ref={containerRef} aria-label="峴港餐廳地圖" />
+      <div className="map-place-accessibility" aria-label="地圖上的餐廳">
+        {places.map((place) => (
+          <button
+            className="map-place-accessible"
+            type="button"
+            key={place.id}
+            aria-label={`${place.name}，${place.iconType}`}
+            onClick={() => onSelect(place)}
+          >
+            {place.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
 }

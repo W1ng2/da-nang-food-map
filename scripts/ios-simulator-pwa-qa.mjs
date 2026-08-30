@@ -239,6 +239,31 @@ async function nativeSwipeUp(sessionId) {
   await command(sessionId, 'DELETE', '/actions')
 }
 
+async function fastWebMapDrag(sessionId) {
+  const rect = await execute(sessionId, `
+    const rect = document.querySelector('.maplibregl-canvas')?.getBoundingClientRect()
+    return rect ? { x: rect.x, y: rect.y, width: rect.width, height: rect.height } : null
+  `)
+  if (!rect) throw new Error('Map canvas rectangle was not available for fast-drag QA')
+  const startX = Math.round(rect.x + rect.width * 0.78)
+  const endX = Math.round(rect.x + rect.width * 0.22)
+  const y = Math.round(rect.y + rect.height * 0.52)
+  await command(sessionId, 'POST', '/actions', {
+    actions: [{
+      type: 'pointer',
+      id: 'map-drag-finger',
+      parameters: { pointerType: 'touch' },
+      actions: [
+        { type: 'pointerMove', duration: 0, x: startX, y, origin: 'viewport' },
+        { type: 'pointerDown', button: 0 },
+        { type: 'pointerMove', duration: 120, x: endX, y, origin: 'viewport' },
+        { type: 'pointerUp', button: 0 },
+      ],
+    }],
+  })
+  await command(sessionId, 'DELETE', '/actions')
+}
+
 async function waitForWebContract(sessionId) {
   const deadline = Date.now() + 45_000
   let lastResult
@@ -268,8 +293,11 @@ async function waitForWebContract(sessionId) {
 async function assertMapCount(sessionId, expected) {
   return waitForScript(sessionId, `
     const count = Number(document.querySelector('.map-status strong')?.textContent)
-    return count === ${expected} && document.querySelectorAll('.map-marker').length === ${expected}
-      ? { count, markerCount: document.querySelectorAll('.map-marker').length }
+    const accessibleCount = document.querySelectorAll('.map-place-accessible').length
+    const webGlRenderer = document.querySelector('.map-canvas')?.dataset.restaurantMarkerRenderer
+    const domMarkerCount = document.querySelectorAll('.maplibregl-marker').length
+    return count === ${expected} && accessibleCount === ${expected} && webGlRenderer === 'webgl-symbol' && domMarkerCount === 0
+      ? { count, accessibleCount, webGlRenderer, domMarkerCount }
       : null
   `)
 }
@@ -286,15 +314,32 @@ async function verifyStandaloneCoreFlows(sessionId) {
   const initialContract = await waitForWebContract(sessionId)
   await assertMapCount(sessionId, 36)
 
+  const moveCountBeforeDrag = Number(await execute(sessionId, `return document.querySelector('.map-canvas')?.dataset.mapMoveCount || 0`))
+  await screenshot(sessionId, '08a-fast-drag-before.png')
+  await fastWebMapDrag(sessionId)
+  const dragContract = await waitForScript(sessionId, `
+    const canvas = document.querySelector('.map-canvas')
+    const moveCount = Number(canvas?.dataset.mapMoveCount || 0)
+    const domMarkerCount = document.querySelectorAll('.maplibregl-marker').length
+    return moveCount > ${moveCountBeforeDrag} && canvas?.dataset.restaurantMarkerRenderer === 'webgl-symbol' && domMarkerCount === 0
+      ? { moveCountBefore: ${moveCountBeforeDrag}, moveCountAfter: moveCount, renderer: canvas.dataset.restaurantMarkerRenderer, domMarkerCount }
+      : null
+  `)
+  await screenshot(sessionId, '08b-fast-drag-after.png')
+
   const search = await findElement(sessionId, 'css selector', 'input[aria-label="搜尋餐廳"]')
   if (!search) throw new Error('Restaurant search input was not found')
   await clearElement(sessionId, search)
   await typeElement(sessionId, search, 'MỘC Quán Seafood')
   await assertMapCount(sessionId, 1)
 
-  const mocMarker = await findElement(sessionId, 'css selector', 'button.map-marker[aria-label^="MỘC Quán Seafood"]')
-  if (!mocMarker) throw new Error('MỘC Quán Seafood marker was not found after searching')
-  await clickElement(sessionId, mocMarker)
+  const selectedMoc = await execute(sessionId, `
+    const button = document.querySelector('button.map-place-accessible[aria-label^="MỘC Quán Seafood"]')
+    if (!button) return false
+    button.click()
+    return true
+  `)
+  if (!selectedMoc) throw new Error('MỘC Quán Seafood WebGL marker accessibility action was not found after searching')
 
   const detailContract = await waitForScript(sessionId, `
     const dialog = document.querySelector('.place-sheet')
@@ -377,15 +422,16 @@ async function verifyStandaloneCoreFlows(sessionId) {
   if (!locate) throw new Error('Current-location button was not found')
   await clickElement(sessionId, locate)
   const locationContract = await waitForScript(sessionId, `
-    const marker = document.querySelector('.user-location-marker')
+    const canvas = document.querySelector('.map-canvas')
     const button = document.querySelector('.locate-button')
-    return marker && button?.textContent.includes('重新定位')
-      ? { markerLabel: marker.getAttribute('aria-label'), buttonText: button.textContent }
+    return canvas?.dataset.userLocationRenderer === 'webgl-circle' && canvas?.dataset.userLocationVisible === 'true' && button?.textContent.includes('重新定位')
+      ? { renderer: canvas.dataset.userLocationRenderer, visible: canvas.dataset.userLocationVisible, buttonText: button.textContent, domMarkerCount: document.querySelectorAll('.maplibregl-marker').length }
       : null
   `, 25_000)
 
   const coreContract = {
     initial: { standalone: initialContract.standalone, count: 36 },
+    fastDrag: dragContract,
     search: { query: 'MỘC Quán Seafood', count: 1 },
     detail: detailContract,
     storage: storedContract,

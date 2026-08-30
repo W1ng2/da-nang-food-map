@@ -1,12 +1,18 @@
-import { describe, expect, it, vi } from 'vitest'
-import { createPlaceMarkerElement } from './MapView'
+import { describe, expect, it } from 'vitest'
+import {
+  createRestaurantFeatureCollection,
+  createUserLocationFeatureCollection,
+  restaurantLayerSpecifications,
+  restaurantMarkerAssetPath,
+  restaurantMarkerImageId
+} from './MapView'
 import type { Place } from '../types'
 
 const place: Place = {
   id: 'test-place',
   name: 'Test Place',
   collection: 'michelin',
-  iconType: 'vietnamese',
+  iconType: '🇻🇳 越南菜',
   icon: '🇻🇳',
   type: 'Vietnamese',
   michelin: 'Selected',
@@ -30,22 +36,40 @@ const place: Place = {
   geocodeSource: 'test'
 }
 
-describe('place marker rendering contract', () => {
-  it('keeps MapLibre positioning on an unanimated outer element', () => {
-    const marker = createPlaceMarkerElement(place, true, vi.fn())
-    const visual = marker.querySelector<HTMLElement>('.map-pin')
+describe('WebGL restaurant marker contract', () => {
+  it('encodes every restaurant as a selected-aware GeoJSON point', () => {
+    const collection = createRestaurantFeatureCollection([place], place.id)
 
-    expect(marker.classList.contains('map-marker')).toBe(true)
-    expect(marker.classList.contains('is-selected')).toBe(true)
-    expect(visual).not.toBeNull()
-    expect(visual).not.toBe(marker)
-    expect(visual?.classList.contains('is-selected')).toBe(true)
+    expect(collection.features).toHaveLength(1)
+    expect(collection.features[0]).toMatchObject({
+      id: place.id,
+      geometry: { type: 'Point', coordinates: [place.lng, place.lat] },
+      properties: {
+        placeId: place.id,
+        imageId: 'restaurant-pin-michelin-vietnam',
+        selected: true
+      }
+    })
   })
 
-  it('never animates the positioning transform', () => {
-    const marker = createPlaceMarkerElement(place, false, vi.fn())
+  it('uses MapLibre symbol layers so pins and the raster map share one WebGL frame', () => {
+    const layers = restaurantLayerSpecifications()
 
-    expect(marker.style.transition).toBe('none')
-    expect(marker.querySelector('.map-pin')).not.toBe(marker)
+    expect(layers).toHaveLength(2)
+    expect(layers.every((layer) => layer.type === 'symbol' && layer.source === 'restaurant-places')).toBe(true)
+    expect(layers.map((layer) => layer.layout?.['icon-size'])).toEqual([1, 1.26])
+  })
+
+  it('resolves the precise icon into the matching collection-coloured pin asset', () => {
+    expect(restaurantMarkerImageId(place)).toBe('restaurant-pin-michelin-vietnam')
+    expect(restaurantMarkerAssetPath(place)).toBe('map-pins/michelin-vietnam.png')
+  })
+
+  it('keeps the user location in a WebGL GeoJSON source instead of a DOM marker', () => {
+    const visible = createUserLocationFeatureCollection({ lat: 16.06, lng: 108.22 })
+    const hidden = createUserLocationFeatureCollection(null)
+
+    expect(visible.features[0].geometry.coordinates).toEqual([108.22, 16.06])
+    expect(hidden.features).toEqual([])
   })
 })
