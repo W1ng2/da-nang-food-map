@@ -151,6 +151,25 @@ async function findByLabels(sessionId, labels, partial = false) {
   return findElement(sessionId, '-ios predicate string', clauses.join(' OR '))
 }
 
+async function findVisibleByLabels(sessionId, labels, partial = false) {
+  const clauses = labels.flatMap(label => {
+    const escaped = label.replaceAll("'", "\\'")
+    const operator = partial ? 'CONTAINS[c]' : '=='
+    return [`label ${operator} '${escaped}'`, `name ${operator} '${escaped}'`]
+  })
+  return findElement(sessionId, '-ios predicate string', `visible == 1 AND (${clauses.join(' OR ')})`)
+}
+
+async function waitForVisibleByLabels(sessionId, labels, partial = false, timeout = 10_000) {
+  const deadline = Date.now() + timeout
+  while (Date.now() < deadline) {
+    const element = await findVisibleByLabels(sessionId, labels, partial)
+    if (element) return element
+    await pause(500)
+  }
+  return null
+}
+
 async function nativeSwipeUp(sessionId) {
   const rect = await command(sessionId, 'GET', '/window/rect')
   const x = Math.round(rect.width * 0.5)
@@ -231,35 +250,50 @@ async function installFromSafari() {
   await switchContext(browserSession, 'NATIVE_APP')
   await source(browserSession, '02-safari-native-source.xml')
 
-  const share = await findByLabels(browserSession, ['Share', 'Share Menu', '分享'], true)
+  const educationClose = await findVisibleByLabels(browserSession, ['Close'])
+  if (educationClose) {
+    await clickElement(browserSession, educationClose)
+    await pause(500)
+  }
+
+  let share = await findVisibleByLabels(browserSession, ['Share', 'Share Menu', '分享'], true)
+  if (!share) {
+    const more = await findVisibleByLabels(browserSession, ['More', 'MoreMenuButton'])
+    if (!more) throw new Error('Safari More menu button was not found')
+    await clickElement(browserSession, more)
+    await pause(750)
+    await screenshot(browserSession, '02-more-menu.png')
+    await source(browserSession, '03-more-menu-source.xml')
+    share = await waitForVisibleByLabels(browserSession, ['Share', 'Share Menu', '分享'], true)
+  }
   if (!share) throw new Error('Safari Share button was not found')
   await clickElement(browserSession, share)
   await pause(1_000)
-  await screenshot(browserSession, '02-share-sheet.png')
-  await source(browserSession, '03-share-sheet-source.xml')
+  await screenshot(browserSession, '04-share-sheet.png')
+  await source(browserSession, '04-share-sheet-source.xml')
 
-  let addToHome = await findByLabels(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'], true)
+  let addToHome = await findVisibleByLabels(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'], true)
   for (let attempt = 0; !addToHome && attempt < 5; attempt += 1) {
     await nativeSwipeUp(browserSession)
     await pause(500)
-    await screenshot(browserSession, `03-share-sheet-scroll-${attempt + 1}.png`)
-    addToHome = await findByLabels(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'], true)
+    await screenshot(browserSession, `05-share-sheet-scroll-${attempt + 1}.png`)
+    addToHome = await findVisibleByLabels(browserSession, ['Add to Home Screen', '加入主畫面', '加到主畫面'], true)
   }
   if (!addToHome) {
-    await source(browserSession, '04-share-sheet-final-source.xml')
+    await source(browserSession, '05-share-sheet-final-source.xml')
     throw new Error('Add to Home Screen action was not found in the Share sheet')
   }
 
   await clickElement(browserSession, addToHome)
   await pause(1_000)
-  await screenshot(browserSession, '04-add-to-home-screen-dialog.png')
-  await source(browserSession, '05-add-dialog-source.xml')
+  await screenshot(browserSession, '06-add-to-home-screen-dialog.png')
+  await source(browserSession, '06-add-dialog-source.xml')
 
-  const add = await findByLabels(browserSession, ['Add', '加入', '新增'])
+  const add = await findVisibleByLabels(browserSession, ['Add', '加入', '新增'])
   if (!add) throw new Error('Final Add button was not found')
   await clickElement(browserSession, add)
   await pause(2_000)
-  await screenshot(browserSession, '05-after-add.png')
+  await screenshot(browserSession, '07-after-add.png')
 }
 
 async function launchFromHomeScreen() {
