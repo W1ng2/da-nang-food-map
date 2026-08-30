@@ -143,6 +143,12 @@ async function clickElement(sessionId, element) {
   await command(sessionId, 'POST', `/element/${encodeURIComponent(id)}/click`, {})
 }
 
+async function elementRect(sessionId, element) {
+  const id = elementId(element)
+  if (!id) throw new Error('Element has no WebDriver id')
+  return command(sessionId, 'GET', `/element/${encodeURIComponent(id)}/rect`)
+}
+
 async function clearElement(sessionId, element) {
   const id = elementId(element)
   if (!id) throw new Error('Element has no WebDriver id')
@@ -215,6 +221,52 @@ async function findVisibleShareAction(sessionId, labels) {
     '-ios predicate string',
     `visible == 1 AND name == 'actionGroupCell' AND (${clauses.join(' OR ')})`,
   )
+}
+
+async function nativeTap(sessionId, x, y) {
+  await command(sessionId, 'POST', '/actions', {
+    actions: [{
+      type: 'pointer',
+      id: 'tap-finger',
+      parameters: { pointerType: 'touch' },
+      actions: [
+        { type: 'pointerMove', duration: 0, x, y, origin: 'viewport' },
+        { type: 'pointerDown', button: 0 },
+        { type: 'pause', duration: 100 },
+        { type: 'pointerUp', button: 0 },
+      ],
+    }],
+  })
+  await command(sessionId, 'DELETE', '/actions')
+}
+
+async function dismissSafariEducationPopover(sessionId) {
+  const educationLabels = ['View Bookmarks, Share Menu, and Open Tabs']
+  const close = await waitForVisibleByLabels(sessionId, ['Close', 'Dismiss'], true, 4_000)
+  if (close) {
+    await clickElement(sessionId, close)
+    await pause(500)
+    return true
+  }
+
+  const education = await findVisibleByLabels(sessionId, educationLabels, true)
+  const nativeSource = education ? '' : await source(sessionId, '00-safari-before-education-dismiss.xml')
+  if (!education && !educationLabels.some(label => nativeSource.includes(label))) return false
+
+  await simulatorScreenshot('00-safari-before-education-dismiss.png')
+  const windowRect = await command(sessionId, 'GET', '/window/rect')
+  const educationRect = education ? await elementRect(sessionId, education) : null
+  const x = Math.round(windowRect.width * 0.9)
+  const y = educationRect
+    ? Math.round(educationRect.y + Math.min(educationRect.height / 2, 24))
+    : Math.round(windowRect.height * 0.56)
+  await nativeTap(sessionId, x, y)
+  await pause(750)
+  await simulatorScreenshot('00-safari-after-education-dismiss.png')
+
+  const stillVisible = await findVisibleByLabels(sessionId, educationLabels, true)
+  if (stillVisible) throw new Error('Safari education popover remained visible after its close control was tapped')
+  return true
 }
 
 async function nativeSwipeUp(sessionId) {
@@ -493,11 +545,7 @@ async function installFromSafari() {
   await pause(2_000)
   await execute(browserSession, 'mobile: activateApp', [{ bundleId: 'com.apple.mobilesafari' }])
 
-  const educationClose = await findVisibleByLabels(browserSession, ['Close'])
-  if (educationClose) {
-    await clickElement(browserSession, educationClose)
-    await pause(500)
-  }
+  await dismissSafariEducationPopover(browserSession)
 
   const { contexts } = await waitForWebContext(browserSession)
   const webContext = contexts.find(context => context !== 'NATIVE_APP')
