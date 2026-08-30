@@ -6,6 +6,7 @@ const root = resolve(import.meta.dirname, '..')
 const publicDir = resolve(root, 'public')
 const cachePath = resolve(root, 'data', 'geocoding-cache.json')
 const metadataPath = resolve(root, 'data', 'google-place-metadata.json')
+const enrichmentPath = resolve(root, 'data', 'place-enrichment.json')
 
 const sources = [
   { file: 'da-nang-michelin-restaurants-hkd.csv', collection: 'michelin', nameKey: '餐廳名稱' },
@@ -19,6 +20,12 @@ const slug = (value) => clean(value).normalize('NFD').replace(/[\u0300-\u036f]/g
 const normalized = (value) => slug(value).replace(/\b(da-nang|restaurant|nhahang|nha-hang|quan|cuisine|food|and|bar)\b/g, '').replace(/-+/g, '-').replace(/(^-|-$)/g, '')
 const firstGrapheme = (value) => Array.from(new Intl.Segmenter('zh-HK', { granularity: 'grapheme' }).segment(clean(value)))[0]?.segment || '🍴'
 const typeLabel = (value) => clean(value).replace(/^\p{Extended_Pictographic}(?:\uFE0F)?\s*/u, '').replace(/^[\p{Regional_Indicator}]{2}\s*/u, '')
+const vndOnly = (value) => clean(value).replace(/\s*[（(]\s*約?\s*HK\$[^）)]*[）)]\s*$/i, '').trim()
+
+function hkdRange(value) {
+  const numbers = clean(value).match(/[\d,]+/g)?.map((part) => Number(part.replace(/,/g, ''))).filter(Number.isFinite) || []
+  return { min: numbers[0] ?? null, max: numbers[1] ?? numbers[0] ?? null }
+}
 
 function nameScore(expected, actual) {
   const a = normalized(expected)
@@ -99,6 +106,8 @@ try { manualGeocodes = JSON.parse(await readFile(resolve(root, 'data', 'manual-g
 cache = { ...cache, ...manualGeocodes }
 let googleMetadata = {}
 try { googleMetadata = JSON.parse(await readFile(metadataPath, 'utf8')) } catch {}
+let enrichments = {}
+try { enrichments = JSON.parse(await readFile(enrichmentPath, 'utf8')) } catch {}
 
 const rows = []
 for (const source of sources) {
@@ -109,8 +118,12 @@ for (const source of sources) {
     const iconType = clean(row['圖標類型'])
     const combinedPrice = clean(row['人均消費（VND／HKD，約）'] || row['人均消費（VND，約）'])
     const hkdFromCombined = combinedPrice.match(/約\s*(HK\$[\d,]+(?:[–-][\d,]+)?)/i)?.[1] || ''
+    const priceHkd = clean(row['人均消費（HKD）'] || hkdFromCombined)
+    const parsedHkd = hkdRange(priceHkd)
+    const id = slug(`${source.collection}-${name}`)
+    const enrichment = enrichments[id] || {}
     rows.push({
-      id: slug(`${source.collection}-${name}`),
+      id,
       name,
       address: clean(row['地址']),
       collection: source.collection,
@@ -124,10 +137,17 @@ for (const source of sources) {
         ? clean(row['核對日期'] || row['評分核對日期'])
         : googleMetadata[name]?.verifiedAt || '',
       description: clean(row['餐廳簡介'] || row['店鋪簡介']).replace(/｜人均：.*$/, ''),
-      priceVnd: clean(row['人均消費（VND）'] || row['人均消費（VND，約）'] || combinedPrice),
-      priceHkd: clean(row['人均消費（HKD）'] || hkdFromCombined),
+      priceVnd: vndOnly(row['人均消費（VND）'] || row['人均消費（VND，約）'] || combinedPrice),
+      priceHkd,
+      priceHkdMin: parsedHkd.min,
+      priceHkdMax: parsedHkd.max,
       signature: clean(row['餐廳名物'] || row['招牌項目']),
-      hours: clean(row['早餐／營業時間']),
+      hours: clean(enrichment.hours || row['早餐／營業時間']),
+      bookingAdvice: clean(enrichment.bookingAdvice),
+      bookingUrl: clean(enrichment.bookingUrl),
+      phone: clean(enrichment.phone),
+      website: clean(enrichment.website),
+      photo: enrichment.photo || null,
       mapsUrl: clean(row['Google Maps']) || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${row['地址']}`)}`,
       criteria: clean(row['篩選條件']),
       reviewAudit: clean(row['誘評抽查']),

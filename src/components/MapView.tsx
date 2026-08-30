@@ -3,6 +3,7 @@ import {
   AttributionControl,
   Map as LibreMap,
   NavigationControl,
+  type CircleLayerSpecification,
   type GeoJSONSource,
   type MapLayerMouseEvent,
   type SymbolLayerSpecification
@@ -28,7 +29,6 @@ interface RestaurantFeatureCollection {
   type: 'FeatureCollection'
   features: Array<{
     type: 'Feature'
-    id: string
     geometry: { type: 'Point'; coordinates: [number, number] }
     properties: RestaurantMarkerProperties
   }>
@@ -44,6 +44,8 @@ interface UserLocationFeatureCollection {
 }
 
 const RESTAURANT_SOURCE_ID = 'restaurant-places'
+const RESTAURANT_CLUSTER_LAYER_ID = 'restaurant-clusters'
+const RESTAURANT_CLUSTER_COUNT_LAYER_ID = 'restaurant-cluster-count'
 const RESTAURANT_LAYER_ID = 'restaurant-pins'
 const SELECTED_RESTAURANT_LAYER_ID = 'restaurant-pins-selected'
 const USER_LOCATION_SOURCE_ID = 'user-location'
@@ -51,6 +53,12 @@ const USER_LOCATION_HALO_LAYER_ID = 'user-location-halo'
 const USER_LOCATION_DOT_LAYER_ID = 'user-location-dot'
 
 export const RESTAURANT_LAYER_IDS = [RESTAURANT_LAYER_ID, SELECTED_RESTAURANT_LAYER_ID] as const
+export const RESTAURANT_CLUSTER_OPTIONS = {
+  cluster: true,
+  clusterRadius: 48,
+  clusterMaxZoom: 13,
+  generateId: true
+} as const
 
 export function restaurantMarkerImageId(place: Pick<Place, 'collection' | 'iconType'>) {
   const iconFile = MAP_ICON_FILES[place.iconType] ?? 'vietnam'
@@ -67,7 +75,6 @@ export function createRestaurantFeatureCollection(places: Place[], selectedId: s
     type: 'FeatureCollection',
     features: places.map((place) => ({
       type: 'Feature',
-      id: place.id,
       geometry: { type: 'Point', coordinates: [place.lng, place.lat] },
       properties: {
         placeId: place.id,
@@ -89,7 +96,7 @@ export function createUserLocationFeatureCollection(location: UserLocation | nul
   }
 }
 
-export function restaurantLayerSpecifications(): SymbolLayerSpecification[] {
+export function restaurantLayerSpecifications(): Array<CircleLayerSpecification | SymbolLayerSpecification> {
   const commonLayout: NonNullable<SymbolLayerSpecification['layout']> = {
     'icon-image': ['get', 'imageId'],
     'icon-anchor': 'bottom',
@@ -99,17 +106,40 @@ export function restaurantLayerSpecifications(): SymbolLayerSpecification[] {
 
   return [
     {
+      id: RESTAURANT_CLUSTER_LAYER_ID,
+      type: 'circle',
+      source: RESTAURANT_SOURCE_ID,
+      filter: ['has', 'point_count'],
+      paint: {
+        'circle-color': ['step', ['get', 'point_count'], '#cf8d20', 10, '#d2672c', 25, '#a72e28'],
+        'circle-radius': ['step', ['get', 'point_count'], 19, 10, 23, 25, 28],
+        'circle-stroke-width': 3,
+        'circle-stroke-color': '#fffaf0'
+      }
+    },
+    {
+      id: RESTAURANT_CLUSTER_COUNT_LAYER_ID,
+      type: 'symbol',
+      source: RESTAURANT_SOURCE_ID,
+      filter: ['has', 'point_count'],
+      layout: {
+        'text-field': ['get', 'point_count_abbreviated'],
+        'text-size': 12
+      },
+      paint: { 'text-color': '#fffaf0' }
+    },
+    {
       id: RESTAURANT_LAYER_ID,
       type: 'symbol',
       source: RESTAURANT_SOURCE_ID,
-      filter: ['==', ['get', 'selected'], false],
+      filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'selected'], false]],
       layout: { ...commonLayout, 'icon-size': 1 }
     },
     {
       id: SELECTED_RESTAURANT_LAYER_ID,
       type: 'symbol',
       source: RESTAURANT_SOURCE_ID,
-      filter: ['==', ['get', 'selected'], true],
+      filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'selected'], true]],
       layout: { ...commonLayout, 'icon-size': 1.26 }
     }
   ]
@@ -185,6 +215,16 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
       const place = placesRef.current.find((candidate) => candidate.id === placeId)
       if (place) onSelectRef.current(place)
     }
+    const handleClusterClick = async (event: MapLayerMouseEvent) => {
+      const clusterId = Number(event.features?.[0]?.properties?.cluster_id)
+      const coordinates = event.features?.[0]?.geometry.type === 'Point'
+        ? event.features[0].geometry.coordinates as [number, number]
+        : null
+      const source = map.getSource(RESTAURANT_SOURCE_ID) as GeoJSONSource | undefined
+      if (!source || !Number.isFinite(clusterId) || !coordinates) return
+      const zoom = await source.getClusterExpansionZoom(clusterId)
+      map.easeTo({ center: coordinates, zoom, duration: 450 })
+    }
     const showPointer = () => { map.getCanvas().style.cursor = 'pointer' }
     const hidePointer = () => { map.getCanvas().style.cursor = '' }
 
@@ -194,7 +234,8 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
 
       map.addSource(RESTAURANT_SOURCE_ID, {
         type: 'geojson',
-        data: createRestaurantFeatureCollection(placesRef.current, selectedRef.current?.id ?? null)
+        data: createRestaurantFeatureCollection(placesRef.current, selectedRef.current?.id ?? null),
+        ...RESTAURANT_CLUSTER_OPTIONS
       })
       for (const layer of restaurantLayerSpecifications()) map.addLayer(layer)
 
@@ -225,7 +266,11 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
         map.on('mouseenter', layerId, showPointer)
         map.on('mouseleave', layerId, hidePointer)
       }
+      map.on('click', RESTAURANT_CLUSTER_LAYER_ID, handleClusterClick)
+      map.on('mouseenter', RESTAURANT_CLUSTER_LAYER_ID, showPointer)
+      map.on('mouseleave', RESTAURANT_CLUSTER_LAYER_ID, hidePointer)
       containerRef.current?.setAttribute('data-restaurant-marker-renderer', 'webgl-symbol')
+      containerRef.current?.setAttribute('data-restaurant-clustering', 'true')
       containerRef.current?.setAttribute('data-user-location-renderer', 'webgl-circle')
       containerRef.current?.setAttribute('data-user-location-visible', String(Boolean(userLocationRef.current)))
     }

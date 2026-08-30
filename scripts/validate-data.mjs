@@ -14,8 +14,19 @@ for (const place of places) {
   if (!Number.isFinite(place.lat) || !Number.isFinite(place.lng)) failures.push(`${place.name}: missing coordinates`)
   if (place.lat < 15.8 || place.lat > 16.3 || place.lng < 107.9 || place.lng > 108.5) failures.push(`${place.name}: coordinate outside Da Nang bounds`)
   if (!place.priceHkd && !/HK\$/i.test(place.priceVnd)) failures.push(`${place.name}: missing HKD price`)
+  const hasHkdMin = Number.isFinite(place.priceHkdMin)
+  const hasHkdMax = Number.isFinite(place.priceHkdMax)
+  if (hasHkdMin !== hasHkdMax) failures.push(`${place.name}: incomplete HKD range`)
+  if (hasHkdMin && place.priceHkdMin > place.priceHkdMax) failures.push(`${place.name}: reversed HKD range`)
   if (!place.rating) failures.push(`${place.name}: missing Google rating`)
   if (!place.reviewCount) failures.push(`${place.name}: missing Google review count`)
+  if (place.photo) {
+    for (const field of ['url', 'alt', 'credit', 'sourceUrl', 'rightsNotice']) {
+      if (!place.photo[field]) failures.push(`${place.name}: photo missing ${field}`)
+    }
+    if (!/^https?:\/\//.test(place.photo.sourceUrl)) failures.push(`${place.name}: invalid photo source URL`)
+  }
+  if (place.bookingUrl && !place.bookingAdvice) failures.push(`${place.name}: booking URL without advice`)
 }
 
 if (failures.length) {

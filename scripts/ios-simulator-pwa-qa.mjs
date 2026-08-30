@@ -295,9 +295,10 @@ async function assertMapCount(sessionId, expected) {
     const count = Number(document.querySelector('.map-status strong')?.textContent)
     const accessibleCount = document.querySelectorAll('.map-place-accessible').length
     const webGlRenderer = document.querySelector('.map-canvas')?.dataset.restaurantMarkerRenderer
+    const clustering = document.querySelector('.map-canvas')?.dataset.restaurantClustering
     const domMarkerCount = document.querySelectorAll('.maplibregl-marker').length
-    return count === ${expected} && accessibleCount === ${expected} && webGlRenderer === 'webgl-symbol' && domMarkerCount === 0
-      ? { count, accessibleCount, webGlRenderer, domMarkerCount }
+    return count === ${expected} && accessibleCount === ${expected} && webGlRenderer === 'webgl-symbol' && clustering === 'true' && domMarkerCount === 0
+      ? { count, accessibleCount, webGlRenderer, clustering, domMarkerCount }
       : null
   `)
 }
@@ -349,6 +350,8 @@ async function verifyStandaloneCoreFlows(sessionId) {
       hash: location.hash,
       googleMaps: dialog.querySelector('a[href*="google.com/maps"]')?.href ?? null,
       appleMaps: dialog.querySelector('a[href*="maps.apple.com"]')?.href ?? null,
+      photoAlt: dialog.querySelector('.place-sheet__photo img')?.alt ?? null,
+      booking: dialog.querySelector('.contact-actions a[href*="mocseafood.com/dat-ban"]')?.href ?? null,
     }
   `)
   for (const requiredText of ['蒜香牛油龍蝦', '400,000–900,000 VND', 'HK$120–270']) {
@@ -358,6 +361,8 @@ async function verifyStandaloneCoreFlows(sessionId) {
   }
   if (detailContract.hash !== '#place=michelin-moc-quan-seafood') throw new Error(`Unexpected deep link ${detailContract.hash}`)
   if (!detailContract.googleMaps || !detailContract.appleMaps) throw new Error('Restaurant navigation links are missing')
+  if (!detailContract.photoAlt?.includes('夜間門面')) throw new Error('MỘC identifying photo is missing')
+  if (!detailContract.booking) throw new Error('MỘC official booking action is missing')
 
   const detailActions = await findElements(sessionId, 'css selector', '.place-sheet .quick-actions button')
   if (detailActions.length !== 3) throw new Error(`Expected 3 detail actions, found ${detailActions.length}`)
@@ -377,23 +382,23 @@ async function verifyStandaloneCoreFlows(sessionId) {
   await clearElement(sessionId, search)
   await assertMapCount(sessionId, 36)
 
-  let filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  let filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
   if (filterButtons.length !== 4) throw new Error(`Expected 4 collection filters, found ${filterButtons.length}`)
   await clickElement(sessionId, filterButtons[1])
   await assertMapCount(sessionId, 74)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
   await clickElement(sessionId, filterButtons[0])
   await assertMapCount(sessionId, 38)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
   await clickElement(sessionId, filterButtons[2])
   await assertMapCount(sessionId, 50)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
   await clickElement(sessionId, filterButtons[1])
   await assertMapCount(sessionId, 12)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
   await clickElement(sessionId, filterButtons[3])
   await assertMapCount(sessionId, 23)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button')
+  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
   await clickElement(sessionId, filterButtons[2])
   await assertMapCount(sessionId, 11)
 

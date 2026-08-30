@@ -1,0 +1,30 @@
+{
+  "michelin-moc-quan-seafood": {
+    "hours": "每日 10:30–23:45；最後點餐 22:30",
+    "bookingAdvice": "建議預約，尤其晚餐及多人用餐。",
+    "bookingUrl": "https://mocseafood.com/dat-ban",
+    "phone": "+84905665058",
+    "website": "https://mocseafood.com/moc-da-nang",
+    "photo": {
+      "url": "https://mocseafood.com/wp-content/uploads/z7235788088089_ac9cd0ac4063691123ae52e1d1f00944.webp",
+      "alt": "MỘC Quán Seafood 夜間門面，紅黃燈籠、戶外座位及 26 號招牌清晰可見",
+      "credit": "Mộc Seafood 官方網站",
+      "sourceUrl": "https://mocseafood.com/moc-da-nang",
+      "rightsNotice": "© Hải sản Mộc quán；遠端顯示，未儲存於本 App"
+    }
+  },
+  "high-rating-pizza-4p-s": {
+    "hours": "星期一至五 11:00–22:00；星期六、日 10:00–22:00；最後點餐 21:30",
+    "bookingAdvice": "熱門時段經常滿座，建議預約。",
+    "bookingUrl": "https://booking.pizza4ps.com/?restaurants=5fa947ed79c7bd001515effb&getLatLng=dn&utm_source=corp",
+    "phone": "19006043",
+    "website": "https://pizza4ps.com/vn/location/944/?lang=english",
+    "photo": {
+      "url": "https://pizza4ps.com/wp-content/uploads/2023/07/78034719_2721643444539354_2592835004560048128_n.jpg",
+      "alt": "Pizza 4P’s Indochina 峴港店室內，藍色靛染窗簾、木桌與水泥柱可作辨認",
+      "credit": "Pizza 4P’s 官方網站",
+      "sourceUrl": "https://pizza4ps.com/vn/location/944/?lang=english",
+      "rightsNotice": "© Pizza 4P’s；遠端顯示，未儲存於本 App"
+    }
+  }
+}

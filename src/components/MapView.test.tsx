@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   createRestaurantFeatureCollection,
   createUserLocationFeatureCollection,
+  RESTAURANT_CLUSTER_OPTIONS,
   restaurantLayerSpecifications,
   restaurantMarkerAssetPath,
   restaurantMarkerImageId
@@ -22,11 +23,18 @@ const place: Place = {
   signature: 'Test dish',
   priceVnd: '100,000',
   priceHkd: 'HK$31',
+  priceHkdMin: 31,
+  priceHkdMax: 31,
   rating: 4.8,
   reviewCount: 500,
   reviewCountVerifiedAt: '2026-08-30',
   address: 'Da Nang',
   hours: '08:00-22:00',
+  bookingAdvice: '',
+  bookingUrl: '',
+  phone: '',
+  website: '',
+  photo: null,
   mapsUrl: 'https://maps.google.com/',
   criteria: 'Test criteria',
   reviewAudit: 'No incentive detected',
@@ -42,7 +50,6 @@ describe('WebGL restaurant marker contract', () => {
 
     expect(collection.features).toHaveLength(1)
     expect(collection.features[0]).toMatchObject({
-      id: place.id,
       geometry: { type: 'Point', coordinates: [place.lng, place.lat] },
       properties: {
         placeId: place.id,
@@ -55,9 +62,21 @@ describe('WebGL restaurant marker contract', () => {
   it('uses MapLibre symbol layers so pins and the raster map share one WebGL frame', () => {
     const layers = restaurantLayerSpecifications()
 
-    expect(layers).toHaveLength(2)
-    expect(layers.every((layer) => layer.type === 'symbol' && layer.source === 'restaurant-places')).toBe(true)
-    expect(layers.map((layer) => layer.layout?.['icon-size'])).toEqual([1, 1.26])
+    expect(layers).toHaveLength(4)
+    expect(layers.every((layer) => layer.source === 'restaurant-places')).toBe(true)
+    expect(layers.map((layer) => layer.id)).toEqual([
+      'restaurant-clusters', 'restaurant-cluster-count', 'restaurant-pins', 'restaurant-pins-selected'
+    ])
+    expect(layers.slice(2).map((layer) => layer.type === 'symbol' ? layer.layout?.['icon-size'] : null)).toEqual([1, 1.26])
+  })
+
+  it('clusters dense restaurants before individual pins become useful', () => {
+    expect(RESTAURANT_CLUSTER_OPTIONS).toEqual({
+      cluster: true,
+      clusterRadius: 48,
+      clusterMaxZoom: 13,
+      generateId: true
+    })
   })
 
   it('resolves the precise icon into the matching collection-coloured pin asset', () => {

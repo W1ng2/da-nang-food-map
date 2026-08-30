@@ -1,5 +1,5 @@
 import { COLLECTIONS, MAP_ICON_FILES } from '../config'
-import { appleMapsUrl, distanceKm, formatReviews } from '../utils'
+import { appleMapsUrl, distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
 
 interface PlaceSheetProps {
@@ -15,10 +15,21 @@ interface PlaceSheetProps {
 
 export function PlaceSheet({ place, location, favorite, visited, onClose, onFavorite, onVisited, onShare }: PlaceSheetProps) {
   const iconFile = MAP_ICON_FILES[place.iconType]
+  const photoUrl = placePhotoUrl(place)
   return (
     <section className="place-sheet" role="dialog" aria-modal="true" aria-label={place.name}>
       <div className="place-sheet__grabber" />
-      <button className="place-sheet__close" type="button" onClick={onClose} aria-label="關閉">×</button>
+      <button className="place-sheet__close" type="button" onClick={onClose} aria-label="關閉" autoFocus>×</button>
+      {photoUrl && place.photo && (
+        <figure className="place-sheet__photo">
+          <img src={photoUrl} alt={place.photo.alt} decoding="async" referrerPolicy="no-referrer"
+            onError={(event) => { event.currentTarget.closest('figure')?.setAttribute('hidden', '') }} />
+          <figcaption>
+            <a href={place.photo.sourceUrl} target="_blank" rel="noreferrer">相片：{place.photo.credit}</a>
+            <span>{place.photo.rightsNotice}</span>
+          </figcaption>
+        </figure>
+      )}
       <div className="place-sheet__headline">
         <span className="place-sheet__icon" aria-hidden="true">{iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}</span>
         <div>
@@ -32,8 +43,9 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
 
       <div className="fact-grid">
         <div><span>不可錯過</span><strong>{place.signature}</strong></div>
-        <div><span>人均預算</span><strong>{place.priceVnd}</strong><em>{place.priceHkd || 'HKD 已包含於價格'}</em></div>
+        <div><span>人均預算</span><strong>{place.priceVnd}</strong><em>{place.priceHkd}</em></div>
         {place.hours && <div><span>早餐／營業時間</span><strong>{place.hours}</strong></div>}
+        {place.bookingAdvice && <div><span>訂座提示</span><strong>{place.bookingAdvice}</strong></div>}
         <div><span>地址</span><strong>{place.address}</strong></div>
       </div>
 
@@ -48,10 +60,15 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
       )}
 
       <div className="quick-actions">
-        <button type="button" className={favorite ? 'is-active' : ''} onClick={onFavorite}>{favorite ? '♥ 已收藏' : '♡ 收藏'}</button>
-        <button type="button" className={visited ? 'is-active' : ''} onClick={onVisited}>{visited ? '✓ 已去過' : '標記去過'}</button>
+        <button type="button" className={favorite ? 'is-active' : ''} aria-pressed={favorite} onClick={onFavorite}>{favorite ? '♥ 已收藏' : '♡ 收藏'}</button>
+        <button type="button" className={visited ? 'is-active' : ''} aria-pressed={visited} onClick={onVisited}>{visited ? '✓ 已去過' : '標記去過'}</button>
         <button type="button" onClick={onShare}>分享</button>
       </div>
+      {(place.bookingUrl || place.phone || place.website) && <div className="contact-actions">
+        {place.bookingUrl && <a href={place.bookingUrl} target="_blank" rel="noreferrer">官方訂座</a>}
+        {place.phone && <a href={`tel:${place.phone}`}>致電</a>}
+        {place.website && <a href={place.website} target="_blank" rel="noreferrer">官方網站</a>}
+      </div>}
       <div className="route-actions">
         <a href={place.mapsUrl} target="_blank" rel="noreferrer">Google Maps</a>
         <a href={appleMapsUrl(place)} target="_blank" rel="noreferrer">Apple Maps</a>
