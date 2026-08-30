@@ -1,0 +1,95 @@
+name: iOS Simulator PWA QA
+
+on:
+  workflow_dispatch:
+    inputs:
+      pwa_url:
+        description: Public PWA URL to validate
+        required: true
+        default: https://w1ng2.github.io/da-nang-food-map/
+
+permissions:
+  contents: read
+
+jobs:
+  install-and-launch:
+    name: Install and launch from iPhone Home Screen
+    runs-on: macos-26
+    timeout-minutes: 35
+    env:
+      PWA_URL: ${{ inputs.pwa_url }}
+      IOS_QA_ARTIFACT_DIR: artifacts/ios-simulator
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Select an installed iPhone Simulator
+        run: |
+          set -euo pipefail
+          xcode-select -p
+          xcrun simctl list runtimes
+          xcrun simctl list devices available
+          node <<'NODE'
+          const { execFileSync } = require('node:child_process')
+          const devices = JSON.parse(execFileSync('xcrun', ['simctl', 'list', 'devices', 'available', '--json'], { encoding: 'utf8' })).devices
+          const candidates = Object.entries(devices)
+            .flatMap(([runtime, entries]) => entries.map(device => ({ runtime, ...device })))
+            .filter(device => device.isAvailable && /^iPhone /.test(device.name))
+            .sort((a, b) => b.runtime.localeCompare(a.runtime, undefined, { numeric: true }))
+          if (!candidates.length) throw new Error('No available iPhone Simulator was found')
+          const preferred = candidates.find(device => /iPhone 17 Pro$/.test(device.name)) ?? candidates[0]
+          require('node:fs').appendFileSync(process.env.GITHUB_ENV, `IOS_SIM_UDID=${preferred.udid}\nIOS_SIM_NAME=${preferred.name}\n`)
+          console.log(`Selected ${preferred.name} (${preferred.runtime}, ${preferred.udid})`)
+          NODE
+
+      - name: Boot Simulator
+        run: |
+          set -euo pipefail
+          xcrun simctl boot "$IOS_SIM_UDID" || true
+          xcrun simctl bootstatus "$IOS_SIM_UDID" -b
+          xcrun simctl status_bar "$IOS_SIM_UDID" override --time 9:41 --batteryState charged --batteryLevel 100
+
+      - name: Install Appium XCUITest driver
+        run: |
+          set -euo pipefail
+          npm install --global appium@3
+          appium driver install xcuitest
+          appium driver doctor xcuitest
+
+      - name: Start Appium
+        run: |
+          set -euo pipefail
+          mkdir -p "$IOS_QA_ARTIFACT_DIR"
+          appium --address 127.0.0.1 --port 4723 --log "$IOS_QA_ARTIFACT_DIR/appium.log" &
+          echo $! > "$IOS_QA_ARTIFACT_DIR/appium.pid"
+          for attempt in {1..60}; do
+            if curl --fail --silent http://127.0.0.1:4723/status >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo 'Appium did not become ready' >&2
+          exit 1
+
+      - name: Install PWA and validate standalone launch
+        run: node scripts/ios-simulator-pwa-qa.mjs
+
+      - name: Capture final Simulator state
+        if: always()
+        run: |
+          mkdir -p "$IOS_QA_ARTIFACT_DIR"
+          xcrun simctl io "$IOS_SIM_UDID" screenshot "$IOS_QA_ARTIFACT_DIR/final-simulator.png" || true
+          xcrun simctl diagnose -b --output="$IOS_QA_ARTIFACT_DIR/simctl-diagnose.tar.gz" || true
+
+      - name: Upload QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-simulator-pwa-qa
+          path: artifacts/ios-simulator
+          if-no-files-found: error
+          retention-days: 14
+
