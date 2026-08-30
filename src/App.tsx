@@ -29,6 +29,7 @@ export default function App() {
   const [showInstall, setShowInstall] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
   const [decisionFilters, setDecisionFilters] = useState<DecisionFilters>(DEFAULT_DECISION_FILTERS)
+  const [draftDecisionFilters, setDraftDecisionFilters] = useState<DecisionFilters>(DEFAULT_DECISION_FILTERS)
   const [favorites, toggleFavorite] = useStoredSet('danang-food-map:favorites')
   const [visited, toggleVisited] = useStoredSet('danang-food-map:visited')
 
@@ -58,17 +59,24 @@ export default function App() {
     return () => window.removeEventListener('hashchange', selectFromHash)
   }, [places])
 
-  const filtered = useMemo(() => {
+  const collectionMatches = useMemo(() => {
     const visibleCollections = view === 'favorites'
       ? new Set(Object.keys(COLLECTIONS) as CollectionId[])
       : collections
-    const collectionMatches = filterPlaces(places, query, visibleCollections, view === 'favorites', favorites)
+    return filterPlaces(places, query, visibleCollections, view === 'favorites', favorites)
+  }, [places, query, collections, view, favorites])
+
+  const filtered = useMemo(() => {
     const result = applyDecisionFilters(collectionMatches, decisionFilters, userLocation)
     if (!userLocation) return result
     return [...result].sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b))
-  }, [places, query, collections, view, favorites, userLocation, decisionFilters])
+  }, [collectionMatches, userLocation, decisionFilters])
 
-  const cuisines = useMemo(() => [...new Set(places.map((place) => place.type))].sort((a, b) => a.localeCompare(b, 'zh-HK')), [places])
+  const cuisines = useMemo(() => [...new Set(collectionMatches.map((place) => place.type))].sort((a, b) => a.localeCompare(b, 'zh-HK')), [collectionMatches])
+  const draftResultCount = useMemo(
+    () => applyDecisionFilters(collectionMatches, draftDecisionFilters, userLocation).length,
+    [collectionMatches, draftDecisionFilters, userLocation]
+  )
   const activeDecisionFilterCount = Object.values(decisionFilters).filter((value) => value !== '' && value !== null).length
 
   const toggleCollection = (id: CollectionId) => setCollections((current) => {
@@ -78,17 +86,37 @@ export default function App() {
     return next
   })
 
-  const locate = (enableNearby = false) => {
+  const locate = (enableNearbyDraft = false) => {
     setLocationError('')
     if (!navigator.geolocation) return setLocationError('此瀏覽器不支援定位。')
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
         setUserLocation({ lat: coords.latitude, lng: coords.longitude, accuracy: coords.accuracy })
-        if (enableNearby) setDecisionFilters((current) => ({ ...current, nearbyKm: 3 }))
+        if (enableNearbyDraft) setDraftDecisionFilters((current) => ({ ...current, nearbyKm: 3 }))
       },
       (error) => setLocationError(error.code === 1 ? '請在 Safari 設定允許此網站使用位置。' : '暫時無法取得位置，請稍後再試。'),
       { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 }
     )
+  }
+
+  const openFilters = () => {
+    setLocationError('')
+    setDraftDecisionFilters({
+      ...decisionFilters,
+      cuisine: cuisines.includes(decisionFilters.cuisine) ? decisionFilters.cuisine : ''
+    })
+    setShowFilters(true)
+  }
+
+  const closeFilters = () => {
+    setLocationError('')
+    setShowFilters(false)
+  }
+
+  const applyFilters = () => {
+    setDecisionFilters(draftDecisionFilters)
+    setLocationError('')
+    setShowFilters(false)
   }
 
   const sharePlace = useCallback(async () => {
@@ -121,12 +149,12 @@ export default function App() {
               <span>{meta.icon}</span>{meta.shortLabel}
             </button>
           ))}
-          <button className={`decision-filter-button ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={() => setShowFilters(true)}>
-            條件{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
+          <button className={`decision-filter-button ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={openFilters}>
+            篩選{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
           </button>
         </div>}
-        {view === 'favorites' && <button className={`decision-filter-button decision-filter-button--standalone ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={() => setShowFilters(true)}>
-          條件篩選{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
+        {view === 'favorites' && <button className={`decision-filter-button decision-filter-button--standalone ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={openFilters}>
+          篩選{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
         </button>}
       </header>
 
@@ -151,7 +179,7 @@ export default function App() {
         )}
       </section>
 
-      {locationError && <div className="toast" role="alert">{locationError}<button type="button" aria-label="關閉定位提示" onClick={() => setLocationError('')}>×</button></div>}
+      {locationError && !showFilters && <div className="toast" role="alert">{locationError}<button type="button" aria-label="關閉定位提示" onClick={() => setLocationError('')}>×</button></div>}
 
       <nav className="tabbar" aria-label="主要頁面">
         <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => setView('map')}><span aria-hidden="true">⌖</span>地圖</button>
@@ -177,9 +205,10 @@ export default function App() {
       </>}
 
       {showFilters && <>
-        <button className="sheet-backdrop" type="button" aria-label="關閉篩選" onClick={() => setShowFilters(false)} />
-        <DecisionFilterSheet filters={decisionFilters} cuisines={cuisines} hasLocation={Boolean(userLocation)}
-          onChange={setDecisionFilters} onRequestLocation={() => locate(true)} onReset={() => setDecisionFilters(DEFAULT_DECISION_FILTERS)} onClose={() => setShowFilters(false)} />
+        <button className="sheet-backdrop" type="button" aria-label="關閉篩選" onClick={closeFilters} />
+        <DecisionFilterSheet filters={draftDecisionFilters} cuisines={cuisines} hasLocation={Boolean(userLocation)} resultCount={draftResultCount}
+          locationError={locationError} onChange={setDraftDecisionFilters} onRequestLocation={() => locate(true)}
+          onReset={() => setDraftDecisionFilters(DEFAULT_DECISION_FILTERS)} onApply={applyFilters} onClose={closeFilters} />
       </>}
     </main>
   )

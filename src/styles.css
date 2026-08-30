@@ -147,20 +147,29 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .install-sheet > img { width: 68px; height: 68px; margin-bottom: 12px; border-radius: 17px; box-shadow: 0 6px 16px rgba(23,60,50,.18); }
 .install-sheet ol { margin: 16px 0; padding: 13px 13px 13px 34px; background: #f0e5d1; border-radius: 5px 18px 18px 18px; color: var(--ink); font-size: 13px; line-height: 1.9; }
 .install-sheet > p { color: var(--muted); font-size: 11px; line-height: 1.5; }
-.filter-sheet { max-width: 520px; left: 50%; right: auto; width: calc(100% - 16px); padding: 29px 20px 20px; transform: translateX(-50%); }
-.filter-sheet h2 { margin: 3px 0 18px; font-family: "Songti TC", serif; font-size: 27px; }
+.filter-sheet { max-width: 520px; max-height: min(86dvh, 760px); left: 50%; right: auto; width: calc(100% - 16px); padding: 29px 20px 0; transform: translateX(-50%); }
+.filter-sheet h2 { margin: 3px 0 4px; font-family: "Songti TC", serif; font-size: 27px; }
+.filter-sheet__summary { margin: 0 0 13px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .filter-sheet__group { min-height: 61px; padding: 10px 0; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-top: 1px solid var(--line); }
 .filter-sheet__group > div { display: flex; flex-direction: column; gap: 2px; }
 .filter-sheet__group strong, .filter-sheet__select > span, .filter-sheet__fieldset legend { color: var(--ink); font-size: 13px; font-weight: 800; }
 .filter-sheet small { color: var(--muted); font-size: 9px; line-height: 1.45; }
 .filter-sheet__group button, .filter-sheet__options button { min-height: 40px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 800; }
 .filter-sheet button.is-active { border-color: var(--tomato); background: #fce5dc; color: var(--tomato); }
+.filter-sheet__location { padding: 12px 0; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; border-top: 1px solid var(--line); }
+.filter-sheet__location > div { display: flex; flex-direction: column; gap: 2px; }
+.filter-sheet__location strong { color: var(--ink); font-size: 13px; }
+.filter-sheet__location > button { min-height: 42px; padding: 8px 13px; border: 1px solid var(--ink); border-radius: 999px; background: transparent; color: var(--ink); font-size: 11px; font-weight: 800; }
+.filter-sheet__inline-alert { grid-column: 1 / -1; margin: 5px 0 0; padding: 8px 10px; border-radius: 10px; background: #f8dfd8; color: #7d2e27; font-size: 10px; line-height: 1.4; }
 .filter-sheet__fieldset { margin: 0; padding: 13px 0; border: 0; border-top: 1px solid var(--line); }
-.filter-sheet__options { margin: 9px 0 6px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-.filter-sheet__options button { padding-left: 6px; padding-right: 6px; }
-.filter-sheet__select { padding: 13px 0; display: grid; grid-template-columns: 1fr minmax(155px, auto); align-items: center; gap: 12px; border-top: 1px solid var(--line); }
-.filter-sheet__select select { min-width: 0; padding: 10px 30px 10px 11px; border: 1px solid var(--line); border-radius: 12px; background: #f4ead8; color: var(--ink); font: inherit; font-size: 12px; }
-.filter-sheet__footer { margin-top: 9px; display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+.filter-sheet__options { margin: 9px 0 6px; display: grid; gap: 6px; }
+.filter-sheet__options--four { grid-template-columns: repeat(4, 1fr); }
+.filter-sheet__options--budget { grid-template-columns: repeat(3, 1fr); }
+.filter-sheet__options--rating { grid-template-columns: repeat(3, 1fr); }
+.filter-sheet__options button { min-height: 42px; padding-left: 6px; padding-right: 6px; }
+.filter-sheet__select { padding: 13px 0; display: grid; gap: 8px; border-top: 1px solid var(--line); }
+.filter-sheet__select select { width: 100%; min-width: 0; min-height: 44px; padding: 10px 34px 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: #f4ead8; color: var(--ink); font: inherit; font-size: 12px; }
+.filter-sheet__footer { position: sticky; bottom: 0; z-index: 2; margin: 9px -20px 0; padding: 12px 20px max(12px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 2fr; gap: 8px; border-top: 1px solid var(--line); background: rgba(255,250,240,.97); box-shadow: 0 -8px 18px rgba(23,60,50,.08); backdrop-filter: blur(12px); }
 .filter-sheet__footer button { min-height: 46px; border: 1px solid var(--line); border-radius: 4px 15px 15px 15px; background: transparent; font-size: 12px; font-weight: 800; }
 .filter-sheet__footer button:last-child { border-color: var(--ink); background: var(--ink); color: white; }
 .toast { position: fixed; z-index: 30; left: 14px; right: 14px; bottom: calc(72px + env(safe-area-inset-bottom)); padding: 12px 40px 12px 14px; border-radius: 5px 15px 15px 15px; background: #7d2e27; color: white; box-shadow: var(--shadow); font-size: 12px; }
