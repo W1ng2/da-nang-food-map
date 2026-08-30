@@ -179,6 +179,7 @@ async function waitForWebContract(sessionId) {
 async function installFromSafari() {
   browserSession = await createSession({
     browserName: 'Safari',
+    'appium:forceAppLaunch': true,
     'appium:safariInitialUrl': pwaUrl,
     'appium:initialDeeplinkUrl': pwaUrl,
   })
