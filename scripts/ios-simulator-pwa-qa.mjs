@@ -1,5 +1,9 @@
 import { mkdir, writeFile } from 'node:fs/promises'
+import { execFile } from 'node:child_process'
 import path from 'node:path'
+import { promisify } from 'node:util'
+
+const execFileAsync = promisify(execFile)
 
 const appiumUrl = process.env.APPIUM_URL ?? 'http://127.0.0.1:4723'
 const pwaUrl = process.env.PWA_URL ?? 'https://w1ng2.github.io/da-nang-food-map/'
@@ -55,6 +59,7 @@ async function createSession(extraCapabilities = {}) {
         'appium:wdaStartupRetries': 1,
         'appium:showXcodeLog': true,
         'appium:webviewConnectTimeout': 30_000,
+        'appium:includeSafariInWebviews': true,
         ...extraCapabilities,
       },
     },
@@ -95,6 +100,18 @@ async function execute(sessionId, script, args = []) {
 
 async function switchContext(sessionId, name) {
   await command(sessionId, 'POST', '/context', { name })
+}
+
+async function waitForWebContext(sessionId, timeout = 45_000) {
+  const deadline = Date.now() + timeout
+  let contexts = []
+  while (Date.now() < deadline) {
+    contexts = await command(sessionId, 'GET', '/contexts')
+    const webContext = contexts.find(context => context !== 'NATIVE_APP')
+    if (webContext) return { contexts, webContext }
+    await pause(1_000)
+  }
+  throw new Error(`No WebKit context became available: ${JSON.stringify(contexts)}`)
 }
 
 async function findElement(sessionId, using, value) {
@@ -177,15 +194,16 @@ async function waitForWebContract(sessionId) {
 }
 
 async function installFromSafari() {
-  browserSession = await createSession({
-    browserName: 'Safari',
-    'appium:forceAppLaunch': true,
-    'appium:safariInitialUrl': pwaUrl,
-    'appium:initialDeeplinkUrl': pwaUrl,
-  })
+  browserSession = await createSession()
+  await execFileAsync('xcrun', ['simctl', 'openurl', simulatorUdid, pwaUrl])
+  await pause(2_000)
+  await execute(browserSession, 'mobile: activateApp', [{ bundleId: 'com.apple.mobilesafari' }])
+  const { contexts } = await waitForWebContext(browserSession)
+  const webContext = contexts.find(context => context !== 'NATIVE_APP')
+  await switchContext(browserSession, webContext)
 
   const browserContract = await waitForWebContract(browserSession)
-  await saveJson('01-safari-contract.json', browserContract)
+  await saveJson('01-safari-contract.json', { contexts, ...browserContract })
   await screenshot(browserSession, '01-safari-loaded.png')
 
   if (browserContract.standalone) throw new Error('Safari unexpectedly reported standalone display mode before installation')
