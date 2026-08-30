@@ -11,6 +11,31 @@ interface MapViewProps {
   userLocation: UserLocation | null
 }
 
+export function createPlaceMarkerElement(place: Place, isSelected: boolean, onSelect: (place: Place) => void) {
+  const button = document.createElement('button')
+  button.type = 'button'
+  button.className = `map-marker${isSelected ? ' is-selected' : ''}`
+  button.style.transition = 'none'
+  button.setAttribute('aria-label', `${place.name}，${place.iconType}`)
+
+  const visual = document.createElement('span')
+  visual.className = `map-pin map-pin--${place.collection}${isSelected ? ' is-selected' : ''}`
+  const iconFile = MAP_ICON_FILES[place.iconType]
+  if (iconFile) {
+    const image = document.createElement('img')
+    image.src = `${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`
+    image.alt = ''
+    visual.append(image)
+  } else {
+    const fallback = document.createElement('span')
+    fallback.textContent = place.icon
+    visual.append(fallback)
+  }
+  button.append(visual)
+  button.addEventListener('click', () => onSelect(place))
+  return button
+}
+
 export function MapView({ places, selected, onSelect, userLocation }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<LibreMap | null>(null)
@@ -48,22 +73,7 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
     if (!map) return
     markerRefs.current.forEach((marker) => marker.remove())
     markerRefs.current = places.map((place) => {
-      const button = document.createElement('button')
-      button.type = 'button'
-      button.className = `map-pin map-pin--${place.collection}${selected?.id === place.id ? ' is-selected' : ''}`
-      button.setAttribute('aria-label', `${place.name}，${place.iconType}`)
-      const iconFile = MAP_ICON_FILES[place.iconType]
-      if (iconFile) {
-        const image = document.createElement('img')
-        image.src = `${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`
-        image.alt = ''
-        button.append(image)
-      } else {
-        const fallback = document.createElement('span')
-        fallback.textContent = place.icon
-        button.append(fallback)
-      }
-      button.addEventListener('click', () => onSelect(place))
+      const button = createPlaceMarkerElement(place, selected?.id === place.id, onSelect)
       return new LibreMarker({ element: button, anchor: 'bottom' }).setLngLat([place.lng, place.lat]).addTo(map)
     })
   }, [places, selected, onSelect])

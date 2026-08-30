@@ -57,13 +57,15 @@ button { color: inherit; }
 .maplibregl-ctrl-group { border-radius: 13px !important; overflow: hidden; box-shadow: 0 5px 18px rgba(24,53,46,.18) !important; }
 .maplibregl-ctrl-attrib { max-width: 145px; overflow: hidden; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
 
-.map-pin { width: 37px; height: 42px; padding: 5px; border: 2px solid var(--paper-light); border-radius: 18px 18px 18px 4px; background: var(--tomato); box-shadow: 0 5px 12px rgba(24,53,46,.28); transform: rotate(-45deg); cursor: pointer; transition: transform .18s ease, filter .18s ease; }
+.map-marker { width: 37px; height: 42px; padding: 0; border: 0; background: transparent; cursor: pointer; transition: none; }
+.map-marker.is-selected { z-index: 3; }
+.map-pin { width: 100%; height: 100%; display: block; padding: 5px; border: 2px solid var(--paper-light); border-radius: 18px 18px 18px 4px; background: var(--tomato); box-shadow: 0 5px 12px rgba(24,53,46,.28); transform: rotate(-45deg); pointer-events: none; transition: transform .18s ease, filter .18s ease; }
 .map-pin > img, .map-pin > span { width: 100%; height: 100%; display: grid; place-items: center; object-fit: contain; border-radius: 50%; transform: rotate(45deg); background: var(--paper-light); font-size: 16px; }
 .map-pin--michelin { background: #a72e28; }
 .map-pin--high-rating { background: #d2672c; }
 .map-pin--cafe-dessert { background: #77583c; }
 .map-pin--breakfast { background: #cf8d20; }
-.map-pin.is-selected { transform: rotate(-45deg) scale(1.26); filter: drop-shadow(0 6px 7px rgba(23,60,50,.32)); z-index: 3; }
+.map-pin.is-selected { transform: rotate(-45deg) scale(1.26); filter: drop-shadow(0 6px 7px rgba(23,60,50,.32)); }
 .user-location-marker { width: 22px; height: 22px; border: 4px solid white; border-radius: 50%; background: #177ad8; box-shadow: 0 0 0 9px rgba(23,122,216,.18), 0 2px 9px rgba(0,42,87,.35); }
 
 .map-status { position: absolute; top: 12px; left: 12px; z-index: 2; padding: 7px 10px; border-radius: 11px; background: rgba(255,250,240,.92); box-shadow: 0 5px 15px rgba(23,60,50,.15); font-size: 11px; color: var(--muted); backdrop-filter: blur(8px); }
