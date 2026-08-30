@@ -26,4 +26,5 @@ const mapIcons = [
 
 await Promise.all(mapIcons.map((name) => cp(resolve(root, `map-icon-${name}.svg`), resolve(mapIconDir, `${name}.svg`))))
 await cp(resolve(root, 'node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs'), resolve(assetDir, 'maplibre-gl-worker.mjs'))
-console.log(`Built app icons, synced ${mapIcons.length} map icons, and bundled the MapLibre worker.`)
+await cp(resolve(root, 'node_modules/maplibre-gl/dist/maplibre-gl-shared.mjs'), resolve(assetDir, 'maplibre-gl-shared.mjs'))
+console.log(`Built app icons, synced ${mapIcons.length} map icons, and bundled the MapLibre worker modules.`)
