@@ -17,15 +17,16 @@ describe('餐廳搜尋與篩選合約', () => {
     expect(normalizeSearch('Bánh Xèo')).toBe(normalizeSearch('Banh Xeo'))
   })
 
-  it('只回傳已啟用分類並可搜尋名物', () => {
-    const places = [place(), place({ id: 'coffee', name: 'Roost', collection: 'cafe-dessert', signature: 'Cold Brew' })]
-    expect(filterPlaces(places, 'banh xeo', new Set(['michelin']))).toEqual([places[0]])
-    expect(filterPlaces(places, 'cold brew', new Set(['michelin']))).toEqual([])
+  it('直接按菜式篩選並可搜尋名物，不受推薦來源影響', () => {
+    const places = [place(), place({ id: 'coffee', name: 'Roost', collection: 'cafe-dessert', type: '精品咖啡', signature: 'Cold Brew' })]
+    expect(filterPlaces(places, 'banh xeo', '越南菜')).toEqual([places[0]])
+    expect(filterPlaces(places, 'cold brew', '越南菜')).toEqual([])
+    expect(filterPlaces(places, '', '')).toEqual(places)
   })
 
   it('收藏模式只顯示已收藏項目', () => {
     const places = [place(), place({ id: 'second' })]
-    expect(filterPlaces(places, '', new Set(['michelin']), true, new Set(['second']))).toEqual([places[1]])
+    expect(filterPlaces(places, '', '', true, new Set(['second']))).toEqual([places[1]])
   })
 })
 
@@ -43,18 +44,18 @@ describe('決策篩選合約', () => {
       place({ id: 'within-budget', priceHkdMin: 60, priceHkdMax: 100 }),
       place({ id: 'too-expensive', priceHkdMin: 60, priceHkdMax: 209 })
     ]
-    expect(applyDecisionFilters(places, { cuisine: '', maxPriceHkd: 100, minRating: null, nearbyKm: null }, null))
+    expect(applyDecisionFilters(places, { maxPriceHkd: 100, nearbyKm: null }, null))
       .toEqual([places[0]])
   })
 
-  it('可同時按菜式、評分及目前位置縮窄結果', () => {
+  it('只以實用條件按預算及目前位置縮窄結果，不設評分門檻', () => {
     const origin = { lat: 16.0589, lng: 108.2162 }
     const places = [
-      place({ id: 'match', rating: 4.9, type: '越南菜', lat: 16.059, lng: 108.2162 }),
-      place({ id: 'wrong-cuisine', rating: 4.9, type: '意大利菜' }),
-      place({ id: 'too-far', rating: 4.9, type: '越南菜', lat: 16.2, lng: 108.2162 })
+      place({ id: 'match', rating: 3.9, lat: 16.059, lng: 108.2162 }),
+      place({ id: 'also-match', rating: 4.9, lat: 16.06, lng: 108.2162 }),
+      place({ id: 'too-far', rating: 4.9, lat: 16.2, lng: 108.2162 })
     ]
-    expect(applyDecisionFilters(places, { cuisine: '越南菜', maxPriceHkd: null, minRating: 4.8, nearbyKm: 3 }, origin))
-      .toEqual([places[0]])
+    expect(applyDecisionFilters(places, { maxPriceHkd: null, nearbyKm: 3 }, origin))
+      .toEqual([places[0], places[1]])
   })
 })

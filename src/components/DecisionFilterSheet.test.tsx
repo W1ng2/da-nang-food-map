@@ -5,16 +5,13 @@ import { DecisionFilterSheet } from './DecisionFilterSheet'
 import type { DecisionFilters } from '../utils'
 
 const filters: DecisionFilters = {
-  cuisine: '',
   maxPriceHkd: null,
-  minRating: null,
   nearbyKm: null
 }
 
 const renderSheet = (overrides: Partial<ComponentProps<typeof DecisionFilterSheet>> = {}) => renderToStaticMarkup(
   <DecisionFilterSheet
     filters={filters}
-    cuisines={['精品咖啡', 'Gelato／雪糕']}
     hasLocation={false}
     resultCount={12}
     locationError=""
@@ -36,15 +33,16 @@ describe('條件篩選決策合約', () => {
     expect(markup).toContain('顯示 12 間')
   })
 
-  it('定位後提供多個距離選項，菜式只顯示呼叫端提供的類型', () => {
+  it('定位後提供距離及預算，但不再提供米芝蓮、評分或菜式來源篩選', () => {
     const markup = renderSheet({ hasLocation: true, resultCount: 4 })
 
     expect(markup).toContain('1 km')
     expect(markup).toContain('3 km')
     expect(markup).toContain('5 km')
-    expect(markup).toContain('精品咖啡')
-    expect(markup).toContain('Gelato／雪糕')
-    expect(markup).not.toContain('牛扒／扒房')
+    expect(markup).toContain('每位預算上限')
+    expect(markup).not.toContain('Google 評分')
+    expect(markup).not.toContain('Michelin')
+    expect(markup).not.toContain('菜式類型')
     expect(markup).toContain('顯示 4 間')
   })
 

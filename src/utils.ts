@@ -1,18 +1,16 @@
-import type { CollectionId, Place, UserLocation } from './types'
+import type { Place, UserLocation } from './types'
 
 export interface DecisionFilters {
-  cuisine: string
   maxPriceHkd: number | null
-  minRating: number | null
   nearbyKm: number | null
 }
 
 export const normalizeSearch = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('zh-HK')
 
-export function filterPlaces(places: Place[], query: string, collections: Set<CollectionId>, favoritesOnly = false, favorites = new Set<string>()) {
+export function filterPlaces(places: Place[], query: string, cuisine: string, favoritesOnly = false, favorites = new Set<string>()) {
   const needle = normalizeSearch(query.trim())
   return places.filter((place) => {
-    if (!collections.has(place.collection)) return false
+    if (cuisine && place.type !== cuisine) return false
     if (favoritesOnly && !favorites.has(place.id)) return false
     if (!needle) return true
     const haystack = normalizeSearch([place.name, place.address, place.type, place.description, place.signature, place.michelin].join(' '))
@@ -36,8 +34,6 @@ export function applyDecisionFilters(
   location: UserLocation | null
 ) {
   return places.filter((place) => {
-    if (filters.cuisine && place.type !== filters.cuisine) return false
-    if (filters.minRating && place.rating < filters.minRating) return false
     if (filters.maxPriceHkd && (!place.priceHkdMax || place.priceHkdMax > filters.maxPriceHkd)) return false
     if (filters.nearbyKm && location && distanceKm(location, place) > filters.nearbyKm) return false
     return true

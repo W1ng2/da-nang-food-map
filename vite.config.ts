@@ -14,7 +14,7 @@ export default defineConfig({
       manifest: {
         name: '峴港食旅地圖',
         short_name: '峴港食旅',
-        description: 'Michelin、高分餐廳、Cafe 甜品、早餐及越式法包的峴港私人美食指南。',
+        description: '按菜式探索峴港餐廳，附 Michelin 識別、早餐、咖啡甜品、預算及距離資料。',
         theme_color: '#173c32',
         background_color: '#f3ead8',
         display: 'standalone',

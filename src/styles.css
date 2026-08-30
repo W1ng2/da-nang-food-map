@@ -45,11 +45,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .search-box input::placeholder { color: #849087; }
 .search-box button { border: 0; background: none; font-size: 22px; color: #77837b; }
 
-.filter-strip { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; padding-bottom: 1px; }
+.filter-strip { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; padding: 1px 1px 3px; scroll-snap-type: x proximity; }
 .filter-strip::-webkit-scrollbar { display: none; }
-.filter-strip button { white-space: nowrap; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; padding: 7px 11px; background: rgba(5,31,24,.25); color: rgba(255,250,240,.68); font-size: 12px; font-weight: 700; }
-.filter-strip button span { margin-right: 4px; }
-.filter-strip button.is-active { background: var(--paper-light); color: var(--chip-color); border-color: transparent; box-shadow: 0 3px 9px rgba(6,29,23,.22); }
+.filter-strip button { min-height: 34px; display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; scroll-snap-align: start; white-space: nowrap; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; padding: 6px 11px; background: rgba(5,31,24,.25); color: rgba(255,250,240,.7); font-size: 12px; font-weight: 700; }
+.filter-strip button img { width: 19px; height: 19px; object-fit: contain; filter: drop-shadow(0 1px 0 rgba(255,255,255,.35)); }
+.filter-strip button.is-active { background: var(--paper-light); color: var(--tomato); border-color: transparent; box-shadow: 0 3px 9px rgba(6,29,23,.22); }
 .filter-strip .decision-filter-button { border-style: dashed; color: var(--paper-light); }
 .filter-strip .decision-filter-button.is-active { --chip-color: var(--ink); border-style: solid; }
 .decision-filter-button--standalone { margin-top: 10px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(5,31,24,.25); color: var(--paper-light); font-size: 12px; font-weight: 800; }
@@ -83,6 +83,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .place-card__icon .place-card__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .place-card__body { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .eyebrow { color: var(--tomato); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.place-card__labels, .place-sheet__labels { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 7px; }
+.michelin-badge { width: fit-content; padding: 3px 6px; border: 1px solid #d6a843; border-radius: 999px; background: #fff2c8; color: #73500d; font-size: 8px; font-weight: 900; letter-spacing: .07em; line-height: 1.1; }
 .place-card__body > strong { overflow: hidden; color: var(--ink); font-family: "Songti TC", serif; font-size: 17px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
 .place-card__meta { color: var(--muted); font-size: 11px; }
 .place-card__meta b { color: #c27b13; }
@@ -152,7 +154,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .filter-sheet__summary { margin: 0 0 13px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .filter-sheet__group { min-height: 61px; padding: 10px 0; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-top: 1px solid var(--line); }
 .filter-sheet__group > div { display: flex; flex-direction: column; gap: 2px; }
-.filter-sheet__group strong, .filter-sheet__select > span, .filter-sheet__fieldset legend { color: var(--ink); font-size: 13px; font-weight: 800; }
+.filter-sheet__group strong, .filter-sheet__fieldset legend { color: var(--ink); font-size: 13px; font-weight: 800; }
 .filter-sheet small { color: var(--muted); font-size: 9px; line-height: 1.45; }
 .filter-sheet__group button, .filter-sheet__options button { min-height: 40px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 800; }
 .filter-sheet button.is-active { border-color: var(--tomato); background: #fce5dc; color: var(--tomato); }
@@ -165,10 +167,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .filter-sheet__options { margin: 9px 0 6px; display: grid; gap: 6px; }
 .filter-sheet__options--four { grid-template-columns: repeat(4, 1fr); }
 .filter-sheet__options--budget { grid-template-columns: repeat(3, 1fr); }
-.filter-sheet__options--rating { grid-template-columns: repeat(3, 1fr); }
 .filter-sheet__options button { min-height: 42px; padding-left: 6px; padding-right: 6px; }
-.filter-sheet__select { padding: 13px 0; display: grid; gap: 8px; border-top: 1px solid var(--line); }
-.filter-sheet__select select { width: 100%; min-width: 0; min-height: 44px; padding: 10px 34px 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: #f4ead8; color: var(--ink); font: inherit; font-size: 12px; }
 .filter-sheet__footer { position: sticky; bottom: 0; z-index: 2; margin: 9px -20px 0; padding: 12px 20px max(12px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 2fr; gap: 8px; border-top: 1px solid var(--line); background: rgba(255,250,240,.97); box-shadow: 0 -8px 18px rgba(23,60,50,.08); backdrop-filter: blur(12px); }
 .filter-sheet__footer button { min-height: 46px; border: 1px solid var(--line); border-radius: 4px 15px 15px 15px; background: transparent; font-size: 12px; font-weight: 800; }
 .filter-sheet__footer button:last-child { border-color: var(--ink); background: var(--ink); color: white; }
@@ -183,8 +182,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .topbar { grid-column: 1; height: 100%; padding: 28px 20px; overflow: hidden; }
   .content { grid-column: 2; grid-row: 1; }
   .tabbar { position: absolute; z-index: 10; left: 14px; bottom: 16px; width: 342px; border: 0; border-radius: 16px; }
-  .filter-strip { margin-top: 16px; flex-wrap: wrap; overflow: visible; }
-  .filter-strip button { flex: 1 0 43%; }
+  .filter-strip { margin-top: 16px; }
   .search-box { margin-top: 20px; }
   .brand h1 { font-size: 29px; }
   .place-sheet { left: auto; right: 18px; width: 430px; bottom: 18px; }

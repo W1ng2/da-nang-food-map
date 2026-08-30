@@ -347,10 +347,11 @@ async function assertMapCount(sessionId, expected) {
     const count = Number(document.querySelector('.map-status strong')?.textContent)
     const accessibleCount = document.querySelectorAll('.map-place-accessible').length
     const webGlRenderer = document.querySelector('.map-canvas')?.dataset.restaurantMarkerRenderer
+    const michelinRenderer = document.querySelector('.map-canvas')?.dataset.michelinMarkerRenderer
     const clustering = document.querySelector('.map-canvas')?.dataset.restaurantClustering
     const domMarkerCount = document.querySelectorAll('.maplibregl-marker').length
-    return count === ${expected} && accessibleCount === ${expected} && webGlRenderer === 'webgl-symbol' && clustering === 'true' && domMarkerCount === 0
-      ? { count, accessibleCount, webGlRenderer, clustering, domMarkerCount }
+    return count === ${expected} && accessibleCount === ${expected} && webGlRenderer === 'webgl-symbol' && michelinRenderer === 'embedded-webgl-pin-badge' && clustering === 'true' && domMarkerCount === 0
+      ? { count, accessibleCount, webGlRenderer, michelinRenderer, clustering, domMarkerCount }
       : null
   `)
 }
@@ -365,7 +366,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
   `)
   await pause(1_500)
   const initialContract = await waitForWebContract(sessionId)
-  await assertMapCount(sessionId, 36)
+  await assertMapCount(sessionId, 97)
 
   const moveCountBeforeDrag = Number(await execute(sessionId, `return document.querySelector('.map-canvas')?.dataset.mapMoveCount || 0`))
   await screenshot(sessionId, '08a-fast-drag-before.png')
@@ -468,37 +469,32 @@ async function verifyStandaloneCoreFlows(sessionId) {
   if (!closeLaMaison) throw new Error('La Maison 1888 detail close button was not found')
   await clickElement(sessionId, closeLaMaison)
   await clearElement(sessionId, search)
-  await assertMapCount(sessionId, 36)
+  await assertMapCount(sessionId, 97)
 
-  let filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
-  if (filterButtons.length !== 4) throw new Error(`Expected 4 collection filters, found ${filterButtons.length}`)
-  await clickElement(sessionId, filterButtons[1])
-  await assertMapCount(sessionId, 74)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
-  await clickElement(sessionId, filterButtons[0])
-  await assertMapCount(sessionId, 38)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
-  await clickElement(sessionId, filterButtons[2])
-  await assertMapCount(sessionId, 50)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
-  await clickElement(sessionId, filterButtons[1])
-  await assertMapCount(sessionId, 12)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
-  await clickElement(sessionId, filterButtons[3])
-  await assertMapCount(sessionId, 23)
-  filterButtons = await findElements(sessionId, 'css selector', '.filter-strip button:not(.decision-filter-button)')
-  await clickElement(sessionId, filterButtons[2])
-  await assertMapCount(sessionId, 11)
+  const cuisineFilters = await findElements(sessionId, 'css selector', '.filter-strip button[data-cuisine]')
+  if (cuisineFilters.length < 20) throw new Error(`Expected cuisine-first filters, found ${cuisineFilters.length}`)
+  const vietnameseFilter = await findElement(sessionId, 'css selector', '.filter-strip button[data-cuisine="越南菜"]')
+  if (!vietnameseFilter) throw new Error('Vietnamese cuisine filter was not found')
+  await clickElement(sessionId, vietnameseFilter)
+  await assertMapCount(sessionId, 27)
+  const breakfastBowlFilter = await findElement(sessionId, 'css selector', '.filter-strip button[data-cuisine="燕麥／乳酪早餐碗"]')
+  if (!breakfastBowlFilter) throw new Error('Breakfast bowl cuisine filter was not found')
+  await clickElement(sessionId, breakfastBowlFilter)
+  await assertMapCount(sessionId, 3)
 
   const tabs = await findElements(sessionId, 'css selector', '.tabbar button')
   if (tabs.length !== 3) throw new Error(`Expected 3 primary tabs, found ${tabs.length}`)
   await clickElement(sessionId, tabs[1])
   const listContract = await waitForScript(sessionId, `
     const cards = [...document.querySelectorAll('.place-card')]
-    return cards.length === 11 && cards[0]?.textContent.includes("An's Cafe")
+    return cards.length === 3 && cards[0]?.textContent.includes("An's Cafe")
       ? { cardCount: cards.length, firstCard: cards[0].textContent }
       : null
   `)
+
+  const allCuisineFilter = await findElement(sessionId, 'css selector', '.filter-strip button[data-cuisine="all"]')
+  if (!allCuisineFilter) throw new Error('All cuisines filter was not found')
+  await clickElement(sessionId, allCuisineFilter)
 
   const currentTabs = await findElements(sessionId, 'css selector', '.tabbar button')
   await clickElement(sessionId, currentTabs[2])
@@ -523,13 +519,13 @@ async function verifyStandaloneCoreFlows(sessionId) {
   `, 25_000)
 
   const coreContract = {
-    initial: { standalone: initialContract.standalone, count: 36 },
+    initial: { standalone: initialContract.standalone, count: 97 },
     fastDrag: dragContract,
     search: { query: 'MỘC Quán Seafood', count: 1 },
     detail: detailContract,
     officialEnrichment: officialEnrichmentContract,
     storage: storedContract,
-    collections: { michelin: 36, highRating: 38, cafeDessert: 12, breakfast: 11, total: 97 },
+    cuisines: { vietnamese: 27, breakfastBowl: 3, total: 97 },
     list: listContract,
     favorites: favoritesContract,
     location: locationContract,

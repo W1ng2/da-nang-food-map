@@ -1,4 +1,4 @@
-import { COLLECTIONS, MAP_ICON_FILES } from '../config'
+import { MAP_ICON_FILES } from '../config'
 import { appleMapsUrl, distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
 
@@ -43,7 +43,10 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
       <div className="place-sheet__headline">
         <span className="place-sheet__icon" aria-hidden="true">{iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}</span>
         <div>
-          <span className="eyebrow">{COLLECTIONS[place.collection].label}{place.michelin ? ` · ${place.michelin}` : ''}</span>
+          <span className="place-sheet__labels">
+            {place.michelin && <span className="michelin-badge">M&nbsp; MICHELIN GUIDE · {place.michelin}</span>}
+            <span className="eyebrow">{place.type}</span>
+          </span>
           <h2>{place.name}</h2>
           <p className="rating-line"><b>★ {place.rating}</b><span>{formatReviews(place.reviewCount)} 則評論</span>{location && <span>{distanceKm(location, place).toFixed(1)} km</span>}</p>
         </div>

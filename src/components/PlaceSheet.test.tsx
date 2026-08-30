@@ -70,6 +70,8 @@ describe('餐廳官方資料顯示合約', () => {
     expect(markup).toContain('每日 11:00–22:00')
     expect(markup).toContain('營業／聯絡資料：</b>2026-08-31')
     expect(markup).toContain('href="https://restaurant.example/hours"')
+    expect(markup).toContain('MICHELIN')
+    expect(markup).toContain('Selected')
   })
 
   it('場地參考照不會被誤標為餐廳門面', () => {

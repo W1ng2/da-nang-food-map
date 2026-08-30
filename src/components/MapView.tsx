@@ -22,6 +22,7 @@ interface MapViewProps {
 interface RestaurantMarkerProperties {
   placeId: string
   imageId: string
+  michelinLabel: string
   selected: boolean
 }
 
@@ -60,14 +61,14 @@ export const RESTAURANT_CLUSTER_OPTIONS = {
   generateId: true
 } as const
 
-export function restaurantMarkerImageId(place: Pick<Place, 'collection' | 'iconType'>) {
+export function restaurantMarkerImageId(place: Pick<Place, 'iconType' | 'michelin'>) {
   const iconFile = MAP_ICON_FILES[place.iconType] ?? 'vietnam'
-  return `restaurant-pin-${place.collection}-${iconFile}`
+  return `restaurant-pin-cuisine-${iconFile}${place.michelin ? '-michelin' : ''}`
 }
 
-export function restaurantMarkerAssetPath(place: Pick<Place, 'collection' | 'iconType'>) {
+export function restaurantMarkerAssetPath(place: Pick<Place, 'iconType' | 'michelin'>) {
   const iconFile = MAP_ICON_FILES[place.iconType] ?? 'vietnam'
-  return `map-pins/${place.collection}-${iconFile}.png`
+  return `map-pins/cuisine-${iconFile}${place.michelin ? '-michelin' : ''}.png`
 }
 
 export function createRestaurantFeatureCollection(places: Place[], selectedId: string | null): RestaurantFeatureCollection {
@@ -79,6 +80,7 @@ export function createRestaurantFeatureCollection(places: Place[], selectedId: s
       properties: {
         placeId: place.id,
         imageId: restaurantMarkerImageId(place),
+        michelinLabel: place.michelin,
         selected: selectedId === place.id
       }
     }))
@@ -239,6 +241,15 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
       })
       for (const layer of restaurantLayerSpecifications()) map.addLayer(layer)
 
+      // Data can finish loading while the map's first style frame is being created.
+      // Re-sync after the source exists so that neither the source nor its images can
+      // remain at the empty initial render.
+      const latestPlaces = placesRef.current
+      await ensureRestaurantImages(map, latestPlaces, pendingImagesRef.current)
+      if (disposed) return
+      const restaurantSource = map.getSource(RESTAURANT_SOURCE_ID) as GeoJSONSource
+      restaurantSource.setData(createRestaurantFeatureCollection(latestPlaces, selectedRef.current?.id ?? null))
+
       map.addSource(USER_LOCATION_SOURCE_ID, {
         type: 'geojson',
         data: createUserLocationFeatureCollection(userLocationRef.current)
@@ -270,6 +281,8 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
       map.on('mouseenter', RESTAURANT_CLUSTER_LAYER_ID, showPointer)
       map.on('mouseleave', RESTAURANT_CLUSTER_LAYER_ID, hidePointer)
       containerRef.current?.setAttribute('data-restaurant-marker-renderer', 'webgl-symbol')
+      containerRef.current?.setAttribute('data-michelin-marker-renderer', 'embedded-webgl-pin-badge')
+      containerRef.current?.setAttribute('data-restaurant-source-count', String(latestPlaces.length))
       containerRef.current?.setAttribute('data-restaurant-clustering', 'true')
       containerRef.current?.setAttribute('data-user-location-renderer', 'webgl-circle')
       containerRef.current?.setAttribute('data-user-location-visible', String(Boolean(userLocationRef.current)))
@@ -324,7 +337,7 @@ export function MapView({ places, selected, onSelect, userLocation }: MapViewPro
             className="map-place-accessible"
             type="button"
             key={place.id}
-            aria-label={`${place.name}，${place.iconType}`}
+            aria-label={`${place.name}，${place.iconType}${place.michelin ? `，MICHELIN ${place.michelin}` : ''}`}
             onClick={() => onSelect(place)}
           >
             {place.name}

@@ -39,3 +39,13 @@ export const MAP_ICON_FILES: Record<string, string> = {
   '🥢 越式早餐｜Bánh cuốn': 'banh-cuon',
   '🥣 燕麥／乳酪早餐碗': 'yogurt-bowl'
 }
+
+export const CUISINE_ORDER = [
+  '越南菜', '越南現代料理', '麵食／街頭小吃', '雞飯／米飯', '海鮮',
+  'Bánh mì 越式法包', '越式早餐｜Xôi gà', '越式早餐｜Bò né',
+  '越式早餐｜Bánh cuốn', '越式早餐｜Bánh bèo', '燕麥／乳酪早餐碗',
+  '精品咖啡', '越南咖啡', 'Gelato／雪糕', '法式甜點／烘焙', '水果／本地甜品',
+  '印度菜', '意大利菜', '意大利現代菜', '法國／歐洲餐', '韓式燒肉',
+  '牛扒／扒房', '牛扒', 'Poke／健康碗', '漢堡', '自助餐', '精釀啤酒',
+  'Rooftop／景觀餐廳'
+] as const

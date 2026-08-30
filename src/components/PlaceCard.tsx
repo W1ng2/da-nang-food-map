@@ -1,4 +1,4 @@
-import { COLLECTIONS, MAP_ICON_FILES } from '../config'
+import { MAP_ICON_FILES } from '../config'
 import { distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
 
@@ -24,7 +24,10 @@ export function PlaceCard({ place, location, favorite, visited, onSelect, onFavo
             onError={(event) => { event.currentTarget.hidden = true }} />}
         </span>
         <span className="place-card__body">
-          <span className="eyebrow">{COLLECTIONS[place.collection].shortLabel} · {place.type}</span>
+          <span className="place-card__labels">
+            {place.michelin && <span className="michelin-badge">M&nbsp; MICHELIN · {place.michelin}</span>}
+            <span className="eyebrow">{place.type}</span>
+          </span>
           <strong>{place.name}</strong>
           <span className="place-card__meta"><b>★ {place.rating}</b> · {formatReviews(place.reviewCount)} 則{location ? ` · ${distanceKm(location, place).toFixed(1)} km` : ''}</span>
           <span className="place-card__price">{place.priceHkd}{place.bookingAdvice ? ' · 建議訂座' : ''}</span>

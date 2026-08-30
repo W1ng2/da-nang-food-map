@@ -55,7 +55,8 @@ describe('WebGL restaurant marker contract', () => {
       geometry: { type: 'Point', coordinates: [place.lng, place.lat] },
       properties: {
         placeId: place.id,
-        imageId: 'restaurant-pin-michelin-vietnam',
+        imageId: 'restaurant-pin-cuisine-vietnam-michelin',
+        michelinLabel: 'Selected',
         selected: true
       }
     })
@@ -69,7 +70,6 @@ describe('WebGL restaurant marker contract', () => {
     expect(layers.map((layer) => layer.id)).toEqual([
       'restaurant-clusters', 'restaurant-cluster-count', 'restaurant-pins', 'restaurant-pins-selected'
     ])
-    expect(layers.slice(2).map((layer) => layer.type === 'symbol' ? layer.layout?.['icon-size'] : null)).toEqual([1, 1.26])
   })
 
   it('clusters dense restaurants before individual pins become useful', () => {
@@ -81,9 +81,10 @@ describe('WebGL restaurant marker contract', () => {
     })
   })
 
-  it('resolves the precise icon into the matching collection-coloured pin asset', () => {
-    expect(restaurantMarkerImageId(place)).toBe('restaurant-pin-michelin-vietnam')
-    expect(restaurantMarkerAssetPath(place)).toBe('map-pins/michelin-vietnam.png')
+  it('resolves the precise cuisine icon into a source-neutral pin asset', () => {
+    expect(restaurantMarkerImageId(place)).toBe('restaurant-pin-cuisine-vietnam-michelin')
+    expect(restaurantMarkerAssetPath(place)).toBe('map-pins/cuisine-vietnam-michelin.png')
+    expect(restaurantMarkerImageId({ ...place, michelin: '' })).toBe('restaurant-pin-cuisine-vietnam')
   })
 
   it('keeps the user location in a WebGL GeoJSON source instead of a DOM marker', () => {

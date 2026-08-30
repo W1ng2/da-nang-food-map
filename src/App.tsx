@@ -1,19 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { COLLECTIONS } from './config'
+import { CUISINE_ORDER, MAP_ICON_FILES } from './config'
 import { useStoredSet } from './hooks'
 import { MapView } from './components/MapView'
 import { DecisionFilterSheet } from './components/DecisionFilterSheet'
 import { PlaceCard } from './components/PlaceCard'
 import { PlaceSheet } from './components/PlaceSheet'
 import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } from './utils'
-import type { CollectionId, Place, UserLocation } from './types'
+import type { Place, UserLocation } from './types'
 
 type View = 'map' | 'list' | 'favorites'
 
 const DEFAULT_DECISION_FILTERS: DecisionFilters = {
-  cuisine: '',
   maxPriceHkd: null,
-  minRating: null,
   nearbyKm: null
 }
 
@@ -21,7 +19,7 @@ export default function App() {
   const [places, setPlaces] = useState<Place[]>([])
   const [query, setQuery] = useState('')
   const [view, setView] = useState<View>('map')
-  const [collections, setCollections] = useState<Set<CollectionId>>(new Set(['michelin']))
+  const [selectedCuisine, setSelectedCuisine] = useState('')
   const [selected, setSelected] = useState<Place | null>(null)
   const [deepLinkReady, setDeepLinkReady] = useState(false)
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null)
@@ -59,32 +57,33 @@ export default function App() {
     return () => window.removeEventListener('hashchange', selectFromHash)
   }, [places])
 
-  const collectionMatches = useMemo(() => {
-    const visibleCollections = view === 'favorites'
-      ? new Set(Object.keys(COLLECTIONS) as CollectionId[])
-      : collections
-    return filterPlaces(places, query, visibleCollections, view === 'favorites', favorites)
-  }, [places, query, collections, view, favorites])
+  const cuisineMatches = useMemo(
+    () => filterPlaces(places, query, selectedCuisine, view === 'favorites', favorites),
+    [places, query, selectedCuisine, view, favorites]
+  )
 
   const filtered = useMemo(() => {
-    const result = applyDecisionFilters(collectionMatches, decisionFilters, userLocation)
+    const result = applyDecisionFilters(cuisineMatches, decisionFilters, userLocation)
     if (!userLocation) return result
     return [...result].sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b))
-  }, [collectionMatches, userLocation, decisionFilters])
+  }, [cuisineMatches, userLocation, decisionFilters])
 
-  const cuisines = useMemo(() => [...new Set(collectionMatches.map((place) => place.type))].sort((a, b) => a.localeCompare(b, 'zh-HK')), [collectionMatches])
+  const cuisines = useMemo(() => {
+    const available = new Set(places.map((place) => place.type))
+    const ordered = CUISINE_ORDER.filter((cuisine) => available.has(cuisine))
+    const remaining = [...available]
+      .filter((cuisine) => !CUISINE_ORDER.includes(cuisine as typeof CUISINE_ORDER[number]))
+      .sort((a, b) => a.localeCompare(b, 'zh-HK'))
+    return [...ordered, ...remaining].map((cuisine) => {
+      const sample = places.find((place) => place.type === cuisine)
+      return { cuisine, iconFile: sample ? MAP_ICON_FILES[sample.iconType] : undefined }
+    })
+  }, [places])
   const draftResultCount = useMemo(
-    () => applyDecisionFilters(collectionMatches, draftDecisionFilters, userLocation).length,
-    [collectionMatches, draftDecisionFilters, userLocation]
+    () => applyDecisionFilters(cuisineMatches, draftDecisionFilters, userLocation).length,
+    [cuisineMatches, draftDecisionFilters, userLocation]
   )
   const activeDecisionFilterCount = Object.values(decisionFilters).filter((value) => value !== '' && value !== null).length
-
-  const toggleCollection = (id: CollectionId) => setCollections((current) => {
-    const next = new Set(current)
-    if (next.has(id)) next.delete(id)
-    else next.add(id)
-    return next
-  })
 
   const locate = (enableNearbyDraft = false) => {
     setLocationError('')
@@ -101,10 +100,7 @@ export default function App() {
 
   const openFilters = () => {
     setLocationError('')
-    setDraftDecisionFilters({
-      ...decisionFilters,
-      cuisine: cuisines.includes(decisionFilters.cuisine) ? decisionFilters.cuisine : ''
-    })
+    setDraftDecisionFilters(decisionFilters)
     setShowFilters(true)
   }
 
@@ -143,19 +139,23 @@ export default function App() {
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜尋餐廳、名物或菜式" aria-label="搜尋餐廳" />
           {query && <button type="button" onClick={() => setQuery('')} aria-label="清除搜尋">×</button>}
         </label>
-        {view !== 'favorites' && <div className="filter-strip" aria-label="餐廳分類">
-          {(Object.entries(COLLECTIONS) as [CollectionId, typeof COLLECTIONS[CollectionId]][]).map(([id, meta]) => (
-            <button key={id} type="button" className={collections.has(id) ? 'is-active' : ''} aria-pressed={collections.has(id)} onClick={() => toggleCollection(id)} style={{ '--chip-color': meta.color } as React.CSSProperties}>
-              <span>{meta.icon}</span>{meta.shortLabel}
+        <div className="filter-strip" aria-label="按菜式篩選">
+          <button type="button" className={!selectedCuisine ? 'is-active' : ''} aria-pressed={!selectedCuisine}
+            data-cuisine="all" onClick={() => setSelectedCuisine('')}>
+            全部菜式
+          </button>
+          {cuisines.map(({ cuisine, iconFile }) => (
+            <button key={cuisine} type="button" className={selectedCuisine === cuisine ? 'is-active' : ''}
+              aria-pressed={selectedCuisine === cuisine} data-cuisine={cuisine}
+              onClick={() => setSelectedCuisine((current) => current === cuisine ? '' : cuisine)}>
+              {iconFile && <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" aria-hidden="true" />}
+              {cuisine}
             </button>
           ))}
           <button className={`decision-filter-button ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={openFilters}>
-            篩選{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
+            距離／預算{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
           </button>
-        </div>}
-        {view === 'favorites' && <button className={`decision-filter-button decision-filter-button--standalone ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={openFilters}>
-          篩選{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
-        </button>}
+        </div>
       </header>
 
       <section className={`content content--${view}`}>
@@ -174,7 +174,7 @@ export default function App() {
             {filtered.length ? filtered.map((place) => (
               <PlaceCard key={place.id} place={place} location={userLocation} favorite={favorites.has(place.id)} visited={visited.has(place.id)}
                 onSelect={() => setSelected(place)} onFavorite={() => toggleFavorite(place.id)} onVisited={() => toggleVisited(place.id)} />
-            )) : <div className="empty-state"><span aria-hidden="true">⌁</span><h3>暫時沒有餐廳</h3><p>{view === 'favorites' && favorites.size === 0 ? '在餐廳卡片按下心形，之後可在這裡快速找到。' : '試試重設條件、開啟其他分類或更改搜尋字詞。'}</p></div>}
+            )) : <div className="empty-state"><span aria-hidden="true">⌁</span><h3>暫時沒有餐廳</h3><p>{view === 'favorites' && favorites.size === 0 ? '在餐廳卡片按下心形，之後可在這裡快速找到。' : '試試選擇「全部菜式」、重設距離或預算，或更改搜尋字詞。'}</p></div>}
           </div>
         )}
       </section>
@@ -206,7 +206,7 @@ export default function App() {
 
       {showFilters && <>
         <button className="sheet-backdrop" type="button" aria-label="關閉篩選" onClick={closeFilters} />
-        <DecisionFilterSheet filters={draftDecisionFilters} cuisines={cuisines} hasLocation={Boolean(userLocation)} resultCount={draftResultCount}
+        <DecisionFilterSheet filters={draftDecisionFilters} hasLocation={Boolean(userLocation)} resultCount={draftResultCount}
           locationError={locationError} onChange={setDraftDecisionFilters} onRequestLocation={() => locate(true)}
           onReset={() => setDraftDecisionFilters(DEFAULT_DECISION_FILTERS)} onApply={applyFilters} onClose={closeFilters} />
       </>}
