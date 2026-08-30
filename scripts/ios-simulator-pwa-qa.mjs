@@ -60,6 +60,7 @@ async function createSession(extraCapabilities = {}) {
         'appium:showXcodeLog': true,
         'appium:webviewConnectTimeout': 30_000,
         'appium:includeSafariInWebviews': true,
+        'appium:enableAsyncExecuteFromHttps': true,
         ...extraCapabilities,
       },
     },
@@ -96,6 +97,10 @@ async function source(sessionId, name) {
 
 async function execute(sessionId, script, args = []) {
   return command(sessionId, 'POST', '/execute/sync', { script, args })
+}
+
+async function executeAsync(sessionId, script, args = []) {
+  return command(sessionId, 'POST', '/execute/async', { script, args })
 }
 
 async function switchContext(sessionId, name) {
@@ -182,7 +187,7 @@ async function waitForWebContract(sessionId) {
         standalone: window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true,
         serviceWorkerControlled: Boolean(navigator.serviceWorker?.controller),
       }`)
-      if (lastResult.readyState === 'complete' && lastResult.hasMapCanvas && lastResult.bodyText.includes('97')) {
+      if (lastResult.readyState === 'complete' && lastResult.hasMapCanvas && lastResult.bodyText.includes('間符合')) {
         return lastResult
       }
     } catch {
@@ -203,11 +208,24 @@ async function installFromSafari() {
   await switchContext(browserSession, webContext)
 
   const browserContract = await waitForWebContract(browserSession)
-  await saveJson('01-safari-contract.json', { contexts, ...browserContract })
+  const dataContract = await executeAsync(browserSession, `
+    const done = arguments[arguments.length - 1]
+    fetch(new URL('places.json', location.href))
+      .then(response => {
+        if (!response.ok) throw new Error('places.json returned ' + response.status)
+        return response.json()
+      })
+      .then(places => done({ placeCount: places.length }))
+      .catch(error => done({ error: String(error) }))
+  `)
+  await saveJson('01-safari-contract.json', { contexts, ...browserContract, ...dataContract })
   await screenshot(browserSession, '01-safari-loaded.png')
 
   if (browserContract.standalone) throw new Error('Safari unexpectedly reported standalone display mode before installation')
   if (!browserContract.manifestHref) throw new Error('PWA manifest link is missing')
+  if (dataContract.error || dataContract.placeCount !== 97) {
+    throw new Error(`Expected 97 restaurant records, received ${JSON.stringify(dataContract)}`)
+  }
 
   await switchContext(browserSession, 'NATIVE_APP')
   await source(browserSession, '02-safari-native-source.xml')
