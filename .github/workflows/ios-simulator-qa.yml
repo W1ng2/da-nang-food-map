@@ -41,7 +41,9 @@ jobs:
             .sort((a, b) => b.runtime.localeCompare(a.runtime, undefined, { numeric: true }))
           if (!candidates.length) throw new Error('No available iPhone Simulator was found')
           const preferred = candidates.find(device => /iPhone 17 Pro$/.test(device.name)) ?? candidates[0]
-          require('node:fs').appendFileSync(process.env.GITHUB_ENV, `IOS_SIM_UDID=${preferred.udid}\nIOS_SIM_NAME=${preferred.name}\n`)
+          const version = preferred.runtime.match(/iOS-(\d+)-(\d+(?:-\d+)?)/)?.slice(1).join('.').replaceAll('-', '.')
+          if (!version) throw new Error(`Could not derive an iOS version from ${preferred.runtime}`)
+          require('node:fs').appendFileSync(process.env.GITHUB_ENV, `IOS_SIM_UDID=${preferred.udid}\nIOS_SIM_NAME=${preferred.name}\nIOS_SIM_VERSION=${version}\n`)
           console.log(`Selected ${preferred.name} (${preferred.runtime}, ${preferred.udid})`)
           NODE
 
@@ -92,4 +94,3 @@ jobs:
           path: artifacts/ios-simulator
           if-no-files-found: error
           retention-days: 14
-

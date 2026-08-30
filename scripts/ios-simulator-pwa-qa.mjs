@@ -5,10 +5,11 @@ const appiumUrl = process.env.APPIUM_URL ?? 'http://127.0.0.1:4723'
 const pwaUrl = process.env.PWA_URL ?? 'https://w1ng2.github.io/da-nang-food-map/'
 const simulatorUdid = process.env.IOS_SIM_UDID
 const simulatorName = process.env.IOS_SIM_NAME ?? 'iPhone Simulator'
+const simulatorVersion = process.env.IOS_SIM_VERSION
 const artifactDir = path.resolve(process.env.IOS_QA_ARTIFACT_DIR ?? 'artifacts/ios-simulator')
 const expectedAppName = '峴港食旅'
 
-if (!simulatorUdid) throw new Error('IOS_SIM_UDID is required')
+if (!simulatorUdid || !simulatorVersion) throw new Error('IOS_SIM_UDID and IOS_SIM_VERSION are required')
 
 await mkdir(artifactDir, { recursive: true })
 
@@ -43,11 +44,17 @@ async function createSession(extraCapabilities = {}) {
         'appium:automationName': 'XCUITest',
         'appium:udid': simulatorUdid,
         'appium:deviceName': simulatorName,
+        'appium:platformVersion': simulatorVersion,
         'appium:newCommandTimeout': 180,
         'appium:noReset': true,
         'appium:isHeadless': true,
         'appium:simulatorStartupTimeout': 300_000,
         'appium:reduceMotion': true,
+        'appium:wdaLaunchTimeout': 240_000,
+        'appium:wdaConnectionTimeout': 240_000,
+        'appium:wdaStartupRetries': 1,
+        'appium:showXcodeLog': true,
+        'appium:webviewConnectTimeout': 30_000,
         ...extraCapabilities,
       },
     },
@@ -256,7 +263,7 @@ async function launchFromHomeScreen() {
 }
 
 try {
-  console.log(`Validating ${pwaUrl} on ${simulatorName} (${simulatorUdid})`)
+  console.log(`Validating ${pwaUrl} on ${simulatorName}, iOS ${simulatorVersion} (${simulatorUdid})`)
   await installFromSafari()
   const standaloneContract = await launchFromHomeScreen()
   console.log(`PASS: ${expectedAppName} installed and launched in standalone mode at ${standaloneContract.url}`)
