@@ -65,6 +65,7 @@ async function createSession(extraCapabilities = {}) {
       },
     },
   })
+  await request('POST', `/session/${value.sessionId}/timeouts`, { script: 30_000 })
   return value.sessionId
 }
 
