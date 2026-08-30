@@ -13,6 +13,12 @@ interface PlaceSheetProps {
   onShare: () => void
 }
 
+const PHOTO_KIND_LABELS = {
+  storefront: '餐廳門面',
+  'building-entrance': '所在大廈入口',
+  'venue-identity': '餐廳參考照'
+} as const
+
 export function PlaceSheet({ place, location, favorite, visited, onClose, onFavorite, onVisited, onShare }: PlaceSheetProps) {
   const iconFile = MAP_ICON_FILES[place.iconType]
   const photoUrl = placePhotoUrl(place)
@@ -25,7 +31,7 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
           <figure className="place-sheet__photo">
             <img src={photoUrl} alt={place.photo.alt} decoding="async" referrerPolicy="no-referrer"
               onError={(event) => { event.currentTarget.closest('.place-sheet__photo-block')?.setAttribute('hidden', '') }} />
-            <span className="place-sheet__photo-kind">{place.photo.kind === 'storefront' ? '餐廳門面' : '所在大廈入口'}</span>
+            <span className="place-sheet__photo-kind">{PHOTO_KIND_LABELS[place.photo.kind]}</span>
             <figcaption>
               <a href={place.photo.sourceUrl} target="_blank" rel="noreferrer">相片：{place.photo.credit}</a>
               <span>{place.photo.rightsNotice}</span>

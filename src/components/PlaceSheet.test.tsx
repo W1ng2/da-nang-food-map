@@ -71,4 +71,26 @@ describe('餐廳官方資料顯示合約', () => {
     expect(markup).toContain('營業／聯絡資料：</b>2026-08-31')
     expect(markup).toContain('href="https://restaurant.example/hours"')
   })
+
+  it('場地參考照不會被誤標為餐廳門面', () => {
+    const referencePhotoPlace: Place = {
+      ...place,
+      photo: { ...place.photo!, kind: 'venue-identity', alt: '同一餐廳的場地參考照片' }
+    }
+    const markup = renderToStaticMarkup(
+      <PlaceSheet
+        place={referencePhotoPlace}
+        location={null}
+        favorite={false}
+        visited={false}
+        onClose={() => {}}
+        onFavorite={() => {}}
+        onVisited={() => {}}
+        onShare={() => {}}
+      />
+    )
+
+    expect(markup).toContain('餐廳參考照')
+    expect(markup).not.toContain('>餐廳門面</span>')
+  })
 })
