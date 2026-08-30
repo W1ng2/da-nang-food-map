@@ -67,7 +67,7 @@ jobs:
         run: |
           set -euo pipefail
           npm install --global appium@3.7.0
-          appium driver list --installed | grep 'xcuitest@12.8.2' || appium driver install xcuitest@12.8.2
+          appium driver list --installed --json | grep '12.8.2' || appium driver install xcuitest@12.8.2
           appium driver doctor xcuitest
 
       - name: Start Appium
