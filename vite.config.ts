@@ -14,7 +14,7 @@ export default defineConfig({
       manifest: {
         name: '峴港食旅地圖',
         short_name: '峴港食旅',
-        description: '按菜式探索峴港餐廳，附 Michelin 識別、早餐、咖啡甜品、預算及距離資料。',
+        description: '探索峴港餐廳與景點，附即時營業狀態、菜式分類、實景圖片、預算及距離資料。',
         theme_color: '#173c32',
         background_color: '#f3ead8',
         display: 'standalone',
@@ -39,6 +39,14 @@ export default defineConfig({
             options: {
               cacheName: 'openstreetmap-tiles',
               expiration: { maxEntries: 180, maxAgeSeconds: 60 * 60 * 24 * 14 }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/upload\.wikimedia\.org\//,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'attraction-images',
+              expiration: { maxEntries: 24, maxAgeSeconds: 60 * 60 * 24 * 30 }
             }
           }
         ]

@@ -5,6 +5,7 @@ import type { Place } from '../types'
 
 const place: Place = {
   id: 'official-photo-place',
+  kind: 'restaurant',
   name: 'Official Photo Place',
   address: 'Da Nang',
   collection: 'michelin',
@@ -23,6 +24,12 @@ const place: Place = {
   signature: 'Test dish',
   hours: '每日 11:00–22:00',
   hoursSourceUrl: 'https://restaurant.example/hours',
+  schedule: {
+    timezone: 'Asia/Ho_Chi_Minh',
+    days: { mon: [['11:00', '22:00']] },
+    source: 'official',
+    verifiedAt: '2026-08-31'
+  },
   enrichmentVerifiedAt: '2026-08-31',
   bookingAdvice: '建議預約',
   bookingUrl: 'https://restaurant.example/reserve',
@@ -37,6 +44,7 @@ const place: Place = {
     sourceUrl: 'https://restaurant.example/gallery',
     rightsNotice: '遠端顯示，未儲存於本 App'
   },
+  markerImageUrl: '',
   mapsUrl: 'https://maps.google.com/',
   criteria: '',
   reviewAudit: '',
@@ -60,6 +68,7 @@ describe('餐廳官方資料顯示合約', () => {
         onFavorite={() => {}}
         onVisited={() => {}}
         onShare={() => {}}
+        now={Date.parse('2026-08-31T12:00:00Z')}
       />
     )
 
@@ -72,6 +81,7 @@ describe('餐廳官方資料顯示合約', () => {
     expect(markup).toContain('href="https://restaurant.example/hours"')
     expect(markup).toContain('MICHELIN')
     expect(markup).toContain('Selected')
+    expect(markup).toContain('營業中')
   })
 
   it('場地參考照不會被誤標為餐廳門面', () => {
@@ -89,6 +99,7 @@ describe('餐廳官方資料顯示合約', () => {
         onFavorite={() => {}}
         onVisited={() => {}}
         onShare={() => {}}
+        now={Date.parse('2026-08-31T12:00:00Z')}
       />
     )
 

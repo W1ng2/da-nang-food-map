@@ -1,9 +1,21 @@
-export type CollectionId = 'michelin' | 'high-rating' | 'cafe-dessert' | 'breakfast'
+export type CollectionId = 'michelin' | 'high-rating' | 'cafe-dessert' | 'breakfast' | 'attraction'
+export type PlaceKind = 'restaurant' | 'attraction'
+export type Weekday = 'sun' | 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat'
+
+export interface OpeningSchedule {
+  timezone: 'Asia/Ho_Chi_Minh'
+  days?: Partial<Record<Weekday, Array<[string, string]>>>
+  alwaysOpen?: boolean
+  monthlyClosedDates?: number[]
+  source: 'official' | 'saved'
+  verifiedAt: string
+  note?: string
+}
 
 export interface PlacePhoto {
   url: string
   alt: string
-  kind: 'storefront' | 'building-entrance' | 'venue-identity'
+  kind: 'storefront' | 'building-entrance' | 'venue-identity' | 'landmark'
   arrivalNote: string
   credit: string
   sourceUrl: string
@@ -12,6 +24,7 @@ export interface PlacePhoto {
 
 export interface Place {
   id: string
+  kind: PlaceKind
   name: string
   address: string
   collection: CollectionId
@@ -19,7 +32,7 @@ export interface Place {
   icon: string
   type: string
   michelin: string
-  rating: number
+  rating: number | null
   reviewCount: number | null
   reviewCountVerifiedAt: string
   description: string
@@ -30,12 +43,14 @@ export interface Place {
   signature: string
   hours: string
   hoursSourceUrl: string
+  schedule: OpeningSchedule | null
   enrichmentVerifiedAt: string
   bookingAdvice: string
   bookingUrl: string
   phone: string
   website: string
   photo: PlacePhoto | null
+  markerImageUrl: string
   mapsUrl: string
   criteria: string
   reviewAudit: string

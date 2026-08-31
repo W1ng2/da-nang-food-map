@@ -11,6 +11,7 @@ import type { Place } from '../types'
 
 const place: Place = {
   id: 'test-place',
+  kind: 'restaurant',
   name: 'Test Place',
   collection: 'michelin',
   iconType: '🇻🇳 越南菜',
@@ -31,12 +32,14 @@ const place: Place = {
   address: 'Da Nang',
   hours: '08:00-22:00',
   hoursSourceUrl: '',
+  schedule: null,
   enrichmentVerifiedAt: '',
   bookingAdvice: '',
   bookingUrl: '',
   phone: '',
   website: '',
   photo: null,
+  markerImageUrl: '',
   mapsUrl: 'https://maps.google.com/',
   criteria: 'Test criteria',
   reviewAudit: 'No incentive detected',
@@ -85,6 +88,27 @@ describe('WebGL restaurant marker contract', () => {
     expect(restaurantMarkerImageId(place)).toBe('restaurant-pin-cuisine-vietnam-michelin')
     expect(restaurantMarkerAssetPath(place)).toBe('map-pins/cuisine-vietnam-michelin.png')
     expect(restaurantMarkerImageId({ ...place, michelin: '' })).toBe('restaurant-pin-cuisine-vietnam')
+  })
+
+  it('switches a closed restaurant to the grayscale pin while unknown hours remain coloured', () => {
+    const closed = {
+      ...place,
+      schedule: {
+        timezone: 'Asia/Ho_Chi_Minh' as const,
+        days: { mon: [['08:00', '10:00'] as [string, string]] },
+        source: 'official' as const,
+        verifiedAt: '2026-08-31'
+      }
+    }
+    const mondayEvening = Date.parse('2026-08-31T12:00:00Z')
+    expect(restaurantMarkerImageId(closed, mondayEvening)).toBe('restaurant-pin-cuisine-vietnam-michelin-closed')
+    expect(restaurantMarkerAssetPath(closed, mondayEvening)).toBe('map-pins/cuisine-vietnam-michelin-closed.png')
+    expect(restaurantMarkerImageId(place, mondayEvening)).toBe('restaurant-pin-cuisine-vietnam-michelin')
+  })
+
+  it('uses a dedicated photo marker identity for attractions', () => {
+    expect(restaurantMarkerImageId({ ...place, id: 'dragon-bridge', kind: 'attraction', markerImageUrl: 'https://example.com/dragon.jpg' }))
+      .toBe('attraction-photo-dragon-bridge')
   })
 
   it('keeps the user location in a WebGL GeoJSON source instead of a DOM marker', () => {

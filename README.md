@@ -1,6 +1,6 @@
 # 峴港食旅地圖 PWA
 
-iPhone 優先的峴港餐廳地圖，按越南菜、海鮮、早餐、咖啡甜品及各國菜式直接分類。Michelin 是額外推薦識別，不會限制搜尋結果；另支援地圖聚合、距離／預算條件、目前位置、餐廳相片與詳情、官方訂座、收藏／已去過、Google Maps／Apple Maps 導航與加入主畫面。
+iPhone 優先的峴港食旅地圖。餐廳按越南菜、海鮮、早餐、咖啡甜品及各國菜式直接分類；Michelin 是額外推薦識別，不會限制搜尋結果。景點以獨立模式及實景照片圖標顯示，與餐廳 pin 清楚分開。另支援越南時區營業狀態、地圖聚合、距離／預算條件、目前位置、相片詳情、官方訂座、收藏／已去過、Google Maps／Apple Maps 導航與加入主畫面。
 
 ## 本機執行
 
@@ -17,7 +17,7 @@ npm run validate:data
 npm run build
 ```
 
-`scripts/build-data.mjs` 把四組經篩選 CSV 合併為 `public/places.json`。餐廳評分、評論、價錢及營業時間會隨時間改變，出發前應再次核對 Google Maps 及最新菜單。
+`scripts/build-data.mjs` 把四組經篩選 CSV、`data/opening-hours.json` 及 `data/attractions.json` 合併為 `public/places.json`。餐廳評分、評論、價錢及營業時間會隨時間改變，出發前應再次核對 Google Maps 及最新菜單。只有已結構化並標明來源／核對日期的時間才會判斷營業狀態；未知時間不會被誤判為關門。
 
 餐廳相片、官方訂座及聯絡資料集中在 `data/place-enrichment.json`。相片只用於到場辨認：街舖顯示門面／招牌，樓上餐廳顯示所屬大廈入口及樓層提示。加入新相片前請依照 `CONTRIBUTING_PHOTOS.md` 核對分店、現址、出處及使用權；沒有可靠到場相片的餐廳會保留精準菜式圖標。營業時間另記來源網址及核對日期，詳情頁可直接打開來源複核。
 

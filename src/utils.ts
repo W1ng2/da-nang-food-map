@@ -34,7 +34,7 @@ export function applyDecisionFilters(
   location: UserLocation | null
 ) {
   return places.filter((place) => {
-    if (filters.maxPriceHkd && (!place.priceHkdMax || place.priceHkdMax > filters.maxPriceHkd)) return false
+    if (place.kind === 'restaurant' && filters.maxPriceHkd && (!place.priceHkdMax || place.priceHkdMax > filters.maxPriceHkd)) return false
     if (filters.nearbyKm && location && distanceKm(location, place) > filters.nearbyKm) return false
     return true
   })

@@ -368,6 +368,31 @@ async function verifyStandaloneCoreFlows(sessionId) {
   const initialContract = await waitForWebContract(sessionId)
   await assertMapCount(sessionId, 97)
 
+  const modeButtons = await findElements(sessionId, 'css selector', '.mode-switch button')
+  if (modeButtons.length !== 2) throw new Error(`Expected restaurant and attraction modes, found ${modeButtons.length}`)
+  await clickElement(sessionId, modeButtons[1])
+  await assertMapCount(sessionId, 6)
+  const attractionContract = await waitForScript(sessionId, `
+    const canvas = document.querySelector('.map-canvas')
+    const button = document.querySelector('button.map-place-accessible[aria-label^="龍橋"]')
+    if (canvas?.dataset.attractionPhotoMarkers !== 'true' || !button) return null
+    button.click()
+    return { photoMarkers: canvas.dataset.attractionPhotoMarkers }
+  `, 20_000)
+  const attractionDetail = await waitForScript(sessionId, `
+    const dialog = document.querySelector('.place-sheet')
+    const photo = dialog?.querySelector('.place-sheet__photo img')
+    return dialog?.textContent.includes('龍橋 Cầu Rồng') && dialog?.textContent.includes('景點實景') && photo?.complete && photo.naturalWidth > 0
+      ? { text: dialog.textContent, photoWidth: photo.naturalWidth, status: dialog.querySelector('.opening-status strong')?.textContent }
+      : null
+  `, 20_000)
+  const closeAttraction = await findElement(sessionId, 'css selector', '.place-sheet__close')
+  if (!closeAttraction) throw new Error('Attraction detail close button was not found')
+  await clickElement(sessionId, closeAttraction)
+  const currentModeButtons = await findElements(sessionId, 'css selector', '.mode-switch button')
+  await clickElement(sessionId, currentModeButtons[0])
+  await assertMapCount(sessionId, 97)
+
   const moveCountBeforeDrag = Number(await execute(sessionId, `return document.querySelector('.map-canvas')?.dataset.mapMoveCount || 0`))
   await screenshot(sessionId, '08a-fast-drag-before.png')
   await fastWebMapDrag(sessionId)
@@ -407,6 +432,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
       photoKind: dialog.querySelector('.place-sheet__photo-kind')?.textContent?.trim() ?? null,
       arrivalNote: dialog.querySelector('.place-sheet__arrival-note')?.textContent?.trim() ?? null,
       booking: dialog.querySelector('.contact-actions a[href*="mocseafood.com/dat-ban"]')?.href ?? null,
+      openingStatus: dialog.querySelector('.opening-status strong')?.textContent?.trim() ?? null,
     }
   `)
   for (const requiredText of ['蒜香牛油龍蝦', '400,000–900,000 VND', 'HK$120–270']) {
@@ -419,6 +445,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
   if (!detailContract.photoAlt?.includes('夜間門面')) throw new Error('MỘC identifying photo is missing')
   if (detailContract.photoKind !== '餐廳門面' || !detailContract.arrivalNote?.includes('26 號門牌')) throw new Error('MỘC arrival-identification guidance is missing')
   if (!detailContract.booking) throw new Error('MỘC official booking action is missing')
+  if (!['營業中', '未開門', '暫時休息', '已打烊', '休息日'].includes(detailContract.openingStatus)) throw new Error('MỘC live opening status is missing')
 
   const detailActions = await findElements(sessionId, 'css selector', '.place-sheet .quick-actions button')
   if (detailActions.length !== 3) throw new Error(`Expected 3 detail actions, found ${detailActions.length}`)
@@ -520,6 +547,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
 
   const coreContract = {
     initial: { standalone: initialContract.standalone, count: 97 },
+    attractions: { count: 6, ...attractionContract, detail: attractionDetail },
     fastDrag: dragContract,
     search: { query: 'MỘC Quán Seafood', count: 1 },
     detail: detailContract,
@@ -563,8 +591,8 @@ async function installFromSafari() {
 
   if (browserContract.standalone) throw new Error('Safari unexpectedly reported standalone display mode before installation')
   if (!browserContract.manifestHref) throw new Error('PWA manifest link is missing')
-  if (dataContract.error || dataContract.placeCount !== 97) {
-    throw new Error(`Expected 97 restaurant records, received ${JSON.stringify(dataContract)}`)
+  if (dataContract.error || dataContract.placeCount !== 103) {
+    throw new Error(`Expected 103 restaurant and attraction records, received ${JSON.stringify(dataContract)}`)
   }
 
   await switchContext(browserSession, 'NATIVE_APP')

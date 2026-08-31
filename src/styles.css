@@ -45,10 +45,16 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .search-box input::placeholder { color: #849087; }
 .search-box button { border: 0; background: none; font-size: 22px; color: #77837b; }
 
+.mode-switch { margin-top: 10px; padding: 3px; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(5,31,24,.3); }
+.mode-switch button { min-height: 30px; border: 0; border-radius: 999px; background: transparent; color: rgba(255,250,240,.68); font-size: 12px; font-weight: 900; }
+.mode-switch button.is-active { background: var(--paper-light); color: var(--ink); box-shadow: 0 3px 10px rgba(6,29,23,.25); }
+.mode-switch span { margin-left: 4px; color: var(--tomato); font-size: 10px; }
+
 .filter-strip { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; padding: 1px 1px 3px; scroll-snap-type: x proximity; }
 .filter-strip::-webkit-scrollbar { display: none; }
 .filter-strip button { min-height: 34px; display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; scroll-snap-align: start; white-space: nowrap; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; padding: 6px 11px; background: rgba(5,31,24,.25); color: rgba(255,250,240,.7); font-size: 12px; font-weight: 700; }
 .filter-strip button img { width: 19px; height: 19px; object-fit: contain; filter: drop-shadow(0 1px 0 rgba(255,255,255,.35)); }
+.filter-strip button img.is-photo { border: 1px solid rgba(255,255,255,.7); border-radius: 50%; object-fit: cover; }
 .filter-strip button.is-active { background: var(--paper-light); color: var(--tomato); border-color: transparent; box-shadow: 0 3px 9px rgba(6,29,23,.22); }
 .filter-strip .decision-filter-button { border-style: dashed; color: var(--paper-light); }
 .filter-strip .decision-filter-button.is-active { --chip-color: var(--ink); border-style: solid; }
@@ -81,6 +87,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .place-card__icon { position: relative; width: 58px; height: 58px; flex: 0 0 auto; display: grid; place-items: center; overflow: hidden; background: #efe2ca; border-radius: 15px 15px 4px 15px; font-size: 24px; }
 .place-card__icon img { width: 38px; height: 38px; object-fit: contain; }
 .place-card__icon .place-card__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.place-card__icon.is-attraction { border: 3px solid #fffaf0; border-radius: 50%; box-shadow: 0 0 0 2px #2b6f84; }
 .place-card__body { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .eyebrow { color: var(--tomato); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 .place-card__labels, .place-sheet__labels { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 7px; }
@@ -88,6 +95,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .place-card__body > strong { overflow: hidden; color: var(--ink); font-family: "Songti TC", serif; font-size: 17px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
 .place-card__meta { color: var(--muted); font-size: 11px; }
 .place-card__meta b { color: #c27b13; }
+.opening-pill { width: fit-content; padding: 2px 7px; border-radius: 999px; background: #e8e3d8; color: #626a65; font-size: 9px; font-weight: 900; }
+.opening-pill--open, .opening-pill--always-open { background: #d8eadc; color: #246238; }
+.opening-pill--before-open, .opening-pill--between { background: #fff0ca; color: #77520b; }
+.opening-pill--closed, .opening-pill--rest-day { background: #e1e1de; color: #333a37; }
 .place-card__price { color: var(--tomato); font-size: 10px; font-weight: 800; }
 .place-card__dish { overflow: hidden; color: #3d534c; font-size: 11px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
 .place-card__actions { padding: 9px 8px; display: flex; flex-direction: column; gap: 6px; border-left: 1px dashed var(--line); }
@@ -124,10 +135,21 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .place-sheet__headline { display: grid; grid-template-columns: 58px 1fr; gap: 12px; padding-right: 30px; align-items: start; }
 .place-sheet__icon { width: 58px; height: 58px; display: grid; place-items: center; background: #efe1c7; border-radius: 18px 18px 4px 18px; font-size: 30px; }
 .place-sheet__icon img { width: 46px; height: 46px; object-fit: contain; }
+.place-sheet__icon.is-attraction { overflow: hidden; border: 3px solid #fffaf0; border-radius: 50%; box-shadow: 0 0 0 2px #2b6f84; }
+.place-sheet__icon.is-attraction img { width: 100%; height: 100%; object-fit: cover; }
 .place-sheet h2, .install-sheet h2 { margin: 3px 0 5px; font-family: "Songti TC", "Noto Serif TC", serif; color: var(--ink); font-size: clamp(22px, 6vw, 31px); line-height: 1.12; }
 .rating-line { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 10px; color: var(--muted); font-size: 11px; }
 .rating-line b { color: #be7610; }
 .place-sheet__description { margin: 17px 0 13px; color: #41574f; font-family: "Songti TC", serif; font-size: 14px; line-height: 1.65; }
+.opening-status { margin: 0 0 11px; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: baseline; border-left: 4px solid #77817b; border-radius: 3px 13px 13px 3px; background: #ece9e1; }
+.opening-status strong { color: #333a37; font-size: 14px; }
+.opening-status span { color: #59635e; font-size: 11px; line-height: 1.4; }
+.opening-status small { grid-column: 1 / -1; color: #6f796f; font-size: 9px; line-height: 1.4; }
+.opening-status--open, .opening-status--always-open { border-left-color: #3b8750; background: #e3f1e6; }
+.opening-status--open strong, .opening-status--always-open strong { color: #246238; }
+.opening-status--before-open, .opening-status--between { border-left-color: #c98e1a; background: #fff4d9; }
+.opening-status--before-open strong, .opening-status--between strong { color: #77520b; }
+.opening-status--closed, .opening-status--rest-day { border-left-color: #343b38; background: #e3e3df; }
 .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .fact-grid > div { min-width: 0; padding: 10px; background: #f0e5d1; border-radius: 4px 14px 14px 14px; }
 .fact-grid span { display: block; margin-bottom: 4px; color: var(--tomato); font-size: 9px; font-weight: 800; letter-spacing: .08em; }

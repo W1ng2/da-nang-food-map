@@ -7,6 +7,9 @@ const publicDir = resolve(root, 'public')
 const cachePath = resolve(root, 'data', 'geocoding-cache.json')
 const metadataPath = resolve(root, 'data', 'google-place-metadata.json')
 const enrichmentPath = resolve(root, 'data', 'place-enrichment.json')
+const openingHoursPath = resolve(root, 'data', 'opening-hours.json')
+const attractionsPath = resolve(root, 'data', 'attractions.json')
+const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
 const sources = [
   { file: 'da-nang-michelin-restaurants-hkd.csv', collection: 'michelin', nameKey: '餐廳名稱' },
@@ -25,6 +28,24 @@ const vndOnly = (value) => clean(value).replace(/\s*[（(]\s*約?\s*HK\$[^）)]*
 function hkdRange(value) {
   const numbers = clean(value).match(/[\d,]+/g)?.map((part) => Number(part.replace(/,/g, ''))).filter(Number.isFinite) || []
   return { min: numbers[0] ?? null, max: numbers[1] ?? numbers[0] ?? null }
+}
+
+function normalizeSchedule(value) {
+  if (!value) return null
+  const days = {}
+  if (value.daily) weekdays.forEach((day) => { days[day] = value.daily })
+  if (value.weekday) ['mon', 'tue', 'wed', 'thu', 'fri'].forEach((day) => { days[day] = value.weekday })
+  if (value.weekend) ['sun', 'sat'].forEach((day) => { days[day] = value.weekend })
+  Object.assign(days, value.days || {})
+  return {
+    timezone: 'Asia/Ho_Chi_Minh',
+    ...(Object.keys(days).length ? { days } : {}),
+    ...(value.alwaysOpen ? { alwaysOpen: true } : {}),
+    ...(value.monthlyClosedDates?.length ? { monthlyClosedDates: value.monthlyClosedDates } : {}),
+    source: value.source,
+    verifiedAt: value.verifiedAt,
+    ...(value.note ? { note: value.note } : {})
+  }
 }
 
 function nameScore(expected, actual) {
@@ -108,6 +129,8 @@ let googleMetadata = {}
 try { googleMetadata = JSON.parse(await readFile(metadataPath, 'utf8')) } catch {}
 let enrichments = {}
 try { enrichments = JSON.parse(await readFile(enrichmentPath, 'utf8')) } catch {}
+let openingHours = {}
+try { openingHours = JSON.parse(await readFile(openingHoursPath, 'utf8')) } catch {}
 
 const rows = []
 for (const source of sources) {
@@ -124,6 +147,7 @@ for (const source of sources) {
     const enrichment = enrichments[id] || {}
     rows.push({
       id,
+      kind: 'restaurant',
       name,
       address: clean(row['地址']),
       collection: source.collection,
@@ -144,12 +168,14 @@ for (const source of sources) {
       signature: clean(row['餐廳名物'] || row['招牌項目']),
       hours: clean(enrichment.hours || row['早餐／營業時間']),
       hoursSourceUrl: clean(enrichment.hoursSourceUrl),
+      schedule: normalizeSchedule(openingHours[id]),
       enrichmentVerifiedAt: clean(enrichment.enrichmentVerifiedAt),
       bookingAdvice: clean(enrichment.bookingAdvice),
       bookingUrl: clean(enrichment.bookingUrl),
       phone: clean(enrichment.phone),
       website: clean(enrichment.website),
       photo: enrichment.photo || null,
+      markerImageUrl: '',
       mapsUrl: clean(row['Google Maps']) || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${row['地址']}`)}`,
       criteria: clean(row['篩選條件']),
       reviewAudit: clean(row['誘評抽查']),
@@ -219,6 +245,14 @@ if (missing.length) {
     await writeFile(cachePath, `${JSON.stringify(cache, null, 2)}\n`)
     if (index < missing.length - 1) await new Promise((resolveDelay) => setTimeout(resolveDelay, result?.source ? 1100 : 350))
   }
+}
+
+const attractionRecords = JSON.parse(await readFile(attractionsPath, 'utf8'))
+for (const attraction of attractionRecords) {
+  rows.push({
+    ...attraction,
+    schedule: normalizeSchedule(attraction.schedule)
+  })
 }
 
 await mkdir(resolve(root, 'data'), { recursive: true })

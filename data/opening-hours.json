@@ -1,0 +1,46 @@
+{
+  "michelin-la-maison-1888": { "daily": [["18:30", "21:00"]], "source": "official", "verifiedAt": "2026-08-31" },
+  "michelin-indian-aroma": { "daily": [["11:00", "22:30"]], "source": "official", "verifiedAt": "2026-08-31" },
+  "michelin-moc-quan-seafood": { "daily": [["10:30", "23:45"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 22:30" },
+  "michelin-nen-danang": {
+    "days": {
+      "sun": [["17:30", "20:45"]],
+      "mon": [["10:30", "14:00"], ["17:30", "20:45"]],
+      "tue": [["17:30", "20:45"]],
+      "wed": [["10:30", "14:00"], ["17:30", "20:45"]],
+      "thu": [["17:30", "20:45"]],
+      "fri": [["10:30", "14:00"], ["17:30", "20:45"]],
+      "sat": [["17:30", "20:45"]]
+    },
+    "source": "official",
+    "verifiedAt": "2026-08-31",
+    "note": "所列結束時間為最後點餐"
+  },
+  "michelin-olivia-s-prime": { "daily": [["11:00", "23:00"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 22:00" },
+  "michelin-the-temptation": {
+    "days": {
+      "sun": [["11:00", "14:00"], ["18:00", "22:00"]],
+      "mon": [["18:00", "22:00"]],
+      "tue": [["11:00", "14:00"], ["18:00", "22:00"]],
+      "wed": [["11:00", "14:00"], ["18:00", "22:00"]],
+      "thu": [["11:00", "14:00"], ["18:00", "22:00"]],
+      "fri": [["11:00", "14:00"], ["18:00", "22:00"]],
+      "sat": [["11:00", "14:00"], ["18:00", "22:00"]]
+    },
+    "source": "official",
+    "verifiedAt": "2026-08-31",
+    "note": "午餐最後點餐 13:30；晚餐最後點餐 21:30"
+  },
+  "high-rating-pizza-4p-s": { "weekday": [["11:00", "22:00"]], "weekend": [["10:00", "22:00"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 21:30" },
+  "high-rating-bistecca-italian-restaurant-in-da-nang": { "daily": [["16:00", "22:00"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 21:30" },
+  "breakfast-an-s-cafe": { "daily": [["07:00", "17:00"]], "monthlyClosedDates": [5], "source": "saved", "verifiedAt": "2026-08-18", "note": "每月 5 日休息；出發前再核對" },
+  "breakfast-oh-la-la-breakfast-brunch-lunch": { "daily": [["08:00", "17:00"]], "source": "saved", "verifiedAt": "2026-08-18" },
+  "breakfast-puna-specialty-coffee-eatery": { "daily": [["07:00", "22:00"]], "source": "saved", "verifiedAt": "2026-08-18" },
+  "breakfast-xoi-bun-mang-ga-ba-vui": { "daily": [["04:00", "21:00"]], "source": "saved", "verifiedAt": "2026-08-18", "note": "早餐建議 08:00 前" },
+  "breakfast-quan-bo-ne-quoc-minh": { "daily": [["06:00", "11:00"]], "source": "saved", "verifiedAt": "2026-08-18", "note": "接近 10:30 後或會售罄" },
+  "breakfast-banh-cuon-tien-hung": { "daily": [["06:00", "19:00"]], "source": "saved", "verifiedAt": "2026-08-18" },
+  "breakfast-banh-beo-nong-197-nui-thanh": { "daily": [["06:00", "10:00"]], "source": "saved", "verifiedAt": "2026-08-18", "note": "約 10:00 前或售罄" },
+  "breakfast-2-ladies-kitchen-banh-mi-coffee": { "daily": [["07:30", "22:30"]], "source": "official", "verifiedAt": "2026-08-31" },
+  "breakfast-banh-mi-happy-bread-mi-aa": { "daily": [["08:00", "21:30"]], "source": "saved", "verifiedAt": "2026-08-18" },
+  "breakfast-banh-mi-ba-lan": { "daily": [["15:00", "23:00"]], "source": "saved", "verifiedAt": "2026-08-18", "note": "不是早餐時段" }
+}

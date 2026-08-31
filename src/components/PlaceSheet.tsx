@@ -1,4 +1,5 @@
 import { MAP_ICON_FILES } from '../config'
+import { getOpeningStatus } from '../openingHours'
 import { appleMapsUrl, distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
 
@@ -11,17 +12,20 @@ interface PlaceSheetProps {
   onFavorite: () => void
   onVisited: () => void
   onShare: () => void
+  now: number
 }
 
 const PHOTO_KIND_LABELS = {
   storefront: '餐廳門面',
   'building-entrance': '所在大廈入口',
-  'venue-identity': '餐廳參考照'
+  'venue-identity': '餐廳參考照',
+  landmark: '景點實景'
 } as const
 
-export function PlaceSheet({ place, location, favorite, visited, onClose, onFavorite, onVisited, onShare }: PlaceSheetProps) {
+export function PlaceSheet({ place, location, favorite, visited, onClose, onFavorite, onVisited, onShare, now }: PlaceSheetProps) {
   const iconFile = MAP_ICON_FILES[place.iconType]
   const photoUrl = placePhotoUrl(place)
+  const opening = getOpeningStatus(place.schedule, new Date(now))
   return (
     <section className="place-sheet" role="dialog" aria-modal="true" aria-label={place.name}>
       <div className="place-sheet__grabber" />
@@ -37,27 +41,38 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
               <span>{place.photo.rightsNotice}</span>
             </figcaption>
           </figure>
-          <p className="place-sheet__arrival-note"><b>到場辨認：</b>{place.photo.arrivalNote}</p>
+          <p className="place-sheet__arrival-note"><b>{place.kind === 'attraction' ? '到訪提示' : '到場辨認'}：</b>{place.photo.arrivalNote}</p>
         </div>
       )}
       <div className="place-sheet__headline">
-        <span className="place-sheet__icon" aria-hidden="true">{iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}</span>
+        <span className={`place-sheet__icon ${place.kind === 'attraction' ? 'is-attraction' : ''}`} aria-hidden="true">
+          {place.kind === 'attraction' && photoUrl ? <img src={photoUrl} alt="" referrerPolicy="no-referrer" /> : iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}
+        </span>
         <div>
           <span className="place-sheet__labels">
             {place.michelin && <span className="michelin-badge">M&nbsp; MICHELIN GUIDE · {place.michelin}</span>}
             <span className="eyebrow">{place.type}</span>
           </span>
           <h2>{place.name}</h2>
-          <p className="rating-line"><b>★ {place.rating}</b><span>{formatReviews(place.reviewCount)} 則評論</span>{location && <span>{distanceKm(location, place).toFixed(1)} km</span>}</p>
+          <p className="rating-line">
+            {place.kind === 'restaurant' && <><b>★ {place.rating}</b><span>{formatReviews(place.reviewCount)} 則評論</span></>}
+            {location && <span>{distanceKm(location, place).toFixed(1)} km</span>}
+          </p>
         </div>
       </div>
 
       <p className="place-sheet__description">{place.description}</p>
 
+      <div className={`opening-status opening-status--${opening.state}`} role="status">
+        <strong>{opening.label}</strong>
+        <span>{opening.detail}</span>
+        {place.schedule?.note && <small>{place.schedule.note}</small>}
+      </div>
+
       <div className="fact-grid">
-        <div><span>不可錯過</span><strong>{place.signature}</strong></div>
-        <div><span>人均預算</span><strong>{place.priceVnd}</strong><em>{place.priceHkd}</em></div>
-        {place.hours && <div><span>早餐／營業時間</span><strong>{place.hours}</strong></div>}
+        <div><span>{place.kind === 'attraction' ? '遊覽重點' : '不可錯過'}</span><strong>{place.signature}</strong></div>
+        <div><span>{place.kind === 'attraction' ? '門票／費用' : '人均預算'}</span><strong>{place.priceVnd}</strong><em>{place.priceHkd}</em></div>
+        {place.hours && <div><span>{place.kind === 'attraction' ? '開放時間' : '早餐／營業時間'}</span><strong>{place.hours}</strong></div>}
         {place.bookingAdvice && <div><span>訂座提示</span><strong>{place.bookingAdvice}</strong></div>}
         <div><span>地址</span><strong>{place.address}</strong></div>
       </div>
@@ -65,8 +80,8 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
       {(place.reviewAudit || place.notes || place.enrichmentVerifiedAt) && (
         <details className="audit-note">
           <summary>資料核對與備註</summary>
-          {place.reviewAudit && <p><b>反誘評抽查：</b>{place.reviewAudit}</p>}
-          {place.notes && <p><b>用餐提示：</b>{place.notes}</p>}
+          {place.kind === 'restaurant' && place.reviewAudit && <p><b>反誘評抽查：</b>{place.reviewAudit}</p>}
+          {place.notes && <p><b>{place.kind === 'attraction' ? '到訪提示' : '用餐提示'}：</b>{place.notes}</p>}
           {place.priceNote && <p><b>價格：</b>{place.priceNote}</p>}
           <p>資料核對：{place.verifiedAt}</p>
           {place.enrichmentVerifiedAt && <p><b>營業／聯絡資料：</b>{place.enrichmentVerifiedAt}{place.hoursSourceUrl && <> · <a href={place.hoursSourceUrl} target="_blank" rel="noreferrer">核對來源</a></>}</p>}

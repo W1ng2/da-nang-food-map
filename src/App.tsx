@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { CUISINE_ORDER, MAP_ICON_FILES } from './config'
+import { ATTRACTION_ORDER, CUISINE_ORDER, MAP_ICON_FILES } from './config'
 import { useStoredSet } from './hooks'
 import { MapView } from './components/MapView'
 import { DecisionFilterSheet } from './components/DecisionFilterSheet'
@@ -9,6 +9,7 @@ import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } 
 import type { Place, UserLocation } from './types'
 
 type View = 'map' | 'list' | 'favorites'
+type ExploreMode = 'restaurant' | 'attraction'
 
 const DEFAULT_DECISION_FILTERS: DecisionFilters = {
   maxPriceHkd: null,
@@ -19,8 +20,10 @@ export default function App() {
   const [places, setPlaces] = useState<Place[]>([])
   const [query, setQuery] = useState('')
   const [view, setView] = useState<View>('map')
-  const [selectedCuisine, setSelectedCuisine] = useState('')
+  const [mode, setMode] = useState<ExploreMode>('restaurant')
+  const [selectedType, setSelectedType] = useState('')
   const [selected, setSelected] = useState<Place | null>(null)
+  const [now, setNow] = useState(Date.now())
   const [deepLinkReady, setDeepLinkReady] = useState(false)
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null)
   const [locationError, setLocationError] = useState('')
@@ -32,8 +35,13 @@ export default function App() {
   const [visited, toggleVisited] = useStoredSet('danang-food-map:visited')
 
   useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 60_000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}places.json`).then((response) => {
-      if (!response.ok) throw new Error('餐廳資料載入失敗')
+      if (!response.ok) throw new Error('地點資料載入失敗')
       return response.json()
     }).then(setPlaces).catch((error) => setLocationError(error.message))
   }, [])
@@ -49,7 +57,9 @@ export default function App() {
     if (!places.length) return
     const selectFromHash = () => {
       const id = new URLSearchParams(window.location.hash.replace(/^#/, '')).get('place')
-      setSelected(id ? places.find((place) => place.id === id) || null : null)
+      const place = id ? places.find((candidate) => candidate.id === id) || null : null
+      if (place) setMode(place.kind)
+      setSelected(place)
     }
     selectFromHash()
     setDeepLinkReady(true)
@@ -57,33 +67,44 @@ export default function App() {
     return () => window.removeEventListener('hashchange', selectFromHash)
   }, [places])
 
-  const cuisineMatches = useMemo(
-    () => filterPlaces(places, query, selectedCuisine, view === 'favorites', favorites),
-    [places, query, selectedCuisine, view, favorites]
+  const modePlaces = useMemo(() => places.filter((place) => place.kind === mode), [places, mode])
+  const typeMatches = useMemo(
+    () => filterPlaces(modePlaces, query, selectedType, view === 'favorites', favorites),
+    [modePlaces, query, selectedType, view, favorites]
   )
 
   const filtered = useMemo(() => {
-    const result = applyDecisionFilters(cuisineMatches, decisionFilters, userLocation)
+    const result = applyDecisionFilters(typeMatches, decisionFilters, userLocation)
     if (!userLocation) return result
     return [...result].sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b))
-  }, [cuisineMatches, userLocation, decisionFilters])
+  }, [typeMatches, userLocation, decisionFilters])
 
-  const cuisines = useMemo(() => {
-    const available = new Set(places.map((place) => place.type))
-    const ordered = CUISINE_ORDER.filter((cuisine) => available.has(cuisine))
+  const placeTypes = useMemo(() => {
+    const order = mode === 'restaurant' ? CUISINE_ORDER : ATTRACTION_ORDER
+    const available = new Set(modePlaces.map((place) => place.type))
+    const ordered = order.filter((type) => available.has(type))
     const remaining = [...available]
-      .filter((cuisine) => !CUISINE_ORDER.includes(cuisine as typeof CUISINE_ORDER[number]))
+      .filter((type) => !(order as readonly string[]).includes(type))
       .sort((a, b) => a.localeCompare(b, 'zh-HK'))
-    return [...ordered, ...remaining].map((cuisine) => {
-      const sample = places.find((place) => place.type === cuisine)
-      return { cuisine, iconFile: sample ? MAP_ICON_FILES[sample.iconType] : undefined }
+    return [...ordered, ...remaining].map((type) => {
+      const sample = modePlaces.find((place) => place.type === type)
+      return { type, iconFile: sample ? MAP_ICON_FILES[sample.iconType] : undefined, markerImageUrl: sample?.markerImageUrl || '' }
     })
-  }, [places])
+  }, [mode, modePlaces])
   const draftResultCount = useMemo(
-    () => applyDecisionFilters(cuisineMatches, draftDecisionFilters, userLocation).length,
-    [cuisineMatches, draftDecisionFilters, userLocation]
+    () => applyDecisionFilters(typeMatches, draftDecisionFilters, userLocation).length,
+    [typeMatches, draftDecisionFilters, userLocation]
   )
-  const activeDecisionFilterCount = Object.values(decisionFilters).filter((value) => value !== '' && value !== null).length
+  const activeDecisionFilterCount = mode === 'restaurant'
+    ? Object.values(decisionFilters).filter((value) => value !== '' && value !== null).length
+    : Number(decisionFilters.nearbyKm !== null)
+
+  const switchMode = (nextMode: ExploreMode) => {
+    setMode(nextMode)
+    setSelectedType('')
+    setQuery('')
+    setSelected(null)
+  }
 
   const locate = (enableNearbyDraft = false) => {
     setLocationError('')
@@ -122,7 +143,7 @@ export default function App() {
     if (navigator.share) await navigator.share(data)
     else {
       await navigator.clipboard.writeText(url)
-      window.alert('餐廳連結已複製。')
+      window.alert('地點連結已複製。')
     }
   }, [selected])
 
@@ -131,29 +152,41 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <span className="brand__stamp" aria-hidden="true">峴港<br />食旅</span>
-          <div><p>DA NANG · 2026</p><h1>今天想吃甚麼？</h1></div>
+          <div><p>DA NANG · 2026</p><h1>今天想去哪裡？</h1></div>
         </div>
         <button className="install-button" type="button" onClick={() => setShowInstall(true)} aria-label="加入主畫面">＋</button>
         <label className="search-box">
           <span aria-hidden="true">⌕</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜尋餐廳、名物或菜式" aria-label="搜尋餐廳" />
+          <input value={query} onChange={(event) => setQuery(event.target.value)}
+            placeholder={mode === 'restaurant' ? '搜尋餐廳、名物或菜式' : '搜尋景點、區域或遊覽重點'}
+            aria-label={mode === 'restaurant' ? '搜尋餐廳' : '搜尋景點'} />
           {query && <button type="button" onClick={() => setQuery('')} aria-label="清除搜尋">×</button>}
         </label>
-        <div className="filter-strip" aria-label="按菜式篩選">
-          <button type="button" className={!selectedCuisine ? 'is-active' : ''} aria-pressed={!selectedCuisine}
-            data-cuisine="all" onClick={() => setSelectedCuisine('')}>
-            全部菜式
+        <div className="mode-switch" aria-label="地圖內容">
+          <button type="button" className={mode === 'restaurant' ? 'is-active' : ''} aria-pressed={mode === 'restaurant'} onClick={() => switchMode('restaurant')}>
+            餐廳 <span>{places.filter((place) => place.kind === 'restaurant').length}</span>
           </button>
-          {cuisines.map(({ cuisine, iconFile }) => (
-            <button key={cuisine} type="button" className={selectedCuisine === cuisine ? 'is-active' : ''}
-              aria-pressed={selectedCuisine === cuisine} data-cuisine={cuisine}
-              onClick={() => setSelectedCuisine((current) => current === cuisine ? '' : cuisine)}>
-              {iconFile && <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" aria-hidden="true" />}
-              {cuisine}
+          <button type="button" className={mode === 'attraction' ? 'is-active' : ''} aria-pressed={mode === 'attraction'} onClick={() => switchMode('attraction')}>
+            景點 <span>{places.filter((place) => place.kind === 'attraction').length}</span>
+          </button>
+        </div>
+        <div className="filter-strip" aria-label={mode === 'restaurant' ? '按菜式篩選' : '按景點類型篩選'}>
+          <button type="button" className={!selectedType ? 'is-active' : ''} aria-pressed={!selectedType}
+            data-cuisine={mode === 'restaurant' ? 'all' : undefined} data-place-type="all" onClick={() => setSelectedType('')}>
+            {mode === 'restaurant' ? '全部菜式' : '全部景點'}
+          </button>
+          {placeTypes.map(({ type, iconFile, markerImageUrl }) => (
+            <button key={type} type="button" className={selectedType === type ? 'is-active' : ''}
+              aria-pressed={selectedType === type} data-cuisine={mode === 'restaurant' ? type : undefined} data-place-type={type}
+              onClick={() => setSelectedType((current) => current === type ? '' : type)}>
+              {mode === 'attraction' && markerImageUrl
+                ? <img className="is-photo" src={markerImageUrl} alt="" aria-hidden="true" referrerPolicy="no-referrer" />
+                : iconFile && <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" aria-hidden="true" />}
+              {type}
             </button>
           ))}
           <button className={`decision-filter-button ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={openFilters}>
-            距離／預算{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
+            {mode === 'restaurant' ? '距離／預算' : '距離'}{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
           </button>
         </div>
       </header>
@@ -161,20 +194,20 @@ export default function App() {
       <section className={`content content--${view}`}>
         {view === 'map' ? (
           <>
-            <MapView places={filtered} selected={selected} onSelect={setSelected} userLocation={userLocation} />
-            <div className="map-status" role="status"><strong>{filtered.length}</strong> 間符合</div>
+            <MapView places={filtered} selected={selected} onSelect={setSelected} userLocation={userLocation} now={now} />
+            <div className="map-status" role="status"><strong>{filtered.length}</strong> {mode === 'restaurant' ? '間餐廳' : '個景點'}</div>
             <button className="locate-button" type="button" onClick={() => locate()}><span aria-hidden="true">⌖</span>{userLocation ? '重新定位' : '我的位置'}</button>
           </>
         ) : (
           <div className="list-view">
             <div className="list-view__heading">
-              <div><span>{view === 'favorites' ? 'MY SAVED PLACES' : 'CURATED IN DA NANG'}</span><h2>{view === 'favorites' ? '我的收藏' : `${filtered.length} 間餐廳`}</h2></div>
+              <div><span>{view === 'favorites' ? 'MY SAVED PLACES' : 'CURATED IN DA NANG'}</span><h2>{view === 'favorites' ? '我的收藏' : `${filtered.length} ${mode === 'restaurant' ? '間餐廳' : '個景點'}`}</h2></div>
               {!userLocation && <button type="button" onClick={() => locate()}>按距離排序</button>}
             </div>
             {filtered.length ? filtered.map((place) => (
               <PlaceCard key={place.id} place={place} location={userLocation} favorite={favorites.has(place.id)} visited={visited.has(place.id)}
-                onSelect={() => setSelected(place)} onFavorite={() => toggleFavorite(place.id)} onVisited={() => toggleVisited(place.id)} />
-            )) : <div className="empty-state"><span aria-hidden="true">⌁</span><h3>暫時沒有餐廳</h3><p>{view === 'favorites' && favorites.size === 0 ? '在餐廳卡片按下心形，之後可在這裡快速找到。' : '試試選擇「全部菜式」、重設距離或預算，或更改搜尋字詞。'}</p></div>}
+                onSelect={() => setSelected(place)} onFavorite={() => toggleFavorite(place.id)} onVisited={() => toggleVisited(place.id)} now={now} />
+            )) : <div className="empty-state"><span aria-hidden="true">⌁</span><h3>暫時沒有{mode === 'restaurant' ? '餐廳' : '景點'}</h3><p>{view === 'favorites' && favorites.size === 0 ? '在地點卡片按下心形，之後可在這裡快速找到。' : `試試選擇「${mode === 'restaurant' ? '全部菜式' : '全部景點'}」、重設距離${mode === 'restaurant' ? '或預算' : ''}，或更改搜尋字詞。`}</p></div>}
           </div>
         )}
       </section>
@@ -188,9 +221,9 @@ export default function App() {
       </nav>
 
       {selected && <>
-        <button className="sheet-backdrop" type="button" aria-label="關閉餐廳詳情" onClick={() => setSelected(null)} />
+        <button className="sheet-backdrop" type="button" aria-label="關閉地點詳情" onClick={() => setSelected(null)} />
         <PlaceSheet place={selected} location={userLocation} favorite={favorites.has(selected.id)} visited={visited.has(selected.id)} onClose={() => setSelected(null)}
-          onFavorite={() => toggleFavorite(selected.id)} onVisited={() => toggleVisited(selected.id)} onShare={sharePlace} />
+          onFavorite={() => toggleFavorite(selected.id)} onVisited={() => toggleVisited(selected.id)} onShare={sharePlace} now={now} />
       </>}
 
       {showInstall && <>
@@ -200,7 +233,7 @@ export default function App() {
           <img src={`${import.meta.env.BASE_URL}icons/icon-192.png`} alt="峴港食旅 App 圖標" />
           <span className="eyebrow">IPHONE WEB APP</span><h2>放進主畫面，旅途中一按即開</h2>
           <ol><li>在 Safari 按下方的「分享」按鈕 <b>□↑</b></li><li>選擇「加入主畫面」</li><li>開啟「以 Web App 開啟」後按加入</li></ol>
-          <p>餐廳資料會離線保留；首次載入新的地圖區域仍需網絡。</p>
+          <p>地點資料會離線保留；首次載入新的地圖區域及景點圖片仍需網絡。</p>
         </section>
       </>}
 
@@ -208,7 +241,7 @@ export default function App() {
         <button className="sheet-backdrop" type="button" aria-label="關閉篩選" onClick={closeFilters} />
         <DecisionFilterSheet filters={draftDecisionFilters} hasLocation={Boolean(userLocation)} resultCount={draftResultCount}
           locationError={locationError} onChange={setDraftDecisionFilters} onRequestLocation={() => locate(true)}
-          onReset={() => setDraftDecisionFilters(DEFAULT_DECISION_FILTERS)} onApply={applyFilters} onClose={closeFilters} />
+          onReset={() => setDraftDecisionFilters(DEFAULT_DECISION_FILTERS)} onApply={applyFilters} onClose={closeFilters} showBudget={mode === 'restaurant'} />
       </>}
     </main>
   )

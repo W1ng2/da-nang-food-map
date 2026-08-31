@@ -1,4 +1,5 @@
 import { MAP_ICON_FILES } from '../config'
+import { getOpeningStatus } from '../openingHours'
 import { distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
 
@@ -10,15 +11,17 @@ interface PlaceCardProps {
   onSelect: () => void
   onFavorite: () => void
   onVisited: () => void
+  now: number
 }
 
-export function PlaceCard({ place, location, favorite, visited, onSelect, onFavorite, onVisited }: PlaceCardProps) {
+export function PlaceCard({ place, location, favorite, visited, onSelect, onFavorite, onVisited, now }: PlaceCardProps) {
   const iconFile = MAP_ICON_FILES[place.iconType]
   const photoUrl = placePhotoUrl(place)
+  const opening = getOpeningStatus(place.schedule, new Date(now))
   return (
     <article className="place-card">
       <button className="place-card__main" type="button" onClick={onSelect}>
-        <span className="place-card__icon" aria-hidden="true">
+        <span className={`place-card__icon ${place.kind === 'attraction' ? 'is-attraction' : ''}`} aria-hidden="true">
           {iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}
           {photoUrl && <img className="place-card__photo" src={photoUrl} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"
             onError={(event) => { event.currentTarget.hidden = true }} />}
@@ -29,9 +32,13 @@ export function PlaceCard({ place, location, favorite, visited, onSelect, onFavo
             <span className="eyebrow">{place.type}</span>
           </span>
           <strong>{place.name}</strong>
-          <span className="place-card__meta"><b>★ {place.rating}</b> · {formatReviews(place.reviewCount)} 則{location ? ` · ${distanceKm(location, place).toFixed(1)} km` : ''}</span>
-          <span className="place-card__price">{place.priceHkd}{place.bookingAdvice ? ' · 建議訂座' : ''}</span>
-          <span className="place-card__dish">名物：{place.signature}</span>
+          <span className="place-card__meta">
+            {place.kind === 'restaurant' && <><b>★ {place.rating}</b> · {formatReviews(place.reviewCount)} 則</>}
+            {location ? `${place.kind === 'restaurant' ? ' · ' : ''}${distanceKm(location, place).toFixed(1)} km` : ''}
+          </span>
+          <span className={`opening-pill opening-pill--${opening.state}`}>{opening.label}</span>
+          <span className="place-card__price">{place.kind === 'attraction' ? `費用：${place.priceHkd}` : `${place.priceHkd}${place.bookingAdvice ? ' · 建議訂座' : ''}`}</span>
+          <span className="place-card__dish">{place.kind === 'attraction' ? '遊覽重點' : '名物'}：{place.signature}</span>
         </span>
       </button>
       <div className="place-card__actions">

@@ -4,7 +4,8 @@ export const COLLECTIONS: Record<CollectionId, { label: string; shortLabel: stri
   michelin: { label: 'Michelin 推薦', shortLabel: 'Michelin', icon: '✦', color: '#a72e28' },
   'high-rating': { label: '非 Michelin · Google 4.8+', shortLabel: 'Google 4.8+', icon: '★', color: '#d2672c' },
   'cafe-dessert': { label: 'Cafe／甜品', shortLabel: 'Cafe 甜品', icon: '☕', color: '#77583c' },
-  breakfast: { label: '早餐／越式法包', shortLabel: '早餐越包', icon: '☀', color: '#cf8d20' }
+  breakfast: { label: '早餐／越式法包', shortLabel: '早餐越包', icon: '☀', color: '#cf8d20' },
+  attraction: { label: '峴港景點', shortLabel: '景點', icon: '◉', color: '#2b6f84' }
 }
 
 export const MAP_ICON_FILES: Record<string, string> = {
@@ -48,4 +49,8 @@ export const CUISINE_ORDER = [
   '印度菜', '意大利菜', '意大利現代菜', '法國／歐洲餐', '韓式燒肉',
   '牛扒／扒房', '牛扒', 'Poke／健康碗', '漢堡', '自助餐', '精釀啤酒',
   'Rooftop／景觀餐廳'
+] as const
+
+export const ATTRACTION_ORDER = [
+  '城市地標', '自然／宗教', '寺廟／景觀', '海灘', '博物館', '建築／宗教'
 ] as const
