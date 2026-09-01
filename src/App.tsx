@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRegisterSW } from 'virtual:pwa-register/react'
-import { ATTRACTION_ORDER, CUISINE_ORDER, MAP_ICON_FILES } from './config'
+import { ATTRACTION_ORDER, CUISINE_ORDER, MAP_ICON_FILES, mapIconAssetPath } from './config'
 import { useStoredSet } from './hooks'
 import { MapView } from './components/MapView'
 import { DecisionFilterSheet } from './components/DecisionFilterSheet'
@@ -192,7 +192,7 @@ export default function App() {
               onClick={() => setSelectedType((current) => current === type ? '' : type)}>
               {mode === 'attraction' && markerImageUrl
                 ? <img className="is-photo" src={markerImageUrl} alt="" aria-hidden="true" referrerPolicy="no-referrer" />
-                : iconFile && <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" aria-hidden="true" />}
+                : iconFile && <img src={`${import.meta.env.BASE_URL}${mapIconAssetPath(iconFile)}`} alt="" aria-hidden="true" />}
               {type}
             </button>
           ))}

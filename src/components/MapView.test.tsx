@@ -87,7 +87,7 @@ describe('WebGL restaurant marker contract', () => {
 
   it('resolves the precise cuisine icon into a source-neutral pin asset', () => {
     expect(restaurantMarkerImageId(place)).toBe('restaurant-pin-cuisine-vietnam-michelin')
-    expect(restaurantMarkerAssetPath(place)).toBe('map-pins/cuisine-vietnam-michelin.png')
+    expect(restaurantMarkerAssetPath(place)).toBe('map-pins/cuisine-vietnam-michelin.png?v=icons-v2')
     expect(restaurantMarkerImageId({ ...place, michelin: '' })).toBe('restaurant-pin-cuisine-vietnam')
   })
 
@@ -103,7 +103,7 @@ describe('WebGL restaurant marker contract', () => {
     }
     const mondayEvening = Date.parse('2026-08-31T12:00:00Z')
     expect(restaurantMarkerImageId(closed, mondayEvening)).toBe('restaurant-pin-cuisine-vietnam-michelin-closed')
-    expect(restaurantMarkerAssetPath(closed, mondayEvening)).toBe('map-pins/cuisine-vietnam-michelin-closed.png')
+    expect(restaurantMarkerAssetPath(closed, mondayEvening)).toBe('map-pins/cuisine-vietnam-michelin-closed.png?v=icons-v2')
     expect(restaurantMarkerImageId(place, mondayEvening)).toBe('restaurant-pin-cuisine-vietnam-michelin')
   })
 

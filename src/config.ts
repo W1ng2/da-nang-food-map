@@ -1,5 +1,15 @@
 import type { CollectionId } from './types'
 
+export const MAP_ART_ASSET_REVISION = 'icons-v2'
+
+export function mapIconAssetPath(iconFile: string) {
+  return `map-icons/${iconFile}.svg?v=${MAP_ART_ASSET_REVISION}`
+}
+
+export function mapPinAssetPath(filename: string) {
+  return `map-pins/${filename}.png?v=${MAP_ART_ASSET_REVISION}`
+}
+
 export const COLLECTIONS: Record<CollectionId, { label: string; shortLabel: string; icon: string; color: string }> = {
   michelin: { label: 'Michelin 推薦', shortLabel: 'Michelin', icon: '✦', color: '#a72e28' },
   'high-rating': { label: '非 Michelin · Google 4.8+', shortLabel: 'Google 4.8+', icon: '★', color: '#d2672c' },

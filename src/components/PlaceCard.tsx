@@ -1,4 +1,4 @@
-import { MAP_ICON_FILES } from '../config'
+import { MAP_ICON_FILES, mapIconAssetPath } from '../config'
 import { getOpeningStatus } from '../openingHours'
 import { distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
@@ -22,7 +22,7 @@ export function PlaceCard({ place, location, favorite, visited, onSelect, onFavo
     <article className="place-card">
       <button className="place-card__main" type="button" onClick={onSelect}>
         <span className={`place-card__icon ${place.kind === 'attraction' ? 'is-attraction' : ''}`} aria-hidden="true">
-          {iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}
+          {iconFile ? <img src={`${import.meta.env.BASE_URL}${mapIconAssetPath(iconFile)}`} alt="" /> : place.icon}
           {photoUrl && <img className="place-card__photo" src={photoUrl} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"
             onError={(event) => { event.currentTarget.hidden = true }} />}
         </span>

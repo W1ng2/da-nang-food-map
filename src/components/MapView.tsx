@@ -9,7 +9,7 @@ import {
   type SymbolLayerSpecification
 } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { MAP_ICON_FILES } from '../config'
+import { MAP_ICON_FILES, mapPinAssetPath } from '../config'
 import { getOpeningStatus } from '../openingHours'
 import type { Place, UserLocation } from '../types'
 
@@ -75,7 +75,7 @@ export function restaurantMarkerImageId(place: MarkerPlace, now = Date.now()) {
 export function restaurantMarkerAssetPath(place: MarkerPlace, now = Date.now()) {
   const iconFile = MAP_ICON_FILES[place.iconType] ?? 'vietnam'
   const isClosed = getOpeningStatus(place.schedule, new Date(now)).isClosed
-  return `map-pins/cuisine-${iconFile}${place.michelin ? '-michelin' : ''}${isClosed ? '-closed' : ''}.png`
+  return mapPinAssetPath(`cuisine-${iconFile}${place.michelin ? '-michelin' : ''}${isClosed ? '-closed' : ''}`)
 }
 
 export function attractionFallbackAssetPath() {

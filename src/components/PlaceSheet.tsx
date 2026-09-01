@@ -1,4 +1,4 @@
-import { MAP_ICON_FILES } from '../config'
+import { MAP_ICON_FILES, mapIconAssetPath } from '../config'
 import { getOpeningStatus } from '../openingHours'
 import { appleMapsUrl, distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
@@ -46,7 +46,7 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
       )}
       <div className="place-sheet__headline">
         <span className={`place-sheet__icon ${place.kind === 'attraction' ? 'is-attraction' : ''}`} aria-hidden="true">
-          {place.kind === 'attraction' && photoUrl ? <img src={photoUrl} alt="" referrerPolicy="no-referrer" /> : iconFile ? <img src={`${import.meta.env.BASE_URL}map-icons/${iconFile}.svg`} alt="" /> : place.icon}
+          {place.kind === 'attraction' && photoUrl ? <img src={photoUrl} alt="" referrerPolicy="no-referrer" /> : iconFile ? <img src={`${import.meta.env.BASE_URL}${mapIconAssetPath(iconFile)}`} alt="" /> : place.icon}
         </span>
         <div>
           <span className="place-sheet__labels">
