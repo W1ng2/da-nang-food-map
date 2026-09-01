@@ -2,6 +2,7 @@ import { MAP_ICON_FILES, mapIconAssetPath } from '../config'
 import { getOpeningStatus } from '../openingHours'
 import { distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
+import { HeartIcon } from './UiIcon'
 
 interface PlaceCardProps {
   place: Place
@@ -42,7 +43,7 @@ export function PlaceCard({ place, location, favorite, visited, onSelect, onFavo
         </span>
       </button>
       <div className="place-card__actions">
-        <button type="button" className={favorite ? 'is-active' : ''} aria-label={favorite ? '取消收藏' : '收藏'} aria-pressed={favorite} onClick={onFavorite}>{favorite ? '♥' : '♡'}</button>
+        <button type="button" className={favorite ? 'is-active' : ''} aria-label={favorite ? '取消收藏' : '收藏'} aria-pressed={favorite} onClick={onFavorite}><HeartIcon filled={favorite} /></button>
         <button type="button" className={visited ? 'is-active' : ''} aria-label={visited ? '取消已去過' : '標記已去過'} aria-pressed={visited} onClick={onVisited}>{visited ? '✓ 去過' : '去過'}</button>
       </div>
     </article>

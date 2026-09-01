@@ -7,6 +7,7 @@ import { DecisionFilterSheet } from './components/DecisionFilterSheet'
 import { PlaceCard } from './components/PlaceCard'
 import { PlaceSheet } from './components/PlaceSheet'
 import { UpdateBanner } from './components/UpdateBanner'
+import { HeartIcon, PlusIcon } from './components/UiIcon'
 import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } from './utils'
 import type { Place, UserLocation } from './types'
 
@@ -161,7 +162,7 @@ export default function App() {
           <span className="brand__stamp" aria-hidden="true">峴港<br />食旅</span>
           <div><p>DA NANG · 2026</p><h1>今天想去哪裡？</h1></div>
         </div>
-        <button className="install-button" type="button" onClick={() => setShowInstall(true)} aria-label="加入主畫面">＋</button>
+        <button className="install-button" type="button" onClick={() => setShowInstall(true)} aria-label="加入主畫面"><PlusIcon /></button>
         <label className="search-box">
           <span aria-hidden="true">⌕</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)}
@@ -229,7 +230,7 @@ export default function App() {
       <nav className="tabbar" aria-label="主要頁面">
         <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => setView('map')}><span aria-hidden="true">⌖</span>地圖</button>
         <button type="button" className={view === 'list' ? 'is-active' : ''} aria-current={view === 'list' ? 'page' : undefined} onClick={() => setView('list')}><span aria-hidden="true">≡</span>清單</button>
-        <button type="button" className={view === 'favorites' ? 'is-active' : ''} aria-current={view === 'favorites' ? 'page' : undefined} onClick={() => setView('favorites')}><span aria-hidden="true">♡</span>收藏<em>{favorites.size || ''}</em></button>
+        <button type="button" className={view === 'favorites' ? 'is-active' : ''} aria-current={view === 'favorites' ? 'page' : undefined} onClick={() => setView('favorites')}><span aria-hidden="true"><HeartIcon filled={view === 'favorites'} /></span>收藏<em>{favorites.size || ''}</em></button>
       </nav>
 
       {selected && <>

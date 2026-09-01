@@ -2,6 +2,7 @@ import { MAP_ICON_FILES, mapIconAssetPath } from '../config'
 import { getOpeningStatus } from '../openingHours'
 import { appleMapsUrl, distanceKm, formatReviews, placePhotoUrl } from '../utils'
 import type { Place, UserLocation } from '../types'
+import { HeartIcon } from './UiIcon'
 
 interface PlaceSheetProps {
   place: Place
@@ -89,7 +90,7 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
       )}
 
       <div className="quick-actions">
-        <button type="button" className={favorite ? 'is-active' : ''} aria-pressed={favorite} onClick={onFavorite}>{favorite ? '♥ 已收藏' : '♡ 收藏'}</button>
+        <button type="button" className={favorite ? 'is-active' : ''} aria-pressed={favorite} onClick={onFavorite}><HeartIcon filled={favorite} />{favorite ? '已收藏' : '收藏'}</button>
         <button type="button" className={visited ? 'is-active' : ''} aria-pressed={visited} onClick={onVisited}>{visited ? '✓ 已去過' : '標記去過'}</button>
         <button type="button" onClick={onShare}>分享</button>
       </div>
