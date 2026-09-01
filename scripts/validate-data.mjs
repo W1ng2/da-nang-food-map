@@ -27,7 +27,7 @@ for (const place of places) {
   if (hasHkdMin && place.priceHkdMin > place.priceHkdMax) failures.push(`${place.name}: reversed HKD range`)
   if (place.kind === 'restaurant' && !place.rating) failures.push(`${place.name}: missing Google rating`)
   if (place.kind === 'restaurant' && !place.reviewCount) failures.push(`${place.name}: missing Google review count`)
-  if (place.kind === 'attraction' && (!place.markerImageUrl || place.photo?.kind !== 'landmark')) failures.push(`${place.name}: attraction requires a landmark photo marker`)
+  if (place.kind === 'attraction' && (!place.markerImageUrl?.startsWith('data:image/') || place.photo?.kind !== 'landmark')) failures.push(`${place.name}: attraction requires an embedded landmark photo marker`)
   if (place.photo) {
     for (const field of ['url', 'alt', 'kind', 'arrivalNote', 'credit', 'sourceUrl', 'rightsNotice']) {
       if (!place.photo[field]) failures.push(`${place.name}: photo missing ${field}`)

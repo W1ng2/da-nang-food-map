@@ -523,6 +523,19 @@ async function verifyStandaloneCoreFlows(sessionId) {
   if (!allCuisineFilter) throw new Error('All cuisines filter was not found')
   await clickElement(sessionId, allCuisineFilter)
 
+  const openNowFilter = await findElement(sessionId, 'css selector', '.open-now-filter')
+  if (!openNowFilter) throw new Error('Open-now quick filter was not found')
+  await clickElement(sessionId, openNowFilter)
+  const openNowContract = await waitForScript(sessionId, `
+    const count = Number(document.querySelector('.map-status strong')?.textContent)
+    const filter = document.querySelector('.open-now-filter')
+    return count > 0 && count < 97 && filter?.getAttribute('aria-pressed') === 'true'
+      ? { count, pressed: filter.getAttribute('aria-pressed') }
+      : null
+  `)
+  await clickElement(sessionId, openNowFilter)
+  await assertMapCount(sessionId, 97)
+
   const currentTabs = await findElements(sessionId, 'css selector', '.tabbar button')
   await clickElement(sessionId, currentTabs[2])
   const favoritesContract = await waitForScript(sessionId, `
@@ -553,7 +566,7 @@ async function verifyStandaloneCoreFlows(sessionId) {
     detail: detailContract,
     officialEnrichment: officialEnrichmentContract,
     storage: storedContract,
-    cuisines: { vietnamese: 27, breakfastBowl: 3, total: 97 },
+    cuisines: { vietnamese: 27, breakfastBowl: 3, total: 97, openNow: openNowContract },
     list: listContract,
     favorites: favoritesContract,
     location: locationContract,

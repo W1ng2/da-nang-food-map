@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   createRestaurantFeatureCollection,
   createUserLocationFeatureCollection,
+  attractionFallbackAssetPath,
   RESTAURANT_CLUSTER_OPTIONS,
   restaurantLayerSpecifications,
   restaurantMarkerAssetPath,
@@ -109,6 +110,7 @@ describe('WebGL restaurant marker contract', () => {
   it('uses a dedicated photo marker identity for attractions', () => {
     expect(restaurantMarkerImageId({ ...place, id: 'dragon-bridge', kind: 'attraction', markerImageUrl: 'https://example.com/dragon.jpg' }))
       .toBe('attraction-photo-dragon-bridge')
+    expect(attractionFallbackAssetPath()).toBe('icons/icon-192.png')
   })
 
   it('keeps the user location in a WebGL GeoJSON source instead of a DOM marker', () => {

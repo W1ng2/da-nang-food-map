@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['apple-touch-icon.png', 'icons/*.png', 'map-icons/*.svg'],
       manifest: {
         name: '峴港食旅地圖',
@@ -31,8 +31,17 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: `${basePath}index.html`,
-        globPatterns: ['**/*.{js,mjs,css,html,ico,png,jpg,jpeg,webp,svg,json,woff2}'],
+        globPatterns: ['**/*.{js,mjs,css,html,ico,png,jpg,jpeg,webp,svg,woff2}'],
         runtimeCaching: [
+          {
+            urlPattern: /\/places\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'places-data',
+              networkTimeoutSeconds: 4,
+              expiration: { maxEntries: 2, maxAgeSeconds: 60 * 60 * 24 * 7 }
+            }
+          },
           {
             urlPattern: /^https:\/\/tile\.openstreetmap\.org\//,
             handler: 'CacheFirst',

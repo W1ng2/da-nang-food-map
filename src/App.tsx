@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useRegisterSW } from 'virtual:pwa-register/react'
 import { ATTRACTION_ORDER, CUISINE_ORDER, MAP_ICON_FILES } from './config'
 import { useStoredSet } from './hooks'
 import { MapView } from './components/MapView'
 import { DecisionFilterSheet } from './components/DecisionFilterSheet'
 import { PlaceCard } from './components/PlaceCard'
 import { PlaceSheet } from './components/PlaceSheet'
+import { UpdateBanner } from './components/UpdateBanner'
 import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } from './utils'
 import type { Place, UserLocation } from './types'
 
@@ -13,10 +15,15 @@ type ExploreMode = 'restaurant' | 'attraction'
 
 const DEFAULT_DECISION_FILTERS: DecisionFilters = {
   maxPriceHkd: null,
-  nearbyKm: null
+  nearbyKm: null,
+  openNow: false
 }
 
 export default function App() {
+  const {
+    needRefresh: [needRefresh, setNeedRefresh],
+    updateServiceWorker
+  } = useRegisterSW()
   const [places, setPlaces] = useState<Place[]>([])
   const [query, setQuery] = useState('')
   const [view, setView] = useState<View>('map')
@@ -74,10 +81,10 @@ export default function App() {
   )
 
   const filtered = useMemo(() => {
-    const result = applyDecisionFilters(typeMatches, decisionFilters, userLocation)
+    const result = applyDecisionFilters(typeMatches, decisionFilters, userLocation, new Date(now))
     if (!userLocation) return result
     return [...result].sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b))
-  }, [typeMatches, userLocation, decisionFilters])
+  }, [typeMatches, userLocation, decisionFilters, now])
 
   const placeTypes = useMemo(() => {
     const order = mode === 'restaurant' ? CUISINE_ORDER : ATTRACTION_ORDER
@@ -92,11 +99,11 @@ export default function App() {
     })
   }, [mode, modePlaces])
   const draftResultCount = useMemo(
-    () => applyDecisionFilters(typeMatches, draftDecisionFilters, userLocation).length,
-    [typeMatches, draftDecisionFilters, userLocation]
+    () => applyDecisionFilters(typeMatches, draftDecisionFilters, userLocation, new Date(now)).length,
+    [typeMatches, draftDecisionFilters, userLocation, now]
   )
   const activeDecisionFilterCount = mode === 'restaurant'
-    ? Object.values(decisionFilters).filter((value) => value !== '' && value !== null).length
+    ? Number(decisionFilters.maxPriceHkd !== null) + Number(decisionFilters.nearbyKm !== null) + Number(decisionFilters.openNow)
     : Number(decisionFilters.nearbyKm !== null)
 
   const switchMode = (nextMode: ExploreMode) => {
@@ -175,6 +182,10 @@ export default function App() {
             data-cuisine={mode === 'restaurant' ? 'all' : undefined} data-place-type="all" onClick={() => setSelectedType('')}>
             {mode === 'restaurant' ? '全部菜式' : '全部景點'}
           </button>
+          {mode === 'restaurant' && <button type="button" className={decisionFilters.openNow ? 'is-active open-now-filter' : 'open-now-filter'}
+            aria-pressed={decisionFilters.openNow} onClick={() => setDecisionFilters((current) => ({ ...current, openNow: !current.openNow }))}>
+            現在營業
+          </button>}
           {placeTypes.map(({ type, iconFile, markerImageUrl }) => (
             <button key={type} type="button" className={selectedType === type ? 'is-active' : ''}
               aria-pressed={selectedType === type} data-cuisine={mode === 'restaurant' ? type : undefined} data-place-type={type}
@@ -213,6 +224,7 @@ export default function App() {
       </section>
 
       {locationError && !showFilters && <div className="toast" role="alert">{locationError}<button type="button" aria-label="關閉定位提示" onClick={() => setLocationError('')}>×</button></div>}
+      {needRefresh && <UpdateBanner onUpdate={() => void updateServiceWorker(true)} onDismiss={() => setNeedRefresh(false)} />}
 
       <nav className="tabbar" aria-label="主要頁面">
         <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => setView('map')}><span aria-hidden="true">⌖</span>地圖</button>

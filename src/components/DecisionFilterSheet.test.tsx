@@ -6,7 +6,8 @@ import type { DecisionFilters } from '../utils'
 
 const filters: DecisionFilters = {
   maxPriceHkd: null,
-  nearbyKm: null
+  nearbyKm: null,
+  openNow: false
 }
 
 const renderSheet = (overrides: Partial<ComponentProps<typeof DecisionFilterSheet>> = {}) => renderToStaticMarkup(

@@ -314,7 +314,10 @@
     }
   },
   "michelin-rang": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日午餐 11:30–15:00；晚餐 17:30–22:30",
+    "hoursSourceUrl": "https://the-rang.com/contact-us/",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://the-rang.com/",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJLePdbMMXQjERY0w1110cROQ/candidate/c_p_000_medium.webp",
       "alt": "Rang 深青色雙門、RANG 招牌及橙色燈光",
@@ -326,7 +329,10 @@
     }
   },
   "michelin-thia-go": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日 10:00–22:00；堂食最後點餐 21:45",
+    "hoursSourceUrl": "https://danang.thiagorestaurant.com/",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://danang.thiagorestaurant.com/",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJ1xhMtcMZQjER9bUa3xuUKFA/p_007_medium.webp",
       "alt": "Thìa Gỗ 綠色花園式入口及綠色外牆",
@@ -374,7 +380,10 @@
     }
   },
   "michelin-luk-lak": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日 07:30–22:00",
+    "hoursSourceUrl": "https://luklak.vn/dia-diem/da-nang/",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://luklak.vn/dia-diem/da-nang/",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJUWBNGo0ZQjERJDLv-2XGwe8/cover_medium.webp",
       "alt": "Luk Lak 樹蔭前的多層外牆及地面紅色招牌",
@@ -386,7 +395,10 @@
     }
   },
   "michelin-madame-lan": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日 06:30–21:30",
+    "hoursSourceUrl": "https://madamelan.net/en",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://madamelan.net/en",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJe0VNzjEYQjERImNbpnRF9cI/candidate/c_p_000_medium.webp",
       "alt": "Madame Lân 黃紅色傳統式入口",
@@ -446,7 +458,10 @@
     }
   },
   "high-rating-all-seasons-buffet-da-nang": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日午餐 11:00–14:30；晚餐 17:00–22:00",
+    "hoursSourceUrl": "https://allseasonsbuffet.com/a-guide-to-da-nang-best-restaurant-danang/",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://allseasonsbuffet.com/",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJB12Iu3oXQjER2RUvYw2dfIo/p_004_medium.webp",
       "alt": "All Seasons Buffet 玻璃多層外牆及 ALL SEASONS 招牌",
@@ -590,7 +605,10 @@
     }
   },
   "high-rating-burger-house-da-nang": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日 09:00–23:00",
+    "hoursSourceUrl": "https://hamburgerdanang.com/",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://hamburgerdanang.com/",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJkf2tQIAZQjERG_-hbl_EKv4/cover_medium.webp",
       "alt": "Burger House 藍白色招牌及開放式街舖",
@@ -758,7 +776,9 @@
     }
   },
   "cafe-dessert-trinh-ca-phe": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "111 Nguyễn Hữu Thọ 分店每日 24 小時營業",
+    "hoursSourceUrl": "https://danangfantasticity.com/en/trinh-cafe-111-nguyen-huu-tho-da-nang",
+    "enrichmentVerifiedAt": "2026-09-01",
     "photo": {
       "url": "https://images.monandanang.vn/photos/google_maps/ChIJ2eFWbrcXQjERkMR0z_5VhM0/cover_medium.webp",
       "alt": "Trình Cà Phê 開放式石木門面及藍鳥標誌",
@@ -878,7 +898,10 @@
     }
   },
   "michelin-bep-cuon": {
-    "enrichmentVerifiedAt": "2026-08-31",
+    "hours": "每日 10:30–22:00；最後點餐 21:00",
+    "hoursSourceUrl": "https://bepcuon.net/",
+    "enrichmentVerifiedAt": "2026-09-01",
+    "website": "https://bepcuon.net/",
     "photo": {
       "url": "https://images.weserv.nl/?url=cdn.khamphadanang.vn/wp-content/uploads/2025/03/bep-cuon-da-nang-3.jpg",
       "alt": "Bếp Cuốn 綠色招牌、植物及門外餐牌",

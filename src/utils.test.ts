@@ -44,7 +44,7 @@ describe('決策篩選合約', () => {
       place({ id: 'within-budget', priceHkdMin: 60, priceHkdMax: 100 }),
       place({ id: 'too-expensive', priceHkdMin: 60, priceHkdMax: 209 })
     ]
-    expect(applyDecisionFilters(places, { maxPriceHkd: 100, nearbyKm: null }, null))
+    expect(applyDecisionFilters(places, { maxPriceHkd: 100, nearbyKm: null, openNow: false }, null))
       .toEqual([places[0]])
   })
 
@@ -55,7 +55,26 @@ describe('決策篩選合約', () => {
       place({ id: 'also-match', rating: 4.9, lat: 16.06, lng: 108.2162 }),
       place({ id: 'too-far', rating: 4.9, lat: 16.2, lng: 108.2162 })
     ]
-    expect(applyDecisionFilters(places, { maxPriceHkd: null, nearbyKm: 3 }, origin))
+    expect(applyDecisionFilters(places, { maxPriceHkd: null, nearbyKm: 3, openNow: false }, origin))
       .toEqual([places[0], places[1]])
+  })
+
+  it('「現在營業」只納入有可靠時間且當刻營業的餐廳', () => {
+    const tuesdayMorning = new Date('2026-09-01T03:00:00Z')
+    const openingSchedule = {
+      timezone: 'Asia/Ho_Chi_Minh' as const,
+      days: { tue: [['09:00', '12:00'] as [string, string]] },
+      source: 'official' as const,
+      verifiedAt: '2026-09-01'
+    }
+    const places = [
+      place({ id: 'open', schedule: openingSchedule }),
+      place({ id: 'closed', schedule: { ...openingSchedule, days: { tue: [['14:00', '17:00']] } } }),
+      place({ id: 'always-open', schedule: { ...openingSchedule, days: undefined, alwaysOpen: true } }),
+      place({ id: 'unknown', schedule: null })
+    ]
+
+    expect(applyDecisionFilters(places, { maxPriceHkd: null, nearbyKm: null, openNow: true }, null, tuesdayMorning))
+      .toEqual([places[0], places[2]])
   })
 })

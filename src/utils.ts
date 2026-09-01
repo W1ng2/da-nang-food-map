@@ -1,8 +1,10 @@
+import { getOpeningStatus } from './openingHours'
 import type { Place, UserLocation } from './types'
 
 export interface DecisionFilters {
   maxPriceHkd: number | null
   nearbyKm: number | null
+  openNow: boolean
 }
 
 export const normalizeSearch = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('zh-HK')
@@ -31,10 +33,12 @@ export function distanceKm(a: UserLocation, b: Pick<Place, 'lat' | 'lng'>) {
 export function applyDecisionFilters(
   places: Place[],
   filters: DecisionFilters,
-  location: UserLocation | null
+  location: UserLocation | null,
+  now = new Date()
 ) {
   return places.filter((place) => {
     if (place.kind === 'restaurant' && filters.maxPriceHkd && (!place.priceHkdMax || place.priceHkdMax > filters.maxPriceHkd)) return false
+    if (place.kind === 'restaurant' && filters.openNow && !['open', 'always-open'].includes(getOpeningStatus(place.schedule, now).state)) return false
     if (filters.nearbyKm && location && distanceKm(location, place) > filters.nearbyKm) return false
     return true
   })

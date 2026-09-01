@@ -78,6 +78,10 @@ export function restaurantMarkerAssetPath(place: MarkerPlace, now = Date.now()) 
   return `map-pins/cuisine-${iconFile}${place.michelin ? '-michelin' : ''}${isClosed ? '-closed' : ''}.png`
 }
 
+export function attractionFallbackAssetPath() {
+  return 'icons/icon-192.png'
+}
+
 export function createRestaurantFeatureCollection(places: Place[], selectedId: string | null, now = Date.now()): RestaurantFeatureCollection {
   return {
     type: 'FeatureCollection',
@@ -224,6 +228,14 @@ async function ensureRestaurantImages(
       await pending
     } catch (error) {
       console.warn(`Marker image could not be loaded for ${place.name}`, error)
+      if (place.kind === 'attraction' && !map.hasImage(imageId)) {
+        try {
+          const { data } = await map.loadImage(`${import.meta.env.BASE_URL}${attractionFallbackAssetPath()}`)
+          if (!map.hasImage(imageId)) map.addImage(imageId, data, { pixelRatio: 4 })
+        } catch (fallbackError) {
+          console.error(`Fallback marker could not be loaded for ${place.name}`, fallbackError)
+        }
+      }
     }
   }))
 }

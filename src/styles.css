@@ -58,6 +58,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .filter-strip button.is-active { background: var(--paper-light); color: var(--tomato); border-color: transparent; box-shadow: 0 3px 9px rgba(6,29,23,.22); }
 .filter-strip .decision-filter-button { border-style: dashed; color: var(--paper-light); }
 .filter-strip .decision-filter-button.is-active { --chip-color: var(--ink); border-style: solid; }
+.filter-strip .open-now-filter { border-color: rgba(216,234,220,.55); color: #e4f5e8; }
+.filter-strip .open-now-filter.is-active { background: #d8eadc; color: #246238; }
 .decision-filter-button--standalone { margin-top: 10px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(5,31,24,.25); color: var(--paper-light); font-size: 12px; font-weight: 800; }
 .decision-filter-button--standalone.is-active { background: var(--paper-light); color: var(--ink); }
 
@@ -195,6 +197,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .filter-sheet__footer button:last-child { border-color: var(--ink); background: var(--ink); color: white; }
 .toast { position: fixed; z-index: 30; left: 14px; right: 14px; bottom: calc(72px + env(safe-area-inset-bottom)); padding: 12px 40px 12px 14px; border-radius: 5px 15px 15px 15px; background: #7d2e27; color: white; box-shadow: var(--shadow); font-size: 12px; }
 .toast button { position: absolute; top: 4px; right: 5px; border: 0; background: none; color: white; font-size: 22px; }
+.update-banner { position: fixed; z-index: 31; left: 12px; right: 12px; bottom: calc(72px + env(safe-area-inset-bottom)); padding: 12px; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 8px; border: 1px solid rgba(255,250,240,.24); border-radius: 5px 16px 16px 16px; background: var(--ink); color: var(--paper-light); box-shadow: var(--shadow); }
+.update-banner div { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.update-banner strong { font-size: 13px; }
+.update-banner span { color: rgba(255,250,240,.72); font-size: 9px; line-height: 1.35; }
+.update-banner button { min-height: 40px; padding: 7px 10px; border: 1px solid rgba(255,250,240,.3); border-radius: 11px; background: transparent; color: var(--paper-light); font-size: 10px; font-weight: 800; }
+.update-banner button:last-child { border-color: var(--mustard); background: var(--mustard); color: var(--ink); }
+
+@media (max-width: 430px) {
+  .update-banner { grid-template-columns: minmax(0, 1fr) auto; }
+  .update-banner div { grid-column: 1 / -1; }
+}
 
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes sheet-up { from { opacity: 0; transform: translateY(24px); } }

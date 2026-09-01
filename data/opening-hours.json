@@ -17,6 +17,11 @@
     "note": "所列結束時間為最後點餐"
   },
   "michelin-olivia-s-prime": { "daily": [["11:00", "23:00"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 22:00" },
+  "michelin-rang": { "daily": [["11:30", "15:00"], ["17:30", "22:30"]], "source": "official", "verifiedAt": "2026-09-01" },
+  "michelin-thia-go": { "daily": [["10:00", "22:00"]], "source": "official", "verifiedAt": "2026-09-01", "note": "堂食最後點餐 21:45" },
+  "michelin-bep-cuon": { "daily": [["10:30", "22:00"]], "source": "official", "verifiedAt": "2026-09-01", "note": "最後點餐 21:00" },
+  "michelin-luk-lak": { "daily": [["07:30", "22:00"]], "source": "official", "verifiedAt": "2026-09-01" },
+  "michelin-madame-lan": { "daily": [["06:30", "21:30"]], "source": "official", "verifiedAt": "2026-09-01" },
   "michelin-the-temptation": {
     "days": {
       "sun": [["11:00", "14:00"], ["18:00", "22:00"]],
@@ -33,6 +38,9 @@
   },
   "high-rating-pizza-4p-s": { "weekday": [["11:00", "22:00"]], "weekend": [["10:00", "22:00"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 21:30" },
   "high-rating-bistecca-italian-restaurant-in-da-nang": { "daily": [["16:00", "22:00"]], "source": "official", "verifiedAt": "2026-08-31", "note": "最後點餐 21:30" },
+  "high-rating-all-seasons-buffet-da-nang": { "daily": [["11:00", "14:30"], ["17:00", "22:00"]], "source": "official", "verifiedAt": "2026-09-01" },
+  "high-rating-burger-house-da-nang": { "daily": [["09:00", "23:00"]], "source": "official", "verifiedAt": "2026-09-01" },
+  "cafe-dessert-trinh-ca-phe": { "alwaysOpen": true, "source": "saved", "verifiedAt": "2026-09-01", "note": "111 Nguyễn Hữu Thọ 分店 24 小時營業" },
   "breakfast-an-s-cafe": { "daily": [["07:00", "17:00"]], "monthlyClosedDates": [5], "source": "saved", "verifiedAt": "2026-08-18", "note": "每月 5 日休息；出發前再核對" },
   "breakfast-oh-la-la-breakfast-brunch-lunch": { "daily": [["08:00", "17:00"]], "source": "saved", "verifiedAt": "2026-08-18" },
   "breakfast-puna-specialty-coffee-eatery": { "daily": [["07:00", "22:00"]], "source": "saved", "verifiedAt": "2026-08-18" },

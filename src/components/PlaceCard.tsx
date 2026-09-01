@@ -16,7 +16,7 @@ interface PlaceCardProps {
 
 export function PlaceCard({ place, location, favorite, visited, onSelect, onFavorite, onVisited, now }: PlaceCardProps) {
   const iconFile = MAP_ICON_FILES[place.iconType]
-  const photoUrl = placePhotoUrl(place)
+  const photoUrl = place.kind === 'attraction' && place.markerImageUrl ? place.markerImageUrl : placePhotoUrl(place)
   const opening = getOpeningStatus(place.schedule, new Date(now))
   return (
     <article className="place-card">
