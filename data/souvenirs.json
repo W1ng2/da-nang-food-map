@@ -1,5 +1,137 @@
 [
   {
+    "id": "banh-mi-rusk",
+    "name": "STAR KITCHEN 法包脆片",
+    "localName": "Bánh Mì Rusk",
+    "forWhom": "同事・喜歡新奇口味的人",
+    "summary": "把法包做成輕巧脆片，以咖啡、椰子、芒果、河粉、胡椒及芫荽六款越南風味作辨識點。獨立包裝適合分派。",
+    "pick": "6 片小盒適合先試；18 片盒適合分享。鹹香口味較特別，送禮前先問能否試吃。",
+    "vndMin": 100000,
+    "vndMax": 250000,
+    "priceBasis": "品牌頁：6 片 100,000／18 片 250,000 VND；非同一份量價格區間",
+    "caution": "法包脆片易碎；留意小麥及各口味配料標籤，先確認有效日期。",
+    "evidence": "Vietnam Sketch 2026 年 1 月報道峴港門市及招牌法包脆片；品牌頁補充規格與售價。不是近期熱搜或銷量榜。",
+    "sources": [
+      {
+        "label": "Vietnam Sketch・峴港門市及法包脆片",
+        "url": "https://vietnam-sketch.com/20260128123541/",
+        "publishedAt": "2026-01-28"
+      },
+      {
+        "label": "品牌・規格及售價",
+        "url": "https://www.starkitchen-vietnam-gift.com/post/starkitchen-souvenir"
+      }
+    ],
+    "category": "零食",
+    "group": "popular",
+    "regions": [
+      "da-nang"
+    ],
+    "buy": "STAR KITCHEN：75 Trần Quốc Toản, Hải Châu, Đà Nẵng；門市現貨及最新價格需現場確認。",
+    "mapQuery": "STAR KITCHEN 75 Tran Quoc Toan Da Nang",
+    "route": "Han Market／峴港大教堂附近逛街時順路看，可同時選法包脆片與腰果。",
+    "checkedAt": "2026-09-07",
+    "photo": {
+      "url": "https://static.wixstatic.com/media/69e2df_872e0d11aceb46c581f4712bd14e0a23~mv2.jpg/v1/fill/w_1920%2Ch_1921%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_auto/69e2df_872e0d11aceb46c581f4712bd14e0a23~mv2.jpg",
+      "sourceUrl": "https://www.starkitchen-vietnam-gift.com/post/starkitchen-souvenir",
+      "credit": "STAR KITCHEN",
+      "label": "包裝示例",
+      "caption": "認明黃色 BÁNH MÌ RUSK 盒及口味圖示；圖片展示不同盒型，購買時核對片數。",
+      "alt": "STAR KITCHEN 黃色 BÁNH MÌ RUSK 禮盒及六款獨立包裝脆片",
+      "verifiedAt": "2026-09-07"
+    }
+  },
+  {
+    "id": "uncle-nam-cashews",
+    "name": "越南腰果分享盒",
+    "localName": "Uncle Nam’s Cashew Nuts · STAR KITCHEN",
+    "forWhom": "同事・家人・堅果愛好者",
+    "summary": "腰果是旅客常提及的越南手信品類。這款以十二小包、四種口味作分享選擇，毋須自行分裝。",
+    "pick": "盒內為烘烤、焦糖、椰子、蜂蜜口味；喜歡單純堅果香的人，可先試烘烤款再決定。",
+    "vndMin": 250000,
+    "vndMax": 250000,
+    "priceBasis": "品牌頁標價／12 小包、4 口味禮盒",
+    "caution": "含腰果；調味款可能較甜，其他過敏原以包裝為準。禮盒價高於普通大包裝，重視性價比可比較每克售價。",
+    "evidence": "旅客討論支持腰果品類，並非這款禮盒的獨立盲測。選此包裝示例因有官方規格、售價及可核對的峴港門市；不採納品牌自己的銷量冠軍宣稱。",
+    "sources": [
+      {
+        "label": "旅客討論・越南手信品類（非品牌評測）",
+        "url": "https://www.reddit.com/r/VietNam/comments/1ht1o12/what_to_buy_in_vietnam_as_a_tourist/"
+      },
+      {
+        "label": "品牌・腰果規格及售價",
+        "url": "https://www.starkitchen-vietnam-gift.com/post/starkitchen-souvenir"
+      },
+      {
+        "label": "Vietnam Sketch・峴港門市",
+        "url": "https://vietnam-sketch.com/20260128123541/"
+      }
+    ],
+    "category": "零食",
+    "group": "popular",
+    "regions": [
+      "da-nang"
+    ],
+    "buy": "STAR KITCHEN：75 Trần Quốc Toản, Hải Châu, Đà Nẵng；門市現貨及最新價格需現場確認。",
+    "mapQuery": "STAR KITCHEN 75 Tran Quoc Toan Da Nang",
+    "route": "Han Market／峴港大教堂附近逛街時順路看，可同時選法包脆片與腰果。",
+    "checkedAt": "2026-09-07",
+    "photo": {
+      "url": "https://static.wixstatic.com/media/69e2df_d4abfbfcfdd24eae94321167169ccc9d~mv2.jpg/v1/fill/w_980%2Ch_980%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/69e2df_d4abfbfcfdd24eae94321167169ccc9d~mv2.jpg",
+      "sourceUrl": "https://www.starkitchen-vietnam-gift.com/post/starkitchen-souvenir",
+      "credit": "STAR KITCHEN",
+      "label": "包裝示例",
+      "caption": "包裝印 MR. NAM’S CASHEW NUTS、4 FLAVOURS，品牌介紹稱 Uncle Nam’s；認明黃色盒和騎車人物。",
+      "alt": "STAR KITCHEN 黃綠色 MR. NAM’S CASHEW NUTS 盒與十二小包腰果",
+      "verifiedAt": "2026-09-07"
+    }
+  },
+  {
+    "id": "vinamit-mango",
+    "name": "越南軟芒果乾",
+    "localName": "VINAMIT · Xoài cát sấy dẻo",
+    "forWhom": "朋友・喜歡果乾的人",
+    "summary": "果乾是容易攜帶的越南手信品類；此處選 VINAMIT 100g 作包裝參考，方便到超市辨認。這款為軟身果乾，不是鬆脆水果片。",
+    "pick": "認明 Xoài cát sấy dẻo 及 100g；同品牌另有無糖、辣味和其他份量，不能只憑袋子顏色選。",
+    "vndMin": 61000,
+    "vndMax": 61000,
+    "priceBasis": "VINAMIT 官網標價／100g；峴港零售價可能不同",
+    "caution": "此款成分為 95% 芒果、糖及鹽，不是無添加糖。檢查封口、成分及有效日期。",
+    "evidence": "旅客手信討論推薦芒果乾品類；VINAMIT 官網核對 100g 規格及成分，LOTTE 峴港站另有同系列 250g 商品頁。不是對此品牌作最佳排名，100g 門市現貨未確認。",
+    "sources": [
+      {
+        "label": "VINAMIT・100g 商品與成分",
+        "url": "https://www.vinamit.com.vn/xoai-cat-say-deo-100g.html"
+      },
+      {
+        "label": "LOTTE 峴港・同系列 250g 零售線索",
+        "url": "https://www.lottemart.vn/vi-dng/product/vinamit-250g-8934743018027-p30841"
+      },
+      {
+        "label": "旅客討論・果乾品類",
+        "url": "https://www.reddit.com/r/VietNam/comments/1gd6bfi/what_should_i_bring_home_from_vietnam/"
+      }
+    ],
+    "category": "零食",
+    "group": "popular",
+    "regions": [
+      "da-nang"
+    ],
+    "buy": "LOTTE Mart 峴港等超市；零售頁可確認同系列，實際規格和現貨先問店員。",
+    "mapQuery": "LOTTE Mart Da Nang",
+    "route": "原有超市行程順道找，不為單一規格特地跑一趟。",
+    "checkedAt": "2026-09-07",
+    "photo": {
+      "url": "https://www.vinamit.com.vn/wp-content/uploads/2020/08/Xoai-Say-Deo-100g.jpg",
+      "sourceUrl": "https://www.vinamit.com.vn/xoai-cat-say-deo-100g.html",
+      "credit": "VINAMIT",
+      "label": "包裝示例",
+      "caption": "認明白袋、黃色芒果圖案、Xoài cát sấy dẻo 及 100g；不要混淆無糖或辣味款。",
+      "alt": "VINAMIT Natural 白袋 Xoài cát sấy dẻo 軟芒果乾 100g",
+      "verifiedAt": "2026-09-07"
+    }
+  },
+  {
     "id": "coconut-crackers",
     "photo": {
       "url": "https://myphuongfood.com/wp-content/uploads/2025/06/z6517148222718_62321f63040d5b22d16decdbb6098b75-1-1-768x1152.jpg",
