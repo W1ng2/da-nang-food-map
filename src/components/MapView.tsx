@@ -299,6 +299,9 @@ export function MapView({ places, selected, onSelect, userLocation, now, hotelFo
     map.addControl(new AttributionControl({ compact: true }), 'top-right')
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right')
     mapRef.current = map
+    // Header filters and iOS viewport changes can resize the map without a window resize.
+    const resizeObserver = new ResizeObserver(() => map.resize())
+    resizeObserver.observe(containerRef.current)
     if (!selectedRef.current && !hotelFocus) map.fitBounds(REGION_BOUNDS[region], { padding: { top: 64, bottom: 70, left: 38, right: 54 }, duration: 0 })
     let completedMoveCount = 0
     containerRef.current.dataset.mapMoveCount = '0'
@@ -414,6 +417,7 @@ export function MapView({ places, selected, onSelect, userLocation, now, hotelFo
 
     return () => {
       disposed = true
+      resizeObserver.disconnect()
       map.remove()
       pendingImagesRef.current.clear()
       mapRef.current = null

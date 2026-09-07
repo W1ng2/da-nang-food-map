@@ -7,7 +7,7 @@ import { DecisionFilterSheet } from './components/DecisionFilterSheet'
 import { PlaceCard } from './components/PlaceCard'
 import { PlaceSheet } from './components/PlaceSheet'
 import { UpdateBanner } from './components/UpdateBanner'
-import { GiftIcon, HeartIcon, PlusIcon } from './components/UiIcon'
+import { GiftIcon, HeartIcon, PlusIcon, MapIcon, ListIcon, RouteIcon } from './components/UiIcon'
 import { ManualUpdate } from './components/ManualUpdate'
 import { SouvenirView } from './components/SouvenirView'
 import { activateAppUpdate, withTimeout } from './manualUpdate'
@@ -189,7 +189,7 @@ export default function App() {
             aria-label={mode === 'restaurant' ? '搜尋餐廳' : '搜尋景點'} />
           {query && <button type="button" onClick={() => setQuery('')} aria-label="清除搜尋">×</button>}
         </label>
-        <label className="region-picker">探索區域<select aria-label="探索區域" value={region} onChange={(event) => { setRegion(event.target.value as Region); setSelectedType(''); setSelectedGroup(''); setSelected(null) }}>
+        <div className="explore-scope"><label className="region-picker"><span>探索區域</span><select aria-label="探索區域" value={region} onChange={(event) => { setRegion(event.target.value as Region); setSelectedType(''); setSelectedGroup(''); setSelected(null) }}>
           <option value="all">峴港＋會安</option><option value="da-nang">峴港</option><option value="hoi-an">會安及周邊</option>
         </select></label>
         <div className="mode-switch" aria-label="地圖內容">
@@ -199,7 +199,7 @@ export default function App() {
           <button type="button" className={mode === 'attraction' ? 'is-active' : ''} aria-pressed={mode === 'attraction'} onClick={() => switchMode('attraction')}>
             景點 <span>{places.filter((place) => place.kind === 'attraction' && (region === 'all' || placeRegion(place) === region)).length}</span>
           </button>
-        </div>
+        </div></div>
         {mode === 'restaurant' && <div className="filter-strip food-groups" aria-label="料理分類">
           <button type="button" aria-pressed={!selectedGroup} className={!selectedGroup ? 'is-active' : ''} onClick={() => { setSelectedGroup(''); setSelectedType('') }}>全部</button>
           {FOOD_GROUPS.filter((group) => modePlaces.some((place) => foodGroup(place.type) === group)).map((group) => <button key={group} type="button" aria-pressed={selectedGroup === group} className={selectedGroup === group ? 'is-active' : ''} onClick={() => { setSelectedGroup(selectedGroup === group ? '' : group); setSelectedType('') }}>{group}</button>)}
@@ -259,9 +259,9 @@ export default function App() {
       }} onDismiss={() => setNeedRefresh(false)} />}
 
       <nav className="tabbar" aria-label="主要頁面">
-        <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => switchView('map')}><span aria-hidden="true">⌖</span>地圖</button>
-        <button type="button" className={view === 'list' ? 'is-active' : ''} aria-current={view === 'list' ? 'page' : undefined} onClick={() => switchView('list')}><span aria-hidden="true">≡</span>清單</button>
-        <button type="button" className={view === 'trip' ? 'is-active' : ''} aria-current={view === 'trip' ? 'page' : undefined} onClick={() => switchView('trip')}><span aria-hidden="true">☷</span>行程</button>
+        <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => switchView('map')}><span aria-hidden="true"><MapIcon /></span>地圖</button>
+        <button type="button" className={view === 'list' ? 'is-active' : ''} aria-current={view === 'list' ? 'page' : undefined} onClick={() => switchView('list')}><span aria-hidden="true"><ListIcon /></span>清單</button>
+        <button type="button" className={view === 'trip' ? 'is-active' : ''} aria-current={view === 'trip' ? 'page' : undefined} onClick={() => switchView('trip')}><span aria-hidden="true"><RouteIcon /></span>行程</button>
         <button type="button" className={view === 'souvenirs' ? 'is-active' : ''} aria-current={view === 'souvenirs' ? 'page' : undefined} onClick={() => switchView('souvenirs')}><span aria-hidden="true"><GiftIcon /></span>手信</button>
         <button type="button" className={view === 'favorites' ? 'is-active' : ''} aria-current={view === 'favorites' ? 'page' : undefined} onClick={() => switchView('favorites')}><span aria-hidden="true"><HeartIcon filled={view === 'favorites'} /></span>收藏<em>{favorites.size || ''}</em></button>
       </nav>

@@ -6,7 +6,7 @@ import { RefreshIcon } from './UiIcon'
 export function ManualUpdate({ onPlaces, onReady }: { onPlaces: (places: Place[]) => void; onReady: () => void }) {
   const [busy, setBusy] = useState(false)
   const locked = useRef(false)
-  const [message, setMessage] = useState('更新不會清除收藏')
+  const [message, setMessage] = useState('')
   const check = async () => {
     if (locked.current) return
     locked.current = true
@@ -24,7 +24,7 @@ export function ManualUpdate({ onPlaces, onReady }: { onPlaces: (places: Place[]
     } finally { locked.current = false; setBusy(false) }
   }
   return <div className="manual-update">
-    <span role="status" aria-live="polite">{message}</span>
-    <button type="button" onClick={() => void check()} disabled={busy} aria-busy={busy}><RefreshIcon />{busy ? '檢查中…' : '檢查更新'}</button>
+    {message && <span role="status" aria-live="polite">{message}</span>}
+    <button type="button" onClick={() => void check()} disabled={busy} aria-busy={busy} aria-label={busy ? '正在檢查更新' : '檢查更新'} title="檢查更新，不會清除收藏"><RefreshIcon /><span>{busy ? '檢查中…' : '檢查更新'}</span></button>
   </div>
 }

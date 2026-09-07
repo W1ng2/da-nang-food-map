@@ -28,7 +28,7 @@ export function SouvenirView({ now }: { now: number }) {
     </div>
     <details className="souvenir-method"><summary>熱門怎樣選？不是銷量榜 ↗</summary><p>「大眾推薦」綜合旅遊指南及口碑；「近期熱門」指近 180 日有具日期的討論訊號，不是銷量或即時熱搜榜。過期項目保留在全部選物，不再標作近期。</p></details>
     <p className="souvenir-count" role="status">{items.length} 款選物 · 點圖片放大，現場對照包裝</p>
-    <p className="souvenir-method">圖片為品牌包裝或款式參考，不代表同款現貨或圖中整套的售價。包裝可能更新；圖片版權屬原權利人，以來源網站外連顯示，需網絡載入。</p>
+    <details className="souvenir-method souvenir-photo-note"><summary>包裝圖片及現貨說明</summary><p>圖片為品牌包裝或款式參考，不代表同款現貨或圖中整套的售價。包裝可能更新；圖片版權屬原權利人，以來源網站外連顯示，需網絡載入。</p></details>
     <div className="souvenir-grid">
       {items.map((item) => <article className="souvenir-card" key={item.id}>
         <div className="souvenir-card__top"><span>{item.category} / {item.regions.length === 2 ? '峴港・會安' : item.regions[0] === 'hoi-an' ? '會安' : '峴港'}</span><span className={isRecentSouvenir(item, now) ? 'souvenir-badge is-recent' : 'souvenir-badge'}>{item.group === 'popular' ? '大眾推薦' : isRecentSouvenir(item, now) ? '近期熱門' : '較早話題'}</span></div>

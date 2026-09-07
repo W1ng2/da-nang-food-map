@@ -10,8 +10,8 @@ const now = Date.parse('2026-09-07T12:00:00+07:00')
 
 describe('souvenir guide', () => {
   it('has sourced prices, shopping leads and real dated evidence for recent picks', () => {
-    expect(SOUVENIRS).toHaveLength(11)
-    expect(new Set(SOUVENIRS.map((item) => item.id)).size).toBe(11)
+    expect(SOUVENIRS).toHaveLength(14)
+    expect(new Set(SOUVENIRS.map((item) => item.id)).size).toBe(14)
     for (const item of SOUVENIRS) {
       expect(item.vndMin).toBeGreaterThan(0)
       expect(item.vndMax).toBeGreaterThanOrEqual(item.vndMin)
@@ -55,10 +55,10 @@ describe('souvenir guide', () => {
     document.body.append(host)
     try {
       await act(async () => root.render(<SouvenirView now={now} />))
-      expect(host.querySelectorAll('article')).toHaveLength(11)
+      expect(host.querySelectorAll('article')).toHaveLength(14)
       const categoryGroup = host.querySelector('[aria-label="手信種類"]')!
       const categoryButton = (text: string) => [...categoryGroup.querySelectorAll('button')].find((button) => button.textContent === text)!
-      for (const [category, count] of [['零食', 6], ['咖啡', 2], ['工藝', 2], ['護理', 1]] as const) {
+      for (const [category, count] of [['零食', 5], ['朱古力', 2], ['即食麵', 2], ['咖啡', 2], ['工藝', 2], ['護理', 1]] as const) {
         await act(async () => categoryButton(category).click())
         expect(host.querySelectorAll('article')).toHaveLength(count)
         expect(categoryButton(category).getAttribute('aria-pressed')).toBe('true')

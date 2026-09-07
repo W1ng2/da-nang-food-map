@@ -1,5 +1,136 @@
 [
   {
+    "id": "alluvia-hoi-an",
+    "name": "Alluvia 會安黑朱古力",
+    "localName": "Dark Chocolate Signature Hoi An · 70%",
+    "category": "朱古力",
+    "regions": [
+      "hoi-an"
+    ],
+    "forWhom": "朱古力愛好者・會安紀念禮",
+    "summary": "70% 黑朱古力配上會安街景水彩包裝。與 MAROU 的產地系列相比，這款更着重旅行紀念感；先試吃，確認喜歡黑朱古力的苦甜比例。",
+    "pick": "圖示為 80g 會安款；官網另有 30g 小片。認明 HOIAN SIGNATURE，不要把峴港咖啡牛奶款當成同一口味。",
+    "vndMin": 68000,
+    "vndMax": 130000,
+    "priceBasis": "官網規格選項：30g 68,000／80g 130,000 VND；門市價另核",
+    "caution": "怕熱，放冷氣環境並避免留在車內或海灘袋。不是所有品牌商品都獲獎；本頁不宣稱此款為得獎產品。",
+    "buy": "Alluvia 會安門市；品牌經銷頁列 136 Trần Phú，出發前核對現址與庫存。",
+    "mapQuery": "Alluvia Chocolate 136 Tran Phu Hoi An",
+    "route": "會安古城散步時試吃，回酒店前才買，縮短在戶外受熱時間。",
+    "evidence": "品牌官網核對可可比例、包裝及兩種規格價；旅客討論有 Alluvia 品牌口碑，但不是此款盲測或市場排名。門市現貨未確認。",
+    "sources": [
+      {
+        "label": "Alluvia・會安款規格與價格",
+        "url": "https://alluviachocolate.com/products/dark-chocolate-signature-hoi-an-dark-chocolate-70"
+      },
+      {
+        "label": "Alluvia・門市地址線索",
+        "url": "https://www.alluviachocolate.com/distributors/"
+      },
+      {
+        "label": "旅客討論・Alluvia 品牌（非此款評測）",
+        "url": "https://www.reddit.com/r/hanoi/comments/1kdszab/best_chocolate_in_town/"
+      }
+    ],
+    "photo": {
+      "url": "https://product.hstatic.net/200001008465/product/27_a401da621813422f95a44be401088e75_master.jpg",
+      "sourceUrl": "https://alluviachocolate.com/products/dark-chocolate-signature-hoi-an-dark-chocolate-70",
+      "credit": "Alluvia Chocolatier",
+      "label": "包裝示例",
+      "caption": "HOIAN SIGNATURE 街景水彩包裝；圖示底部印 80G，30g 規格需另核。",
+      "alt": "Alluvia HOIAN SIGNATURE 80g 會安水彩街景朱古力包裝",
+      "verifiedAt": "2026-09-07"
+    },
+    "group": "popular",
+    "checkedAt": "2026-09-07"
+  },
+  {
+    "id": "hao-hao",
+    "name": "Hảo Hảo 酸辣蝦味即食麵",
+    "localName": "Mì Hảo Hảo · Tôm chua cay · 75g",
+    "category": "即食麵",
+    "regions": [
+      "da-nang"
+    ],
+    "forWhom": "即食麵愛好者・想試越南日常口味的人",
+    "summary": "粉紅袋酸辣蝦味，是旅客討論中反覆被提及的經典選擇。價格低、口味有辨識度，先買兩三包試味，比直接搬一箱更實際。",
+    "pick": "認明 TÔM CHUA CAY 和 75g；不是 Tôm chua ngọt 乾拌麵，也不是杯裝或 BIG 100g。",
+    "vndMin": 4500,
+    "vndMax": 4500,
+    "priceBasis": "Co.op Online 零售標價／75g 單包；非峴港分店即時報價",
+    "caution": "含小麥及蝦味配料，酸辣且調味較重。按包裝查看過敏原與沖泡方法；包裝食物也應保留成分標籤，攜帶規定另核。",
+    "buy": "峴港超市即食麵貨架；LOTTE 有同款商品頁，分店現貨與價格以現場為準。",
+    "mapQuery": "LOTTE Mart Da Nang",
+    "route": "原有超市行程一起買，可與 Omachi 各買少量作口味比較。",
+    "evidence": "越南即食麵旅客討論多次點名酸辣 Hảo Hảo；Co.op 核對單包參考價，LOTTE 提供包裝與規格。不是近期熱搜，亦沒有用零售星等推斷品質。",
+    "sources": [
+      {
+        "label": "旅客討論・越南即食麵",
+        "url": "https://www.reddit.com/r/VietNam/comments/1ey1qdd/whats_your_number_1_vietnamese_instant_noodles/"
+      },
+      {
+        "label": "Co.op・75g 單包價格",
+        "url": "https://cooponline.vn/hao-hao-brand.hao-hao"
+      },
+      {
+        "label": "LOTTE・同款包裝與規格",
+        "url": "https://www.lottemart.vn/vi-cto/product/75g-8934563138165-p12589"
+      }
+    ],
+    "photo": {
+      "url": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/9/8934563138165-1-1.jpg.webp",
+      "sourceUrl": "https://www.lottemart.vn/vi-cto/product/75g-8934563138165-p12589",
+      "credit": "LOTTE Mart／Acecook",
+      "label": "包裝示例",
+      "caption": "粉紅袋、紅色 Hảo Hảo 字樣，右方印 MÌ TÔM CHUA CAY，右下為 75g。",
+      "alt": "Hảo Hảo 粉紅色酸辣蝦味即食麵 75g 袋裝",
+      "verifiedAt": "2026-09-07"
+    },
+    "group": "popular",
+    "checkedAt": "2026-09-07"
+  },
+  {
+    "id": "omachi-ribs",
+    "name": "Omachi 五果燉排骨味麵",
+    "localName": "Omachi · Sườn hầm ngũ quả · 80g",
+    "category": "即食麵",
+    "regions": [
+      "da-nang"
+    ],
+    "forWhom": "喜歡肉湯口味・想比較不同越南麵的人",
+    "summary": "以燉排骨和蔬果風味作為酸辣蝦湯以外的選擇。Omachi 系列在旅客討論中常被提及，此處選可核對規格的 80g 袋裝作入門比較。",
+    "pick": "認明 SƯỜN HẦM NGŨ QUẢ；同品牌有牛肉、酸辣及真肉杯麵。這款雖叫薯仔麵，成分仍以小麥為主，不是純薯仔或無麩質麵。",
+    "vndMin": 9500,
+    "vndMax": 9500,
+    "priceBasis": "LOTTE 零售頁標價／80g 單包；並非峴港門市即時價",
+    "caution": "含動物性配料；成分表列小麥、蛋、魚露、蝦、豬肉及大豆相關配料。對成分或攜帶限制有要求時先核對，不以「薯仔麵」推定健康程度。",
+    "buy": "峴港超市即食麵貨架；所附 LOTTE 商品頁來自其他服務區，只作規格及價格線索。",
+    "mapQuery": "LOTTE Mart Da Nang",
+    "route": "與 Hảo Hảo 同一站採購；先各買少量，不必為某一款特地跨區找貨。",
+    "evidence": "旅客討論支持 Omachi 系列，並非此口味的獨立盲測；LOTTE 核對 80g 包裝、成分及價格。不同人的口味偏好差異大，不列全越南第一。",
+    "sources": [
+      {
+        "label": "旅客討論・Omachi 系列",
+        "url": "https://www.reddit.com/r/VietNam/comments/1ey1qdd/whats_your_number_1_vietnamese_instant_noodles/"
+      },
+      {
+        "label": "LOTTE・80g 規格、成分及價格",
+        "url": "https://www.lottemart.vn/vi-bdh/product/80g-8936221041749-p221425"
+      }
+    ],
+    "photo": {
+      "url": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/9/8936221041749-1.jpg.webp",
+      "sourceUrl": "https://www.lottemart.vn/vi-bdh/product/80g-8936221041749-p221425",
+      "credit": "LOTTE Mart／Omachi",
+      "label": "包裝示例",
+      "caption": "黑色袋頂、紅色下半部；認明 Sườn hầm ngũ quả 及 80g，不要只靠品牌顏色選口味。",
+      "alt": "Omachi 黑紅色五果燉排骨味即食麵 80g 包裝",
+      "verifiedAt": "2026-09-07"
+    },
+    "group": "popular",
+    "checkedAt": "2026-09-07"
+  },
+  {
     "id": "banh-mi-rusk",
     "name": "STAR KITCHEN 法包脆片",
     "localName": "Bánh Mì Rusk",
@@ -391,9 +522,9 @@
       "alt": "MAROU TIỀN GIANG 70% 單一產地巧克力 80g 包裝",
       "verifiedAt": "2026-09-07"
     },
-    "name": "MAROU 越南產地巧克力",
+    "name": "MAROU 越南產地朱古力",
     "localName": "Single Origin & Vietnamese Flavours",
-    "category": "零食",
+    "category": "朱古力",
     "group": "recent",
     "regions": [
       "da-nang",

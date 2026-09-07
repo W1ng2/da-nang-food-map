@@ -2,6 +2,18 @@ interface IconProps {
   className?: string
 }
 
+export function MapIcon() {
+  return <svg className="ui-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Zm6-2v16m6-14v16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+}
+
+export function ListIcon() {
+  return <svg className="ui-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M3 6h1M3 12h1M3 18h1" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /></svg>
+}
+
+export function RouteIcon() {
+  return <svg className="ui-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 5h10a4 4 0 0 1 0 8H7a3 3 0 0 0 0 6h10" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /><circle cx="5" cy="5" r="2" fill="none" stroke="currentColor" strokeWidth="1.7" /><circle cx="19" cy="19" r="2" fill="none" stroke="currentColor" strokeWidth="1.7" /></svg>
+}
+
 export function RefreshIcon() {
   return <svg className="ui-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 7v5h-5M4 17v-5h5M5.5 7a7.5 7.5 0 0 1 12-1L20 9M4 15l2.5 3a7.5 7.5 0 0 0 12-1" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
 }
