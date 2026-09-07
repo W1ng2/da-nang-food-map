@@ -22,7 +22,7 @@
 
 所有頁面頂部「檢查更新」：先以 cache-busting、no-store 請求取得已發布地點資料，格式驗證後才替換畫面；再檢查本網站 service worker。新版下載中不會錯報已是最新；找到 waiting worker 後顯示原有「立即更新／稍後」提示，由使用者選擇重新載入。
 
-失敗、離線、逾時或沒有 service worker 時顯示對應結果；不刪除 localStorage、收藏、已去過或訂位。套用新版沿用 vite-plugin-pwa 的 prompt 流程。手信資料編入版本及離線資產，因此須套用新版才取得修改後的手信內容。
+失敗、離線、逾時或沒有 service worker 時顯示對應結果；不刪除 localStorage、收藏、已去過或訂位。沿用 vite-plugin-pwa 的 prompt 註冊，但使用者套用時明確等待 waiting worker 啟用後重新載入，不只依賴 controlling 事件，修復首次造訪尚未受 worker 控制的分頁不重載情況。手信資料編入版本及離線資產，因此須套用新版才取得修改後的手信內容。
 
 ## 本輪驗證
 
@@ -31,3 +31,4 @@
 - 測試用版本只在忽略的 `dist/sw.js` 加註解觸發 worker 更新，最終重新建置移除；沒有修改使用者瀏覽器或既有訂位監察。
 - 視覺截圖保存在忽略的 `output/playwright/`；不將截圖視作實體 iPhone 驗證。
 - 商品圖：8/8 在 production preview 實際 decode 成功，逐張檢視品牌／款式；390px 和 1280px 無水平溢出，點圖能開啟對應原圖新分頁。以阻擋首張圖片的獨立 320px context 確認失敗提示及來源連結；近期／會安篩選維持正常。手信及更新的 10 項針對性測試通過，production build 通過。
+- 公開網站 8/8 商品圖載入成功。分類新增後測試四類及交叉無結果；另實際重現首次造訪 `controller === null`，修復後在 localhost production preview 點更新確實重載成受控分頁，收藏及手信深連結保留。加入啟用成功、失敗及逾時測試後，針對性測試為 12 項通過。

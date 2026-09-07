@@ -10,6 +10,7 @@ import { UpdateBanner } from './components/UpdateBanner'
 import { GiftIcon, HeartIcon, PlusIcon } from './components/UiIcon'
 import { ManualUpdate } from './components/ManualUpdate'
 import { SouvenirView } from './components/SouvenirView'
+import { activateAppUpdate, withTimeout } from './manualUpdate'
 import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } from './utils'
 import type { Place, UserLocation } from './types'
 import { FOOD_GROUPS, HOTEL, foodGroup, initialTripDate, placeRegion, type Region } from './trip'
@@ -26,8 +27,7 @@ const DEFAULT_DECISION_FILTERS: DecisionFilters = {
 
 export default function App() {
   const {
-    needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker
+    needRefresh: [needRefresh, setNeedRefresh]
   } = useRegisterSW()
   const [places, setPlaces] = useState<Place[]>([])
   const [query, setQuery] = useState('')
@@ -252,7 +252,11 @@ export default function App() {
       </section>
 
       {locationError && !showFilters && <div className="toast" role="alert">{locationError}<button type="button" aria-label="關閉定位提示" onClick={() => setLocationError('')}>×</button></div>}
-      {needRefresh && <UpdateBanner onUpdate={() => void updateServiceWorker(true).catch(() => setLocationError('套用新版失敗，請再按檢查更新。'))} onDismiss={() => setNeedRefresh(false)} />}
+      {needRefresh && <UpdateBanner onUpdate={() => {
+        void withTimeout(navigator.serviceWorker.getRegistration(import.meta.env.BASE_URL))
+          .then(activateAppUpdate).then(() => window.location.reload())
+          .catch(() => setLocationError('套用新版失敗，請再按檢查更新。'))
+      }} onDismiss={() => setNeedRefresh(false)} />}
 
       <nav className="tabbar" aria-label="主要頁面">
         <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => switchView('map')}><span aria-hidden="true">⌖</span>地圖</button>

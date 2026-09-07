@@ -1,5 +1,32 @@
 import type { Place } from './types'
 
+// First-visit tabs may not have a controller yet. Wait for activation, not only
+// Workbox's controlling event, before the caller explicitly reloads the page.
+export async function activateAppUpdate(registration?: ServiceWorkerRegistration): Promise<void> {
+  if (!registration) throw new Error('未能取得 App 版本，請重新開啟。')
+  const worker = registration.waiting
+  if (!worker) {
+    if (registration.active) return // Another tab may already have applied it.
+    throw new Error('新版尚未準備好，請再按檢查更新。')
+  }
+  await new Promise<void>((resolve, reject) => {
+    const finish = (error?: Error) => {
+      clearTimeout(timer)
+      worker.removeEventListener('statechange', changed)
+      if (error) reject(error)
+      else resolve()
+    }
+    const changed = () => {
+      if (worker.state === 'activated') finish()
+      else if (worker.state === 'redundant') finish(new Error('新版啟用失敗，請重試。'))
+    }
+    const timer = setTimeout(() => finish(new Error('新版啟用逾時，請再按檢查更新。')), 20000)
+    worker.addEventListener('statechange', changed)
+    try { worker.postMessage({ type: 'SKIP_WAITING' }); changed() }
+    catch (error) { finish(error instanceof Error ? error : new Error('新版啟用失敗。')) }
+  })
+}
+
 export function withTimeout<T>(promise: Promise<T>, ms = 15000): Promise<T> {
   return new Promise((resolve, reject) => {
     const timer = setTimeout(() => reject(new Error('更新逾時，請稍後重試。')), ms)

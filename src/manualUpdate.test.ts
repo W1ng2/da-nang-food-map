@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { checkAppVersion, fetchPublishedPlaces } from './manualUpdate'
+import { activateAppUpdate, checkAppVersion, fetchPublishedPlaces } from './manualUpdate'
 
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.useRealTimers() })
 
@@ -8,6 +8,28 @@ function registration(overrides: object = {}) {
 }
 
 describe('manual update', () => {
+  it('waits for activation even when a first-visit tab has no controller', async () => {
+    const worker = Object.assign(new EventTarget(), { state: 'installed', postMessage: vi.fn() })
+    let done = false
+    const result = activateAppUpdate(registration({ waiting: worker })).then(() => { done = true })
+    expect(worker.postMessage).toHaveBeenCalledWith({ type: 'SKIP_WAITING' })
+    await Promise.resolve()
+    expect(done).toBe(false)
+    worker.state = 'activated'; worker.dispatchEvent(new Event('statechange'))
+    await result
+    expect(done).toBe(true)
+    await expect(activateAppUpdate(registration())).resolves.toBeUndefined()
+    await expect(activateAppUpdate()).rejects.toThrow('未能取得')
+  })
+  it('does not reload through a failed or stalled activation', async () => {
+    vi.useFakeTimers()
+    const worker = Object.assign(new EventTarget(), { state: 'installed', postMessage: vi.fn() })
+    const failed = expect(activateAppUpdate(registration({ waiting: worker }))).rejects.toThrow('啟用失敗')
+    worker.state = 'redundant'; worker.dispatchEvent(new Event('statechange')); await failed
+    worker.state = 'installed'
+    const stalled = expect(activateAppUpdate(registration({ waiting: worker }))).rejects.toThrow('逾時')
+    await vi.advanceTimersByTimeAsync(20001); await stalled
+  })
   it('checks the registration, and does not clear stored preferences', async () => {
     localStorage.setItem('danang-food-map:favorites', '["hoi-an-mi-quang-92"]')
     const reg = registration()
