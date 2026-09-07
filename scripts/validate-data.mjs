@@ -11,8 +11,8 @@ const ARRIVAL_PHOTO_KINDS = new Set(['storefront', 'building-entrance'])
 const SUPPORTED_PHOTO_KINDS = new Set([...ARRIVAL_PHOTO_KINDS, 'venue-identity', 'landmark'])
 const TIME_PATTERN = /^(?:[01]\d|2[0-3]):[0-5]\d$/
 
-if (places.length !== 111) failures.push(`Expected 111 places, found ${places.length}`)
-if (places.filter((place) => place.kind === 'restaurant').length !== 100) failures.push('Expected 100 restaurants')
+if (places.length !== 125) failures.push(`Expected 125 places, found ${places.length}`)
+if (places.filter((place) => place.kind === 'restaurant').length !== 114) failures.push('Expected 114 restaurants')
 if (places.filter((place) => place.kind === 'attraction').length !== 11) failures.push('Expected 11 attractions')
 if (new Set(places.map((place) => place.id)).size !== places.length) failures.push('Place IDs are not unique')
 
@@ -28,9 +28,10 @@ for (const place of places) {
   if (place.kind === 'restaurant' && !place.rating) failures.push(`${place.name}: missing Google rating`)
   if (place.kind === 'restaurant' && !place.reviewCount) failures.push(`${place.name}: missing Google review count`)
   if (place.id.startsWith('hoi-an-') && place.kind === 'restaurant') {
-    if (place.rating < 4.8 || place.reviewCount < 500) failures.push(`${place.name}: below the existing restaurant screening threshold`)
+    if (place.collection !== 'editor-pick' && (place.rating < 4.8 || place.reviewCount < 500)) failures.push(`${place.name}: below the existing restaurant screening threshold`)
     if (!place.reviewSourceUrl || !place.reviewAudit || !place.criteria) failures.push(`${place.name}: missing screening evidence`)
   }
+  if (place.collection === 'editor-pick' && (place.kind !== 'restaurant' || !place.selectionReason?.trim() || !/^https:\/\//.test(place.selectionSourceUrl || ''))) failures.push(`${place.name}: editorial exception requires a reason and source`)
   if (place.kind === 'attraction' && (!place.markerImageUrl?.startsWith('data:image/') || place.photo?.kind !== 'landmark')) failures.push(`${place.name}: attraction requires an embedded landmark photo marker`)
   if (place.photo) {
     for (const field of ['url', 'alt', 'kind', 'arrivalNote', 'credit', 'sourceUrl', 'rightsNotice']) {

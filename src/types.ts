@@ -1,4 +1,4 @@
-export type CollectionId = 'michelin' | 'high-rating' | 'cafe-dessert' | 'breakfast' | 'attraction'
+export type CollectionId = 'michelin' | 'high-rating' | 'editor-pick' | 'cafe-dessert' | 'breakfast' | 'attraction'
 export type PlaceKind = 'restaurant' | 'attraction'
 export type Weekday = 'sun' | 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat'
 
@@ -36,6 +36,8 @@ export interface Place {
   reviewCount: number | null
   reviewCountVerifiedAt: string
   reviewSourceUrl?: string
+  selectionReason?: string
+  selectionSourceUrl?: string
   description: string
   priceVnd: string
   priceHkd: string

@@ -51,6 +51,7 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
         </span>
         <div>
           <span className="place-sheet__labels">
+            {place.collection === 'editor-pick' && <span className="editor-badge">編輯精選 · 門檻例外</span>}
             {place.michelin && <span className="michelin-badge">M&nbsp; MICHELIN GUIDE · {place.michelin}</span>}
             <span className="eyebrow">{place.type}</span>
           </span>
@@ -75,6 +76,13 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
         <a href={appleMapsUrl(place)} target="_blank" rel="noreferrer">Apple Maps ↗</a>
       </div>
       <p className="place-sheet__description">{place.description}</p>
+      {place.collection === 'editor-pick' && place.selectionReason && (
+        <aside className="selection-note" aria-label="為何例外收錄">
+          <strong>為何例外收錄</strong>
+          <p>{place.selectionReason}</p>
+          {place.selectionSourceUrl && <a href={place.selectionSourceUrl} target="_blank" rel="noreferrer">收錄參考來源 ↗</a>}
+        </aside>
+      )}
 
       <div className="fact-grid">
         <div><span>{place.kind === 'attraction' ? '遊覽重點' : '不可錯過'}</span><strong>{place.signature}</strong></div>

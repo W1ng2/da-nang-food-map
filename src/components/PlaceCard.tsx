@@ -29,6 +29,7 @@ export function PlaceCard({ place, location, favorite, visited, onSelect, onFavo
         </span>
         <span className="place-card__body">
           <span className="place-card__labels">
+            {place.collection === 'editor-pick' && <span className="editor-badge">編輯精選 · 門檻例外</span>}
             {place.michelin && <span className="michelin-badge">M&nbsp; MICHELIN · {place.michelin}</span>}
             <span className="eyebrow">{place.type}</span>
           </span>

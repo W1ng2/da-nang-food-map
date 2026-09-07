@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { FOOD_GROUPS, HOTEL, TRIP_DAYS, foodGroup, initialTripDate, placeRegion, vietnamDate } from './trip'
 import { TripView } from './components/TripView'
 import { NORTH_UP_CAMERA, createUserLocationFeatureCollection } from './components/MapView'
-import { CUISINE_ORDER } from './config'
+import { CUISINE_ORDER, MAP_ICON_FILES } from './config'
 import hoiAn from '../data/hoi-an-places.json'
 
 describe('travel map additions', () => {
@@ -43,14 +43,23 @@ describe('travel map additions', () => {
     expect(renderToStaticMarkup(<TripView {...props} date="2026-09-07" />)).toContain('<h2>今日行程</h2>')
     expect(renderToStaticMarkup(<TripView {...props} date="2026-09-06" />)).toContain('<h2>旅程安排</h2>')
   })
-  it('preserves the existing non-Michelin screening threshold and honest source limitations', () => {
-    expect(hoiAn.filter((place) => place.kind === 'restaurant')).toHaveLength(3)
+  it('preserves screening thresholds except for explicitly sourced editorial picks', () => {
+    expect(hoiAn.filter((place) => place.kind === 'restaurant')).toHaveLength(17)
+    expect(hoiAn.filter((place) => place.collection === 'editor-pick')).toHaveLength(3)
     expect(hoiAn.filter((place) => place.kind === 'attraction')).toHaveLength(5)
+    expect(new Set(hoiAn.map((place) => place.id)).size).toBe(hoiAn.length)
     for (const place of hoiAn) {
       expect(placeRegion(place)).toBe('hoi-an')
       if (place.kind === 'restaurant') {
-        expect(place.rating).toBeGreaterThanOrEqual(4.8)
-        expect(place.reviewCount).toBeGreaterThanOrEqual(500)
+        if (place.collection === 'editor-pick') {
+          expect(place.selectionReason).toContain('門檻')
+          expect(place.selectionSourceUrl).toMatch(/^https:/)
+          expect(place.criteria).toContain('例外')
+        } else {
+          expect(place.rating).toBeGreaterThanOrEqual(4.8)
+          expect(place.reviewCount).toBeGreaterThanOrEqual(500)
+        }
+        expect(MAP_ICON_FILES[place.iconType]).toBeTruthy()
         expect(place.reviewSourceUrl).toMatch(/^https:/)
         expect(place.reviewAudit).toContain('並非全量')
         expect(place.priceHkd).toContain('HK$')

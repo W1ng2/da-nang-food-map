@@ -58,6 +58,26 @@ const place: Place = {
 }
 
 describe('餐廳官方資料顯示合約', () => {
+  it('例外餐廳在清單與詳情明確標示，保留實際分數及來源', () => {
+    const editorial: Place = { ...place, collection: 'editor-pick', michelin: '', rating: 4.5, reviewCount: 396,
+      selectionReason: '未達原門檻，以廣南麵特色例外收錄。', selectionSourceUrl: 'https://guide.example/noodles', photo: null }
+    const props = { place: editorial, location: null, favorite: false, visited: false,
+      onFavorite: () => {}, onVisited: () => {}, now: Date.parse('2026-09-07T05:00:00Z') }
+    const card = renderToStaticMarkup(<PlaceCard {...props} onSelect={() => {}} />)
+    const sheet = renderToStaticMarkup(<PlaceSheet {...props} onClose={() => {}} onShare={() => {}} />)
+    expect(card).toContain('編輯精選 · 門檻例外')
+    expect(sheet).toContain('編輯精選 · 門檻例外')
+    expect(sheet).toContain('★ 4.5')
+    expect(sheet).toContain('396 則評論')
+    expect(sheet).toContain(editorial.selectionReason)
+    expect(sheet).toContain('href="https://guide.example/noodles"')
+    expect(sheet).not.toContain('MICHELIN')
+    expect(sheet).not.toContain('place-sheet__photo-block')
+    const standard = renderToStaticMarkup(<PlaceSheet {...props} place={place} onClose={() => {}} onShare={() => {}} />)
+    expect(standard).not.toContain('編輯精選')
+    expect(standard).not.toContain('為何例外收錄')
+  })
+
   it('訂座聯絡說明不會在清單變成建議訂座，詳情保留原文', () => {
     const infoOnlyPlace = { ...place, bookingAdvice: '可經官方表格預約；10 人以上請直接聯絡餐廳。' }
     const props = {

@@ -97,6 +97,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .place-card__body { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .eyebrow { color: var(--tomato); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 .place-card__labels, .place-sheet__labels { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 7px; }
+.editor-badge { width: fit-content; padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font-size: 10px; font-weight: 800; line-height: 1.3; }
+.selection-note { margin: 0 0 14px; padding: 12px 14px; border-left: 3px solid var(--ink); border-radius: 0 12px 12px 0; background: var(--paper); color: var(--ink); font-size: 12px; line-height: 1.6; }
+.selection-note p { margin: 5px 0; }
+.selection-note a { color: var(--ink); text-underline-offset: 3px; }
 .michelin-badge { width: fit-content; padding: 3px 6px; border: 1px solid #d6a843; border-radius: 999px; background: #fff2c8; color: #73500d; font-size: 8px; font-weight: 900; letter-spacing: .07em; line-height: 1.1; }
 .place-card__body > strong { overflow: hidden; color: var(--ink); font-family: "Songti TC", serif; font-size: 17px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
 .place-card__meta { color: var(--muted); font-size: 11px; }
