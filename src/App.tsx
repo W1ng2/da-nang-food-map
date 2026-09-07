@@ -10,8 +10,10 @@ import { UpdateBanner } from './components/UpdateBanner'
 import { HeartIcon, PlusIcon } from './components/UiIcon'
 import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } from './utils'
 import type { Place, UserLocation } from './types'
+import { FOOD_GROUPS, HOTEL, foodGroup, initialTripDate, placeRegion, type Region } from './trip'
+import { TripView } from './components/TripView'
 
-type View = 'map' | 'list' | 'favorites'
+type View = 'map' | 'list' | 'favorites' | 'trip'
 type ExploreMode = 'restaurant' | 'attraction'
 
 const DEFAULT_DECISION_FILTERS: DecisionFilters = {
@@ -30,6 +32,10 @@ export default function App() {
   const [view, setView] = useState<View>('map')
   const [mode, setMode] = useState<ExploreMode>('restaurant')
   const [selectedType, setSelectedType] = useState('')
+  const [selectedGroup, setSelectedGroup] = useState('')
+  const [region, setRegion] = useState<Region>('all')
+  const [tripDate, setTripDate] = useState(() => initialTripDate(Date.now()))
+  const [hotelFocus, setHotelFocus] = useState(0)
   const [selected, setSelected] = useState<Place | null>(null)
   const [now, setNow] = useState(Date.now())
   const [deepLinkReady, setDeepLinkReady] = useState(false)
@@ -75,10 +81,11 @@ export default function App() {
     return () => window.removeEventListener('hashchange', selectFromHash)
   }, [places])
 
-  const modePlaces = useMemo(() => places.filter((place) => place.kind === mode), [places, mode])
+  const modePlaces = useMemo(() => places.filter((place) => place.kind === mode && (region === 'all' || placeRegion(place) === region)), [places, mode, region])
+  const groupPlaces = useMemo(() => mode === 'restaurant' && selectedGroup ? modePlaces.filter((place) => foodGroup(place.type) === selectedGroup) : modePlaces, [modePlaces, mode, selectedGroup])
   const typeMatches = useMemo(
-    () => filterPlaces(modePlaces, query, selectedType, view === 'favorites', favorites),
-    [modePlaces, query, selectedType, view, favorites]
+    () => filterPlaces(groupPlaces, query, selectedType, view === 'favorites', favorites),
+    [groupPlaces, query, selectedType, view, favorites]
   )
 
   const filtered = useMemo(() => {
@@ -89,7 +96,7 @@ export default function App() {
 
   const placeTypes = useMemo(() => {
     const order = mode === 'restaurant' ? CUISINE_ORDER : ATTRACTION_ORDER
-    const available = new Set(modePlaces.map((place) => place.type))
+    const available = new Set(groupPlaces.map((place) => place.type))
     const ordered = order.filter((type) => available.has(type))
     const remaining = [...available]
       .filter((type) => !(order as readonly string[]).includes(type))
@@ -98,7 +105,7 @@ export default function App() {
       const sample = modePlaces.find((place) => place.type === type)
       return { type, iconFile: sample ? MAP_ICON_FILES[sample.iconType] : undefined, markerImageUrl: sample?.markerImageUrl || '' }
     })
-  }, [mode, modePlaces])
+  }, [mode, modePlaces, groupPlaces])
   const draftResultCount = useMemo(
     () => applyDecisionFilters(typeMatches, draftDecisionFilters, userLocation, new Date(now)).length,
     [typeMatches, draftDecisionFilters, userLocation, now]
@@ -110,8 +117,16 @@ export default function App() {
   const switchMode = (nextMode: ExploreMode) => {
     setMode(nextMode)
     setSelectedType('')
+    setSelectedGroup('')
     setQuery('')
     setSelected(null)
+  }
+
+  const showHotel = () => { setSelected(null); setView('map'); setHotelFocus((value) => value + 1) }
+  const switchView = (nextView: View) => { setHotelFocus(0); setView(nextView) }
+  const showTripPlace = (place: Place) => {
+    setMode(place.kind); setRegion(placeRegion(place)); setSelectedGroup(''); setSelectedType('')
+    setQuery(''); setDecisionFilters(DEFAULT_DECISION_FILTERS); setView('map'); setSelected(place)
   }
 
   const locate = (enableNearbyDraft = false) => {
@@ -159,34 +174,38 @@ export default function App() {
     <main className="app-shell">
       <header className="topbar">
         <div className="brand">
-          <span className="brand__stamp" aria-hidden="true">峴港<br />食旅</span>
-          <div><p>DA NANG · 2026</p><h1>今天想去哪裡？</h1></div>
+          <span className="brand__stamp" aria-hidden="true">越南<br />慢遊</span>
+          <div><p>DA NANG & HOI AN · 2026</p><h1>今天想去哪裡？</h1></div>
         </div>
         <button className="install-button" type="button" onClick={() => setShowInstall(true)} aria-label="加入主畫面"><PlusIcon /></button>
-        <label className="search-box">
+        {view !== 'trip' && <><label className="search-box">
           <span aria-hidden="true">⌕</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)}
             placeholder={mode === 'restaurant' ? '搜尋餐廳、名物或菜式' : '搜尋景點、區域或遊覽重點'}
             aria-label={mode === 'restaurant' ? '搜尋餐廳' : '搜尋景點'} />
           {query && <button type="button" onClick={() => setQuery('')} aria-label="清除搜尋">×</button>}
         </label>
+        <label className="region-picker">探索區域<select aria-label="探索區域" value={region} onChange={(event) => { setRegion(event.target.value as Region); setSelectedType(''); setSelectedGroup(''); setSelected(null) }}>
+          <option value="all">峴港＋會安</option><option value="da-nang">峴港</option><option value="hoi-an">會安及周邊</option>
+        </select></label>
         <div className="mode-switch" aria-label="地圖內容">
           <button type="button" className={mode === 'restaurant' ? 'is-active' : ''} aria-pressed={mode === 'restaurant'} onClick={() => switchMode('restaurant')}>
-            餐廳 <span>{places.filter((place) => place.kind === 'restaurant').length}</span>
+            餐廳 <span>{places.filter((place) => place.kind === 'restaurant' && (region === 'all' || placeRegion(place) === region)).length}</span>
           </button>
           <button type="button" className={mode === 'attraction' ? 'is-active' : ''} aria-pressed={mode === 'attraction'} onClick={() => switchMode('attraction')}>
-            景點 <span>{places.filter((place) => place.kind === 'attraction').length}</span>
+            景點 <span>{places.filter((place) => place.kind === 'attraction' && (region === 'all' || placeRegion(place) === region)).length}</span>
           </button>
         </div>
-        <div className="filter-strip" aria-label={mode === 'restaurant' ? '按菜式篩選' : '按景點類型篩選'}>
+        {mode === 'restaurant' && <div className="filter-strip food-groups" aria-label="料理分類">
+          <button type="button" aria-pressed={!selectedGroup} className={!selectedGroup ? 'is-active' : ''} onClick={() => { setSelectedGroup(''); setSelectedType('') }}>全部</button>
+          {FOOD_GROUPS.filter((group) => modePlaces.some((place) => foodGroup(place.type) === group)).map((group) => <button key={group} type="button" aria-pressed={selectedGroup === group} className={selectedGroup === group ? 'is-active' : ''} onClick={() => { setSelectedGroup(selectedGroup === group ? '' : group); setSelectedType('') }}>{group}</button>)}
+        </div>}
+        <div className="filter-strip detail-filters" aria-label={mode === 'restaurant' ? '按菜式篩選' : '按景點類型篩選'}>
+          {(mode === 'attraction' || selectedGroup) && <>
           <button type="button" className={!selectedType ? 'is-active' : ''} aria-pressed={!selectedType}
             data-cuisine={mode === 'restaurant' ? 'all' : undefined} data-place-type="all" onClick={() => setSelectedType('')}>
             {mode === 'restaurant' ? '全部菜式' : '全部景點'}
           </button>
-          {mode === 'restaurant' && <button type="button" className={decisionFilters.openNow ? 'is-active open-now-filter' : 'open-now-filter'}
-            aria-pressed={decisionFilters.openNow} onClick={() => setDecisionFilters((current) => ({ ...current, openNow: !current.openNow }))}>
-            現在營業
-          </button>}
           {placeTypes.map(({ type, iconFile, markerImageUrl }) => (
             <button key={type} type="button" className={selectedType === type ? 'is-active' : ''}
               aria-pressed={selectedType === type} data-cuisine={mode === 'restaurant' ? type : undefined} data-place-type={type}
@@ -197,23 +216,27 @@ export default function App() {
               {type}
             </button>
           ))}
+          </>}
+          {mode === 'restaurant' && <button type="button" className={decisionFilters.openNow ? 'is-active open-now-filter' : 'open-now-filter'}
+            aria-pressed={decisionFilters.openNow} onClick={() => setDecisionFilters((current) => ({ ...current, openNow: !current.openNow }))}>現在營業</button>}
           <button className={`decision-filter-button ${activeDecisionFilterCount ? 'is-active' : ''}`} type="button" onClick={openFilters}>
             {mode === 'restaurant' ? '距離／預算' : '距離'}{activeDecisionFilterCount ? ` · ${activeDecisionFilterCount}` : ''}
           </button>
-        </div>
+        </div></>}
+        {view === 'trip' && <p className="topbar__trip-note">少趕一站，多留一點時間。</p>}
       </header>
 
       <section className={`content content--${view}`}>
         {view === 'map' ? (
           <>
-            <MapView places={filtered} selected={selected} onSelect={setSelected} userLocation={userLocation} now={now} />
+            <MapView places={filtered} selected={selected} onSelect={setSelected} userLocation={userLocation} now={now} hotelFocus={hotelFocus} region={region} />
             <div className="map-status" role="status"><strong>{filtered.length}</strong> {mode === 'restaurant' ? '間餐廳' : '個景點'}</div>
-            <button className="locate-button" type="button" onClick={() => locate()}><span aria-hidden="true">⌖</span>{userLocation ? '重新定位' : '我的位置'}</button>
+            <div className="map-bottom-actions"><a href={HOTEL.mapsUrl} target="_blank" rel="noreferrer">返回酒店 ↗</a><button className="locate-button" type="button" onClick={() => locate()}><span aria-hidden="true">⌖</span>{userLocation ? '重新定位' : '我的位置'}</button></div>
           </>
-        ) : (
+        ) : view === 'trip' ? <TripView places={places} date={tripDate} now={now} onDate={setTripDate} onPlace={showTripPlace} onHotel={showHotel} /> : (
           <div className="list-view">
             <div className="list-view__heading">
-              <div><span>{view === 'favorites' ? 'MY SAVED PLACES' : 'CURATED IN DA NANG'}</span><h2>{view === 'favorites' ? '我的收藏' : `${filtered.length} ${mode === 'restaurant' ? '間餐廳' : '個景點'}`}</h2></div>
+              <div><span>{view === 'favorites' ? 'MY SAVED PLACES' : region === 'hoi-an' ? 'CURATED IN HOI AN' : region === 'da-nang' ? 'CURATED IN DA NANG' : 'DA NANG & HOI AN'}</span><h2>{view === 'favorites' ? '我的收藏' : `${filtered.length} ${mode === 'restaurant' ? '間餐廳' : '個景點'}`}</h2></div>
               {!userLocation && <button type="button" onClick={() => locate()}>按距離排序</button>}
             </div>
             {filtered.length ? filtered.map((place) => (
@@ -228,14 +251,15 @@ export default function App() {
       {needRefresh && <UpdateBanner onUpdate={() => void updateServiceWorker(true)} onDismiss={() => setNeedRefresh(false)} />}
 
       <nav className="tabbar" aria-label="主要頁面">
-        <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => setView('map')}><span aria-hidden="true">⌖</span>地圖</button>
-        <button type="button" className={view === 'list' ? 'is-active' : ''} aria-current={view === 'list' ? 'page' : undefined} onClick={() => setView('list')}><span aria-hidden="true">≡</span>清單</button>
-        <button type="button" className={view === 'favorites' ? 'is-active' : ''} aria-current={view === 'favorites' ? 'page' : undefined} onClick={() => setView('favorites')}><span aria-hidden="true"><HeartIcon filled={view === 'favorites'} /></span>收藏<em>{favorites.size || ''}</em></button>
+        <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => switchView('map')}><span aria-hidden="true">⌖</span>地圖</button>
+        <button type="button" className={view === 'list' ? 'is-active' : ''} aria-current={view === 'list' ? 'page' : undefined} onClick={() => switchView('list')}><span aria-hidden="true">≡</span>清單</button>
+        <button type="button" className={view === 'trip' ? 'is-active' : ''} aria-current={view === 'trip' ? 'page' : undefined} onClick={() => switchView('trip')}><span aria-hidden="true">☷</span>行程</button>
+        <button type="button" className={view === 'favorites' ? 'is-active' : ''} aria-current={view === 'favorites' ? 'page' : undefined} onClick={() => switchView('favorites')}><span aria-hidden="true"><HeartIcon filled={view === 'favorites'} /></span>收藏<em>{favorites.size || ''}</em></button>
       </nav>
 
       {selected && <>
         <button className="sheet-backdrop" type="button" aria-label="關閉地點詳情" onClick={() => setSelected(null)} />
-        <PlaceSheet place={selected} location={userLocation} favorite={favorites.has(selected.id)} visited={visited.has(selected.id)} onClose={() => setSelected(null)}
+        <PlaceSheet key={selected.id} place={selected} location={userLocation} favorite={favorites.has(selected.id)} visited={visited.has(selected.id)} onClose={() => setSelected(null)}
           onFavorite={() => toggleFavorite(selected.id)} onVisited={() => toggleVisited(selected.id)} onShare={sharePlace} now={now} />
       </>}
 

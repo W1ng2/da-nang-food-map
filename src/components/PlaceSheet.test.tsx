@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { PlaceSheet } from './PlaceSheet'
+import { PlaceCard } from './PlaceCard'
 import type { Place } from '../types'
 
 const place: Place = {
@@ -57,6 +58,20 @@ const place: Place = {
 }
 
 describe('餐廳官方資料顯示合約', () => {
+  it('訂座聯絡說明不會在清單變成建議訂座，詳情保留原文', () => {
+    const infoOnlyPlace = { ...place, bookingAdvice: '可經官方表格預約；10 人以上請直接聯絡餐廳。' }
+    const props = {
+      place: infoOnlyPlace, location: null, favorite: false, visited: false,
+      onFavorite: () => {}, onVisited: () => {}, now: Date.parse('2026-08-31T12:00:00Z')
+    }
+    const card = renderToStaticMarkup(<PlaceCard {...props} onSelect={() => {}} />)
+    const sheet = renderToStaticMarkup(<PlaceSheet {...props} onClose={() => {}} onShare={() => {}} />)
+    expect(card).toContain(place.priceHkd)
+    expect(card).not.toContain('建議訂座')
+    expect(sheet).toContain(infoOnlyPlace.bookingAdvice)
+    expect(sheet).toContain(place.bookingUrl)
+  })
+
   it('相片、營業時間及其核對來源可在詳情頁追溯', () => {
     const markup = renderToStaticMarkup(
       <PlaceSheet

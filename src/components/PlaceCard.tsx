@@ -34,11 +34,11 @@ export function PlaceCard({ place, location, favorite, visited, onSelect, onFavo
           </span>
           <strong>{place.name}</strong>
           <span className="place-card__meta">
-            {place.kind === 'restaurant' && <><b>★ {place.rating}</b> · {formatReviews(place.reviewCount)} 則</>}
+            {place.kind === 'restaurant' && <><b>★ {place.rating}</b> · {formatReviews(place.reviewCount)} 則{place.reviewSourceUrl ? '（轉載快照）' : ''}</>}
             {location ? `${place.kind === 'restaurant' ? ' · ' : ''}${distanceKm(location, place).toFixed(1)} km` : ''}
           </span>
           <span className={`opening-pill opening-pill--${opening.state}`}>{opening.label}</span>
-          <span className="place-card__price">{place.kind === 'attraction' ? `費用：${place.priceHkd}` : `${place.priceHkd}${place.bookingAdvice ? ' · 建議訂座' : ''}`}</span>
+          <span className="place-card__price">{place.kind === 'attraction' ? `費用：${place.priceHkd}` : place.priceHkd}</span>
           <span className="place-card__dish">{place.kind === 'attraction' ? '遊覽重點' : '名物'}：{place.signature}</span>
         </span>
       </button>

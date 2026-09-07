@@ -53,6 +53,6 @@ export function placePhotoUrl(place: Pick<Place, 'photo'>) {
 export const formatReviews = (count: number | null) => count ? new Intl.NumberFormat('zh-HK').format(count) : '未收錄'
 
 export function appleMapsUrl(place: Place) {
-  const params = new URLSearchParams({ daddr: `${place.lat},${place.lng}`, q: place.name, dirflg: 'w' })
+  const params = new URLSearchParams({ daddr: `${place.lat},${place.lng}`, q: place.name })
   return `https://maps.apple.com/?${params.toString()}`
 }

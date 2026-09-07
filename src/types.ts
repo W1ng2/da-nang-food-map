@@ -35,6 +35,7 @@ export interface Place {
   rating: number | null
   reviewCount: number | null
   reviewCountVerifiedAt: string
+  reviewSourceUrl?: string
   description: string
   priceVnd: string
   priceHkd: string

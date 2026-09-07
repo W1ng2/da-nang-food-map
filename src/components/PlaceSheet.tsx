@@ -59,10 +59,9 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
             {place.kind === 'restaurant' && <><b>★ {place.rating}</b><span>{formatReviews(place.reviewCount)} 則評論</span></>}
             {location && <span>{distanceKm(location, place).toFixed(1)} km</span>}
           </p>
+          {place.reviewSourceUrl && <a className="rating-source" href={place.reviewSourceUrl} target="_blank" rel="noreferrer">評論數為轉載快照 · {place.reviewCountVerifiedAt} 核對 ↗</a>}
         </div>
       </div>
-
-      <p className="place-sheet__description">{place.description}</p>
 
       <div className={`opening-status opening-status--${opening.state}`} role="status">
         <strong>{opening.label}</strong>
@@ -70,9 +69,15 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
         {place.schedule?.note && <small>{place.schedule.note}</small>}
       </div>
 
+      <div className="price-summary"><span>{place.kind === 'attraction' ? '門票／費用' : '人均預算'}</span><strong>{place.priceHkd}</strong><small>{place.priceVnd}</small></div>
+      <div className="route-actions">
+        <a href={place.mapsUrl} target="_blank" rel="noreferrer">Google Maps ↗</a>
+        <a href={appleMapsUrl(place)} target="_blank" rel="noreferrer">Apple Maps ↗</a>
+      </div>
+      <p className="place-sheet__description">{place.description}</p>
+
       <div className="fact-grid">
         <div><span>{place.kind === 'attraction' ? '遊覽重點' : '不可錯過'}</span><strong>{place.signature}</strong></div>
-        <div><span>{place.kind === 'attraction' ? '門票／費用' : '人均預算'}</span><strong>{place.priceVnd}</strong><em>{place.priceHkd}</em></div>
         {place.hours && <div><span>{place.kind === 'attraction' ? '開放時間' : '早餐／營業時間'}</span><strong>{place.hours}</strong></div>}
         {place.bookingAdvice && <div><span>訂座提示</span><strong>{place.bookingAdvice}</strong></div>}
         <div><span>地址</span><strong>{place.address}</strong></div>
@@ -82,6 +87,7 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
         <details className="audit-note">
           <summary>資料核對與備註</summary>
           {place.kind === 'restaurant' && place.reviewAudit && <p><b>反誘評抽查：</b>{place.reviewAudit}</p>}
+          {place.criteria && <p><b>收錄條件：</b>{place.criteria}</p>}
           {place.notes && <p><b>{place.kind === 'attraction' ? '到訪提示' : '用餐提示'}：</b>{place.notes}</p>}
           {place.priceNote && <p><b>價格：</b>{place.priceNote}</p>}
           <p>資料核對：{place.verifiedAt}</p>
@@ -95,14 +101,10 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
         <button type="button" onClick={onShare}>分享</button>
       </div>
       {(place.bookingUrl || place.phone || place.website) && <div className="contact-actions">
-        {place.bookingUrl && <a href={place.bookingUrl} target="_blank" rel="noreferrer">官方訂座</a>}
+        {place.bookingUrl && <a href={place.bookingUrl} target="_blank" rel="noreferrer">{place.kind === 'attraction' ? '官方購票' : '官方訂座'}</a>}
         {place.phone && <a href={`tel:${place.phone}`}>致電</a>}
         {place.website && <a href={place.website} target="_blank" rel="noreferrer">官方網站</a>}
       </div>}
-      <div className="route-actions">
-        <a href={place.mapsUrl} target="_blank" rel="noreferrer">Google Maps</a>
-        <a href={appleMapsUrl(place)} target="_blank" rel="noreferrer">Apple Maps</a>
-      </div>
     </section>
   )
 }

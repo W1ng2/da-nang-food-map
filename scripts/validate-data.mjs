@@ -11,15 +11,15 @@ const ARRIVAL_PHOTO_KINDS = new Set(['storefront', 'building-entrance'])
 const SUPPORTED_PHOTO_KINDS = new Set([...ARRIVAL_PHOTO_KINDS, 'venue-identity', 'landmark'])
 const TIME_PATTERN = /^(?:[01]\d|2[0-3]):[0-5]\d$/
 
-if (places.length !== 103) failures.push(`Expected 103 places, found ${places.length}`)
-if (places.filter((place) => place.kind === 'restaurant').length !== 97) failures.push('Expected 97 restaurants')
-if (places.filter((place) => place.kind === 'attraction').length !== 6) failures.push('Expected 6 attractions')
+if (places.length !== 111) failures.push(`Expected 111 places, found ${places.length}`)
+if (places.filter((place) => place.kind === 'restaurant').length !== 100) failures.push('Expected 100 restaurants')
+if (places.filter((place) => place.kind === 'attraction').length !== 11) failures.push('Expected 11 attractions')
 if (new Set(places.map((place) => place.id)).size !== places.length) failures.push('Place IDs are not unique')
 
 for (const place of places) {
   for (const field of required) if (!place[field]) failures.push(`${place.name}: missing ${field}`)
   if (!Number.isFinite(place.lat) || !Number.isFinite(place.lng)) failures.push(`${place.name}: missing coordinates`)
-  if (place.lat < 15.8 || place.lat > 16.3 || place.lng < 107.9 || place.lng > 108.5) failures.push(`${place.name}: coordinate outside Da Nang bounds`)
+  if (place.lat < 15.75 || place.lat > 16.3 || place.lng < 107.9 || place.lng > 108.5) failures.push(`${place.name}: coordinate outside Da Nang / Hoi An bounds`)
   if (!place.priceHkd && !/HK\$/i.test(place.priceVnd)) failures.push(`${place.name}: missing HKD price`)
   const hasHkdMin = Number.isFinite(place.priceHkdMin)
   const hasHkdMax = Number.isFinite(place.priceHkdMax)
@@ -27,6 +27,10 @@ for (const place of places) {
   if (hasHkdMin && place.priceHkdMin > place.priceHkdMax) failures.push(`${place.name}: reversed HKD range`)
   if (place.kind === 'restaurant' && !place.rating) failures.push(`${place.name}: missing Google rating`)
   if (place.kind === 'restaurant' && !place.reviewCount) failures.push(`${place.name}: missing Google review count`)
+  if (place.id.startsWith('hoi-an-') && place.kind === 'restaurant') {
+    if (place.rating < 4.8 || place.reviewCount < 500) failures.push(`${place.name}: below the existing restaurant screening threshold`)
+    if (!place.reviewSourceUrl || !place.reviewAudit || !place.criteria) failures.push(`${place.name}: missing screening evidence`)
+  }
   if (place.kind === 'attraction' && (!place.markerImageUrl?.startsWith('data:image/') || place.photo?.kind !== 'landmark')) failures.push(`${place.name}: attraction requires an embedded landmark photo marker`)
   if (place.photo) {
     for (const field of ['url', 'alt', 'kind', 'arrivalNote', 'credit', 'sourceUrl', 'rightsNotice']) {

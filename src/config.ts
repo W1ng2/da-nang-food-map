@@ -1,5 +1,3 @@
-import type { CollectionId } from './types'
-
 export const MAP_ART_ASSET_REVISION = 'icons-v2'
 
 export function mapIconAssetPath(iconFile: string) {
@@ -8,14 +6,6 @@ export function mapIconAssetPath(iconFile: string) {
 
 export function mapPinAssetPath(filename: string) {
   return `map-pins/${filename}.png?v=${MAP_ART_ASSET_REVISION}`
-}
-
-export const COLLECTIONS: Record<CollectionId, { label: string; shortLabel: string; icon: string; color: string }> = {
-  michelin: { label: 'Michelin 推薦', shortLabel: 'Michelin', icon: '✦', color: '#a72e28' },
-  'high-rating': { label: '非 Michelin · Google 4.8+', shortLabel: 'Google 4.8+', icon: '★', color: '#d2672c' },
-  'cafe-dessert': { label: 'Cafe／甜品', shortLabel: 'Cafe 甜品', icon: '☕', color: '#77583c' },
-  breakfast: { label: '早餐／越式法包', shortLabel: '早餐越包', icon: '☀', color: '#cf8d20' },
-  attraction: { label: '峴港景點', shortLabel: '景點', icon: '◉', color: '#2b6f84' }
 }
 
 export const MAP_ICON_FILES: Record<string, string> = {

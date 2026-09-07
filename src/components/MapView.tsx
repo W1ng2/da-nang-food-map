@@ -3,6 +3,7 @@ import {
   AttributionControl,
   Map as LibreMap,
   NavigationControl,
+  setWorkerUrl,
   type CircleLayerSpecification,
   type GeoJSONSource,
   type MapLayerMouseEvent,
@@ -12,6 +13,11 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { MAP_ICON_FILES, mapPinAssetPath } from '../config'
 import { getOpeningStatus } from '../openingHours'
 import type { Place, UserLocation } from '../types'
+import { HOTEL, type Region } from '../trip'
+
+// Vite's optimized module directory is not where the copied worker lives.
+// Explicitly use the same saved worker in development and on GitHub Pages.
+setWorkerUrl(`${import.meta.env.BASE_URL}assets/maplibre-gl-worker.mjs`)
 
 interface MapViewProps {
   places: Place[]
@@ -19,6 +25,8 @@ interface MapViewProps {
   onSelect: (place: Place) => void
   userLocation: UserLocation | null
   now: number
+  hotelFocus?: number
+  region?: Region
 }
 
 interface RestaurantMarkerProperties {
@@ -137,6 +145,7 @@ export function restaurantLayerSpecifications(): Array<CircleLayerSpecification 
       filter: ['has', 'point_count'],
       layout: {
         'text-field': ['get', 'point_count_abbreviated'],
+        'text-font': ['Noto Sans Regular'],
         'text-size': 12
       },
       paint: { 'text-color': '#fffaf0' }
@@ -240,7 +249,14 @@ async function ensureRestaurantImages(
   }))
 }
 
-export function MapView({ places, selected, onSelect, userLocation, now }: MapViewProps) {
+export const NORTH_UP_CAMERA = { bearing: 0, pitch: 0, duration: 350 } as const
+const REGION_BOUNDS: Record<Region, [[number, number], [number, number]]> = {
+  all: [[108.17, 15.77], [108.42, 16.12]],
+  'da-nang': [[108.17, 16.00], [108.30, 16.12]],
+  'hoi-an': [[108.315, 15.775], [108.42, 15.932]]
+}
+
+export function MapView({ places, selected, onSelect, userLocation, now, hotelFocus = 0, region = 'all' }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<LibreMap | null>(null)
   const placesRef = useRef(places)
@@ -250,6 +266,7 @@ export function MapView({ places, selected, onSelect, userLocation, now }: MapVi
   const nowRef = useRef(now)
   const pendingImagesRef = useRef(new Map<string, Promise<void>>())
   const placeSyncVersionRef = useRef(0)
+  const previousRegionRef = useRef(region)
 
   placesRef.current = places
   selectedRef.current = selected
@@ -264,6 +281,7 @@ export function MapView({ places, selected, onSelect, userLocation, now }: MapVi
       container: containerRef.current,
       style: {
         version: 8,
+        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
         sources: {
           osm: {
             type: 'raster',
@@ -274,18 +292,23 @@ export function MapView({ places, selected, onSelect, userLocation, now }: MapVi
         },
         layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
       },
-      center: [108.223, 16.067],
-      zoom: 12.1,
+      center: selected ? [selected.lng, selected.lat] : hotelFocus ? [HOTEL.lng, HOTEL.lat] : region === 'hoi-an' ? [108.337, 15.898] : region === 'da-nang' ? [108.223, 16.067] : [108.277, 15.98],
+      zoom: selected || hotelFocus ? 14 : region === 'all' ? 10.8 : 12.1,
       attributionControl: false
     })
     map.addControl(new AttributionControl({ compact: true }), 'top-right')
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right')
     mapRef.current = map
+    if (!selectedRef.current && !hotelFocus) map.fitBounds(REGION_BOUNDS[region], { padding: { top: 64, bottom: 70, left: 38, right: 54 }, duration: 0 })
     let completedMoveCount = 0
     containerRef.current.dataset.mapMoveCount = '0'
     map.on('moveend', () => {
       completedMoveCount += 1
       if (containerRef.current) containerRef.current.dataset.mapMoveCount = String(completedMoveCount)
+      containerRef.current?.setAttribute('data-map-bearing', String(map.getBearing()))
+      containerRef.current?.setAttribute('data-map-pitch', String(map.getPitch()))
+      containerRef.current?.setAttribute('data-map-zoom', String(map.getZoom()))
+      containerRef.current?.setAttribute('data-map-center', JSON.stringify(map.getCenter().toArray()))
     })
     const handleRestaurantClick = (event: MapLayerMouseEvent) => {
       const placeId = String(event.features?.[0]?.properties?.placeId ?? '')
@@ -315,6 +338,24 @@ export function MapView({ places, selected, onSelect, userLocation, now }: MapVi
         ...RESTAURANT_CLUSTER_OPTIONS
       })
       for (const layer of restaurantLayerSpecifications()) map.addLayer(layer)
+
+      // Hotel is its own WebGL source: never hidden by cuisine/area filters.
+      const hotelCanvas = document.createElement('canvas')
+      hotelCanvas.width = 240; hotelCanvas.height = 84
+      const context = hotelCanvas.getContext('2d')
+      if (context) {
+        context.fillStyle = '#173c32'; context.beginPath(); context.roundRect(2, 2, 236, 66, 18); context.fill()
+        context.strokeStyle = '#fffaf0'; context.lineWidth = 3; context.stroke()
+        context.fillStyle = '#173c32'; context.beginPath(); context.moveTo(110, 67); context.lineTo(120, 82); context.lineTo(130, 67); context.fill()
+        context.fillStyle = '#fffaf0'; context.font = 'bold 24px sans-serif'; context.textAlign = 'center'; context.fillText('Wyndham 酒店', 120, 44)
+        map.addImage('hotel-pin', context.getImageData(0, 0, 240, 84), { pixelRatio: 2 })
+        map.addSource('hotel', { type: 'geojson', data: createUserLocationFeatureCollection(HOTEL) })
+        map.addLayer({ id: 'hotel-pin', type: 'symbol', source: 'hotel', layout: { 'icon-image': 'hotel-pin', 'icon-anchor': 'bottom', 'icon-allow-overlap': true } })
+        map.on('click', 'hotel-pin', () => map.flyTo({ center: [HOTEL.lng, HOTEL.lat], zoom: 15, duration: 500 }))
+        map.on('mouseenter', 'hotel-pin', showPointer)
+        map.on('mouseleave', 'hotel-pin', hidePointer)
+        containerRef.current?.setAttribute('data-hotel-marker', 'webgl-symbol')
+      }
 
       // Data can finish loading while the map's first style frame is being created.
       // Re-sync after the source exists so that neither the source nor its images can
@@ -408,9 +449,22 @@ export function MapView({ places, selected, onSelect, userLocation, now }: MapVi
     if (userLocation) map.flyTo({ center: [userLocation.lng, userLocation.lat], zoom: 14.5, duration: 800 })
   }, [userLocation])
 
+  useEffect(() => {
+    if (!hotelFocus) return
+    mapRef.current?.flyTo({ center: [HOTEL.lng, HOTEL.lat], zoom: 15, duration: 650 })
+  }, [hotelFocus])
+
+  useEffect(() => {
+    if (previousRegionRef.current === region) return
+    previousRegionRef.current = region
+    if (selectedRef.current) return
+    mapRef.current?.fitBounds(REGION_BOUNDS[region], { padding: { top: 64, bottom: 70, left: 38, right: 54 }, duration: 650 })
+  }, [region])
+
   return (
     <div className="map-view">
-      <div className="map-canvas" ref={containerRef} aria-label="峴港餐廳及景點地圖" />
+      <div className="map-canvas" ref={containerRef} aria-label="峴港及會安餐廳、景點地圖" />
+      <button className="reset-bearing" type="button" aria-label="重設地圖方向，北方朝上" onClick={() => mapRef.current?.easeTo(NORTH_UP_CAMERA)}><span aria-hidden="true">↑ N</span>重設方向</button>
       <div className="map-place-accessibility" aria-label="地圖上的地點">
         {places.map((place) => (
           <button

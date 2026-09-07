@@ -12,9 +12,9 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['apple-touch-icon.png', 'icons/*.png', 'map-icons/*.svg'],
       manifest: {
-        name: '峴港食旅地圖',
-        short_name: '峴港食旅',
-        description: '探索峴港餐廳與景點，附即時營業狀態、菜式分類、實景圖片、預算及距離資料。',
+        name: '峴港・會安慢遊地圖',
+        short_name: '峴港會安',
+        description: '探索峴港與會安餐廳、景點及旅程安排，附按已收錄時間推算的營業狀態、實景照片與港幣預算。',
         theme_color: '#173c32',
         background_color: '#f3ead8',
         display: 'standalone',

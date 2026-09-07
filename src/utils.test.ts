@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { applyDecisionFilters, distanceKm, filterPlaces, normalizeSearch } from './utils'
+import { appleMapsUrl, applyDecisionFilters, distanceKm, filterPlaces, normalizeSearch } from './utils'
 import type { Place } from './types'
 
 const place = (overrides: Partial<Place> = {}): Place => ({
@@ -31,6 +31,14 @@ describe('餐廳搜尋與篩選合約', () => {
 })
 
 describe('距離計算合約', () => {
+  it('導航保留目的地，但不替旅客決定步行或駕車', () => {
+    const destination = place()
+    const url = new URL(appleMapsUrl(destination))
+    expect(url.searchParams.get('daddr')).toBe(`${destination.lat},${destination.lng}`)
+    expect(url.searchParams.get('q')).toBe(destination.name)
+    expect(url.searchParams.has('dirflg')).toBe(false)
+  })
+
   it('峴港市內短距離可正確換算為公里', () => {
     const distance = distanceKm({ lat: 16.0589, lng: 108.2162 }, { lat: 16.0689, lng: 108.2162 })
     expect(distance).toBeGreaterThan(1.1)
