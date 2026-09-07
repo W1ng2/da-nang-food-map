@@ -326,6 +326,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .souvenir-intro small { color: var(--muted); font-size: 11px; }
 .souvenir-filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0 0; }
 .souvenir-filters > div { display: flex; gap: 6px; }
+.souvenir-filters .souvenir-category-filter { flex-basis: 100%; flex-wrap: wrap; align-items: center; padding-top: 12px; border-top: 1px solid var(--line); }
+.souvenir-category-filter > span { color: var(--muted); font-size: 11px; margin-right: 4px; }
 .souvenir-filters button { min-height: 44px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-light); font-weight: 700; font-size: 12px; }
 .souvenir-filters button[aria-pressed="true"] { color: var(--paper-light); background: var(--ink); }
 .souvenir-filters label { font-size: 11px; color: var(--muted); }

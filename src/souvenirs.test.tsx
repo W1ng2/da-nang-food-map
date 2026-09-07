@@ -56,8 +56,21 @@ describe('souvenir guide', () => {
     try {
       await act(async () => root.render(<SouvenirView now={now} />))
       expect(host.querySelectorAll('article')).toHaveLength(8)
+      const categoryGroup = host.querySelector('[aria-label="手信種類"]')!
+      const categoryButton = (text: string) => [...categoryGroup.querySelectorAll('button')].find((button) => button.textContent === text)!
+      for (const [category, count] of [['零食', 3], ['咖啡', 2], ['工藝', 2], ['護理', 1]] as const) {
+        await act(async () => categoryButton(category).click())
+        expect(host.querySelectorAll('article')).toHaveLength(count)
+        expect(categoryButton(category).getAttribute('aria-pressed')).toBe('true')
+      }
       const recent = [...host.querySelectorAll('button')].find((button) => button.textContent === '近期熱門')!
       await act(async () => recent.click())
+      expect(host.querySelectorAll('article')).toHaveLength(1)
+      expect(host.querySelector('article')?.textContent).toContain('Cocoon')
+      await act(async () => categoryButton('咖啡').click())
+      expect(host.querySelectorAll('article')).toHaveLength(0)
+      expect(host.textContent).toContain('試試「全部種類」')
+      await act(async () => categoryButton('全部種類').click())
       expect(host.querySelectorAll('article')).toHaveLength(2)
       const select = host.querySelector('select')!
       await act(async () => { select.value = 'hoi-an'; select.dispatchEvent(new Event('change', { bubbles: true })) })
