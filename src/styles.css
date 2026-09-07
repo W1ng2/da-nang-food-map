@@ -342,6 +342,16 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .souvenir-card h3 { font-family: "Songti TC", "Noto Serif TC", serif; font-size: 26px; margin: 0; line-height: 1.3; overflow-wrap: anywhere; }
 .souvenir-card > p, .souvenir-card details p { font-size: 13px; line-height: 1.8; }
 .souvenir-card .souvenir-for { color: var(--tomato); font-size: 11px; margin-top: 8px; }
+.souvenir-photo { margin: 18px 0; }
+.souvenir-photo__image { position: relative; display: block; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.souvenir-photo__image img { display: block; width: 100%; height: 300px; object-fit: contain; }
+.souvenir-photo__image span { position: absolute; bottom: 8px; right: 8px; padding: 7px 10px; background: var(--ink); color: var(--paper-light); border-radius: 999px; font-size: 11px; }
+.souvenir-photo figcaption { color: var(--muted); font-size: 11px; line-height: 1.8; margin-top: 9px; }
+.souvenir-photo figcaption strong { color: var(--ink); }
+.souvenir-photo figcaption a { display: block; width: fit-content; padding: 10px 0; color: var(--ink); text-underline-offset: 3px; }
+.souvenir-photo__fallback { min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--paper); border-radius: 10px; color: var(--muted); font-size: 13px; }
+.souvenir-photo__fallback a { padding: 12px; color: var(--ink); }
+.souvenir-photo a:focus-visible { outline: 3px solid var(--tomato); outline-offset: 3px; }
 .souvenir-price { display: flex; flex-wrap: wrap; gap: 5px 12px; align-items: baseline; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 13px 0; margin: 18px 0; }
 .souvenir-price strong { font-size: 22px; }
 .souvenir-price span { color: var(--muted); font-size: 12px; }

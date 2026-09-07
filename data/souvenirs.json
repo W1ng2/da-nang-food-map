@@ -1,6 +1,15 @@
 [
   {
     "id": "coconut-crackers",
+    "photo": {
+      "url": "https://myphuongfood.com/wp-content/uploads/2025/06/z6517148222718_62321f63040d5b22d16decdbb6098b75-1-1-768x1152.jpg",
+      "sourceUrl": "https://myphuongfood.com/",
+      "credit": "Mỹ Phương Food",
+      "label": "包裝示例",
+      "caption": "TOPCOCO 黃盒為芝麻 MÈ、橙盒為花生 ĐẬU PHỘNG；認明口味，包裝份量可能不同。",
+      "alt": "TOPCOCO 黃色芝麻盒及橙色花生盒與椰子脆餅",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "烤椰子脆餅",
     "localName": "Bánh dừa nướng",
     "category": "零食",
@@ -36,6 +45,15 @@
   },
   {
     "id": "sesame-cake",
+    "photo": {
+      "url": "https://banhkhome.com/uploads/product/362x270zrcvktde-856-banh-kho-me-trang-hop-250g-gao-lut.jpg",
+      "sourceUrl": "https://banhkhome.com/",
+      "credit": "Bánh khô mè Bà Liễu Mẹ",
+      "label": "包裝示例",
+      "caption": "Bà Liễu Mẹ 白芝麻糙米餅 250g；認明 BÁNH KHÔ MÈ，圖示為品牌其中一款。",
+      "alt": "Bà Liễu Mẹ 白芝麻糙米餅 250g 盒裝",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "芝麻乾餅",
     "localName": "Bánh khô mè",
     "category": "零食",
@@ -64,6 +82,15 @@
   },
   {
     "id": "coffee-phin",
+    "photo": {
+      "url": "https://trungnguyenlegendcafe.net/wp-content/uploads/2020/08/1-4.jpg",
+      "sourceUrl": "https://trungnguyenlegendcafe.net/product/ca-phe-sang-tao-1-340gr-tgcp/",
+      "credit": "Trung Nguyên Legend",
+      "label": "包裝示例",
+      "caption": "Trung Nguyên Sáng tạo 1 咖啡粉 340g；只示範咖啡包裝，phin 滴漏壺另購。",
+      "alt": "Trung Nguyên Sáng tạo 1 咖啡粉 340g 包裝",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "越南咖啡＋滴漏壺",
     "localName": "Cà phê & phin",
     "category": "咖啡",
@@ -94,6 +121,15 @@
   },
   {
     "id": "lantern",
+    "photo": {
+      "url": "https://hoianmemoriesland.com/public/media/long-den-net-dep-truyen-thong-cua-hoi-an_.jpg",
+      "sourceUrl": "https://hoianmemoriesland.com/en/hoi-an-travel-guide-for-unique-souvenir-shopping-d387",
+      "credit": "Hoi An Memories Land",
+      "label": "款式參考",
+      "caption": "會安燈籠外形與布色參考；向店員確認可摺疊，尺寸及花紋以現場為準。",
+      "alt": "會安多款彩色傳統燈籠",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "可摺式會安燈籠",
     "localName": "Đèn lồng Hội An",
     "category": "工藝",
@@ -126,6 +162,15 @@
   },
   {
     "id": "reaching-out",
+    "photo": {
+      "url": "https://d2j6dbq0eux0bg.cloudfront.net/images/9878951/612606803.jpg",
+      "sourceUrl": "https://reachingoutvietnam.com/store/Lotus-Flower-Teacup-p92659388",
+      "credit": "Reaching Out Vietnam",
+      "label": "款式參考",
+      "caption": "Lotus Flower Teacup 蓮花茶杯款式；手作花紋會有差異，門市庫存及單件售價另詢。",
+      "alt": "Reaching Out 藍色蓮花圖案茶杯及杯碟",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "Reaching Out 手工茶具",
     "localName": "Gifts that Give Twice",
     "category": "工藝",
@@ -162,6 +207,15 @@
   },
   {
     "id": "cong-coffee",
+    "photo": {
+      "url": "https://cdn.hstatic.net/products/200000189081/artboard_6_6dcb3c1d13054427ae52f84d0c35fae0_master.png",
+      "sourceUrl": "https://shop.congcaphe.com/products/4-vi-ca-phe-hoa-tan",
+      "credit": "Cộng Cà Phê",
+      "label": "官方包裝圖",
+      "caption": "認明盒面「BỐN VỊ / 4 FLAVORS MIX」；4 種口味、每味 2 包，共 8 包。",
+      "alt": "Cộng 四種口味即溶咖啡 8 包混合盒",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "Cộng 四味即溶咖啡",
     "localName": "4 vị cà phê hoà tan",
     "category": "咖啡",
@@ -196,6 +250,15 @@
   },
   {
     "id": "marou",
+    "photo": {
+      "url": "https://maisonmarou.com/cdn/shop/files/tien-giang-70-single-origin-80g.webp?v=1743415072&width=770",
+      "sourceUrl": "https://maisonmarou.com/collections/chocolate-bars",
+      "credit": "Maison Marou",
+      "label": "包裝示例",
+      "caption": "TIỀN GIANG 70% 單一產地 80g 示例；MAROU 不同產地及口味使用不同色包裝。",
+      "alt": "MAROU TIỀN GIANG 70% 單一產地巧克力 80g 包裝",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "MAROU 越南產地巧克力",
     "localName": "Single Origin & Vietnamese Flavours",
     "category": "零食",
@@ -242,6 +305,15 @@
   },
   {
     "id": "cocoon",
+    "photo": {
+      "url": "https://image.cocoonvietnam.com/uploads/Skin_N_Tinh_chat_nghe_C10_a7b2be4596.png",
+      "sourceUrl": "https://cocoonvietnam.com/danh-muc/van-de-ve-da/da-xin-mau",
+      "credit": "Cocoon Vietnam",
+      "label": "官方商品圖",
+      "caption": "圖示為薑黃 C10 精華；現場核對 C10 和 30ml，勿與 C22 或面膜混淆。",
+      "alt": "Cocoon Hưng Yên 薑黃 C10 精華商品",
+      "verifiedAt": "2026-09-07"
+    },
     "name": "Cocoon 越南護膚選物",
     "localName": "Hưng Yên Turmeric",
     "category": "護理",

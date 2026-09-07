@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 import { SOUVENIRS, isRecentSouvenir, souvenirMapUrl, souvenirPrice } from './souvenirs'
 import { SouvenirView } from './components/SouvenirView'
+import { SouvenirPhoto } from './components/SouvenirPhoto'
 
 const now = Date.parse('2026-09-07T12:00:00+07:00')
 
@@ -17,6 +18,9 @@ describe('souvenir guide', () => {
       expect(souvenirPrice(item)).toContain('HK$')
       expect(item.caution && item.buy && item.priceBasis && item.evidence).toBeTruthy()
       expect(item.sources.length).toBeGreaterThan(0)
+      expect(item.photo.url).toMatch(/^https:\/\//)
+      expect(item.photo.sourceUrl).toMatch(/^https:\/\//)
+      expect(item.photo.alt && item.photo.caption && item.photo.credit && item.photo.verifiedAt).toBeTruthy()
       for (const source of item.sources) expect(source.url).toMatch(/^https:\/\//)
       if (item.group === 'recent') expect(item.sources.some((source) => source.publishedAt === item.recentAt)).toBe(true)
       expect(new URL(souvenirMapUrl(item.mapQuery)).searchParams.get('query')).toBe(item.mapQuery)
@@ -29,6 +33,21 @@ describe('souvenir guide', () => {
     expect(isRecentSouvenir(marou, Date.parse('2027-09-07'))).toBe(false)
     expect(isRecentSouvenir(marou, Date.parse('2026-01-01'))).toBe(false)
     expect(renderToStaticMarkup(<SouvenirView now={Date.parse('2027-09-07')} />)).toContain('較早話題')
+  })
+  it('opens the exact product image and falls back honestly if the remote image fails', async () => {
+    vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true)
+    const host = document.createElement('div'), root = createRoot(host), item = SOUVENIRS[0]
+    document.body.append(host)
+    try {
+      await act(async () => root.render(<SouvenirPhoto item={item} />))
+      expect(host.querySelector('img')?.alt).toBe(item.photo.alt)
+      expect(host.querySelector('.souvenir-photo__image')?.getAttribute('href')).toBe(item.photo.url)
+      expect(host.querySelector('.souvenir-photo__image')?.getAttribute('target')).toBe('_blank')
+      await act(async () => host.querySelector('img')!.dispatchEvent(new Event('error')))
+      expect(host.querySelector('img')).toBeNull()
+      expect(host.textContent).toContain('圖片暫未能載入')
+      expect(host.querySelector('.souvenir-photo__fallback a')?.getAttribute('href')).toBe(item.photo.sourceUrl)
+    } finally { await act(async () => root.unmount()); host.remove(); vi.unstubAllGlobals() }
   })
   it('filters by recommendation and shopping region without changing restaurant filters', async () => {
     vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true)

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { SouvenirPhoto } from './SouvenirPhoto'
 import { SOUVENIRS, SOUVENIR_CHECKED_AT, isRecentSouvenir, souvenirMapUrl, souvenirPrice, type SouvenirFilter } from '../souvenirs'
 
 export function SouvenirView({ now }: { now: number }) {
@@ -19,12 +20,14 @@ export function SouvenirView({ now }: { now: number }) {
       <label>購買區域<select aria-label="手信購買區域" value={region} onChange={(event) => setRegion(event.target.value)}><option value="all">峴港＋會安</option><option value="da-nang">峴港</option><option value="hoi-an">會安</option></select></label>
     </div>
     <details className="souvenir-method"><summary>熱門怎樣選？不是銷量榜 ↗</summary><p>「大眾推薦」綜合旅遊指南及口碑；「近期熱門」指近 180 日有具日期的討論訊號，不是銷量或即時熱搜榜。過期項目保留在全部選物，不再標作近期。</p></details>
-    <p className="souvenir-count" role="status">{items.length} 款選物 · 每款附購買線索與來源</p>
+    <p className="souvenir-count" role="status">{items.length} 款選物 · 點圖片放大，現場對照包裝</p>
+    <p className="souvenir-method">圖片為品牌包裝或款式參考，不代表同款現貨或圖中整套的售價。包裝可能更新；圖片版權屬原權利人，以來源網站外連顯示，需網絡載入。</p>
     <div className="souvenir-grid">
       {items.map((item) => <article className="souvenir-card" key={item.id}>
         <div className="souvenir-card__top"><span>{item.category} / {item.regions.length === 2 ? '峴港・會安' : item.regions[0] === 'hoi-an' ? '會安' : '峴港'}</span><span className={isRecentSouvenir(item, now) ? 'souvenir-badge is-recent' : 'souvenir-badge'}>{item.group === 'popular' ? '大眾推薦' : isRecentSouvenir(item, now) ? '近期熱門' : '較早話題'}</span></div>
         <p className="souvenir-local-name">{item.localName}</p><h3>{item.name}</h3>
         <p className="souvenir-for">送給 {item.forWhom}</p>
+        <SouvenirPhoto item={item} />
         <p>{item.summary}</p>
         <div className="souvenir-price"><strong>{souvenirPrice(item)}</strong><span>{item.vndMin.toLocaleString('en-US')}{item.vndMin !== item.vndMax ? `–${item.vndMax.toLocaleString('en-US')}` : ''} VND</span><small>{item.priceBasis}</small></div>
         <p><b>怎樣揀</b> {item.pick}</p>
