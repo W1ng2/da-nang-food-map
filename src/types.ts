@@ -36,6 +36,8 @@ export interface Place {
   reviewCount: number | null
   reviewCountVerifiedAt: string
   reviewSourceUrl?: string
+  reviewCountSnapshotAt?: string
+  foodSourceUrl?: string
   selectionReason?: string
   selectionSourceUrl?: string
   description: string

@@ -60,7 +60,7 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
             {place.kind === 'restaurant' && <><b>★ {place.rating}</b><span>{formatReviews(place.reviewCount)} 則評論</span></>}
             {location && <span>{distanceKm(location, place).toFixed(1)} km</span>}
           </p>
-          {place.reviewSourceUrl && <a className="rating-source" href={place.reviewSourceUrl} target="_blank" rel="noreferrer">評論數為轉載快照 · {place.reviewCountVerifiedAt} 核對 ↗</a>}
+          {place.reviewSourceUrl && <a className="rating-source" href={place.reviewSourceUrl} target="_blank" rel="noreferrer">{place.reviewSourceUrl.startsWith('https://www.google.com/maps/') ? 'Google 頁面紀錄' : '評論數為轉載快照'} · {place.reviewCountVerifiedAt} 核對 ↗</a>}
         </div>
       </div>
 
@@ -99,6 +99,9 @@ export function PlaceSheet({ place, location, favorite, visited, onClose, onFavo
           {place.notes && <p><b>{place.kind === 'attraction' ? '到訪提示' : '用餐提示'}：</b>{place.notes}</p>}
           {place.priceNote && <p><b>價格：</b>{place.priceNote}</p>}
           <p>資料核對：{place.verifiedAt}</p>
+          {place.reviewCountSnapshotAt && <p>評論數快照：{place.reviewCountSnapshotAt}</p>}
+          {place.foodSourceUrl && <p><a href={place.foodSourceUrl} target="_blank" rel="noreferrer">菜單／菜式參考來源 ↗</a></p>}
+          {place.reviewSourceUrl?.includes('restaurantshoian.com') && <p>評論數資料改編自 <a href="https://restaurantshoian.com/data" target="_blank" rel="noreferrer">RestaurantsHoiAn.com</a>（<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>）；評分及現址另行核對。</p>}
           {place.enrichmentVerifiedAt && <p><b>營業／聯絡資料：</b>{place.enrichmentVerifiedAt}{place.hoursSourceUrl && <> · <a href={place.hoursSourceUrl} target="_blank" rel="noreferrer">核對來源</a></>}</p>}
         </details>
       )}

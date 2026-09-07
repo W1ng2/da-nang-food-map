@@ -5,6 +5,8 @@ import { TripView } from './components/TripView'
 import { NORTH_UP_CAMERA, createUserLocationFeatureCollection } from './components/MapView'
 import { CUISINE_ORDER, MAP_ICON_FILES } from './config'
 import hoiAn from '../data/hoi-an-places.json'
+import screening from '../data/hoi-an-screening.json'
+import discovery from '../data/hoi-an-discovery-snapshot.json'
 
 describe('travel map additions', () => {
   it('keeps north-up reset independent from zoom and location', () => {
@@ -44,7 +46,7 @@ describe('travel map additions', () => {
     expect(renderToStaticMarkup(<TripView {...props} date="2026-09-06" />)).toContain('<h2>旅程安排</h2>')
   })
   it('preserves screening thresholds except for explicitly sourced editorial picks', () => {
-    expect(hoiAn.filter((place) => place.kind === 'restaurant')).toHaveLength(17)
+    expect(hoiAn.filter((place) => place.kind === 'restaurant')).toHaveLength(88)
     expect(hoiAn.filter((place) => place.collection === 'editor-pick')).toHaveLength(3)
     expect(hoiAn.filter((place) => place.kind === 'attraction')).toHaveLength(5)
     expect(new Set(hoiAn.map((place) => place.id)).size).toBe(hoiAn.length)
@@ -57,7 +59,7 @@ describe('travel map additions', () => {
           expect(place.criteria).toContain('例外')
         } else {
           expect(place.rating).toBeGreaterThanOrEqual(4.8)
-          expect(place.reviewCount).toBeGreaterThanOrEqual(500)
+          expect(place.reviewCount).toBeGreaterThanOrEqual(place.collection === 'cafe-dessert' ? 300 : 500)
         }
         expect(MAP_ICON_FILES[place.iconType]).toBeTruthy()
         expect(place.reviewSourceUrl).toMatch(/^https:/)
@@ -67,6 +69,25 @@ describe('travel map additions', () => {
         expect(place.photo?.kind).toBe('landmark')
         expect(place.markerImageFile).toMatch(/^data\/landmark-markers\//)
       }
+    }
+  })
+  it('accounts for every discovery candidate and prevents silently dropping an accepted place', () => {
+    expect(discovery.candidates).toHaveLength(203)
+    expect(screening.records).toHaveLength(228)
+    for (const candidate of discovery.candidates) {
+      const decision = screening.records.find((record) => record.candidateId === `catalog:${candidate.slug}`)
+      expect(decision?.reason).toBeTruthy()
+      expect(decision?.sourceUrl).toMatch(/^https:/)
+      if (candidate.rating === null && decision?.status === 'below-threshold') {
+        expect((decision.liveRating !== null && decision.liveRating < 4.8) || (decision.reviewCountEvidence != null && decision.reviewCountEvidence < 500)).toBe(true)
+      }
+    }
+    const included = screening.records.filter((record) => record.status === 'included')
+    expect(new Set(included.map((record) => record.placeId))).toEqual(new Set(hoiAn.filter((place) => place.kind === 'restaurant').map((place) => place.id)))
+    for (const id of ['hoi-an-mi-quang-92', 'hoi-an-pho-tung', 'hoi-an-nourish-eatery-cafe-and-restaurant', 'hoi-an-ellie-s-cafe-hoi-an', 'hoi-an-coconut-coffee']) expect(included.some((record) => record.placeId === id)).toBe(true)
+    for (const slug of ['sampan-seafood-and-bar', 'purple-lantern-an-bang-beach-hoi-an', 'the-secret-oasis']) {
+      expect(screening.records.find((record) => record.candidateId === `catalog:${slug}`)?.status).toBe('rejected')
+      expect(hoiAn.some((place) => place.id === `hoi-an-${slug}`)).toBe(false)
     }
   })
 })

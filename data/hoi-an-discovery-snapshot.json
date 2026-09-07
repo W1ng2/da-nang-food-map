@@ -1,0 +1,1836 @@
+{
+  "source": "https://restaurantshoian.com/data/hoi-an-restaurants.json",
+  "credit": "RestaurantsHoiAn.com, CC BY 4.0",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "retrievedAt": "2026-09-07",
+  "generated": "2026-08",
+  "candidates": [
+    {
+      "name": "Red Bean Restaurant",
+      "slug": "red-bean-restaurant",
+      "address": "132 Hùng Vương, Hội An Tây, Đà Nẵng 560000, Vietnam",
+      "rating": 5,
+      "reviewCount": 1533,
+      "cuisine": "Seafood, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Mate Restaurant and Coffee",
+      "slug": "mate-restaurant-and-coffee",
+      "address": "Hẻm 120 Trần Nhân Tông, Phường, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 5,
+      "reviewCount": 2518,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "The Temple Restaurant & Lounge",
+      "slug": "the-temple-restaurant-and-lounge",
+      "address": "132 Hùng Vương, Hội An Tây, Đà Nẵng 560000, Vietnam",
+      "rating": 5,
+      "reviewCount": 704,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "The Soul Restaurant",
+      "slug": "the-soul-restaurant",
+      "address": "47 Thoại Ngọc Hầu, Hội An, Đà Nẵng 51300, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 800,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Tuan Restaurant & Cafe",
+      "slug": "tuan-restaurant-and-cafe",
+      "address": "170 Trần Nhân Tông",
+      "rating": 4.9,
+      "reviewCount": 5562,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Nhan's kitchen",
+      "slug": "nhan-s-kitchen",
+      "address": "167 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 5677,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Pause And Enjoy Restaurant",
+      "slug": "pause-and-enjoy-restaurant",
+      "address": "Night Market street, 15/4 Nguyễn Hoàng, An Hội, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 5293,
+      "cuisine": "Seafood, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Firefly Restaurant & Bar",
+      "slug": "firefly-restaurant-and-bar",
+      "address": "178 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 2755,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Faifoo Central Restaurant",
+      "slug": "faifoo-central-restaurant",
+      "address": "57 Hoàng Diệu, Hội An, Đà Nẵng 51000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 2256,
+      "cuisine": "Asian, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Phan Gia Riverside Restaurant",
+      "slug": "phan-gia-riverside-restaurant",
+      "address": "95 Trần Quang Khải, Hội An Đông, Đà Nẵng 84000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1700,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Cua Dai Central Restaurant & Cooking Class",
+      "slug": "cua-dai-central-restaurant-and-cooking-class",
+      "address": "10/2 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1071,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Le Petit Bistro Hội An",
+      "slug": "le-petit-bistro-hoi-an",
+      "address": "476 Cửa Đại, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1103,
+      "cuisine": "French",
+      "closed": false
+    },
+    {
+      "name": "Melody Fine Dining Restaurant",
+      "slug": "melody-fine-dining-restaurant",
+      "address": "86/2 Trần Hưng Đạo, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 5,
+      "reviewCount": 281,
+      "cuisine": "International, Asian",
+      "closed": false
+    },
+    {
+      "name": "Silent Garden Restaurant",
+      "slug": "silent-garden-restaurant",
+      "address": "61B Đ. Trần Cao Vân, Hội An, Đà Nẵng 02353, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1171,
+      "cuisine": "Asian Fusion, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "QQ Restaurant Hoi An",
+      "slug": "qq-restaurant-hoi-an",
+      "address": "69 Ngô Quyền, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 7078,
+      "cuisine": "Cafe, Seafood",
+      "closed": false
+    },
+    {
+      "name": "Purple Lantern( An Bang Beach Hoi An)",
+      "slug": "purple-lantern-an-bang-beach-hoi-an",
+      "address": "Alley 157 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 2165,
+      "cuisine": "Seafood, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Breeze Restaurant and Basket Boat",
+      "slug": "breeze-restaurant-and-basket-boat",
+      "address": "thôn thanh tam, Hoi An Dong, Da Nang, Vietnam",
+      "rating": 5,
+      "reviewCount": 733,
+      "cuisine": "Seafood, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Grandma Kitchen",
+      "slug": "grandma-kitchen",
+      "address": "15 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1218,
+      "cuisine": "Seafood, Asian Fusion",
+      "closed": false
+    },
+    {
+      "name": "Hoi An Heart Restaurant",
+      "slug": "hoi-an-heart-restaurant",
+      "address": "68 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 3025,
+      "cuisine": "Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Circle",
+      "slug": "circle",
+      "address": "317 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1163,
+      "cuisine": "American, Bar",
+      "closed": false
+    },
+    {
+      "name": "Tra Que Garden Cooking Class & Restaurant",
+      "slug": "tra-que-garden-cooking-class-and-restaurant",
+      "address": "Nam Phuoc, Da Nang, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 295,
+      "cuisine": "Vietnamese",
+      "closed": true
+    },
+    {
+      "name": "The Faifo Factory",
+      "slug": "the-faifo-factory",
+      "address": "441 Cửa Đại, Hội An, Đà Nẵng 51000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 499,
+      "cuisine": "Cafe, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "The Secret Oasis",
+      "slug": "the-secret-oasis",
+      "address": "61 Đ. Phan Bội Châu, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 627,
+      "cuisine": "Seafood, Vietnamese",
+      "closed": true
+    },
+    {
+      "name": "La Silk Riverside Restaurant",
+      "slug": "la-silk-riverside-restaurant",
+      "address": "12 Huyền Trân Công Chúa, Hội An Đông, Đà Nẵng 51000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 580,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Baba's Kitchen",
+      "slug": "baba-s-kitchen",
+      "address": "115 Đ. Phan Chu Trinh",
+      "rating": 4.8,
+      "reviewCount": 6946,
+      "cuisine": "Indian",
+      "closed": false
+    },
+    {
+      "name": "JAN Restaurant (Local Food)",
+      "slug": "jan-restaurant-local-food",
+      "address": "242B Lê Thánh Tông, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1029,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Phi banh mi",
+      "slug": "phi-banh-mi",
+      "address": "88 Thái Phiên, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 3077,
+      "cuisine": "Banh Mi",
+      "closed": false
+    },
+    {
+      "name": "nourish eatery. / Café & Restaurant",
+      "slug": "nourish-eatery-cafe-and-restaurant",
+      "address": "220a Nguyễn Duy Hiệu, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1718,
+      "cuisine": "Breakfast & Brunch",
+      "closed": false
+    },
+    {
+      "name": "Hi Restaurant",
+      "slug": "hi-restaurant",
+      "address": "V8GH+48F, Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 534,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "La Burger Hoi An",
+      "slug": "la-burger-hoi-an",
+      "address": "90/1 Đ. Phan Chu Trinh, Old Town, Hội An, Đà Nẵng 51309, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1957,
+      "cuisine": "European, Deli",
+      "closed": false
+    },
+    {
+      "name": "Kumquat BBQ Restaurant Cooking Class",
+      "slug": "kumquat-bbq-restaurant-cooking-class",
+      "address": "Tra Que Village, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 487,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "HOME Hoi An",
+      "slug": "home-hoi-an",
+      "address": "Ancient Town 14 La Hối",
+      "rating": 4.8,
+      "reviewCount": 2964,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "PADDY FIELD Restaurant",
+      "slug": "paddy-field-restaurant",
+      "address": "215 Lê Thánh Tông, Street, Hội An Đông, Đà Nẵng 51000, Vietnam",
+      "rating": 5,
+      "reviewCount": 108,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Lenco Cafe & Bar",
+      "slug": "lenco-cafe-and-bar",
+      "address": "679/4 Đ. Hai Bà Trưng, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 958,
+      "cuisine": "Bar, Cafe",
+      "closed": false
+    },
+    {
+      "name": "Hoi An Chestnut Restaurant",
+      "slug": "hoi-an-chestnut-restaurant",
+      "address": "116 Hùng Vương, Hội An, Đà Nẵng 51000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 182,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Little Flower Restaurant",
+      "slug": "little-flower-restaurant",
+      "address": "186 Trần Nhân Tông, street, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 743,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Claypot Hoi An",
+      "slug": "claypot-hoi-an",
+      "address": "217 Lý Thái Tổ, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 648,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Cỏ Hồng Restaurant",
+      "slug": "co-hong-restaurant",
+      "address": "Lạc Long Quân, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 378,
+      "cuisine": "",
+      "closed": false
+    },
+    {
+      "name": "The Dishes Restaurant",
+      "slug": "the-dishes-restaurant",
+      "address": "35 Đào Duy Từ, Hội An, Đà Nẵng 510000, Vietnam",
+      "rating": 5,
+      "reviewCount": 92,
+      "cuisine": "Asian, Asian Fusion",
+      "closed": false
+    },
+    {
+      "name": "Sampan Seafood & Bar",
+      "slug": "sampan-seafood-and-bar",
+      "address": "Đ. Phan Bội Châu, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 582,
+      "cuisine": "Chinese, Seafood",
+      "closed": false
+    },
+    {
+      "name": "\"Lồng Đèn\" Restaurant",
+      "slug": "long-en-restaurant",
+      "address": "02 Thoại Ngọc Hầu",
+      "rating": 4.9,
+      "reviewCount": 181,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Simple Bar and Restaurant (Rose's kitchen)",
+      "slug": "simple-bar-and-restaurant-rose-s-kitchen",
+      "address": "113 Âu Cơ, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 328,
+      "cuisine": "Seafood, European",
+      "closed": false
+    },
+    {
+      "name": "An Bang Beach Village Restaurant",
+      "slug": "an-bang-beach-village-restaurant",
+      "address": "To 6B An Bang, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1668,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "The Boat Riverside Restaurant & Bar",
+      "slug": "the-boat-riverside-restaurant-and-bar",
+      "address": "44 Huyền Trân Công Chúa, Hội An Đông, Đà Nẵng 51300, Vietnam",
+      "rating": 5,
+      "reviewCount": 938,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Le Cabanon Hoi An",
+      "slug": "le-cabanon-hoi-an",
+      "address": "53 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 721,
+      "cuisine": "French, European",
+      "closed": false
+    },
+    {
+      "name": "Blue Sea Hoi An Restaurant",
+      "slug": "blue-sea-hoi-an-restaurant",
+      "address": "43 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 571,
+      "cuisine": "Bar, Seafood",
+      "closed": false
+    },
+    {
+      "name": "Noodle House By Streets",
+      "slug": "noodle-house-by-streets",
+      "address": "512 Đ. Hai Bà Trưng, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 1069,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Restaurant 328",
+      "slug": "restaurant-328",
+      "address": "328 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 869,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Banh Mi Sum",
+      "slug": "banh-mi-sum",
+      "address": "149 Trần Hưng Đạo, Hội An, Đà Nẵng 51309, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1027,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Traders Waterfront Restaurant",
+      "slug": "traders-waterfront-restaurant",
+      "address": "09 Đ. Phan Bội Châu, Hội An, Đà Nẵng 53100, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 115,
+      "cuisine": "Bar, International",
+      "closed": false
+    },
+    {
+      "name": "Mai Home Hoi An",
+      "slug": "mai-home-hoi-an",
+      "address": "V8XQ+QXJ, Hội An Tây, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 238,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "Mr Hoà's Kitchen Restaurant",
+      "slug": "mr-hoa-s-kitchen-restaurant",
+      "address": "Tổ 6 An Bàng, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 635,
+      "cuisine": "Pizza, Cafe",
+      "closed": false
+    },
+    {
+      "name": "Deli Sky Bar Hoi An",
+      "slug": "deli-sky-bar-hoi-an",
+      "address": "Hoi An Delicacy Hotel & Spa, 116 Hùng Vương, Hội An, Đà Nẵng 51000, Vietnam",
+      "rating": 5,
+      "reviewCount": 210,
+      "cuisine": "Bar, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Passion Restaurant & Bar",
+      "slug": "passion-restaurant-and-bar",
+      "address": "159 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 509,
+      "cuisine": "Bar, Seafood",
+      "closed": true
+    },
+    {
+      "name": "Hoshigami Sushi Japanese Restaurant",
+      "slug": "hoshigami-sushi-japanese-restaurant",
+      "address": "207 Cửa Đại, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 483,
+      "cuisine": "Japanese, Seafood",
+      "closed": false
+    },
+    {
+      "name": "Greek Souvlaki Hội An",
+      "slug": "greek-souvlaki",
+      "address": "7 Thái Phiên, P, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 2420,
+      "cuisine": "Greek",
+      "closed": false
+    },
+    {
+      "name": "MAAZI Hoi An",
+      "slug": "maazi-hoi-an",
+      "address": "132A Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 2564,
+      "cuisine": "Indian, Bar",
+      "closed": false
+    },
+    {
+      "name": "The Son Bistro",
+      "slug": "the-son-bistro",
+      "address": "98 Lê Lợi, Old Town, Hội An, Đà Nẵng 51300, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1619,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "IBERICO - TAPAS y VINO Hoi An",
+      "slug": "iberico-tapas-y-vino-hoi-an",
+      "address": "100 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 657,
+      "cuisine": "Spanish",
+      "closed": false
+    },
+    {
+      "name": "L'Annam Restaurant",
+      "slug": "l-annam-restaurant",
+      "address": "Cua Dai Beach, Au Co Street, Hoi An Dong Ward, Âu Cơ, Street, Hội An Đông, Đà Nẵng 840511, Vietnam",
+      "rating": 5,
+      "reviewCount": 188,
+      "cuisine": "Seafood, International",
+      "closed": false
+    },
+    {
+      "name": "Rustic House Restaurant & Bar",
+      "slug": "rustic-house-restaurant-and-bar",
+      "address": "124 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.9,
+      "reviewCount": 383,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Citadel Restaurant & Bar",
+      "slug": "citadel-restaurant-and-bar",
+      "address": "21/3 Đ. Phan Bội Châu, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 5,
+      "reviewCount": 362,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Bup Cafe",
+      "slug": "bup-cafe",
+      "address": "132A Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 584,
+      "cuisine": "Asian",
+      "closed": false
+    },
+    {
+      "name": "Bao Han Restaurant",
+      "slug": "bao-han-restaurant",
+      "address": "17 Cửa Đại",
+      "rating": 4.8,
+      "reviewCount": 1161,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Little Faifo Restaurant",
+      "slug": "little-faifo-restaurant",
+      "address": "66 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 902,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "GOLDEN NUT HOI AN RESTAURANT",
+      "slug": "golden-nut-hoi-an-restaurant",
+      "address": "69 Lạc Long Quân, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 338,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Miss Lien Thao",
+      "slug": "miss-lien-thao",
+      "address": "khu ẩm thực, đường Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 408,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "The Basket Boat Café & Restaurant",
+      "slug": "the-basket-boat-cafe-and-restaurant",
+      "address": "Thôn Vạn Lăng, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 612,
+      "cuisine": "",
+      "closed": false
+    },
+    {
+      "name": "Ellie s Cafe Hoi An",
+      "slug": "ellie-s-cafe-hoi-an",
+      "address": "11/4 18 Tháng 8, Hội An, Đà Nẵng 56000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1477,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Seashell by Nu Eatery",
+      "slug": "seashell-by-nu-eatery",
+      "address": "10 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 601,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Son Hoi An Restaurant",
+      "slug": "son-hoi-an-restaurant",
+      "address": "232 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 971,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Spice Viet Restaurant (Hoi An)",
+      "slug": "spice-viet-restaurant-hoi-an",
+      "address": "187 Lý Thường Kiệt, Street, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 512,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Phuong's Beach Restaurant",
+      "slug": "phuong-s-beach-restaurant",
+      "address": "Tổ 7 Biển an bàng, Hội An Tây, Đà Nẵng 56000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 679,
+      "cuisine": "Seafood, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Baby Mustard Restaurant",
+      "slug": "baby-mustard-restaurant",
+      "address": "Đường Biển, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 933,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "V Vegan",
+      "slug": "v-vegan",
+      "address": "108 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1190,
+      "cuisine": "Vegan",
+      "closed": false
+    },
+    {
+      "name": "Chops Hoi An Riverside",
+      "slug": "chops-hoi-an-riverside",
+      "address": "96A Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 51000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 756,
+      "cuisine": "American, Bar",
+      "closed": false
+    },
+    {
+      "name": "Bao Phuong Restaurant",
+      "slug": "bao-phuong-restaurant",
+      "address": "2 Ngô Quyền, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 404,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "Nostalife",
+      "slug": "nostalife",
+      "address": "33/3 Nguyễn Phúc Chu, Phường, Hội An, Đà Nẵng 550000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1321,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Chops Hoi An",
+      "slug": "chops-hoi-an",
+      "address": "61a Đ. Phan Chu Trinh",
+      "rating": 4.6,
+      "reviewCount": 1778,
+      "cuisine": "Burgers",
+      "closed": false
+    },
+    {
+      "name": "Vy's Deli",
+      "slug": "vy-s-deli",
+      "address": "41 Nguyễn Phúc Chu, st, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1062,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Mr. Sơn Restaurant",
+      "slug": "mr-son-restaurant",
+      "address": "Ẩm Thực 62, Khu, 02 Nguyễn Phúc Chu, P, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 917,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Bới Cơm Hoi An Restaurant & Cafe",
+      "slug": "boi-com-hoi-an-restaurant-and-cafe",
+      "address": "20 Đào Duy Từ",
+      "rating": 4.7,
+      "reviewCount": 867,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Hoi An Steakhouse Riverside",
+      "slug": "hoi-an-steakhouse-riverside",
+      "address": "71 Trần Quang Khải, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 836,
+      "cuisine": "Steakhouse, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Am Vegetarian Hideaway",
+      "slug": "am-vegetarian-hideaway",
+      "address": "06 Bầu Ốc Hạ 1, Street, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 433,
+      "cuisine": "Vegetarian",
+      "closed": false
+    },
+    {
+      "name": "Jack's Cat Cafe",
+      "slug": "jack-s-cat-cafe",
+      "address": "Tống Văn Sương, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 339,
+      "cuisine": "Cafe, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "The Moon Restaurant An Bang",
+      "slug": "the-moon-restaurant-an-bang",
+      "address": "186/12 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng 563865, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 242,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "Market Bar",
+      "slug": "market-bar",
+      "address": "Đ. Bạch Đằng/02 Hoàng Diệu, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1033,
+      "cuisine": "Bar, International",
+      "closed": false
+    },
+    {
+      "name": "Nhu Bau Resturant (family Kitchen)",
+      "slug": "nhu-bau-resturant-family-kitchen",
+      "address": "Alley 221 Phù Đổng Thiên Vương, Hội An Đông, Đà Nẵng 550000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 376,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "Cao Lau Ba Le Restaurant",
+      "slug": "cao-lau-ba-le-restaurant",
+      "address": "49/3 Trần Hưng Đạo, Hội An, Đà Nẵng 56000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 2661,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Morning Glory Mother's Kitchen",
+      "slug": "morning-glory-mother-s-kitchen",
+      "address": "14 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 1061,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "MIX Greek Restaurant Hoi An",
+      "slug": "mix-greek-restaurant-hoi-an",
+      "address": "70 Lê Lợi, Old Town, Hội An, Đà Nẵng 56000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 3129,
+      "cuisine": "Greek",
+      "closed": false
+    },
+    {
+      "name": "Bun Cha Ta Hoi An",
+      "slug": "bun-cha-ta-hoi-an",
+      "address": "197 Nguyễn Duy Hiệu, Hội An, Đà Nẵng 008454, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1165,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Weavers An Bang",
+      "slug": "weavers-an-bang",
+      "address": "87 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 620,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "The Happy Buffalo Hoi An",
+      "slug": "the-happy-buffalo-hoi-an",
+      "address": "18 Tống Văn Sương, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 318,
+      "cuisine": "Bar",
+      "closed": false
+    },
+    {
+      "name": "Orivy Restaurant",
+      "slug": "orivy-restaurant",
+      "address": "546 Cửa Đại, Hội An, Đà Nẵng 56000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1776,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "samurai Kitchen HoiAn",
+      "slug": "samurai-kitchen-hoian",
+      "address": "09 Đ. Tiểu La, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 597,
+      "cuisine": "Japanese",
+      "closed": false
+    },
+    {
+      "name": "Red Gecko",
+      "slug": "red-gecko",
+      "address": "city, 23 Nguyễn Hoàng, street, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1713,
+      "cuisine": "Seafood, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Flower Restaurant",
+      "slug": "flower-restaurant",
+      "address": "01 Lưu Qúy Kỳ, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 481,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Tiệm Bánh mì Ty ( Ty's Bread )",
+      "slug": "tiem-banh-mi-ty-ty-s-bread",
+      "address": "14 Đường Cao Hồng Lãnh",
+      "rating": 5,
+      "reviewCount": 897,
+      "cuisine": "Street Food",
+      "closed": false
+    },
+    {
+      "name": "Mi Casa Restaurant",
+      "slug": "mi-casa-restaurant",
+      "address": "65 Lạc Long Quân, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 290,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Red Dragon Restaurant Cooking Class",
+      "slug": "red-dragon-restaurant-cooking-class",
+      "address": "332 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 826,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Madame Hien (Cô Mai)",
+      "slug": "madame-hien-restaurant",
+      "address": "02 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 524,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Rêu Dining",
+      "slug": "reu-dining",
+      "address": "Trà Quế, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 589,
+      "cuisine": "Cafe, Seafood",
+      "closed": false
+    },
+    {
+      "name": "Madam Lau",
+      "slug": "madam-lau",
+      "address": "59 Nguyễn Phúc Tần, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1776,
+      "cuisine": "Italian, Asian",
+      "closed": false
+    },
+    {
+      "name": "An Gia Cottage",
+      "slug": "an-gia-cottage",
+      "address": "93 Lạc Long Quân, Hội An Tây, Đà Nẵng 560000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 611,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Song Thanh Riverside Restaurant",
+      "slug": "song-thanh-riverside-restaurant",
+      "address": "67 Trần Quang Khải, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 538,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "Sua Cafe Vegan Food",
+      "slug": "sua-cafe-vegan-food",
+      "address": "Đường Lê Hồng Phong Nối Dài, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 5,
+      "reviewCount": 16,
+      "cuisine": "Cafe, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Rice Bistro",
+      "slug": "rice-bistro",
+      "address": "538 Cửa Đại, Hội An, Đà Nẵng 550000, Vietnam",
+      "rating": 4.4,
+      "reviewCount": 5,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Lim Dining Room",
+      "slug": "lim-dining-room",
+      "address": "96 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 1334,
+      "cuisine": "Italian, Pizza",
+      "closed": false
+    },
+    {
+      "name": "Nữ Eatery",
+      "slug": "nu-eatery",
+      "address": "10A Nguyễn Thị Minh Khai, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 2495,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Hong Phuc 2",
+      "slug": "hong-phuc-2",
+      "address": "Đ. Bạch Đằng/93 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 1883,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Ganesh Indian Restaurant",
+      "slug": "ganesh-indian-restaurant",
+      "address": "V8HG+VQG, 99 Trần Hưng Đạo, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 1785,
+      "cuisine": "Indian",
+      "closed": false
+    },
+    {
+      "name": "Lucky Beach Seafood Restaurant",
+      "slug": "lucky-beach-seafood-restaurant",
+      "address": "Tổ 2 Thịnh Mỹ, Hội An Tây, Đà Nẵng 51316, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 563,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Bong Restaurant and Bar",
+      "slug": "bong-restaurant-and-bar",
+      "address": "244 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 288,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Ho Lo Quan",
+      "slug": "ho-lo-quan",
+      "address": "20 Đ. Trần Cao Vân, Hội An, Đà Nẵng 51000, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 2977,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Banana Split Cafe",
+      "slug": "banana-split-cafe",
+      "address": "53 Hoàng Diệu, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 474,
+      "cuisine": "Cafe",
+      "closed": false
+    },
+    {
+      "name": "Tree Coconut Beach Restaurant",
+      "slug": "tree-coconut-beach-restaurant",
+      "address": "An Bang beach, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 368,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Nhà Hàng Nón Lá",
+      "slug": "nha-hang-non-la",
+      "address": "V8GR+39J Cồn Hến, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 484,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Lê Hội Bánh Mì Chay (Le Hoi Vegan Banh Mi)",
+      "slug": "le-hoi-banh-mi-chay-le-hoi-vegan-banh-mi",
+      "address": "3 Nguyễn Huệ",
+      "rating": 4.9,
+      "reviewCount": 2277,
+      "cuisine": "Banh Mi",
+      "closed": false
+    },
+    {
+      "name": "Ivegan Supershop Hoi An",
+      "slug": "ivegan-supershop-hoi-an",
+      "address": "672 Đ. Hai Bà Trưng, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 739,
+      "cuisine": "Cafe, International",
+      "closed": false
+    },
+    {
+      "name": "Art Space Restaurant & Bar",
+      "slug": "art-space-restaurant-and-bar",
+      "address": "1 Đường Phạm Hồng Thái, Hội An, Đà Nẵng 00000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 125,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "The Old Man Restaurant",
+      "slug": "the-old-man-restaurant",
+      "address": "11 Lạc Long Quân, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 171,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Herbs And Spices Cooking classes",
+      "slug": "herbs-and-spices-cooking-classes",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "International, Asian",
+      "closed": false
+    },
+    {
+      "name": "Chickpea Eatery: Vegan Restaurant & Vegan Cooking Class Hoi An",
+      "slug": "chickpea-eatery-vegan-restaurant-and-vegan-cooking-class-hoi-an",
+      "address": "86 Đ. Phan Chu Trinh",
+      "rating": 4.9,
+      "reviewCount": 1360,
+      "cuisine": "Vegan",
+      "closed": false
+    },
+    {
+      "name": "Cơm Linh - Vietnamese Restaurant",
+      "slug": "com-linh-vietnamese-restaurant",
+      "address": "42 Đ. Phan Chu Trinh, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 4051,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Wild Beach Restaurant",
+      "slug": "wild-beach-restaurant",
+      "address": "Tổ 4 Tân Thịnh, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 212,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Broccoli",
+      "slug": "broccoli",
+      "address": "103 Lạc Long Quân, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 290,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "French Bakery & Restaurant",
+      "slug": "french-bakery-and-restaurant",
+      "address": "165 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng 53000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 492,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Serene Restaurant & Bar",
+      "slug": "serene-restaurant-and-bar",
+      "address": "510/2 Trần Nhân Tông, Hội An Đông, Đà Nẵng 51000, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 30,
+      "cuisine": "European, Asian",
+      "closed": false
+    },
+    {
+      "name": "Nocturnal Artist",
+      "slug": "nocturnal-artist",
+      "address": "250 Nguyễn Duy Hiệu, Hội An Đông, Quảng Nam, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 255,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Cardi Pizzeria",
+      "slug": "cardi-pizzeria",
+      "address": "32 Thái Phiên, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 748,
+      "cuisine": "Pizza",
+      "closed": false
+    },
+    {
+      "name": "Dingo Deli",
+      "slug": "dingo-deli",
+      "address": "463 Cửa Đại, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 2004,
+      "cuisine": "Western",
+      "closed": false
+    },
+    {
+      "name": "Hoi An Golden Lotus Restaurant",
+      "slug": "hoi-an-golden-lotus-restaurant",
+      "address": "73 Lạc Long Quân, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 241,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Mộc Garden Restaurant",
+      "slug": "moc-garden-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Pizza, International",
+      "closed": false
+    },
+    {
+      "name": "Morning Glory Signature",
+      "slug": "morning-glory-signature",
+      "address": "41 Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 1952,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Charm Hoi An Restaurant",
+      "slug": "charm-hoi-an-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "The Hill Station Deli & Boutique",
+      "slug": "the-hill-station",
+      "address": "321 Nguyễn Duy Hiệu, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.7,
+      "reviewCount": 795,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Tra Que Water Wheel Restaurant & Cooking classes",
+      "slug": "tra-que-water-wheel-restaurant-and-cooking-classes",
+      "address": "Tra Que Village",
+      "rating": 4.9,
+      "reviewCount": 653,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Êm Hội An (êm Comfort Food)",
+      "slug": "em-hoi-an-em-comfort-food",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Asian Fusion",
+      "closed": false
+    },
+    {
+      "name": "Mót Hội An",
+      "slug": "mot-hoi-an",
+      "address": "150 Trần Phú, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 3618,
+      "cuisine": "Cafe",
+      "closed": false
+    },
+    {
+      "name": "Cao Cao Grasshopper Bar & Restaurant",
+      "slug": "cao-cao-grasshopper-bar-and-restaurant",
+      "address": "06 Cửa Đại, Hội An Đông, Đà Nẵng 560000, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 458,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "The Field Restaurant & Bar",
+      "slug": "the-field-restaurant-and-bar",
+      "address": "Vong Nhi hamlet, Tống Văn Sương, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 467,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "A6 Garden- Smokehouse And Craft Beer",
+      "slug": "a6-garden-smokehouse-and-craft-beer",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Steakhouse, Barbecue",
+      "closed": false
+    },
+    {
+      "name": "Secret Garden",
+      "slug": "secret-garden-hoi-an",
+      "address": "132/2 Trần Phú, Old Town, Hội An, Đà Nẵng 53000, Vietnam",
+      "rating": 4.8,
+      "reviewCount": 352,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Aira An Bang Garden Restaurant",
+      "slug": "aira-an-bang-garden-restaurant",
+      "address": "An Bang Beach, To 3, Khoi An Tan, Cam An Ward, Hội An Tây, Đà Nẵng, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 33,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Vy's Market Restaurant",
+      "slug": "vy-s-market-restaurant",
+      "address": "An Hoi Islet, 3 Nguyễn Hoàng, Street, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 1976,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Hoa Hiên - Vietnamese Restaurant Hoian",
+      "slug": "hoa-hien-vietnamese-restaurant-hoian",
+      "address": "33 Trần Quang Khải",
+      "rating": 4.8,
+      "reviewCount": 2393,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Gia Thiện Cơm Nhà",
+      "slug": "gia-thien-com-nha",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Green Mango",
+      "slug": "green-mango",
+      "address": "54 Nguyễn Thái Học, Phường, Hội An, Đà Nẵng 563800, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 815,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Herbal Pizza and Steak Hoi An",
+      "slug": "herbal-pizza-and-steak-hoi-an",
+      "address": "599 Đ. Hai Bà Trưng",
+      "rating": 4.8,
+      "reviewCount": 1829,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Chips 'N' Fish 'N' Stuff",
+      "slug": "chips-n-fish-n-stuff",
+      "address": "1 Nguyễn Phúc Chu, Street, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 587,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Quán ăn Cô Hoa",
+      "slug": "quan-an-co-hoa",
+      "address": "27 Nguyễn Tri Phương",
+      "rating": 5,
+      "reviewCount": 202,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Old Garden Restaurant (Vườn Xưa)",
+      "slug": "old-garden-restaurant-vuon-xua",
+      "address": "33/1 Đ. Phan Chu Trinh, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 568,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Bikini Bottom Express Hoi An",
+      "slug": "bikini-bottom-express-hoi-an",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "American, Bar",
+      "closed": false
+    },
+    {
+      "name": "Spring Onion Restaurant",
+      "slug": "spring-onion-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Thìa Gỗ Hội An",
+      "slug": "thia-go-hoi-an",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Temari Omakase & Sushi restaurant",
+      "slug": "temari-omakase-and-sushi-restaurant",
+      "address": "02/22 Lê Lợi",
+      "rating": 4.9,
+      "reviewCount": 303,
+      "cuisine": "Japanese",
+      "closed": false
+    },
+    {
+      "name": "3 Dragons Sports Bar & Restaurant",
+      "slug": "3-dragons-sports-bar-and-restaurant",
+      "address": "51 Đ. Phan Bội Châu, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.5,
+      "reviewCount": 1144,
+      "cuisine": "Sports Bar",
+      "closed": false
+    },
+    {
+      "name": "Vị Hội An Restaurant & Café",
+      "slug": "vi-hoi-an-restaurant-and-cafe",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "cobb restaurant",
+      "slug": "cobb-restaurant",
+      "address": "82 Nguyễn Du",
+      "rating": 4.8,
+      "reviewCount": 412,
+      "cuisine": "Western",
+      "closed": false
+    },
+    {
+      "name": "Ngon Phố Hội - Vietnamese Authentic Cuisine",
+      "slug": "ngon-pho-hoi-vietnamese-authentic-cuisine",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Aubergine49",
+      "slug": "aubergine49",
+      "address": "49 Lý Thái Tổ, Hội An Đông, Đà Nẵng, Vietnam",
+      "rating": 4.3,
+      "reviewCount": 246,
+      "cuisine": "European",
+      "closed": false
+    },
+    {
+      "name": "9Steps In - Resraurant",
+      "slug": "9steps-in-resraurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Pizza, Asian",
+      "closed": false
+    },
+    {
+      "name": "Vietnamese Chopsticks - Dua Viet Restaurant",
+      "slug": "vietnamese-chopsticks-dua-viet-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Phố Rêu restaurant - coffee",
+      "slug": "pho-reu-restaurant-coffee",
+      "address": "391 Cửa Đại",
+      "rating": 4.8,
+      "reviewCount": 352,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Khói Restaurant And Cooking Class",
+      "slug": "khoi-restaurant-and-cooking-class",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Seafood, Asian",
+      "closed": false
+    },
+    {
+      "name": "Kalmody - Vietnamese Cultural Pub & Restaurant",
+      "slug": "kalmody-vietnamese-cultural-pub-and-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Bar, Cafe",
+      "closed": false
+    },
+    {
+      "name": "KURUMI - Healthy Vegan Food & Desserts - Hoi An",
+      "slug": "kurumi-healthy-vegan-food-and-desserts-hoi-an",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "",
+      "closed": false
+    },
+    {
+      "name": "Đào Tiên Restaurant",
+      "slug": "dao-tien-restaurant",
+      "address": "19/4 Đ. Phan Bội Châu, Hội An, Đà Nẵng 56000, Vietnam",
+      "rating": 4.4,
+      "reviewCount": 1039,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Pho Xua",
+      "slug": "pho-xua",
+      "address": "35 Đ. Phan Chu Trinh, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.4,
+      "reviewCount": 3975,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Mango Rooms",
+      "slug": "mango-rooms",
+      "address": "37 Đ. Phan Bội Châu, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.6,
+      "reviewCount": 812,
+      "cuisine": "Asian Fusion",
+      "closed": false
+    },
+    {
+      "name": "Minh Hien Vegetarian Restaurant",
+      "slug": "minh-hien-vegetarian-restaurant",
+      "address": "26/16 Thái Phiên",
+      "rating": 4.7,
+      "reviewCount": 1642,
+      "cuisine": "Vegetarian",
+      "closed": false
+    },
+    {
+      "name": "Hoang's Kitchen Hoi An - Vietnamese Cuisine & Vegan food",
+      "slug": "hoang-s-kitchen-hoi-an-vietnamese-cuisine-and-vegan-food",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "MẸT Vietnamese Restaurant & Vegetarian Food 7",
+      "slug": "met-vietnamese-restaurant-and-vegetarian-food-7",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Cao Lầu Bà Đình",
+      "slug": "cao-lau-ba-inh",
+      "address": "138 Trần Phú",
+      "rating": 4.9,
+      "reviewCount": 136,
+      "cuisine": "Bar",
+      "closed": false
+    },
+    {
+      "name": "Bánh mì Mr.pig",
+      "slug": "banh-mi-mr-pig",
+      "address": "39a Nguyễn Phúc Chu",
+      "rating": 4.8,
+      "reviewCount": 201,
+      "cuisine": "Banh Mi",
+      "closed": false
+    },
+    {
+      "name": "Faifoo Central Restaurant 2 - Vietnamese Food & Cooking Class",
+      "slug": "faifoo-central-restaurant-2-vietnamese-food-and-cooking-class",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "The 1990's Hội An Restaurant And Bar",
+      "slug": "the-1990-s-hoi-an-restaurant-and-bar",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Bar",
+      "closed": false
+    },
+    {
+      "name": "Tranh Cat Bui Restaurant&Cooking Class",
+      "slug": "tranh-cat-bui-restaurant-and-cooking-class",
+      "address": "250 Nguyễn Duy Hiệu",
+      "rating": 4.8,
+      "reviewCount": 164,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Hủ Tiếu Hai Toàn",
+      "slug": "hu-tieu-hai-toan",
+      "address": "44 Đ. Phan Chu Trinh",
+      "rating": 4.9,
+      "reviewCount": 97,
+      "cuisine": "Fast Food",
+      "closed": false
+    },
+    {
+      "name": "A Little Kitchen - Bep Nho",
+      "slug": "a-little-kitchen-bep-nho",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Morning Glory Lounge Bar & Restaurant",
+      "slug": "morning-glory-lounge-bar-and-restaurant",
+      "address": "41 Nguyen Phuc Chu 3F An Hoi",
+      "rating": 4.7,
+      "reviewCount": 307,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Cá Rô Đồng Quán - Anabas Restaurant",
+      "slug": "ca-ro-ong-quan-anabas-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Asian, Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Yellow lantern food and coffee riverside",
+      "slug": "yellow-lantern-food-and-coffee-riverside",
+      "address": "52 Nguyễn Du",
+      "rating": 5,
+      "reviewCount": 53,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Quán Cao Lầu Thanh",
+      "slug": "quan-cao-lau-thanh",
+      "address": "26 Thái Phiên",
+      "rating": 4.6,
+      "reviewCount": 2485,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Mọi - Lẩu & Nướng ( BBQ & Hot Pot)",
+      "slug": "moi-lau-and-nuong-bbq-and-hot-pot",
+      "address": "55 18 Tháng 8",
+      "rating": 4.6,
+      "reviewCount": 1991,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Miss Ly",
+      "slug": "miss-ly",
+      "address": "22 Nguyễn Huệ, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.2,
+      "reviewCount": 3613,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Vegan food",
+      "slug": "vegan-food",
+      "address": "37 Trần Hưng Đạo",
+      "rating": 4.7,
+      "reviewCount": 116,
+      "cuisine": "Vegan",
+      "closed": false
+    },
+    {
+      "name": "Cargo Club Cafe & Restaurant",
+      "slug": "cargo-club-cafe-and-restaurant",
+      "address": "109 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.3,
+      "reviewCount": 2440,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Nhà hàng Góc Việt",
+      "slug": "nha-hang-goc-viet",
+      "address": "08 La Hối",
+      "rating": 4.6,
+      "reviewCount": 174,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Morning Glory Restaurant",
+      "slug": "morning-glory-restaurant",
+      "address": "106 Nguyễn Thái Học, Phường, Hội An, Đà Nẵng, Vietnam",
+      "rating": 4.2,
+      "reviewCount": 7880,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Quán Bến xưa",
+      "slug": "quan-ben-xua",
+      "address": "Hoi An",
+      "rating": 4.6,
+      "reviewCount": 152,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "MANGO MANGO",
+      "slug": "mango-mango",
+      "address": "45 Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng 560000, Vietnam",
+      "rating": 4.3,
+      "reviewCount": 1162,
+      "cuisine": "Asian Fusion",
+      "closed": false
+    },
+    {
+      "name": "Hoi An Riverside Restaurant",
+      "slug": "hoi-an-riverside-restaurant",
+      "address": "1 Đường Phạm Hồng Thái",
+      "rating": 4.5,
+      "reviewCount": 89,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "My Pho",
+      "slug": "my-pho",
+      "address": "18 Đ. Bạch Đằng",
+      "rating": 4.5,
+      "reviewCount": 57,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Larue Restaurant",
+      "slug": "larue-restaurant",
+      "address": "231-211 Trần Nhân Tông",
+      "rating": 4.7,
+      "reviewCount": 9,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Olla Cuisine",
+      "slug": "olla-cuisine",
+      "address": "154 Trần Phú",
+      "rating": 4.6,
+      "reviewCount": 12,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Best Food Street of Hoi An",
+      "slug": "best-food-street-of-hoi-an",
+      "address": "197 Đ. Trần Cao Vân",
+      "rating": 5,
+      "reviewCount": 2,
+      "cuisine": "Vietnamese street food",
+      "closed": false
+    },
+    {
+      "name": "Hương lý. Thịt vịt. Duck meat, poridge and salad",
+      "slug": "huong-ly-thit-vit-duck-meat-poridge-and-salad",
+      "address": "351 Nguyễn Tất Thành",
+      "rating": 5,
+      "reviewCount": 1,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Quán hủ tiếu Ông Già",
+      "slug": "quan-hu-tieu-ong-gia",
+      "address": "62 Mạc Đĩnh Chi",
+      "rating": 4.3,
+      "reviewCount": 23,
+      "cuisine": "Bar",
+      "closed": false
+    },
+    {
+      "name": "Thanh Thanh Restaurant",
+      "slug": "thanh-thanh-restaurant",
+      "address": "152/1 Trần Phú",
+      "rating": 4.4,
+      "reviewCount": 109,
+      "cuisine": "Restaurant",
+      "closed": false
+    },
+    {
+      "name": "Hoai Linh Restaurant",
+      "slug": "hoai-linh-restaurant",
+      "address": "",
+      "rating": null,
+      "reviewCount": null,
+      "cuisine": "Vietnamese",
+      "closed": false
+    },
+    {
+      "name": "Burger Craft",
+      "slug": "burger-craft",
+      "address": "639 Đ. Hai Bà Trưng",
+      "rating": 4.4,
+      "reviewCount": 619,
+      "cuisine": "Restaurant",
+      "closed": false
+    }
+  ]
+}

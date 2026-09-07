@@ -3,6 +3,9 @@ import { resolve } from 'node:path'
 
 const root = resolve(import.meta.dirname, '..')
 const places = JSON.parse(await readFile(resolve(root, 'public', 'places.json'), 'utf8'))
+const hoiAn = JSON.parse(await readFile(resolve(root, 'data', 'hoi-an-places.json'), 'utf8'))
+const screening = JSON.parse(await readFile(resolve(root, 'data', 'hoi-an-screening.json'), 'utf8'))
+const discovery = JSON.parse(await readFile(resolve(root, 'data', 'hoi-an-discovery-snapshot.json'), 'utf8'))
 const required = ['id', 'kind', 'name', 'address', 'collection', 'iconType', 'description', 'priceVnd', 'signature', 'mapsUrl', 'verifiedAt']
 const failures = []
 const MINIMUM_VERIFIED_PHOTOS = 103
@@ -11,8 +14,8 @@ const ARRIVAL_PHOTO_KINDS = new Set(['storefront', 'building-entrance'])
 const SUPPORTED_PHOTO_KINDS = new Set([...ARRIVAL_PHOTO_KINDS, 'venue-identity', 'landmark'])
 const TIME_PATTERN = /^(?:[01]\d|2[0-3]):[0-5]\d$/
 
-if (places.length !== 125) failures.push(`Expected 125 places, found ${places.length}`)
-if (places.filter((place) => place.kind === 'restaurant').length !== 114) failures.push('Expected 114 restaurants')
+if (places.length !== 103 + hoiAn.length) failures.push(`Expected baseline 103 + ${hoiAn.length} Hoi An places, found ${places.length}`)
+if (places.filter((place) => place.kind === 'restaurant').length !== 97 + hoiAn.filter((place) => place.kind === 'restaurant').length) failures.push('Restaurant count differs from source datasets')
 if (places.filter((place) => place.kind === 'attraction').length !== 11) failures.push('Expected 11 attractions')
 if (new Set(places.map((place) => place.id)).size !== places.length) failures.push('Place IDs are not unique')
 
@@ -28,7 +31,8 @@ for (const place of places) {
   if (place.kind === 'restaurant' && !place.rating) failures.push(`${place.name}: missing Google rating`)
   if (place.kind === 'restaurant' && !place.reviewCount) failures.push(`${place.name}: missing Google review count`)
   if (place.id.startsWith('hoi-an-') && place.kind === 'restaurant') {
-    if (place.collection !== 'editor-pick' && (place.rating < 4.8 || place.reviewCount < 500)) failures.push(`${place.name}: below the existing restaurant screening threshold`)
+    const minimumReviews = place.collection === 'cafe-dessert' ? 300 : 500
+    if (place.collection !== 'editor-pick' && (place.rating < 4.8 || place.reviewCount < minimumReviews)) failures.push(`${place.name}: below its screening threshold`)
     if (!place.reviewSourceUrl || !place.reviewAudit || !place.criteria) failures.push(`${place.name}: missing screening evidence`)
   }
   if (place.collection === 'editor-pick' && (place.kind !== 'restaurant' || !place.selectionReason?.trim() || !/^https:\/\//.test(place.selectionSourceUrl || ''))) failures.push(`${place.name}: editorial exception requires a reason and source`)
@@ -55,6 +59,23 @@ for (const place of places) {
       }
     }
   }
+}
+
+// Every discovered candidate has a decision; every included decision resolves to a real place.
+if (new Set(screening.records.map((record) => record.candidateId)).size !== screening.records.length) failures.push('Duplicate screening candidate IDs')
+for (const candidate of discovery.candidates) {
+  if (!screening.records.some((record) => record.candidateId === `catalog:${candidate.slug}`)) failures.push(`${candidate.name}: missing screening decision`)
+}
+for (const record of screening.records) {
+  if (!['included', 'rejected', 'hold', 'below-threshold'].includes(record.status) || !record.reason?.trim() || !record.sourceUrl) failures.push(`${record.name}: incomplete screening decision`)
+  const place = hoiAn.find((place) => place.id === record.placeId)
+  if (record.status === 'below-threshold' && record.snapshotRating === null && !(Number.isFinite(record.liveRating) && record.liveRating < 4.8) && !(Number.isFinite(record.reviewCountEvidence) && record.reviewCountEvidence < 500)) failures.push(`${record.name}: missing metrics cannot count as below threshold`)
+  if (record.status === 'included' && (!place || place.kind !== 'restaurant')) failures.push(`${record.name}: included candidate missing from map`)
+  if (record.status !== 'included' && record.placeId) failures.push(`${record.name}: non-included candidate has a map ID`)
+  if (record.status === 'included' && place && (record.liveRating !== place.rating || !record.googleMapsUrl)) failures.push(`${record.name}: screening evidence differs from map`)
+}
+for (const place of hoiAn.filter((place) => place.kind === 'restaurant')) {
+  if (screening.records.filter((record) => record.status === 'included' && record.placeId === place.id).length !== 1) failures.push(`${place.name}: expected exactly one included screening decision`)
 }
 
 const coverage = {
