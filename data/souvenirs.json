@@ -1,0 +1,282 @@
+[
+  {
+    "id": "coconut-crackers",
+    "name": "烤椰子脆餅",
+    "localName": "Bánh dừa nướng",
+    "category": "零食",
+    "group": "popular",
+    "regions": [
+      "da-nang",
+      "hoi-an"
+    ],
+    "forWhom": "同事・朋友・多人分享",
+    "summary": "薄脆、椰香明顯，又不用冷藏。想買一批容易分派的手信，這類最實際。",
+    "pick": "選密封包裝；先試原味，再考慮芝麻或花生口味。TOPCOCO 是本地旅遊局介紹的品牌之一。",
+    "vndMin": 35000,
+    "vndMax": 120000,
+    "priceBasis": "旅遊指南參考／每包，份量及品牌不同",
+    "caution": "易碎；留意花生、芝麻及其他過敏原，檢查有效日期。",
+    "buy": "Han Market 特產檔或市內超市；先比較包裝重量。",
+    "mapQuery": "Han Market Da Nang",
+    "route": "峴港逛 Han Market 時順手買，之後避免壓在行李底。",
+    "evidence": "峴港旅遊局介紹 TOPCOCO；Pullman 的手信指南亦推薦烤椰子餅。不是銷量排名。",
+    "sources": [
+      {
+        "label": "峴港旅遊局・TOPCOCO",
+        "url": "https://danangfantasticity.com/en/topcoco-sesame-grilled-coconut-cake-the-da-nang-ocop-product",
+        "publishedAt": "2025-03-06"
+      },
+      {
+        "label": "Pullman・品類及預算",
+        "url": "https://www.pullman-danang.com/discovery/destination/souvenir-shop-in-da-nang/"
+      }
+    ],
+    "checkedAt": "2026-09-07",
+    "hoiAnMapQuery": "Hoi An Market"
+  },
+  {
+    "id": "sesame-cake",
+    "name": "芝麻乾餅",
+    "localName": "Bánh khô mè",
+    "category": "零食",
+    "group": "popular",
+    "regions": [
+      "da-nang"
+    ],
+    "forWhom": "長輩・喜歡傳統糕餅的人",
+    "summary": "峴港傳統芝麻糕餅，帶烘香與脆口口感。比一般國際零食更有地方特色。",
+    "pick": "優先選有品牌、製造日期及密封盒的產品，小盒比散裝更方便送人。",
+    "vndMin": 40000,
+    "vndMax": 150000,
+    "priceBasis": "旅遊指南參考／每盒，依品牌及份量",
+    "caution": "含芝麻，偏甜且易碎；先確認收禮人的口味。",
+    "buy": "峴港特產店或 Han Market。",
+    "mapQuery": "Han Market Da Nang",
+    "route": "與椰子餅一起採購即可，毋須特地多跑一站。",
+    "evidence": "Pullman 的峴港手信指南將它列為本地傳統特產，並提供選購及價格參考。",
+    "sources": [
+      {
+        "label": "Pullman・手信指南",
+        "url": "https://www.pullman-danang.com/discovery/destination/souvenir-shop-in-da-nang/"
+      }
+    ],
+    "checkedAt": "2026-09-07"
+  },
+  {
+    "id": "coffee-phin",
+    "name": "越南咖啡＋滴漏壺",
+    "localName": "Cà phê & phin",
+    "category": "咖啡",
+    "group": "popular",
+    "regions": [
+      "da-nang",
+      "hoi-an"
+    ],
+    "forWhom": "咖啡愛好者・自己留念",
+    "summary": "把旅途中的滴漏咖啡帶回家。比只買漂亮包裝，選對研磨度和烘焙日期更重要。",
+    "pick": "買密封咖啡粉／豆，請店員按 phin 研磨；不熟悉對方器材時，先問有沒有磨豆機。",
+    "vndMin": 120000,
+    "vndMax": 300000,
+    "priceBasis": "編輯預算／一小包咖啡加基本滴漏壺，非店家報價",
+    "caution": "留意是否加香料、糖或奶粉；不以「麝香咖啡」名號推定真偽或品質。",
+    "buy": "市內超市或烘豆 Cafe；現場先問零售咖啡和 phin 是否有貨。",
+    "mapQuery": "coffee roasters Da Nang",
+    "route": "穿插 Cafe 時試喝後才買；不用為手信額外排一整段行程。",
+    "evidence": "越南旅遊局將咖啡及 phin 列為傳統手信；品類推薦不等於每間店都有現貨。",
+    "sources": [
+      {
+        "label": "越南旅遊局・傳統手信",
+        "url": "https://beta-v2.vietnam.travel/things-to-do/12-traditional-vietnamese-souvenirs"
+      }
+    ],
+    "checkedAt": "2026-09-07",
+    "hoiAnMapQuery": "coffee roasters Hoi An"
+  },
+  {
+    "id": "lantern",
+    "name": "可摺式會安燈籠",
+    "localName": "Đèn lồng Hội An",
+    "category": "工藝",
+    "group": "popular",
+    "regions": [
+      "hoi-an"
+    ],
+    "forWhom": "家居佈置・有會安回憶的人",
+    "summary": "比鑰匙圈更有會安特色。選可收合的小尺寸，回家也比較容易找到擺放位置。",
+    "pick": "請店家當場示範摺疊，檢查竹骨和布面；先問價格是否包括燈具。",
+    "vndMin": 100000,
+    "vndMax": 300000,
+    "priceBasis": "編輯預算／小型燈籠，材質及手工不同",
+    "caution": "手工尺寸有差異；收合後再量行李空間，布製燈籠勿配明火。",
+    "buy": "Nguyễn Hoàng 夜市燈籠檔或古城工藝店。",
+    "mapQuery": "Hoi An Night Market Nguyen Hoang",
+    "route": "會安晚餐後夜遊時順路選；不用特意白天再來一次。",
+    "evidence": "越南旅遊局推薦可摺平攜帶的傳統燈籠；會安當地旅遊介紹也列為代表性手工藝。",
+    "sources": [
+      {
+        "label": "越南旅遊局・燈籠",
+        "url": "https://beta-v2.vietnam.travel/things-to-do/12-traditional-vietnamese-souvenirs"
+      },
+      {
+        "label": "會安手信介紹",
+        "url": "https://visitdanang.travel/vi/goi-y-mua-do-luu-niem-o-hoi-an-dam-chat-pho-co-9139"
+      }
+    ],
+    "checkedAt": "2026-09-07"
+  },
+  {
+    "id": "reaching-out",
+    "name": "Reaching Out 手工茶具",
+    "localName": "Gifts that Give Twice",
+    "category": "工藝",
+    "group": "popular",
+    "regions": [
+      "hoi-an"
+    ],
+    "forWhom": "重要親友・喜歡手作的人",
+    "summary": "會安社會企業的手工選物，茶具、家居小物比大量派發的零食更適合留給重要的人。",
+    "pick": "先看實物色澤和手感，要求防撞包裝；店方採固定價格，不必議價。",
+    "vndMin": 250000,
+    "vndMax": 800000,
+    "priceBasis": "編輯預算／小型單件；整套茶具可能超出，現場報價為準",
+    "caution": "陶瓷易碎且較重；不將工藝店和茶室地址混為一談。",
+    "buy": "Reaching Out 工藝店：131 Trần Phú，會安古城。",
+    "mapQuery": "Reaching Out Arts and Crafts 131 Tran Phu Hoi An",
+    "route": "逛古城時穿插工藝店；若試喝茶，茶室是另一個地點。",
+    "evidence": "店方公開社企、手作及固定價格政策，並展示多年旅客評價獎項；屬工藝取向選擇，不是大眾銷量榜。",
+    "sources": [
+      {
+        "label": "店方・故事與旅客評價",
+        "url": "https://www.reachingoutvietnam.com/"
+      },
+      {
+        "label": "店方・固定價格及社企說明",
+        "url": "https://reachingoutvietnam.com/contact-us/faq/"
+      },
+      {
+        "label": "店方・工藝店取貨地址",
+        "url": "https://www.reachingoutvietnam.com/free-pickup/"
+      }
+    ],
+    "checkedAt": "2026-09-07"
+  },
+  {
+    "id": "cong-coffee",
+    "name": "Cộng 四味即溶咖啡",
+    "localName": "4 vị cà phê hoà tan",
+    "category": "咖啡",
+    "group": "popular",
+    "regions": [
+      "da-nang",
+      "hoi-an"
+    ],
+    "forWhom": "同事・喜歡奶咖的人",
+    "summary": "椰子咖啡、鹽奶咖等四味一盒，省去磨豆與器材，適合小份量分享或試味。",
+    "pick": "官網這款為 4 種口味、每味 2 包；不是店內現沖飲品。",
+    "vndMin": 48000,
+    "vndMax": 48000,
+    "priceBasis": "官網標價／8 包混合盒；門市價格及庫存待確認",
+    "caution": "含糖奶咖風味，未必適合喝黑咖啡的人；即溶與現沖味道不同，公開評價也有分歧。",
+    "buy": "Cộng 門市詢問零售盒裝；也可先看越南官方商店。",
+    "mapQuery": "Cong Ca Phe Da Nang",
+    "route": "逛峴港市中心時配合 Cafe 休息購買；不要把所有門市都視作有貨。",
+    "evidence": "官網提供可帶走的盒裝；旅客有推薦即溶咖啡，也有人偏好現沖，因此列為方便型手信而非品質第一。",
+    "sources": [
+      {
+        "label": "Cộng 官方・規格及價格",
+        "url": "https://shop.congcaphe.com/products/4-vi-ca-phe-hoa-tan"
+      },
+      {
+        "label": "旅客討論・包含不同意見",
+        "url": "https://www.reddit.com/r/VietNam/comments/1rt0hdk/is_cong_caphe_popular_in_vietnam/"
+      }
+    ],
+    "checkedAt": "2026-09-07",
+    "hoiAnMapQuery": "Cong Ca Phe Hoi An"
+  },
+  {
+    "id": "marou",
+    "name": "MAROU 越南產地巧克力",
+    "localName": "Single Origin & Vietnamese Flavours",
+    "category": "零食",
+    "group": "recent",
+    "regions": [
+      "da-nang",
+      "hoi-an"
+    ],
+    "forWhom": "巧克力愛好者・精緻小禮物",
+    "summary": "想送越南原產可可，又想包裝體面，可選單一產地或金桔、咖啡等風味巧克力。",
+    "pick": "單一產地款官網 140,000 VND；金桔、咖啡等風味款多為 170,000 VND，按實際規格選。",
+    "vndMin": 140000,
+    "vndMax": 170000,
+    "priceBasis": "官網所列上述巧克力條標價，非整個品牌價格範圍",
+    "caution": "怕熱；留到回酒店前買，避免長時間放車內。先核對奶類、果仁等成分。",
+    "buy": "Maison Marou 峴港／會安門市，分店和庫存以官方門市頁為準。",
+    "mapQuery": "Maison Marou Da Nang",
+    "route": "峴港購物或會安古城行程都可考慮；可當 Cafe 休息後的最後一站。",
+    "evidence": "2026-06-20 巧克力社群多位用戶談及 MAROU 及越南風味；6 月品牌另公布夏季合作。是近期討論訊號，不是銷售冠軍。",
+    "recentAt": "2026-06-20",
+    "recentLabel": "2026 年 6 月・社群討論",
+    "sources": [
+      {
+        "label": "近期巧克力社群討論",
+        "url": "https://www.reddit.com/r/chocolate/comments/1ualkg4/im_so_excited_to_try_these/",
+        "publishedAt": "2026-06-20"
+      },
+      {
+        "label": "官方・口味及標價",
+        "url": "https://maisonmarou.com/collections/chocolate-bars"
+      },
+      {
+        "label": "官方・門市",
+        "url": "https://maisonmarou.com/pages/locations"
+      },
+      {
+        "label": "品牌消息・不是銷量證據",
+        "url": "https://maisonmarou.com/vi/blogs/news/a-collab-rooted-in-vietnam",
+        "publishedAt": "2026-06-24"
+      }
+    ],
+    "checkedAt": "2026-09-07",
+    "hoiAnMapQuery": "Maison Marou Hoi An"
+  },
+  {
+    "id": "cocoon",
+    "name": "Cocoon 越南護膚選物",
+    "localName": "Hưng Yên Turmeric",
+    "category": "護理",
+    "group": "recent",
+    "regions": [
+      "da-nang"
+    ],
+    "forWhom": "熟悉對方膚質的朋友・自己",
+    "summary": "除了食物，也可考慮越南本地護膚品牌。近期旅客討論提到薑黃系列與柚子洗髮產品。",
+    "pick": "想買小份可看薑黃面膜 30ml；C10 精華 30ml 是另一款，勿把它與較貴的 C22 混淆。",
+    "vndMin": 152000,
+    "vndMax": 320000,
+    "priceBasis": "官網：面膜 30ml 為 152,000；C10 精華 30ml 為 320,000 VND",
+    "caution": "不替收禮人判斷膚質或保證功效；先試用並核對成分。液體／膏狀產品須按航空規定打包。",
+    "buy": "峴港 Hasaki 等正規護理店，先確認指定規格有貨；不向無法核實的散貨店購買。",
+    "mapQuery": "Hasaki Da Nang",
+    "route": "峴港女裝購物時順道安排；先問同伴需要哪款，比盲買一大套實際。",
+    "evidence": "2026-03-17 的旅遊美妝討論中，有不同用戶推薦 Cocoon 薑黃系列；僅屬社群口碑訊號，沒有本地手信銷量數據。",
+    "recentAt": "2026-03-17",
+    "recentLabel": "2026 年 3 月・旅客討論",
+    "sources": [
+      {
+        "label": "近期旅客美妝討論",
+        "url": "https://www.reddit.com/r/AsianBeauty/comments/1rw9w2u/mustbuy_skincare_makeup_from_vietnam_and_singapore/",
+        "publishedAt": "2026-03-17"
+      },
+      {
+        "label": "Cocoon 官方・規格及價格",
+        "url": "https://cocoonvietnam.com/danh-muc/van-de-ve-da/da-xin-mau"
+      },
+      {
+        "label": "Hasaki・產品系列介紹",
+        "url": "https://hasaki.vn/cam-nang/review-my-pham-cocoon-cac-san-pham-dang-co-va-ban-chay-cua-cocoon-2247.html"
+      }
+    ],
+    "checkedAt": "2026-09-07"
+  }
+]

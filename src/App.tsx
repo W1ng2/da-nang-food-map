@@ -7,13 +7,15 @@ import { DecisionFilterSheet } from './components/DecisionFilterSheet'
 import { PlaceCard } from './components/PlaceCard'
 import { PlaceSheet } from './components/PlaceSheet'
 import { UpdateBanner } from './components/UpdateBanner'
-import { HeartIcon, PlusIcon } from './components/UiIcon'
+import { GiftIcon, HeartIcon, PlusIcon } from './components/UiIcon'
+import { ManualUpdate } from './components/ManualUpdate'
+import { SouvenirView } from './components/SouvenirView'
 import { applyDecisionFilters, distanceKm, filterPlaces, type DecisionFilters } from './utils'
 import type { Place, UserLocation } from './types'
 import { FOOD_GROUPS, HOTEL, foodGroup, initialTripDate, placeRegion, type Region } from './trip'
 import { TripView } from './components/TripView'
 
-type View = 'map' | 'list' | 'favorites' | 'trip'
+type View = 'map' | 'list' | 'favorites' | 'trip' | 'souvenirs'
 type ExploreMode = 'restaurant' | 'attraction'
 
 const DEFAULT_DECISION_FILTERS: DecisionFilters = {
@@ -29,7 +31,7 @@ export default function App() {
   } = useRegisterSW()
   const [places, setPlaces] = useState<Place[]>([])
   const [query, setQuery] = useState('')
-  const [view, setView] = useState<View>('map')
+  const [view, setView] = useState<View>(() => new URLSearchParams(window.location.hash.slice(1)).get('page') === 'souvenirs' ? 'souvenirs' : 'map')
   const [mode, setMode] = useState<ExploreMode>('restaurant')
   const [selectedType, setSelectedType] = useState('')
   const [selectedGroup, setSelectedGroup] = useState('')
@@ -63,16 +65,17 @@ export default function App() {
   useEffect(() => {
     if (!deepLinkReady) return
     const id = selected?.id
-    if (!id) history.replaceState(null, '', window.location.pathname)
+    if (!id) history.replaceState(null, '', `${window.location.pathname}${view === 'souvenirs' ? '#page=souvenirs' : ''}`)
     else history.replaceState(null, '', `#place=${encodeURIComponent(id)}`)
-  }, [selected, deepLinkReady])
+  }, [selected, deepLinkReady, view])
 
   useEffect(() => {
     if (!places.length) return
     const selectFromHash = () => {
+      if (new URLSearchParams(window.location.hash.slice(1)).get('page') === 'souvenirs') setView('souvenirs')
       const id = new URLSearchParams(window.location.hash.replace(/^#/, '')).get('place')
       const place = id ? places.find((candidate) => candidate.id === id) || null : null
-      if (place) setMode(place.kind)
+      if (place) { setMode(place.kind); setView('map') }
       setSelected(place)
     }
     selectFromHash()
@@ -123,7 +126,7 @@ export default function App() {
   }
 
   const showHotel = () => { setSelected(null); setView('map'); setHotelFocus((value) => value + 1) }
-  const switchView = (nextView: View) => { setHotelFocus(0); setView(nextView) }
+  const switchView = (nextView: View) => { setHotelFocus(0); setSelected(null); setView(nextView) }
   const showTripPlace = (place: Place) => {
     setMode(place.kind); setRegion(placeRegion(place)); setSelectedGroup(''); setSelectedType('')
     setQuery(''); setDecisionFilters(DEFAULT_DECISION_FILTERS); setView('map'); setSelected(place)
@@ -178,7 +181,8 @@ export default function App() {
           <div><p>DA NANG & HOI AN · 2026</p><h1>今天想去哪裡？</h1></div>
         </div>
         <button className="install-button" type="button" onClick={() => setShowInstall(true)} aria-label="加入主畫面"><PlusIcon /></button>
-        {view !== 'trip' && <><label className="search-box">
+        <ManualUpdate onPlaces={setPlaces} onReady={() => setNeedRefresh(true)} />
+        {view !== 'trip' && view !== 'souvenirs' && <><label className="search-box">
           <span aria-hidden="true">⌕</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)}
             placeholder={mode === 'restaurant' ? '搜尋餐廳、名物或菜式' : '搜尋景點、區域或遊覽重點'}
@@ -233,7 +237,7 @@ export default function App() {
             <div className="map-status" role="status"><strong>{filtered.length}</strong> {mode === 'restaurant' ? '間餐廳' : '個景點'}</div>
             <div className="map-bottom-actions"><a href={HOTEL.mapsUrl} target="_blank" rel="noreferrer">返回酒店 ↗</a><button className="locate-button" type="button" onClick={() => locate()}><span aria-hidden="true">⌖</span>{userLocation ? '重新定位' : '我的位置'}</button></div>
           </>
-        ) : view === 'trip' ? <TripView places={places} date={tripDate} now={now} onDate={setTripDate} onPlace={showTripPlace} onHotel={showHotel} /> : (
+        ) : view === 'souvenirs' ? <SouvenirView now={now} /> : view === 'trip' ? <TripView places={places} date={tripDate} now={now} onDate={setTripDate} onPlace={showTripPlace} onHotel={showHotel} /> : (
           <div className="list-view">
             <div className="list-view__heading">
               <div><span>{view === 'favorites' ? 'MY SAVED PLACES' : region === 'hoi-an' ? 'CURATED IN HOI AN' : region === 'da-nang' ? 'CURATED IN DA NANG' : 'DA NANG & HOI AN'}</span><h2>{view === 'favorites' ? '我的收藏' : `${filtered.length} ${mode === 'restaurant' ? '間餐廳' : '個景點'}`}</h2></div>
@@ -248,12 +252,13 @@ export default function App() {
       </section>
 
       {locationError && !showFilters && <div className="toast" role="alert">{locationError}<button type="button" aria-label="關閉定位提示" onClick={() => setLocationError('')}>×</button></div>}
-      {needRefresh && <UpdateBanner onUpdate={() => void updateServiceWorker(true)} onDismiss={() => setNeedRefresh(false)} />}
+      {needRefresh && <UpdateBanner onUpdate={() => void updateServiceWorker(true).catch(() => setLocationError('套用新版失敗，請再按檢查更新。'))} onDismiss={() => setNeedRefresh(false)} />}
 
       <nav className="tabbar" aria-label="主要頁面">
         <button type="button" className={view === 'map' ? 'is-active' : ''} aria-current={view === 'map' ? 'page' : undefined} onClick={() => switchView('map')}><span aria-hidden="true">⌖</span>地圖</button>
         <button type="button" className={view === 'list' ? 'is-active' : ''} aria-current={view === 'list' ? 'page' : undefined} onClick={() => switchView('list')}><span aria-hidden="true">≡</span>清單</button>
         <button type="button" className={view === 'trip' ? 'is-active' : ''} aria-current={view === 'trip' ? 'page' : undefined} onClick={() => switchView('trip')}><span aria-hidden="true">☷</span>行程</button>
+        <button type="button" className={view === 'souvenirs' ? 'is-active' : ''} aria-current={view === 'souvenirs' ? 'page' : undefined} onClick={() => switchView('souvenirs')}><span aria-hidden="true"><GiftIcon /></span>手信</button>
         <button type="button" className={view === 'favorites' ? 'is-active' : ''} aria-current={view === 'favorites' ? 'page' : undefined} onClick={() => switchView('favorites')}><span aria-hidden="true"><HeartIcon filled={view === 'favorites'} /></span>收藏<em>{favorites.size || ''}</em></button>
       </nav>
 

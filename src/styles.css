@@ -121,7 +121,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .empty-state h3 { margin: 4px 0; font-family: "Songti TC", serif; color: var(--ink); font-size: 22px; }
 .empty-state p { font-size: 13px; }
 
-.tabbar { z-index: 9; height: calc(61px + env(safe-area-inset-bottom)); padding: 7px 15px env(safe-area-inset-bottom); display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(255,250,240,.96); border-top: 1px solid var(--line); box-shadow: 0 -5px 18px rgba(23,60,50,.08); backdrop-filter: blur(14px); }
+.tabbar { z-index: 9; height: calc(61px + env(safe-area-inset-bottom)); padding: 7px 15px env(safe-area-inset-bottom); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); background: rgba(255,250,240,.96); border-top: 1px solid var(--line); box-shadow: 0 -5px 18px rgba(23,60,50,.08); backdrop-filter: blur(14px); }
 .tabbar button { position: relative; border: 0; background: none; color: #7c887f; font-size: 10px; font-weight: 800; }
 .tabbar button > span { height: 24px; display: grid; place-items: center; margin: 0 auto 1px; font-size: 24px; line-height: 1; }
 .tabbar button.is-active { color: var(--tomato); }
@@ -312,3 +312,47 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* A pocket gift journal, using the map's paper, ink and tomato palette. */
+.manual-update { margin-top: 10px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.manual-update > span { min-width: 0; color: #d7e4da; font-size: 10px; line-height: 1.4; }
+.manual-update button { display: flex; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; min-height: 44px; padding: 6px 10px; border: 1px solid #82958a; border-radius: 10px; background: transparent; color: var(--paper-light); font-size: 12px; font-weight: 700; }
+.manual-update button:disabled { opacity: .65; cursor: wait; }
+.souvenir-view { height: 100%; overflow-y: auto; overscroll-behavior-y: contain; padding: 24px 18px 40px; }
+.souvenir-intro, .souvenir-filters, .souvenir-method, .souvenir-count, .souvenir-grid, .souvenir-footnote { max-width: 1000px; margin-left: auto; margin-right: auto; }
+.souvenir-intro { padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.souvenir-intro h2 { margin: 12px 0; font-family: "Songti TC", "Noto Serif TC", serif; font-size: clamp(32px, 6vw, 48px); line-height: 1.15; letter-spacing: -.02em; }
+.souvenir-intro p { max-width: 440px; color: var(--muted); font-size: 14px; line-height: 1.8; margin: 0 0 12px; }
+.souvenir-intro small { color: var(--muted); font-size: 11px; }
+.souvenir-filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0 0; }
+.souvenir-filters > div { display: flex; gap: 6px; }
+.souvenir-filters button { min-height: 44px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-light); font-weight: 700; font-size: 12px; }
+.souvenir-filters button[aria-pressed="true"] { color: var(--paper-light); background: var(--ink); }
+.souvenir-filters label { font-size: 11px; color: var(--muted); }
+.souvenir-filters select { min-height: 44px; max-width: 180px; margin-left: 8px; padding: 8px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper-light); color: var(--ink); font: inherit; }
+.souvenir-method { color: var(--muted); font-size: 11px; line-height: 1.8; }
+.souvenir-method summary { min-height: 44px; padding: 12px 0; cursor: pointer; }
+.souvenir-count { font-size: 12px; margin-top: 24px; margin-bottom: 12px; }
+.souvenir-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+.souvenir-card { min-width: 0; padding: 22px 18px 14px; background: var(--paper-light); border: 1px solid var(--line); border-radius: 16px; }
+.souvenir-card__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 10px; color: var(--muted); }
+.souvenir-badge { border: 1px solid var(--line); border-radius: 6px; padding: 5px 7px; white-space: nowrap; }
+.souvenir-badge.is-recent { color: #9e361f; background: #ffede4; border-color: #e9b29e; }
+.souvenir-local-name { color: var(--muted); letter-spacing: .03em; margin: 22px 0 5px; font-size: 12px; }
+.souvenir-card h3 { font-family: "Songti TC", "Noto Serif TC", serif; font-size: 26px; margin: 0; line-height: 1.3; overflow-wrap: anywhere; }
+.souvenir-card > p, .souvenir-card details p { font-size: 13px; line-height: 1.8; }
+.souvenir-card .souvenir-for { color: var(--tomato); font-size: 11px; margin-top: 8px; }
+.souvenir-price { display: flex; flex-wrap: wrap; gap: 5px 12px; align-items: baseline; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 13px 0; margin: 18px 0; }
+.souvenir-price strong { font-size: 22px; }
+.souvenir-price span { color: var(--muted); font-size: 12px; }
+.souvenir-price small { flex-basis: 100%; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.souvenir-card .souvenir-caution { background: var(--paper); border-left: 2px solid #b5a689; padding: 9px 12px; font-size: 12px; }
+.souvenir-card b { font-weight: 700; }
+.souvenir-map-link { display: flex; justify-content: center; align-items: center; min-height: 44px; border: 1px solid var(--ink); border-radius: 10px; color: var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; margin: 14px 0 8px; }
+.souvenir-card summary { min-height: 44px; padding: 12px 0; font-size: 11px; cursor: pointer; }
+.souvenir-card details ul { padding-left: 18px; }
+.souvenir-card details li { font-size: 11px; line-height: 1.8; margin-bottom: 8px; }
+.souvenir-card details a, .souvenir-footnote a { color: var(--ink); text-underline-offset: 3px; }
+.souvenir-footnote { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.souvenir-footnote h3 { color: var(--ink); font-size: 16px; }
+@media (min-width: 1100px) { .souvenir-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .souvenir-view { padding: 36px; } }
