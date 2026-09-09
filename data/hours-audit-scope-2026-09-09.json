@@ -1,0 +1,1198 @@
+{
+  "checkedAt": "2026-09-09",
+  "baselineSchedules": 47,
+  "targets": [
+    {
+      "id": "michelin-an-thoi",
+      "name": "Ăn Thôi",
+      "address": "114 Bạch Đằng, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-banh-xeo-76",
+      "name": "Bánh Xèo 76",
+      "address": "85A Lê Văn Hưu, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "時間待核實：Wanderlog／Restaurant Guru 列每日 10:00–21:00；Si Dining 的餐廳介紹另稱星期一休息。每週休息日有衝突，暫不判定營業狀態。",
+      "hoursSourceUrl": "https://restaurantguru.com/Banh-xeo-76-Da-Nang"
+    },
+    {
+      "id": "michelin-be-ni-2",
+      "name": "Bé Ni 2",
+      "address": "228 Võ Nguyên Giáp, An Hải, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-bun-bo-ba-roi-hai-chau",
+      "name": "Bún Bò Bà Rơi (Hải Châu)",
+      "address": "5 Phan Thành Tài, Hòa Cường, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-bun-bo-hue-ba-thuong",
+      "name": "Bún Bò Huế Bà Thương",
+      "address": "23 Trần Quốc Toản, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-bun-cha-ca-109",
+      "name": "Bún Chả Cá 109",
+      "address": "109 Nguyễn Chí Thanh, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-my-quang-sua-hong-van",
+      "name": "Mỳ Quảng Sứa Hồng Vân",
+      "address": "59C Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-phu-hong",
+      "name": "Phú Hồng",
+      "address": "19 Yên Bái, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-que-xua",
+      "name": "Quê Xưa",
+      "address": "165–167 Núi Thành, Hòa Cường, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-ba-dieu-tran-tong",
+      "name": "Bà Diệu (Trần Tống)",
+      "address": "17 Trần Tống, Thanh Khê, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-banh-canh-yen",
+      "name": "Bánh Canh Yến",
+      "address": "253 Nguyễn Hoàng, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-bep-hen",
+      "name": "Bếp Hên",
+      "address": "47 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-bun-cha-ca-ba-hoa",
+      "name": "Bún Chả Cá Bà Hoa",
+      "address": "27 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-bun-rieu-cua-39",
+      "name": "Bún Riêu Cua 39",
+      "address": "39 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-com-ga-lan",
+      "name": "Cơm Gà Lan",
+      "address": "520 Trưng Nữ Vương, Hòa Cường, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-le-comptoir",
+      "name": "Le Comptoir",
+      "address": "16 Chế Lan Viên, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "website": "https://lecomptoirdng.com/en/",
+      "hours": "官網列出每日入座時段：第一輪 17:00／17:30／18:00；第二輪 20:00／20:30。未明確列出關門時間，暫不判定營業狀態；20:00 前入座限時 2.5 小時。",
+      "hoursSourceUrl": "https://lecomptoirdng.com/en/"
+    },
+    {
+      "id": "michelin-my-hanh-seafood",
+      "name": "My Hanh Seafood",
+      "address": "03–05 Võ Nguyên Giáp, An Hải, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "待核實：官網首頁及訂位頁列出 08:00–22:00、09:00–23:00、08:00–23:00 等不同時間，暫不判定營業狀態；出發前請向店家確認。",
+      "hoursSourceUrl": "https://myhanhseafood.vn/dat-ban/"
+    },
+    {
+      "id": "michelin-my-quang-co-sau",
+      "name": "Mỳ Quảng Cô Sáu",
+      "address": "397 Trần Hưng Đạo, An Hải, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-nam-danh-seafood",
+      "name": "Năm Đảnh Seafood",
+      "address": "139/59/38 Trần Quang Khải, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-nu-do-kitchen",
+      "name": "Nu Đồ Kitchen",
+      "address": "11/1 Lưu Quang Thuận, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "michelin-si-dining",
+      "name": "Si Dining",
+      "address": "01 Giang Châu 2, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "時間待核實：米芝蓮指南列每日 17:30–21:30；Food Tour Da Nang 列 17:00–21:30。開門時間不一致，官網本輪無法讀取，暫不判定營業狀態。",
+      "hoursSourceUrl": "https://guide.michelin.com/hk/zh_HK/da-nang-region/da-nang_2984390/restaurant/si-dining"
+    },
+    {
+      "id": "high-rating-nha-hang-nha-go-viet-da-nang",
+      "name": "Nhà hàng Nhà Gỗ Việt Đà Nẵng",
+      "address": "49 Nguyễn Thái Học, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nha-hang-lan-gio",
+      "name": "Nhà hàng Làn Gió",
+      "address": "169 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-vietnam-daily-cuisine",
+      "name": "Vietnam Daily Cuisine",
+      "address": "10 An Thượng 29, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-gypsy-rooftop-restaurant-bar",
+      "name": "Gypsy Rooftop Restaurant & Bar",
+      "address": "20 Đống Đa, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "https://thegypsydng.com/en/",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-hung-68-restaurant-food-and-drink",
+      "name": "Hùng 68 Restaurant - Food and Drink",
+      "address": "110 Trường Sa, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-hoang-s-kitchen-da-nang-vietnamese-vegan-food",
+      "name": "Hoang’s Kitchen Đà Nẵng - Vietnamese & Vegan Food",
+      "address": "40 Hà Bổng, An Hải, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-ngon-da-nang-vietnamese-cuisine-restaurant",
+      "name": "NGON DA NANG - VIETNAMESE CUISINE RESTAURANT",
+      "address": "88B Lê Quang Đạo, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-vietnom-local-eatery",
+      "name": "Vietnom Local Eatery",
+      "address": "97 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-riverside-terrace-restaurant",
+      "name": "Riverside Terrace Restaurant",
+      "address": "493 Trần Hưng Đạo, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-ca-go-vietnamese-restaurant",
+      "name": "Cá Gỗ Vietnamese Restaurant",
+      "address": "278 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-mama-masala-indian-cuisine-da-nang",
+      "name": "MAMA MASALA INDIAN CUISINE Da Nang",
+      "address": "376 Trần Hưng Đạo, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-gravel-house-bbq-restaurant-da-nang",
+      "name": "Gravel House BBQ Restaurant Da Nang",
+      "address": "91 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-claypot-bar-and-restaurant",
+      "name": "ClayPot Bar and Restaurant",
+      "address": "32 Võ Nghĩa, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-ky-vat-vietnamese-restaurant",
+      "name": "Ky Vat - Vietnamese Restaurant",
+      "address": "56A Lê Hồng Phong, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nha-hang-thien-kim",
+      "name": "Nhà hàng Thiên Kim",
+      "address": "166 Bạch Đằng, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-them-hai-san",
+      "name": "Thèm Hải Sản",
+      "address": "39 Trần Bạch Đằng, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nha-bep-xua-restaurant",
+      "name": "Nhà Bếp Xưa Restaurant",
+      "address": "64 Hà Bổng, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-miss-nhi",
+      "name": "Miss NHI",
+      "address": "39 An Thượng 30, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nha-hang-nha-bep-cho-han",
+      "name": "Nhà hàng NHÀ BẾP CHỢ HÀN",
+      "address": "22 Hùng Vương, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-maazi-da-nang",
+      "name": "MAAZI Da Nang",
+      "address": "264 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-loco-restaurant-danang-seafood-restaurant",
+      "name": "LoCo Restaurant - Danang Seafood Restaurant",
+      "address": "1C Lê Duẩn, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nha-an-vietnamese-local-food-restaurant-and-vegan",
+      "name": "Nhà An - Vietnamese local food restaurant and vegan",
+      "address": "101 Hồ Nghinh, An Hải, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-emo-s-homecooked-vietnamese-cuisine",
+      "name": "EMO'S HOMECOOKED VIETNAMESE CUISINE",
+      "address": "16 Đường Mỹ Khê 4, An Hải, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-bhojan-indian-restaurant",
+      "name": "BHOJAN INDIAN RESTAURANT",
+      "address": "20-22 Lê Quang Đạo, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-butcher-steak",
+      "name": "Butcher Steak",
+      "address": "64 Lê Quang Đạo, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-bep-lua-vietnamese-restaurant",
+      "name": "Bếp Lụa Vietnamese Restaurant",
+      "address": "94 Bạch Đằng, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nazaare-indian-beach-restaurant-and-bar",
+      "name": "Nazaare - Indian Beach Restaurant and Bar",
+      "address": "Lô 02 Võ Nguyên Giáp, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-rainbowl-poke",
+      "name": "Rainbowl Poke",
+      "address": "97 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-nha-hang-mr-anh",
+      "name": "Nhà hàng Mr.Anh",
+      "address": "340 Ông Ích Khiêm, Thanh Khê, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-miri-hom-vietnamese-cuisine",
+      "name": "MiRi Hôm Vietnamese Cuisine",
+      "address": "199 Nguyễn Văn Thoại, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-manvar-rasoi-indian-restaurant",
+      "name": "MANVAR Rasoi Indian Restaurant",
+      "address": "37 Chế Lan Viên, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-sky-view-restaurant",
+      "name": "Sky View Restaurant",
+      "address": "216 Võ Nguyên Giáp, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-vi-brewhouse",
+      "name": "Vị Brewhouse",
+      "address": "37 Quang Trung, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "high-rating-dom-bistro",
+      "name": "DOM Bistro",
+      "address": "3 Phan Bội Châu, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-roost-coffee-roasters-da-nang",
+      "name": "Roost Coffee Roasters | Da Nang",
+      "address": "57 Bà Huyện Thanh Quan, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-acacia-coffee-and-more",
+      "name": "ACACIA coffee and more",
+      "address": "05 An Cư 5, An Hải, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-outta-da-blue-da-nang",
+      "name": "Outta da Blue Đà Nẵng",
+      "address": "66 Pasteur, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-passport-coffee-lab-specialty-coffee-brunch",
+      "name": "Passport Coffee Lab | Specialty Coffee & Brunch",
+      "address": "78 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-o2o-first-roast",
+      "name": "O2o First Roast",
+      "address": "18/3B Phan Tứ, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-91cc-91-concept-coffee",
+      "name": "[91cc] 91 Concept Coffee",
+      "address": "91 Trần Quốc Toản, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-freezedom-da-nang",
+      "name": "Freezedom Da Nang",
+      "address": "156 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-nang-ngot-patisserie",
+      "name": "Nang Ngot Patisserie",
+      "address": "20 Phan Bội Châu, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-little-mango",
+      "name": "Little Mango",
+      "address": "15 Ngô Thì Sĩ, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "cafe-dessert-kem-bo-be-hue",
+      "name": "Kem bơ Bé Huệ",
+      "address": "11B4 An Thượng 38, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "breakfast-heo-nuong-lu-ong-phu-dat",
+      "name": "Heo nướng lu Ông Phú Đạt",
+      "address": "128 Nguyễn Duy Hiệu, An Hải, Đà Nẵng 550000, Vietnam",
+      "website": "",
+      "hours": "05:30起；中段休息及售罄情況出發前核對",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "attraction-marble-mountains",
+      "name": "五行山 Ngũ Hành Sơn",
+      "address": "81 Huyền Trân Công Chúa, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "website": "https://danangfantasticity.com/en/da-nang-on-summer-days-the-ideal-stopover-for-all-tourists",
+      "hours": "開放時間及售票安排出發前核對",
+      "hoursSourceUrl": "https://danangfantasticity.com/en/da-nang-on-summer-days-the-ideal-stopover-for-all-tourists"
+    },
+    {
+      "id": "attraction-linh-ung-pagoda",
+      "name": "靈應寺 Chùa Linh Ứng",
+      "address": "Hoàng Sa, Thọ Quang, Sơn Trà, Đà Nẵng, Vietnam",
+      "website": "https://danangfantasticity.com/en/da-nang-on-summer-days-the-ideal-stopover-for-all-tourists",
+      "hours": "宗教場所，訪客時間出發前核對",
+      "hoursSourceUrl": "https://danangfantasticity.com/en/da-nang-on-summer-days-the-ideal-stopover-for-all-tourists"
+    },
+    {
+      "id": "attraction-da-nang-cathedral",
+      "name": "峴港主教座堂（粉紅教堂）",
+      "address": "156 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "website": "https://commons.wikimedia.org/wiki/Category:Da_Nang_Cathedral",
+      "hours": "宗教活動及訪客開放時間出發前核對",
+      "hoursSourceUrl": "https://commons.wikimedia.org/wiki/Category:Da_Nang_Cathedral"
+    },
+    {
+      "id": "hoi-an-nhans-kitchen",
+      "name": "Nhan’s Kitchen",
+      "address": "167 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+      "website": "https://www.facebook.com/Nhans-Kitchen-Hoi-An-1148784298600736/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-firefly",
+      "name": "Firefly Restaurant & Bar",
+      "address": "178 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+      "website": "https://www.facebook.com/fireflyrestaurantbar/",
+      "hours": "時間待核實：Tripadvisor 列每日 11:30–21:30；Wanderlog 列每日 11:00–21:30（越南時間）。開門時間不一致，暫不判定營業狀態。",
+      "hoursSourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d14985756-Reviews-Firefly_restaurant_Bar-Hoi_An_Quang_Nam_Province.html"
+    },
+    {
+      "id": "hoi-an-an-bang-beach-village",
+      "name": "An Bang Beach Village Restaurant",
+      "address": "Tổ 6B, An Bàng, Hội An Tây, Đà Nẵng, Vietnam",
+      "website": "https://anbangbeachvillage.com/",
+      "hours": "第三方列每日 11:00–22:00；完整時段請向店方確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/An-Bang-Beach-Village-tp-Hoi-An"
+    },
+    {
+      "id": "hoi-an-qq",
+      "name": "Nhà Hàng QQ",
+      "address": "69 Ngô Quyền, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "website": "https://www.facebook.com/hoianqqrestaurant/",
+      "hours": "第三方列每日 11:00–22:00；完整時段待店方確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/QQ-restaurant-Hoi-An-tp-Hoi-An"
+    },
+    {
+      "id": "hoi-an-a-little-kitchen",
+      "name": "A Little Kitchen Restaurant – Bếp Nhỏ",
+      "address": "71/2 Phan Châu Trinh, Hội An, Vietnam",
+      "website": "",
+      "hours": "第三方有 11:00–21:00 及 10:00–22:00 等不同記錄，完整時段待確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/A-Little-Kitchen-Bep-Nho-tp-Hoi-An"
+    },
+    {
+      "id": "hoi-an-ba-hieu",
+      "name": "Bà Hiếu – Local Foods",
+      "address": "25 Đào Duy Từ, Hội An, Vietnam",
+      "website": "https://www.facebook.com/thitheohap.hoian/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-the-soul",
+      "name": "The Soul Restaurant",
+      "address": "47 Thoại Ngọc Hầu, RiverTown Hoi An Resort & Spa, Hội An, Vietnam",
+      "website": "https://thesoulhoian.com/",
+      "hours": "官網：早餐 06:30–10:00；午晚餐 11:00 起，最後點餐 22:00。最後點餐時間不等於關門時間。",
+      "hoursSourceUrl": "https://thesoulhoian.com/"
+    },
+    {
+      "id": "hoi-an-jeera",
+      "name": "JEERA – Indian Restaurant",
+      "address": "126 Trần Cao Vân, Hội An, Vietnam",
+      "website": "https://www.facebook.com/profile.php?id=61553772907243",
+      "hours": "第三方列每日 11:00–23:00；完整時段待店方確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/MAAZI-Hoi-An-2-tp-Hoi-An"
+    },
+    {
+      "id": "hoi-an-two-mango-tree",
+      "name": "Bánh Mì Hai Cây Xoài – Two Mango Tree Bread",
+      "address": "124 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "第三方列每日 06:00–18:00；完整時段待店方確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/Banh-Mi-Hai-Cay-Xoai-Vietnam"
+    },
+    {
+      "id": "hoi-an-sri-spices",
+      "name": "SRI SPICES INDIAN FAMILY RESTAURANT",
+      "address": "74 Trần Hưng Đạo, Hội An, Vietnam",
+      "website": "https://www.facebook.com/SRI-Spices-100826082725633/",
+      "hours": "第三方列每日 11:30–22:00；完整時段待店方確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/Sri-Spices-Indian-and-Sri-Lankan-Restaurant-tp-Hoi-An"
+    },
+    {
+      "id": "hoi-an-pho-ngan",
+      "name": "Phở Ngân Hội An",
+      "address": "132 Trần Cao Vân, Hội An, Vietnam",
+      "website": "",
+      "hours": "Google 現頁與第三方的關門時間不同（19:00／20:00／20:30），完整時段待確認。",
+      "hoursSourceUrl": "https://restaurantguru.com/Pho-Ngan-Hoi-An-tp-Hoi-An"
+    },
+    {
+      "id": "hoi-an-cao-lau-thanh",
+      "name": "Quán Cao Lầu Thanh",
+      "address": "26 Thái Phiên, Hội An, Vietnam",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-my-quang-bich",
+      "name": "Mỳ Quảng Bích",
+      "address": "272 Hùng Vương, Hội An Tây, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-banh-xeo-ba-9",
+      "name": "Bánh Xèo, Thịt Nướng, Nem Lụi Bà 9",
+      "address": "Kiệt 92 Phan Châu Trinh, Hội An, Vietnam",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-old-town",
+      "name": "會安古城 Hội An Old Town",
+      "address": "Minh An, Hội An, Vietnam（古城西側步行參考點）",
+      "website": "https://vietnam.travel/places-to-go/central-vietnam/hoi-an",
+      "hours": "開放安排出發前再核對",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-japanese-bridge",
+      "name": "日本橋 Chùa Cầu",
+      "address": "Nguyễn Thị Minh Khai, Hội An, Vietnam",
+      "website": "https://vietnam.travel/places-to-go/central-vietnam/hoi-an",
+      "hours": "開放安排出發前再核對",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-an-bang-beach",
+      "name": "安邦沙灘 An Bang Beach",
+      "address": "An Bàng, Hội An, Vietnam",
+      "website": "https://vietnam.travel/places-to-go/central-vietnam/hoi-an",
+      "hours": "開放安排出發前再核對",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-precious-heritage",
+      "name": "Precious Heritage 民族文化博物館",
+      "address": "26 Phan Bội Châu, Hội An, Vietnam",
+      "website": "https://www.rehahnphotographer.com/precious-heritage-museum/",
+      "hours": "待核實：官網同頁分別列出每日 08:00–20:00 及 08:00–18:00，關門時間不一致；暫不判定營業狀態。",
+      "hoursSourceUrl": "https://www.rehahnphotographer.com/precious-heritage-museum/"
+    },
+    {
+      "id": "hoi-an-tuan-restaurant-and-cafe",
+      "name": "Tuan Restaurant & Cafe",
+      "address": "170 Trần Nhân Tông, Hội An Đông, Đà Nẵng 563831越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-faifoo-central-restaurant",
+      "name": "Faifoo Central Restaurant",
+      "address": "57 Hoàng Diệu, Hội An, Đà Nẵng 51000越南",
+      "website": "https://faifoocentralrestaurant.com/reservation/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-phan-gia-riverside-restaurant",
+      "name": "Phan Gia Riverside Restaurant",
+      "address": "95 Trần Quang Khải, Hội An Đông, Đà Nẵng 84000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-cua-dai-central-restaurant-and-cooking-class",
+      "name": "Cua Dai Central Restaurant & Cooking Class",
+      "address": "10/2 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000越南",
+      "website": "https://cuadaicentralrestaurant.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-le-petit-bistro-hoi-an",
+      "name": "Le Petit Bistro Hội An",
+      "address": "476 Cửa Đại, Hội An Đông, Đà Nẵng 560000越南",
+      "website": "https://www.lepetitbistrohoian476.com/api/res/6l_qv_m",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-silent-garden-restaurant",
+      "name": "Silent Garden Hội An",
+      "address": "61B Đ. Trần Cao Vân, Hội An, Đà Nẵng 02353越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-breeze-restaurant-and-basket-boat",
+      "name": "Breeze Restaurant & Basket Boat",
+      "address": "thôn thanh tam, Hoi An Dong, Da Nang, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-circle",
+      "name": "Circle Hoi An Restaurant | Burgers, Mexican and Vietnamese food by Circle",
+      "address": "317 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-jan-restaurant-local-food",
+      "name": "Restaurant JAN ( Local food )",
+      "address": "242B Lê Thánh Tông, Hội An Đông, Đà Nẵng 560000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-phi-banh-mi",
+      "name": "Phi banh mi",
+      "address": "88 Thái Phiên, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-hi-restaurant",
+      "name": "Hi Restaurant",
+      "address": "V8GH+48F, Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-la-burger-hoi-an",
+      "name": "LA BURGER HOIAN",
+      "address": "90/1 Phan Châu Trinh, Old Town, Hội An, Đà Nẵng 51309越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-home-hoi-an",
+      "name": "HOME Hoi An",
+      "address": "Ancient Town, 14 La Hối, An Hội, Hội An, Đà Nẵng 560000越南",
+      "website": "https://homevietnameserestaurants.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-lenco-cafe-and-bar",
+      "name": "LENCO CAFE & BAR",
+      "address": "679/4 Đ. Hai Bà Trưng, Old Town, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-little-flower-restaurant",
+      "name": "Little Flower Restaurant",
+      "address": "186 Trần Nhân Tông, street, Hội An Đông, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-claypot-hoi-an",
+      "name": "Claypot Hoi An",
+      "address": "217 Lý Thái Tổ, Hội An Tây, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-the-boat-riverside-restaurant-and-bar",
+      "name": "The Boat Riverside Restaurant & Bar",
+      "address": "44 Huyền Trân Công Chúa, Hội An Đông, Đà Nẵng 51300越南",
+      "website": "http://zalo.me/0568781888",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-le-cabanon-hoi-an",
+      "name": "Cabanon",
+      "address": "53 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-blue-sea-hoi-an-restaurant",
+      "name": "Blue Sea Hoi An Restaurants",
+      "address": "43 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-noodle-house-by-streets",
+      "name": "NOODLE House by STREETS (A hospitality & tourism social enterprise initiative) - Local Noodles, Rice & Clay Pot Cuisines",
+      "address": "512 Đ. Hai Bà Trưng, Hội An Tây, Đà Nẵng, 越南",
+      "website": "http://www.streetsinternational.org/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-restaurant-328",
+      "name": "Restaurant 328",
+      "address": "328 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-banh-mi-sum",
+      "name": "Bánh Mì Sum",
+      "address": "149 Trần Hưng Đạo, Hội An, Đà Nẵng 51309越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-mr-hoa-s-kitchen-restaurant",
+      "name": "Mr Hoà's Kitchen restaurant ( Home made PIZZA) , PASTA and Vietnamese food )",
+      "address": "Tổ 6 An Bàng, Hội An Tây, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-passion-restaurant-and-bar",
+      "name": "Passion Restaurant & Bar (An Bang Beach Hoi An)",
+      "address": "159 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng 560000越南",
+      "website": "https://www.facebook.com/PassionHoiAn",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-greek-souvlaki",
+      "name": "Greek Souvlaki Hội An - Nhà hàng ẩm thực Hy Lạp",
+      "address": "7 Thái Phiên, P, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-maazi-hoi-an",
+      "name": "MAAZI Hoi An",
+      "address": "132A Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 560000越南",
+      "website": "https://www.facebook.com/profile.php?id=100090493164247",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-the-son-bistro",
+      "name": "The Son Bistro – Vietnamese Restaurant, Craft Beer & Bar",
+      "address": "98 Lê Lợi, Old Town, Hội An, Đà Nẵng 51300越南",
+      "website": "https://www.facebook.com/TheSonBistro/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-iberico-tapas-y-vino-hoi-an",
+      "name": "IBERICO - TAPAS y VINO Hoi An",
+      "address": "100 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000越南",
+      "website": "https://www.weareiberico.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-bup-cafe",
+      "name": "Búp café",
+      "address": "132A Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 560000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-bao-han-restaurant",
+      "name": "Bao Han Restaurant",
+      "address": "17 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "website": "https://www.facebook.com/B%E1%BA%A3o-H%C3%A2n-Restaurant-547175538971556/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-the-basket-boat-cafe-and-restaurant",
+      "name": "The Basket Boat Cafe & Restaurant",
+      "address": "Thôn Vạn Lăng, Hội An Đông, Đà Nẵng 560000越南",
+      "website": "http://thebasketboat.com/contact-us/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-seashell-by-nu-eatery",
+      "name": "Seashell by Nu Eatery",
+      "address": "10 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng, 越南",
+      "website": "https://www.facebook.com/TheSeaShellByNuEatery/photos/pcb.1087172798302750/1087172648302765/?type=3&theater",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-son-hoi-an-restaurant",
+      "name": "Son Hoian",
+      "address": "232 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "website": "https://instagram.com/son_hoian_slowfood?igshid=YmMyMTA2M2Y=",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-baby-mustard-restaurant",
+      "name": "Baby Mustard",
+      "address": "Đường Biển, Hội An Tây, Đà Nẵng, 越南",
+      "website": "https://www.facebook.com/babymustard/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-morning-glory-mother-s-kitchen",
+      "name": "Morning Glory Mother's Kitchen",
+      "address": "14 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000, Vietnam",
+      "website": "https://www.facebook.com/MorningGloryMothersKitchen",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-tiem-banh-mi-ty-ty-s-bread",
+      "name": "Tiệm Bánh mì Ty ( Ty’s Bread )",
+      "address": "14 Đường Cao Hồng Lãnh, Hội An, Đà Nẵng 560000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-madame-hien-restaurant",
+      "name": "Madame Hien ( Cô Mai)",
+      "address": "02 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, 越南",
+      "website": "https://www.facebook.com/madamehienhoian/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-tra-que-water-wheel-restaurant-and-cooking-classes",
+      "name": "Tra Que Water Wheel Restaurant & Cooking classes",
+      "address": "Hoi An Tay, Da Nang, 越南",
+      "website": "http://traquewaterwheel.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-hoa-hien-vietnamese-restaurant-hoian",
+      "name": "Hoa Hiên - Vietnamese Restaurant Hoian",
+      "address": "33 Trần Quang Khải, Hội An Đông, Đà Nẵng, 越南",
+      "website": "https://facebook.com/hoahienrestaurant",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-mr-son-restaurant",
+      "name": "Mr. Sơn Restaurant",
+      "address": "Ẩm Thực 62, Khu, 02 Nguyễn Phúc Chu, P, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-red-dragon-restaurant-cooking-class",
+      "name": "Red Dragon Restaurant and Cooking Class",
+      "address": "332 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-mi-quang-92",
+      "name": "Mì Quảng 92 - Mì quảng cá lóc, bò, mì tôm thịt",
+      "address": "112A Đ. Trần Cao Vân, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "時間待核實：Wanderlog 列每日 06:30–20:00；Tripadvisor 列每日 06:00–20:30（越南時間）。兩者均為 112A Trần Cao Vân，但時間不一致，暫不判定營業狀態。",
+      "hoursSourceUrl": "https://wanderlog.com/place/details/7475275/"
+    },
+    {
+      "id": "hoi-an-pho-tung",
+      "name": "Phở Tùng",
+      "address": "51/7 Phan Châu Trinh, Old Town, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-all-day-banh-mi",
+      "name": "All Day Bánh Mì - Serving History in Every Bite - Hoi An",
+      "address": "25 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-nom-bistro",
+      "name": "Nom Cafe and Bistro",
+      "address": "98/2 Trần Phú, Old Town, Hội An, Đà Nẵng 56000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-hy",
+      "name": "Hỷ",
+      "address": "10/15 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng 51000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-spice-route-ms-vy",
+      "name": "The Spice Route by Ms Vy",
+      "address": "103 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000越南",
+      "website": "https://www.facebook.com/profile.php?id=61558243913987&mibextid=kFxxJD",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-me-rooftop",
+      "name": "Mê Hội An Rooftop Coffee & Kitchen",
+      "address": "166 Trần Phú, Old Town, Hội An, Đà Nẵng 560000越南",
+      "website": "https://mehoian.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-coffee-hub",
+      "name": "Hoi An Coffee Hub",
+      "address": "Hẻm 11 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-coconut-coffee",
+      "name": "Coconut Coffee Hội An",
+      "address": "Đ. Phan Bội Châu, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-dudu-cafe",
+      "name": "Dudu Cafe Hoi An",
+      "address": "11 Trần Phú, Old Town, Hội An, Đà Nẵng 560000越南",
+      "website": "https://facebook.com/duducafe1",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-phin-coffee",
+      "name": "Phin Coffee Restaurant",
+      "address": "47/28 Trần Hưng Đạo, Hội An, Đà Nẵng, 越南",
+      "website": "https://www.facebook.com/phincoffeeworkshop",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-met-10",
+      "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food MET 10",
+      "address": "47 Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng 560000越南",
+      "website": "https://metvietnameserestaurant.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-met-7",
+      "name": "MẸT Hội An - Vietnamese cuisine & Vegetarian options 7",
+      "address": "49 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, 越南",
+      "website": "https://metvietnameserestaurant.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-met-6",
+      "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food 6",
+      "address": "72b Đ. Bạch Đằng, Phường, Hội An, Đà Nẵng, 越南",
+      "website": "https://metvietnameserestaurant.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-met-9",
+      "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food MET 9",
+      "address": "56 Phan Châu Trinh, Hội An, Đà Nẵng, 越南",
+      "website": "https://metvietnameserestaurant.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-bikini-bottom-express-hoi-an",
+      "name": "Bikini Bottom Express Riverside Hoi An",
+      "address": "115 Trần Quang Khải, Hội An Đông, Đà Nẵng 560000越南",
+      "website": "https://bikinibottomexpress.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-a6-garden-smokehouse-and-craft-beer",
+      "name": "A6 Garden- Smokehouse & Craft Beer",
+      "address": "47 Đ. Phan Bội Châu, Hội An, Đà Nẵng 51000越南",
+      "website": "https://www.a6smokehouse.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-em-hoi-an-em-comfort-food",
+      "name": "Êm - Comfort Food",
+      "address": "54/2 Phan Châu Trinh, Phường, Hội An, Đà Nẵng, 越南",
+      "website": "http://www.emhoian.vn/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-ngon-pho-hoi-vietnamese-authentic-cuisine",
+      "name": "Ngon Phố Hội",
+      "address": "21 La Hối, Phường, Hội An, Đà Nẵng 51309越南",
+      "website": "https://ngonphohoi.com/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-ca-ro-ong-quan-anabas-restaurant",
+      "name": "Anabas Restaurant - Cá Rô Đồng Quán - Hoi An restaurant - 호이안 로컬 레스토랑",
+      "address": "29 Phan Châu Trinh, Old Town, Hội An, Đà Nẵng 51300越南",
+      "website": "https://anabasrestaurant.vn/en/reservation/",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    },
+    {
+      "id": "hoi-an-vietnamese-chopsticks-dua-viet-restaurant",
+      "name": "Vietnamese Chopsticks - Dua Viet Restaurant",
+      "address": "11 Nguyễn Tri Phương, Hội An, Đà Nẵng, 越南",
+      "website": "",
+      "hours": "完整營業時間待確認",
+      "hoursSourceUrl": ""
+    }
+  ]
+}

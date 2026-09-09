@@ -1,0 +1,6105 @@
+{
+  "checkedAt": "2026-09-09",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "scope": "All 149 places without a usable weekly schedule at the start of this audit.",
+  "baselineSchedules": 47,
+  "totalPlaces": 196,
+  "resultCounts": {
+    "conflict": 77,
+    "added": 65,
+    "incomplete": 6,
+    "inaccessible": 1
+  },
+  "schedulesAfter": 112,
+  "limitations": [
+    "查閱日期不代表來源更新日期；搜尋引擎保存的完整頁面可過時。",
+    "本輪使用官方網站及可識別商戶的旅遊平台，並非 149 間店家電話或 Google Maps 即時確認。",
+    "added 表示已採用完整一週刊載表，不保證臨時休息或現場店況。",
+    "conflict 包括時間、休息日、地址或營業／停業狀態差異；不能據此判定已打烊。",
+    "此輪保留原有 47 個時間表，沒有重新核實該 47 個。"
+  ],
+  "places": [
+    {
+      "id": "michelin-an-thoi",
+      "name": "Ăn Thôi",
+      "address": "114 Bạch Đằng, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "同為 114 Bạch Đằng：Tripadvisor 列 10:30–22:30，Wanderlog 列 10:30–21:30；不套用 02 Lý Tự Trọng 同名店。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d24982748-Reviews-An_Thoi-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/5650137",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d24982748-Reviews-An_Thoi-Da_Nang.html",
+      "hours": "時間待核實：同為 114 Bạch Đằng：Tripadvisor 列 10:30–22:30，Wanderlog 列 10:30–21:30；不套用 02 Lý Tự Trọng 同名店。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-banh-xeo-76",
+      "name": "Bánh Xèo 76",
+      "address": "85A Lê Văn Hưu, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "Restaurant Guru／Wanderlog 列每日 10:00–21:00；本輪讀取 Si Dining 餐廳介紹另稱星期一休息，休息日不一致。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Banh-xeo-76-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://sidiningdanang.com/category/food-and-drink/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Banh-xeo-76-Da-Nang",
+      "hours": "時間待核實：Restaurant Guru／Wanderlog 列每日 10:00–21:00；本輪讀取 Si Dining 餐廳介紹另稱星期一休息，休息日不一致。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-be-ni-2",
+      "name": "Bé Ni 2",
+      "address": "228 Võ Nguyên Giáp, An Hải, Đà Nẵng 550000, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/3453456/b%C3%A9-ni-2",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/3453456/b%C3%A9-ni-2",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "mon": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "tue": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "wed": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "thu": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "fri": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "sat": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ]
+      },
+      "alwaysOpen": true,
+      "display": "全日開放",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：全日開放（越南時間）。非即時店況。"
+    },
+    {
+      "id": "michelin-bun-bo-ba-roi-hai-chau",
+      "name": "Bún Bò Bà Rơi (Hải Châu)",
+      "address": "5 Phan Thành Tài, Hòa Cường, Đà Nẵng 550000, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bun-Bo-Ba-Roi-Da-Nang-2",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bun-Bo-Ba-Roi-Da-Nang-2",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 06:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "michelin-bun-bo-hue-ba-thuong",
+      "name": "Bún Bò Huế Bà Thương",
+      "address": "23 Trần Quốc Toản, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bun-Bo-Hue-Ba-Thuong-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bun-Bo-Hue-Ba-Thuong-Da-Nang",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:00",
+            "10:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:00–10:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 06:00–10:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "michelin-bun-cha-ca-109",
+      "name": "Bún Chả Cá 109",
+      "address": "109 Nguyễn Chí Thanh, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "109 Nguyễn Chí Thanh：Restaurant Guru 列每日 06:00–22:00，Viet-Biz 列 24 小時；尚無店家確認哪個版本有效。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bun-Cha-ca-109-Da-Nang",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.viet-biz.com/en/b%C3%BAn-ch%E1%BA%A3-c%C3%A1_17O-094-571-31-71",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bun-Cha-ca-109-Da-Nang",
+      "hours": "時間待核實：109 Nguyễn Chí Thanh：Restaurant Guru 列每日 06:00–22:00，Viet-Biz 列 24 小時；尚無店家確認哪個版本有效。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-my-quang-sua-hong-van",
+      "name": "Mỳ Quảng Sứa Hồng Vân",
+      "address": "59C Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "59C Lê Hồng Phong：En Primeur Club 七日表 06:00–13:00，Foody 刊載 06:30–13:30，時間不一致。",
+      "sources": [
+        {
+          "url": "https://www.enprimeurclub.com/restaurants/m-qung-sa-hng-vn-da-nang-restaurant",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.foody.vn/da-nang/mi-quang-sua-hong-van",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.enprimeurclub.com/restaurants/m-qung-sa-hng-vn-da-nang-restaurant",
+      "hours": "時間待核實：59C Lê Hồng Phong：En Primeur Club 七日表 06:00–13:00，Foody 刊載 06:30–13:30，時間不一致。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-phu-hong",
+      "name": "Phú Hồng",
+      "address": "19 Yên Bái, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "米芝蓮七日表星期二休息；Wanderlog 同一店卻列星期二亦營業。其餘日子兩段時間一致，仍不猜測休息日。",
+      "sources": [
+        {
+          "url": "https://guide.michelin.com/cz/en/da-nang-region/da-nang_2984390/restaurant/phu-hong",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/5033699/qu%25C3%25A1n-phu-h%25C3%25B4ng",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "guide",
+      "sourceUrl": "https://guide.michelin.com/cz/en/da-nang-region/da-nang_2984390/restaurant/phu-hong",
+      "hours": "時間待核實：米芝蓮七日表星期二休息；Wanderlog 同一店卻列星期二亦營業。其餘日子兩段時間一致，仍不猜測休息日。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-que-xua",
+      "name": "Quê Xưa",
+      "address": "165–167 Núi Thành, Hòa Cường, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "165 Núi Thành：Restaurant Guru 列 06:00–22:30，Viet-Biz 列 06:00–22:00；另有 Hải Phòng 同名店資料，未套用。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/mi-quang-QUE-XUA-Da-Nang",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.viet-biz.com/en/que-xua-restaurant-091-995-06-77",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/mi-quang-QUE-XUA-Da-Nang",
+      "hours": "時間待核實：165 Núi Thành：Restaurant Guru 列 06:00–22:30，Viet-Biz 列 06:00–22:00；另有 Hải Phòng 同名店資料，未套用。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-ba-dieu-tran-tong",
+      "name": "Bà Diệu (Trần Tống)",
+      "address": "17 Trần Tống, Thanh Khê, Đà Nẵng 550000, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.enprimeurclub.com/restaurants/b-diu-tran-tong-street-da-nang-restaurant",
+      "sources": [
+        {
+          "url": "https://www.enprimeurclub.com/restaurants/b-diu-tran-tong-street-da-nang-restaurant",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ],
+        "mon": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ],
+        "tue": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ],
+        "wed": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ],
+        "thu": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ],
+        "fri": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ],
+        "sat": [
+          [
+            "13:00",
+            "20:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 13:00–20:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 En Primeur Club 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "En Primeur Club 列示：每日 13:00–20:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "michelin-banh-canh-yen",
+      "name": "Bánh Canh Yến",
+      "address": "253 Nguyễn Hoàng, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "253 Nguyễn Hoàng：旅遊介紹與完整平台表的開門時間不同（14:00 與 06:00），未確認現行版本。",
+      "sources": [
+        {
+          "url": "https://visitdanang.travel/vi/banh-canh-yen",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/1279387/b%C3%A1nh-canh-y%E1%BA%BFn",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://visitdanang.travel/vi/banh-canh-yen",
+      "hours": "時間待核實：253 Nguyễn Hoàng：旅遊介紹與完整平台表的開門時間不同（14:00 與 06:00），未確認現行版本。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-bep-hen",
+      "name": "Bếp Hên",
+      "address": "47 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "47 Lê Hồng Phong：平台列午晚市分段時間，但其他刊載版本開門／午休時間不同；未找到可消除衝突的店家公告。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bep-Hen-Restaurant-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/4087609/b%E1%BA%BFp-h%C3%AAn",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bep-Hen-Restaurant-Da-Nang",
+      "hours": "時間待核實：47 Lê Hồng Phong：平台列午晚市分段時間，但其他刊載版本開門／午休時間不同；未找到可消除衝突的店家公告。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-bun-cha-ca-ba-hoa",
+      "name": "Bún Chả Cá Bà Hoa",
+      "address": "27 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bun-Cha-Ca-Ba-Hoa-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bun-Cha-Ca-Ba-Hoa-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 06:00–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "michelin-bun-rieu-cua-39",
+      "name": "Bún Riêu Cua 39",
+      "address": "39 Lê Hồng Phong, Hải Châu, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "39 Lê Hồng Phong：Restaurant Guru 星期日至五至 14:00、星期六至 11:00；Riviu 卻列每天至 11:00。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bun-Rieu-Cua-39-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://riviu.vn/bu-n-rieu-cua-39",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bun-Rieu-Cua-39-Da-Nang",
+      "hours": "時間待核實：39 Lê Hồng Phong：Restaurant Guru 星期日至五至 14:00、星期六至 11:00；Riviu 卻列每天至 11:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-com-ga-lan",
+      "name": "Cơm Gà Lan",
+      "address": "520 Trưng Nữ Vương, Hòa Cường, Đà Nẵng 550000, Vietnam",
+      "status": "incomplete",
+      "reason": "520 Trưng Nữ Vương：兩平台把星期日 09:00–午夜接星期一 00:00–20:30，形成連續 35.5 小時營業；未有足夠佐證排除跨日欄位錯置，不自行修正成每日 09:00–20:30。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Com-ga-Lan-Da-Nang",
+          "access": "web-page-extract",
+          "role": "insufficient"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/1408124",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Com-ga-Lan-Da-Nang",
+      "hours": "時間待核實：520 Trưng Nữ Vương：兩平台把星期日 09:00–午夜接星期一 00:00–20:30，形成連續 35.5 小時營業；未有足夠佐證排除跨日欄位錯置，不自行修正成每日 09:00–20:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-le-comptoir",
+      "name": "Le Comptoir",
+      "address": "16 Chế Lan Viên, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "status": "incomplete",
+      "reason": "官網只有每日兩輪入座時間及用餐限時，沒有明確關門時間；不可用訂位選項推算完整營業表。",
+      "sources": [
+        {
+          "url": "https://lecomptoirdng.com/en/about/",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://lecomptoirdng.com/en/about/",
+      "hours": "時間待核實：官網只有每日兩輪入座時間及用餐限時，沒有明確關門時間；不可用訂位選項推算完整營業表。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-my-hanh-seafood",
+      "name": "My Hanh Seafood",
+      "address": "03–05 Võ Nguyên Giáp, An Hải, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "官網首頁／訂位頁曾列 08:00–22:00、09:00–23:00、08:00–23:00；米芝蓮另列至 23:00，仍未解決官網內部差異。",
+      "sources": [
+        {
+          "url": "https://myhanhseafood.vn/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://guide.michelin.com/ph/en/da-nang-region/da-nang_2984390/restaurant/my-hanh-seafood",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://myhanhseafood.vn/",
+      "hours": "時間待核實：官網首頁／訂位頁曾列 08:00–22:00、09:00–23:00、08:00–23:00；米芝蓮另列至 23:00，仍未解決官網內部差異。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-my-quang-co-sau",
+      "name": "Mỳ Quảng Cô Sáu",
+      "address": "397 Trần Hưng Đạo, An Hải, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "397 Trần Hưng Đạo：Restaurant Guru／Wanderlog 06:30–22:00，Tripadvisor 06:00–23:00。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/My-Quang-Co-Sau-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d25185872-Reviews-M_Qu_ng_Co_Sau-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/My-Quang-Co-Sau-Da-Nang",
+      "hours": "時間待核實：397 Trần Hưng Đạo：Restaurant Guru／Wanderlog 06:30–22:00，Tripadvisor 06:00–23:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-nam-danh-seafood",
+      "name": "Năm Đảnh Seafood",
+      "address": "139/59/38 Trần Quang Khải, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/2592858/nam-danh-seafood",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/2592858/nam-danh-seafood",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:30",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:30–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 10:30–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "michelin-nu-do-kitchen",
+      "name": "Nu Đồ Kitchen",
+      "address": "11/1 Lưu Quang Thuận, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "Food Tour Da Nang 刊載 09:00–16:30；其他平台 09:00–16:00 或 08:00–19:00，且星期日是否休息未有一致證據。",
+      "sources": [
+        {
+          "url": "https://www.foodtourdanang.vn/nu-do-kitchen",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.foody.vn/da-nang/nu-do-kitchen",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.foodtourdanang.vn/nu-do-kitchen",
+      "hours": "時間待核實：Food Tour Da Nang 刊載 09:00–16:30；其他平台 09:00–16:00 或 08:00–19:00，且星期日是否休息未有一致證據。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "michelin-si-dining",
+      "name": "Si Dining",
+      "address": "01 Giang Châu 2, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+      "status": "added",
+      "source": "official",
+      "sourceUrl": "https://sidiningdanang.com/category/food-and-drink/",
+      "sources": [
+        {
+          "url": "https://sidiningdanang.com/category/food-and-drink/",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "17:30",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 17:30–21:30",
+      "reason": "本輪最後重試成功讀取 Si Dining 自家網站，餐廳自述明列 Daily 17:30–21:30 及 1 Giang Chau 2 地址，與米芝蓮版本一致；以前第三方 17:00 版本不採用。",
+      "note": "按店家網站列示時間推算，非即時店況；出發前請確認臨時安排。",
+      "hours": "官網列示：每日 17:30–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-nha-hang-nha-go-viet-da-nang",
+      "name": "Nhà hàng Nhà Gỗ Việt Đà Nẵng",
+      "address": "49 Nguyễn Thái Học, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Nha-Go-Restaurant-Da-Nang-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Nha-Go-Restaurant-Da-Nang-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 09:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 09:00–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-nha-hang-lan-gio",
+      "name": "Nhà hàng Làn Gió",
+      "address": "169 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "169 Trần Phú：Tripadvisor 每日 10:30–21:30，Wanderlog 每日 10:30–22:30。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d30051760-Reviews-Nha_Hang_Lan_Gio-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/12641499/nh%C3%A0-h%C3%A0ng-l%C3%A0n-gi%C3%B3",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d30051760-Reviews-Nha_Hang_Lan_Gio-Da_Nang.html",
+      "hours": "時間待核實：169 Trần Phú：Tripadvisor 每日 10:30–21:30，Wanderlog 每日 10:30–22:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-vietnam-daily-cuisine",
+      "name": "Vietnam Daily Cuisine",
+      "address": "10 An Thượng 29, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298085-d32710764-Reviews-Vietnam_Daily_Cuisine-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298085-d32710764-Reviews-Vietnam_Daily_Cuisine-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 07:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-gypsy-rooftop-restaurant-bar",
+      "name": "Gypsy Rooftop Restaurant & Bar",
+      "address": "20 Đống Đa, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d25502987-Reviews-The_Gypsy_Rooftop_Restaurant_Bar-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d25502987-Reviews-The_Gypsy_Rooftop_Restaurant_Bar-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "17:00",
+            "23:00"
+          ]
+        ],
+        "mon": [],
+        "tue": [
+          [
+            "17:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "17:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "17:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "17:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "17:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 17:00–23:00；星期一 休息；星期二 17:00–23:00；星期三 17:00–23:00；星期四 17:00–23:00；星期五 17:00–23:00；星期六 17:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：星期日 17:00–23:00；星期一 休息；星期二 17:00–23:00；星期三 17:00–23:00；星期四 17:00–23:00；星期五 17:00–23:00；星期六 17:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-hung-68-restaurant-food-and-drink",
+      "name": "Hùng 68 Restaurant - Food and Drink",
+      "address": "110 Trường Sa, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.in/Restaurant_Review-g298085-d14170101-Reviews-Hung_68_Restaurant_Food_And_Drink-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.in/Restaurant_Review-g298085-d14170101-Reviews-Hung_68_Restaurant_Food_And_Drink-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "06:30",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:30–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 06:30–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-hoang-s-kitchen-da-nang-vietnamese-vegan-food",
+      "name": "Hoang’s Kitchen Đà Nẵng - Vietnamese & Vegan Food",
+      "address": "40 Hà Bổng, An Hải, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "峴港官網主區列每日 10:00–23:30，但同頁仍留有瑞士地址範本，Tripadvisor 多日 11:30 AM／PM 亦不一致；不把疑似錯字自行當成核實。",
+      "sources": [
+        {
+          "url": "https://hoangskitchendanang.com/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d34133873-Reviews-Hoang_s_Kitchen_Da_Nang_Vietnamese_cuisine_Vegan_Food-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://hoangskitchendanang.com/",
+      "hours": "時間待核實：峴港官網主區列每日 10:00–23:30，但同頁仍留有瑞士地址範本，Tripadvisor 多日 11:30 AM／PM 亦不一致；不把疑似錯字自行當成核實。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-ngon-da-nang-vietnamese-cuisine-restaurant",
+      "name": "NGON DA NANG - VIETNAMESE CUISINE RESTAURANT",
+      "address": "88B Lê Quang Đạo, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "88B Lê Quang Đạo：官網刊載 09:00–22:30，Tripadvisor 七日表 10:00–22:30。",
+      "sources": [
+        {
+          "url": "https://ngondanangrestaurant.com/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298085-d34278642-Reviews-Ngon_Da_Nang_Vietnamese_Cuisine_Restuarant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://ngondanangrestaurant.com/",
+      "hours": "時間待核實：88B Lê Quang Đạo：官網刊載 09:00–22:30，Tripadvisor 七日表 10:00–22:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-vietnom-local-eatery",
+      "name": "Vietnom Local Eatery",
+      "address": "97 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "97 Mai Thúc Lân：官網 07:00–21:30，Restaurant Guru 七日表 07:30–21:45。",
+      "sources": [
+        {
+          "url": "https://www.vietnom.kitchen/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Vietnom-Eatery-Da-Nang",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.vietnom.kitchen/",
+      "hours": "時間待核實：97 Mai Thúc Lân：官網 07:00–21:30，Restaurant Guru 七日表 07:30–21:45。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-riverside-terrace-restaurant",
+      "name": "Riverside Terrace Restaurant",
+      "address": "493 Trần Hưng Đạo, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298085-d27732890-Reviews-Riverside_Terrace_Restaurant-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298085-d27732890-Reviews-Riverside_Terrace_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "12:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "15:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "15:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "15:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "15:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "12:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "12:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 12:00–23:00；星期一 15:00–23:00；星期二 15:00–23:00；星期三 15:00–23:00；星期四 15:00–23:00；星期五 12:00–23:00；星期六 12:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：星期日 12:00–23:00；星期一 15:00–23:00；星期二 15:00–23:00；星期三 15:00–23:00；星期四 15:00–23:00；星期五 12:00–23:00；星期六 12:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-ca-go-vietnamese-restaurant",
+      "name": "Cá Gỗ Vietnamese Restaurant",
+      "address": "278 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "278 Võ Nguyên Giáp：Tripadvisor 11:30–22:00，Restaurant Guru 11:00–22:00；官網未提供可消除差異的完整時間。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d26363671-Reviews-or15-Ca_G_Vietnamese_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Ca-Go-Restaurant-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://cagorestaurant.vn",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d26363671-Reviews-or15-Ca_G_Vietnamese_Restaurant-Da_Nang.html",
+      "hours": "時間待核實：278 Võ Nguyên Giáp：Tripadvisor 11:30–22:00，Restaurant Guru 11:00–22:00；官網未提供可消除差異的完整時間。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-mama-masala-indian-cuisine-da-nang",
+      "name": "MAMA MASALA INDIAN CUISINE Da Nang",
+      "address": "376 Trần Hưng Đạo, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298085-d33311862-Reviews-Mama_Masala_Indian_Cuisine_Da_Nang-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298085-d33311862-Reviews-Mama_Masala_Indian_Cuisine_Da_Nang-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 10:00–23:00；星期一 10:00–23:00；星期二 10:00–23:00；星期三 10:00–23:00；星期四 10:00–23:00；星期五 10:00–23:00；星期六 11:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：星期日 10:00–23:00；星期一 10:00–23:00；星期二 10:00–23:00；星期三 10:00–23:00；星期四 10:00–23:00；星期五 10:00–23:00；星期六 11:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-gravel-house-bbq-restaurant-da-nang",
+      "name": "Gravel House BBQ Restaurant Da Nang",
+      "address": "91 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g25231262-d33414953-Reviews-Gravel_House_BBQ_Restaurant_Da_Nang-Hai_Chau_Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g25231262-d33414953-Reviews-Gravel_House_BBQ_Restaurant_Da_Nang-Hai_Chau_Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 11:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-claypot-bar-and-restaurant",
+      "name": "ClayPot Bar and Restaurant",
+      "address": "32 Võ Nghĩa, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "official",
+      "sourceUrl": "https://claypotdanang.com/",
+      "sources": [
+        {
+          "url": "https://claypotdanang.com/",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ],
+        "mon": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:30",
+            "02:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 09:30–翌日 02:00",
+      "reason": "已核對對應店名／地點及完整一週時間。最後點餐 01:30。",
+      "note": "最後點餐 01:30。 按刊載時間推算，非即時店況。",
+      "hours": "官網列示：每日 09:30–翌日 02:00（越南時間）。最後點餐 01:30。"
+    },
+    {
+      "id": "high-rating-ky-vat-vietnamese-restaurant",
+      "name": "Ky Vat - Vietnamese Restaurant",
+      "address": "56A Lê Hồng Phong, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "official",
+      "sourceUrl": "https://www.kyvat-restaurant.com/contact-kyvat",
+      "sources": [
+        {
+          "url": "https://www.kyvat-restaurant.com/contact-kyvat",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按官方刊載時間推算，臨時變動請向店家確認。 按刊載時間推算，非即時店況。",
+      "hours": "官網列示：每日 11:00–22:00（越南時間）。"
+    },
+    {
+      "id": "high-rating-nha-hang-thien-kim",
+      "name": "Nhà hàng Thiên Kim",
+      "address": "166 Bạch Đằng, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/7838348/nh%C3%A0-h%C3%A0ng-thi%C3%AAn-kim",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/7838348/nh%C3%A0-h%C3%A0ng-thi%C3%AAn-kim",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 10:00–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-them-hai-san",
+      "name": "Thèm Hải Sản",
+      "address": "39 Trần Bạch Đằng, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "官網每日 11:00 AM–12:00 PM（字面為中午）與平台至 12:00 AM（午夜）不一致；不擅自更正 AM／PM。",
+      "sources": [
+        {
+          "url": "https://themhaisandn.com/lien-he/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Them-Hai-San-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://themhaisandn.com/lien-he/",
+      "hours": "時間待核實：官網每日 11:00 AM–12:00 PM（字面為中午）與平台至 12:00 AM（午夜）不一致；不擅自更正 AM／PM。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-nha-bep-xua-restaurant",
+      "name": "Nhà Bếp Xưa Restaurant",
+      "address": "64 Hà Bổng, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d24105100-Reviews-Nha_B_p_Xua-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d24105100-Reviews-Nha_B_p_Xua-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-miss-nhi",
+      "name": "Miss NHI",
+      "address": "39 An Thượng 30, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "39 An Thượng 30：Restaurant Guru 至 23:30，Tripadvisor 至翌日 00:30，收舖時間不同。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Miss-Nhi-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d17395845-Reviews-Miss_Nhi_Da_Nang_Food_Shop-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Miss-Nhi-Da-Nang",
+      "hours": "時間待核實：39 An Thượng 30：Restaurant Guru 至 23:30，Tripadvisor 至翌日 00:30，收舖時間不同。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-nha-hang-nha-bep-cho-han",
+      "name": "Nhà hàng NHÀ BẾP CHỢ HÀN",
+      "address": "22 Hùng Vương, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Nha-hang-NHA-BEP-CHO-HAN-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Nha-hang-NHA-BEP-CHO-HAN-Da-Nang",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 09:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 09:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-maazi-da-nang",
+      "name": "MAAZI Da Nang",
+      "address": "264 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "264 Trần Phú：Restaurant Guru 11:00–翌日 00:00，Tripadvisor 10:30–23:30。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/MAAZI-Da-Nang-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d25420086-Reviews-MAAZI_Da_Nang-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/MAAZI-Da-Nang-Da-Nang",
+      "hours": "時間待核實：264 Trần Phú：Restaurant Guru 11:00–翌日 00:00，Tripadvisor 10:30–23:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-loco-restaurant-danang-seafood-restaurant",
+      "name": "LoCo Restaurant - Danang Seafood Restaurant",
+      "address": "1C Lê Duẩn, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "1C Lê Duẩn：官網索引午晚市合計 10:30–22:00，Tripadvisor 10:00–23:00；直接讀取官網另遇逾時，未解決差異。",
+      "sources": [
+        {
+          "url": "https://locorestaurant.vn/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g25231262-d26328668-Reviews-LoCo_Restaurant-Hai_Chau_Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://locorestaurant.vn/",
+      "hours": "時間待核實：1C Lê Duẩn：官網索引午晚市合計 10:30–22:00，Tripadvisor 10:00–23:00；直接讀取官網另遇逾時，未解決差異。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-nha-an-vietnamese-local-food-restaurant-and-vegan",
+      "name": "Nhà An - Vietnamese local food restaurant and vegan",
+      "address": "101 Hồ Nghinh, An Hải, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Nha-An-Vietnamese-local-food-restaurant-and-vegan-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Nha-An-Vietnamese-local-food-restaurant-and-vegan-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 10:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-emo-s-homecooked-vietnamese-cuisine",
+      "name": "EMO'S HOMECOOKED VIETNAMESE CUISINE",
+      "address": "16 Đường Mỹ Khê 4, An Hải, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/EMOS-Vietnamese-Taste-Restaurant-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/EMOS-Vietnamese-Taste-Restaurant-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 10:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-bhojan-indian-restaurant",
+      "name": "BHOJAN INDIAN RESTAURANT",
+      "address": "20-22 Lê Quang Đạo, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "20–22 Lê Quang Đạo：官網每日 12:00–23:30，Tripadvisor 星期三／四 11:30 開門及 23:15 收舖，版本不同。",
+      "sources": [
+        {
+          "url": "https://www.bhojan.vn/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d27731856-Reviews-Bhojan_Indian_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.bhojan.vn/",
+      "hours": "時間待核實：20–22 Lê Quang Đạo：官網每日 12:00–23:30，Tripadvisor 星期三／四 11:30 開門及 23:15 收舖，版本不同。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-butcher-steak",
+      "name": "Butcher Steak",
+      "address": "64 Lê Quang Đạo, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g27704560-d15153450-Reviews-Butcher_Steak_Danang-Ngu_Hanh_Son_Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g27704560-d15153450-Reviews-Butcher_Steak_Danang-Ngu_Hanh_Son_Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-bep-lua-vietnamese-restaurant",
+      "name": "Bếp Lụa Vietnamese Restaurant",
+      "address": "94 Bạch Đằng, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "94 Bạch Đằng：Tripadvisor 不同語言索引的開門時間有 08:00／09:30 差異。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d32859508-Reviews-B_p_L_a_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298085-d32859508-Reviews-B_p_L_a_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d32859508-Reviews-B_p_L_a_Restaurant-Da_Nang.html",
+      "hours": "時間待核實：94 Bạch Đằng：Tripadvisor 不同語言索引的開門時間有 08:00／09:30 差異。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-nazaare-indian-beach-restaurant-and-bar",
+      "name": "Nazaare - Indian Beach Restaurant and Bar",
+      "address": "Lô 02 Võ Nguyên Giáp, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d33188210-Reviews-Nazare_Indian_Western_Beach_Restaurant-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d33188210-Reviews-Nazare_Indian_Western_Beach_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "01:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–翌日 01:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 11:00–翌日 01:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-rainbowl-poke",
+      "name": "Rainbowl Poke",
+      "address": "97 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "Rainbowl 平台使用 95 Mai Thúc Lân，地圖記錄為 97，97 官網另屬 Vietnom；尚未確認地址／商戶關係，不套用舊址時間。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d24038346-Reviews-Rainbowl_Poke-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/3565255/rainbowl-poke",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d24038346-Reviews-Rainbowl_Poke-Da_Nang.html",
+      "hours": "時間待核實：Rainbowl 平台使用 95 Mai Thúc Lân，地圖記錄為 97，97 官網另屬 Vietnom；尚未確認地址／商戶關係，不套用舊址時間。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-nha-hang-mr-anh",
+      "name": "Nhà hàng Mr.Anh",
+      "address": "340 Ông Ích Khiêm, Thanh Khê, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/3254579/nh%C3%A0-h%C3%A0ng-mranh-mranh-local-vietnamese-cuisine-restaurant",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/3254579/nh%C3%A0-h%C3%A0ng-mranh-mranh-local-vietnamese-cuisine-restaurant",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:30–20:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 10:30–20:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-miri-hom-vietnamese-cuisine",
+      "name": "MiRi Hôm Vietnamese Cuisine",
+      "address": "199 Nguyễn Văn Thoại, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d33400623-Reviews-MiRi_Hom_Vietnamese_Cuisine-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d33400623-Reviews-MiRi_Hom_Vietnamese_Cuisine-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "23:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–23:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–23:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-manvar-rasoi-indian-restaurant",
+      "name": "MANVAR Rasoi Indian Restaurant",
+      "address": "37 Chế Lan Viên, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "37 Chế Lan Viên：Tripadvisor 11:30 開門，Restaurant Guru 12:00 開門。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.in/Restaurant_Review-g298085-d25376645-Reviews-MANVAR_RASOI_INDIAN_RESTAURANT-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Manvar-Rasoi-Indian-Restaurant-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.in/Restaurant_Review-g298085-d25376645-Reviews-MANVAR_RASOI_INDIAN_RESTAURANT-Da_Nang.html",
+      "hours": "時間待核實：37 Chế Lan Viên：Tripadvisor 11:30 開門，Restaurant Guru 12:00 開門。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "high-rating-sky-view-restaurant",
+      "name": "Sky View Restaurant",
+      "address": "216 Võ Nguyên Giáp, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d12968948-Reviews-Sky_View_Restaurant-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d12968948-Reviews-Sky_View_Restaurant-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 11:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "high-rating-vi-brewhouse",
+      "name": "Vị Brewhouse",
+      "address": "37 Quang Trung, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Ca-Phe-Chim-Da-Nang-2",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Ca-Phe-Chim-Da-Nang-2",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ],
+        "mon": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ],
+        "tue": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ],
+        "wed": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ],
+        "thu": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ],
+        "fri": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ],
+        "sat": [
+          [
+            "14:00",
+            "23:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 14:00–23:30",
+      "reason": "已核對對應店名／地點及完整一週時間。官網逾時，採對應 37 Quang Trung 商戶頁；並與 Waze 對照。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。官網逾時，採對應 37 Quang Trung 商戶頁；並與 Waze 對照。",
+      "hours": "Restaurant Guru 列示：每日 14:00–23:30（越南時間）。非即時店況。官網逾時，採對應 37 Quang Trung 商戶頁；並與 Waze 對照。"
+    },
+    {
+      "id": "high-rating-dom-bistro",
+      "name": "DOM Bistro",
+      "address": "3 Phan Bội Châu, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298085-d13329353-Reviews-Dom_Bistro-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298085-d13329353-Reviews-Dom_Bistro-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ],
+        "mon": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ],
+        "tue": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ],
+        "wed": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ],
+        "thu": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ],
+        "fri": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ],
+        "sat": [
+          [
+            "15:00",
+            "22:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 15:00–22:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 15:00–22:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "cafe-dessert-roost-coffee-roasters-da-nang",
+      "name": "Roost Coffee Roasters | Da Nang",
+      "address": "57 Bà Huyện Thanh Quan, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d26244781-Reviews-Roost_Coffee_Roasters_Da_Nang-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d26244781-Reviews-Roost_Coffee_Roasters_Da_Nang-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。未採用 Life of Da Nang 的 demo 頁時間；採 Tripadvisor 七日表。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。未採用 Life of Da Nang 的 demo 頁時間；採 Tripadvisor 七日表。",
+      "hours": "Tripadvisor 列示：每日 07:00–22:00（越南時間）。非即時店況。未採用 Life of Da Nang 的 demo 頁時間；採 Tripadvisor 七日表。"
+    },
+    {
+      "id": "cafe-dessert-acacia-coffee-and-more",
+      "name": "ACACIA coffee and more",
+      "address": "05 An Cư 5, An Hải, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "05 An Cư 5：Restaurant Guru 不同頁面／索引的開門時間為 06:30 或 07:00。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/ACACIA-coffee-and-more-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/ACACIA-coffee-and-more-Da-Nang",
+      "hours": "時間待核實：05 An Cư 5：Restaurant Guru 不同頁面／索引的開門時間為 06:30 或 07:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "cafe-dessert-outta-da-blue-da-nang",
+      "name": "Outta da Blue Đà Nẵng",
+      "address": "66 Pasteur, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d33026993-Reviews-Outta_Da_Blue_Da_N_ng_Danang_Specialty_Coffee_Shop-Da_Nang.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d33026993-Reviews-Outta_Da_Blue_Da_N_ng_Danang_Specialty_Coffee_Shop-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        "mon": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:00–18:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 07:00–18:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "cafe-dessert-passport-coffee-lab-specialty-coffee-brunch",
+      "name": "Passport Coffee Lab | Specialty Coffee & Brunch",
+      "address": "78 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "78 Mai Thúc Lân：Restaurant Guru 星期六至 18:00、其餘日子至 21:00；咖啡介紹另列每日至 18:00。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Passport-Coffee-Lab-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://danang.coffee/passport-coffee-lab/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Passport-Coffee-Lab-Da-Nang",
+      "hours": "時間待核實：78 Mai Thúc Lân：Restaurant Guru 星期六至 18:00、其餘日子至 21:00；咖啡介紹另列每日至 18:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "cafe-dessert-o2o-first-roast",
+      "name": "O2o First Roast",
+      "address": "18/3B Phan Tứ, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "Tripadvisor 說明搬至 20 Hà Đặc 二樓，地圖仍為 18/3B Phan Tứ；未核實現址，不能把新店時間套用舊圖釘。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298085-d23411204-Reviews-O2o_First_Roast_Coffee-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298085-d23411204-Reviews-O2o_First_Roast_Coffee-Da_Nang.html",
+      "hours": "時間待核實：Tripadvisor 說明搬至 20 Hà Đặc 二樓，地圖仍為 18/3B Phan Tứ；未核實現址，不能把新店時間套用舊圖釘。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "cafe-dessert-91cc-91-concept-coffee",
+      "name": "[91cc] 91 Concept Coffee",
+      "address": "91 Trần Quốc Toản, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "91 Trần Quốc Toản：LaptopFriendly 列 07:00 開門；咖啡介紹的表格與正文分別 06:30／07:00，不一致。",
+      "sources": [
+        {
+          "url": "https://laptopfriendlycafe.com/cafes/da-nang/91cc-91-concept-coffee",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://danang.coffee/91-concept-coffee/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://laptopfriendlycafe.com/cafes/da-nang/91cc-91-concept-coffee",
+      "hours": "時間待核實：91 Trần Quốc Toản：LaptopFriendly 列 07:00 開門；咖啡介紹的表格與正文分別 06:30／07:00，不一致。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "cafe-dessert-freezedom-da-nang",
+      "name": "Freezedom Da Nang",
+      "address": "156 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Freezedom-Da-Nang-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Freezedom-Da-Nang-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 09:00–22:00；星期一 17:00–22:00；星期二 09:00–22:00；星期三 09:00–22:00；星期四 09:00–22:00；星期五 09:00–22:00；星期六 09:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。採 156 Mai Thúc Lân 現址頁；Tripadvisor 的 30 Ngô Thì Sĩ 地址未套用。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。採 156 Mai Thúc Lân 現址頁；Tripadvisor 的 30 Ngô Thì Sĩ 地址未套用。",
+      "hours": "Restaurant Guru 列示：星期日 09:00–22:00；星期一 17:00–22:00；星期二 09:00–22:00；星期三 09:00–22:00；星期四 09:00–22:00；星期五 09:00–22:00；星期六 09:00–22:00（越南時間）。非即時店況。採 156 Mai Thúc Lân 現址頁；Tripadvisor 的 30 Ngô Thì Sĩ 地址未套用。"
+    },
+    {
+      "id": "cafe-dessert-nang-ngot-patisserie",
+      "name": "Nang Ngot Patisserie",
+      "address": "20 Phan Bội Châu, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Nang-Ngot-Patisserie-Da-Nang",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Nang-Ngot-Patisserie-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 07:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "cafe-dessert-little-mango",
+      "name": "Little Mango",
+      "address": "15 Ngô Thì Sĩ, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "Little Mango：Tripadvisor／Restaurant Guru 有營業表，但 Wanderlog 標示永久停業；尚未確認是否同址搬遷或停業，不擅自刪店。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g15296807-d13484558-Reviews-Little_Mango-My_An_Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/3531244/little-mango",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g15296807-d13484558-Reviews-Little_Mango-My_An_Da_Nang.html",
+      "hours": "時間待核實：Little Mango：Tripadvisor／Restaurant Guru 有營業表，但 Wanderlog 標示永久停業；尚未確認是否同址搬遷或停業，不擅自刪店。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "cafe-dessert-kem-bo-be-hue",
+      "name": "Kem bơ Bé Huệ",
+      "address": "11B4 An Thượng 38, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "11B4 An Thượng 38：本輪 Guru 舊頁抽取為 17:30–22:00，新索引／Wanderlog 為 11:00–21:00；索引版本不同。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Kem-bo-Be-Hue-Avocado-Ice-Cream-Be-Hue-Da-Nang",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/6048326/kem-b%C6%A1-b%C3%A9-hu%E1%BB%87--be-hue-galeto-avocado-ice-cream",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Kem-bo-Be-Hue-Avocado-Ice-Cream-Be-Hue-Da-Nang",
+      "hours": "時間待核實：11B4 An Thượng 38：本輪 Guru 舊頁抽取為 17:30–22:00，新索引／Wanderlog 為 11:00–21:00；索引版本不同。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "breakfast-heo-nuong-lu-ong-phu-dat",
+      "name": "Heo nướng lu Ông Phú Đạt",
+      "address": "128 Nguyễn Duy Hiệu, An Hải, Đà Nẵng 550000, Vietnam",
+      "status": "conflict",
+      "reason": "128 Nguyễn Duy Hiệu：Restaurant Guru／Wanderlog 至 18:30，Viet-Biz 至 19:00，尚未解決收舖時間差異。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Heo-nuong-lu-Ong-Phu-Dat-Da-Nang",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.viet-biz.com/en/heo-n%C6%B0%E1%BB%9Bng-lu-%C3%B4ng-ph%C3%BA-%C4%91%E1%BA%A1t-093-253-27-59",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Heo-nuong-lu-Ong-Phu-Dat-Da-Nang",
+      "hours": "時間待核實：128 Nguyễn Duy Hiệu：Restaurant Guru／Wanderlog 至 18:30，Viet-Biz 至 19:00，尚未解決收舖時間差異。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "attraction-marble-mountains",
+      "name": "五行山 Ngũ Hành Sơn",
+      "address": "81 Huyền Trân Công Chúa, Ngũ Hành Sơn, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "official",
+      "sourceUrl": "https://vietnam.travel/node/1203",
+      "sources": [
+        {
+          "url": "https://vietnam.travel/node/1203",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ],
+        "mon": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "17:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:00–17:30",
+      "reason": "已核對對應店名／地點及完整一週時間。官方越南旅遊局列示景區每日 07:00–17:30；電梯及個別洞穴安排另查。",
+      "note": "官方越南旅遊局列示景區每日 07:00–17:30；電梯及個別洞穴安排另查。 按刊載時間推算，非即時店況。",
+      "hours": "越南旅遊局列示：每日 07:00–17:30（越南時間）。官方越南旅遊局列示景區每日 07:00–17:30；電梯及個別洞穴安排另查。"
+    },
+    {
+      "id": "attraction-linh-ung-pagoda",
+      "name": "靈應寺 Chùa Linh Ứng",
+      "address": "Hoàng Sa, Thọ Quang, Sơn Trà, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "峴港旅遊局舊文稱全日開放，較新旅遊資料稱每日 06:00–21:00；寺院官網未找到明確七日訪客時間，不把佛像內部／電梯時間混用。",
+      "sources": [
+        {
+          "url": "https://danangfantasticity.com/en/linh-ung-pagoda",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://sunparadiseland.com/en/SunParadiseLandDaNang/tin-tuc/explore-linh-ung-pagoda-bai-but-in-the-heart-of-son-tra-2025-6210",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://chualinhung.vn/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://danangfantasticity.com/en/linh-ung-pagoda",
+      "hours": "時間待核實：峴港旅遊局舊文稱全日開放，較新旅遊資料稱每日 06:00–21:00；寺院官網未找到明確七日訪客時間，不把佛像內部／電梯時間混用。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "attraction-da-nang-cathedral",
+      "name": "峴港主教座堂（粉紅教堂）",
+      "address": "156 Trần Phú, Hải Châu, Đà Nẵng, Vietnam",
+      "status": "incomplete",
+      "reason": "查到的是單日參觀時間、一般介紹及彌撒時段；缺乏可核對的完整七日遊客入場表，不能把彌撒時間當成觀光開放時間。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Attraction_Review-g298085-d12273530-Reviews-Da_Nang_Catheral-Da_Nang.html",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        },
+        {
+          "url": "https://www.foody.vn/da-nang/nha-tho-cathedral",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Attraction_Review-g298085-d12273530-Reviews-Da_Nang_Catheral-Da_Nang.html",
+      "hours": "時間待核實：查到的是單日參觀時間、一般介紹及彌撒時段；缺乏可核對的完整七日遊客入場表，不能把彌撒時間當成觀光開放時間。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-nhans-kitchen",
+      "name": "Nhan’s Kitchen",
+      "address": "167 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "167 Trần Nhân Tông：Tripadvisor 列星期日至三 10:00 開門、星期四至六 11:00 開門，收舖 21:00／21:15；Apple Maps 列每日 11:00–21:30，時間不一致。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://maps.apple.com/place?place-id=I96ABDFE6C0540E33",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：167 Trần Nhân Tông：Tripadvisor 列星期日至三 10:00 開門、星期四至六 11:00 開門，收舖 21:00／21:15；Apple Maps 列每日 11:00–21:30，時間不一致。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-firefly",
+      "name": "Firefly Restaurant & Bar",
+      "address": "178 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "178 Trần Nhân Tông：Tripadvisor 有每日 11:30–21:30 及星期三休息兩種索引，Wanderlog 另列 11:00 開門。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d14985756-Reviews-Firefly_restaurant_Bar-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com.my/Restaurant_Review-g298082-d14985756-Reviews-Firefly_restaurant_Bar-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/1279014/firefly-restaurant--bar",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d14985756-Reviews-Firefly_restaurant_Bar-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：178 Trần Nhân Tông：Tripadvisor 有每日 11:30–21:30 及星期三休息兩種索引，Wanderlog 另列 11:00 開門。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-an-bang-beach-village",
+      "name": "An Bang Beach Village Restaurant",
+      "address": "Tổ 6B, An Bàng, Hội An Tây, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d7602149-Reviews-An_Bang_Beach_Village_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d7602149-Reviews-An_Bang_Beach_Village_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-qq",
+      "name": "Nhà Hàng QQ",
+      "address": "69 Ngô Quyền, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/QQ-restaurant-Hoi-An-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/QQ-restaurant-Hoi-An-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 11:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-a-little-kitchen",
+      "name": "A Little Kitchen Restaurant – Bếp Nhỏ",
+      "address": "71/2 Phan Châu Trinh, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "71/2 Phan Châu Trinh：Tripadvisor 10:00–22:00，Waze 11:00–21:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d25102013-Reviews-A_Little_Kitchen_Bep_Nho-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.waze.com/live-map/directions/vn/dja-nang/a-little-kitchen-restaurant-bep-nho?to=place.ChIJ027JttAPQjEREemFvSkuEyE",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d25102013-Reviews-A_Little_Kitchen_Bep_Nho-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：71/2 Phan Châu Trinh：Tripadvisor 10:00–22:00，Waze 11:00–21:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-ba-hieu",
+      "name": "Bà Hiếu – Local Foods",
+      "address": "25 Đào Duy Từ, Hội An, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Quan-Banh-trang-cuon-thit-heo-Hoi-An-Vietnam",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Quan-Banh-trang-cuon-thit-heo-Hoi-An-Vietnam",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:00–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 07:00–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-the-soul",
+      "name": "The Soul Restaurant",
+      "address": "47 Thoại Ngọc Hầu, RiverTown Hoi An Resort & Spa, Hội An, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13387957-Reviews-The_Soul_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13387957-Reviews-The_Soul_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:30",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:30–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 06:30–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-jeera",
+      "name": "JEERA – Indian Restaurant",
+      "address": "126 Trần Cao Vân, Hội An, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.au/Restaurant_Review-g298082-d27148524-Reviews-Jeera_Indian_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.au/Restaurant_Review-g298082-d27148524-Reviews-Jeera_Indian_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 11:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-two-mango-tree",
+      "name": "Bánh Mì Hai Cây Xoài – Two Mango Tree Bread",
+      "address": "124 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/1475926/b%C3%A1nh-m%C3%AC-hai-c%C3%A2y-xo%C3%A0i-two-mango-tree-bread",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/1475926/b%C3%A1nh-m%C3%AC-hai-c%C3%A2y-xo%C3%A0i-two-mango-tree-bread",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:00",
+            "18:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:00–18:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 06:00–18:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-sri-spices",
+      "name": "SRI SPICES INDIAN FAMILY RESTAURANT",
+      "address": "74 Trần Hưng Đạo, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "74 Trần Hưng Đạo：Restaurant Guru 11:30–22:00，Tripadvisor 10:00 開門。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/SRI-SPICES-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d24989866-Reviews-Sri_Spices_Indian_Sri_Lankan_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/SRI-SPICES-tp-Hoi-An",
+      "hours": "時間待核實：74 Trần Hưng Đạo：Restaurant Guru 11:30–22:00，Tripadvisor 10:00 開門。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-pho-ngan",
+      "name": "Phở Ngân Hội An",
+      "address": "132 Trần Cao Vân, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "132 Trần Cao Vân：Restaurant Guru 每日 07:00–20:00，Tripadvisor 06:00 開門及部分日子休息；未採同區不同名 Pho Nguyen。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Pho-Ngan-Hoi-An-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d33020576-Reviews-Ph_Ngan_H_i_An-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Pho-Ngan-Hoi-An-tp-Hoi-An",
+      "hours": "時間待核實：132 Trần Cao Vân：Restaurant Guru 每日 07:00–20:00，Tripadvisor 06:00 開門及部分日子休息；未採同區不同名 Pho Nguyen。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-cao-lau-thanh",
+      "name": "Quán Cao Lầu Thanh",
+      "address": "26 Thái Phiên, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "26 Thái Phiên：Tripadvisor 每日至 19:00；Wanderlog 星期日至 15:00、星期六至 17:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d12913336-Reviews-Cao_Lau_Thanh-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/1121735/qu%C3%A1n-cao-l%E1%BA%A7u-thanh",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d12913336-Reviews-Cao_Lau_Thanh-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：26 Thái Phiên：Tripadvisor 每日至 19:00；Wanderlog 星期日至 15:00、星期六至 17:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-my-quang-bich",
+      "name": "Mỳ Quảng Bích",
+      "address": "272 Hùng Vương, Hội An Tây, Đà Nẵng, Vietnam",
+      "status": "conflict",
+      "reason": "272 Hùng Vương：Wanderlog 同一商戶不同語言頁出現 07:30–19:30、06:30–20:00 及星期一 24 小時等不一致版本。",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/1089200/m%E1%BB%B3-qu%E1%BA%A3ng-b%C3%ADch",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/1089200/m%E1%BB%B3-qu%E1%BA%A3ng-b%C3%ADch",
+      "hours": "時間待核實：272 Hùng Vương：Wanderlog 同一商戶不同語言頁出現 07:30–19:30、06:30–20:00 及星期一 24 小時等不一致版本。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-banh-xeo-ba-9",
+      "name": "Bánh Xèo, Thịt Nướng, Nem Lụi Bà 9",
+      "address": "Kiệt 92 Phan Châu Trinh, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "Kiệt 92 Phan Châu Trinh：Tripadvisor 每日 12:00–21:00，Green SM 介紹 15:00–21:30；159/20 Trần Hưng Đạo 另一地址未套用。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d21007659-Reviews-Banh_Xeo_Ba_9-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.greensm.com/vn-vi/news/banh-xeo-hoi-an",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d21007659-Reviews-Banh_Xeo_Ba_9-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：Kiệt 92 Phan Châu Trinh：Tripadvisor 每日 12:00–21:00，Green SM 介紹 15:00–21:30；159/20 Trần Hưng Đạo 另一地址未套用。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-old-town",
+      "name": "會安古城 Hội An Old Town",
+      "address": "Minh An, Hội An, Vietnam（古城西側步行參考點）",
+      "status": "incomplete",
+      "reason": "古城是街區而非單一營業場所。官方公告列夏／冬步行管制及表演時間，不等於古城所有景點的營業表；請各別查看付費景點。",
+      "sources": [
+        {
+          "url": "https://hoianheritage.danang.gov.vn/en/news/news-events/announcement-of-the-visiting-in-hoi-an-ancient-town-125.html",
+          "access": "web-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://hoianheritage.danang.gov.vn/en/news/news-events/announcement-of-the-visiting-in-hoi-an-ancient-town-125.html",
+      "hours": "時間待核實：古城是街區而非單一營業場所。官方公告列夏／冬步行管制及表演時間，不等於古城所有景點的營業表；請各別查看付費景點。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-japanese-bridge",
+      "name": "日本橋 Chùa Cầu",
+      "address": "Nguyễn Thị Minh Khai, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "峴港旅遊局列橋內／神龕 09:00–11:00、15:00–22:00，Hoi An Local 列 09:00–22:00；外圍全天可觀看不等於橋內一直開放。",
+      "sources": [
+        {
+          "url": "https://danangfantasticity.com/ja/see-and-do/japanese-covered-bridge-chua-cau",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://hoianlocal.com/business/chua-cau/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://danangfantasticity.com/ja/see-and-do/japanese-covered-bridge-chua-cau",
+      "hours": "時間待核實：峴港旅遊局列橋內／神龕 09:00–11:00、15:00–22:00，Hoi An Local 列 09:00–22:00；外圍全天可觀看不等於橋內一直開放。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-an-bang-beach",
+      "name": "安邦沙灘 An Bang Beach",
+      "address": "An Bàng, Hội An, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.in/Attraction_Review-g298082-d6612712-Reviews-An_Bang_Beach-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.in/Attraction_Review-g298082-d6612712-Reviews-An_Bang_Beach-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "mon": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "tue": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "wed": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "thu": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "fri": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ],
+        "sat": [
+          [
+            "00:00",
+            "24:00"
+          ]
+        ]
+      },
+      "alwaysOpen": true,
+      "display": "全日開放",
+      "reason": "已核對對應店名／地點及完整一週時間。公共海灘可到訪時間，不代表救生員、商戶或安全下水時段。Tripadvisor 以 00:00–23:59 表示全日。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。公共海灘可到訪時間，不代表救生員、商戶或安全下水時段。Tripadvisor 以 00:00–23:59 表示全日。",
+      "hours": "Tripadvisor 列示：全日開放（越南時間）。非即時店況。公共海灘可到訪時間，不代表救生員、商戶或安全下水時段。Tripadvisor 以 00:00–23:59 表示全日。"
+    },
+    {
+      "id": "hoi-an-precious-heritage",
+      "name": "Precious Heritage 民族文化博物館",
+      "address": "26 Phan Bội Châu, Hội An, Vietnam",
+      "status": "conflict",
+      "reason": "官網 FAQ 每日 08:00–18:00，Google Arts & Culture／Tripadvisor 至 20:00；同日先前官網正文也有 20:00 版本，收館時間仍待確認。",
+      "sources": [
+        {
+          "url": "https://www.rehahnphotographer.com/precious-heritage-museum/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://artsandculture.google.com/partner/precious-heritage-art-gallery-museum",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.rehahnphotographer.com/precious-heritage-museum/",
+      "hours": "時間待核實：官網 FAQ 每日 08:00–18:00，Google Arts & Culture／Tripadvisor 至 20:00；同日先前官網正文也有 20:00 版本，收館時間仍待確認。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-tuan-restaurant-and-cafe",
+      "name": "Tuan Restaurant & Cafe",
+      "address": "170 Trần Nhân Tông, Hội An Đông, Đà Nẵng 563831越南",
+      "status": "conflict",
+      "reason": "170 Trần Nhân Tông：Restaurant Guru 星期五休息，Tripadvisor 星期五仍有 10:15–21:00。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Restaurant-and-Cafe-Tuan-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d9748200-Reviews-Restaurant_Cafe_Tu_n-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Restaurant-and-Cafe-Tuan-tp-Hoi-An",
+      "hours": "時間待核實：170 Trần Nhân Tông：Restaurant Guru 星期五休息，Tripadvisor 星期五仍有 10:15–21:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-faifoo-central-restaurant",
+      "name": "Faifoo Central Restaurant",
+      "address": "57 Hoàng Diệu, Hội An, Đà Nẵng 51000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Faifoo-Central-Restaurant-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Faifoo-Central-Restaurant-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 08:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 08:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-phan-gia-riverside-restaurant",
+      "name": "Phan Gia Riverside Restaurant",
+      "address": "95 Trần Quang Khải, Hội An Đông, Đà Nẵng 84000越南",
+      "status": "conflict",
+      "reason": "95 Trần Quang Khải：Wanderlog／Restaurant Guru 每日 11:00–22:30；Tripadvisor 多日至 23:00，星期日另出現午夜開門欄位。",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/3684226/phan-gia-riverside",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d17287969-Reviews-Phan_Gia-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/3684226/phan-gia-riverside",
+      "hours": "時間待核實：95 Trần Quang Khải：Wanderlog／Restaurant Guru 每日 11:00–22:30；Tripadvisor 多日至 23:00，星期日另出現午夜開門欄位。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-cua-dai-central-restaurant-and-cooking-class",
+      "name": "Cua Dai Central Restaurant & Cooking Class",
+      "address": "10/2 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "10/2 Bạch Đằng：Restaurant Guru 星期五至日 10:30 開門、其餘日子 12:30；Wanderlog 每日 12:30；官網本輪無法讀取。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Cua-Dai-Central-Beach-Restaurant-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/5962911",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://cuadaicentralrestaurant.com/",
+          "access": "unavailable",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Cua-Dai-Central-Beach-Restaurant-tp-Hoi-An",
+      "hours": "時間待核實：10/2 Bạch Đằng：Restaurant Guru 星期五至日 10:30 開門、其餘日子 12:30；Wanderlog 每日 12:30；官網本輪無法讀取。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-le-petit-bistro-hoi-an",
+      "name": "Le Petit Bistro Hội An",
+      "address": "476 Cửa Đại, Hội An Đông, Đà Nẵng 560000越南",
+      "status": "added",
+      "source": "official",
+      "sourceUrl": "https://www.lepetitbistrohoian476.com/contact",
+      "sources": [
+        {
+          "url": "https://www.lepetitbistrohoian476.com/contact",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ],
+        "mon": [],
+        "tue": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "17:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 17:00–22:00；星期一 休息；星期二 17:00–22:00；星期三 17:00–22:00；星期四 17:00–22:00；星期五 17:00–22:00；星期六 17:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。官網訂位至 21:30，餐廳開放至 22:00；星期一休息。",
+      "note": "官網訂位至 21:30，餐廳開放至 22:00；星期一休息。 按刊載時間推算，非即時店況。",
+      "hours": "官網列示：星期日 17:00–22:00；星期一 休息；星期二 17:00–22:00；星期三 17:00–22:00；星期四 17:00–22:00；星期五 17:00–22:00；星期六 17:00–22:00（越南時間）。官網訂位至 21:30，餐廳開放至 22:00；星期一休息。"
+    },
+    {
+      "id": "hoi-an-silent-garden-restaurant",
+      "name": "Silent Garden Hội An",
+      "address": "61B Đ. Trần Cao Vân, Hội An, Đà Nẵng 02353越南",
+      "status": "conflict",
+      "reason": "61B Trần Cao Vân：Wanderlog 12:00–22:00，Tripadvisor 11:30–22:00。",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/2624398",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d14927502-Reviews-Silent_Garden_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/2624398",
+      "hours": "時間待核實：61B Trần Cao Vân：Wanderlog 12:00–22:00，Tripadvisor 11:30–22:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-breeze-restaurant-and-basket-boat",
+      "name": "Breeze Restaurant & Basket Boat",
+      "address": "thôn thanh tam, Hoi An Dong, Da Nang, 越南",
+      "status": "conflict",
+      "reason": "Wanderlog 標星期四休息且至 20:00；其 app 索引至 19:00；Tripadvisor 星期四亦開門。",
+      "sources": [
+        {
+          "url": "https://app.wanderlog.com/place/details/3452053/breeze-restaurant--basket-boat",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d14981852-Reviews-Breeze_Restaurant_and_Basket_Boat-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://app.wanderlog.com/place/details/3452053/breeze-restaurant--basket-boat",
+      "hours": "時間待核實：Wanderlog 標星期四休息且至 20:00；其 app 索引至 19:00；Tripadvisor 星期四亦開門。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-circle",
+      "name": "Circle Hoi An Restaurant | Burgers, Mexican and Vietnamese food by Circle",
+      "address": "317 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "317 Cửa Đại：星期三休息一致，但 Tripadvisor 至 21:00、Hoi An Local 至 21:45。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d8075317-Reviews-Circle-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://hoianlocal.com/business/circle-hoi-an-restaurant/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d8075317-Reviews-Circle-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：317 Cửa Đại：星期三休息一致，但 Tripadvisor 至 21:00、Hoi An Local 至 21:45。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-jan-restaurant-local-food",
+      "name": "Restaurant JAN ( Local food )",
+      "address": "242B Lê Thánh Tông, Hội An Đông, Đà Nẵng 560000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d25376153-Reviews-JAN_Restaurant_Local_Food-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d25376153-Reviews-JAN_Restaurant_Local_Food-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-phi-banh-mi",
+      "name": "Phi banh mi",
+      "address": "88 Thái Phiên, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "88 Thái Phiên：Tripadvisor 08:00–20:00，Restaurant Guru 08:00–19:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d7706064-Reviews-Phi_Banh_Mi-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/phi-banh-mi-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d7706064-Reviews-Phi_Banh_Mi-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：88 Thái Phiên：Tripadvisor 08:00–20:00，Restaurant Guru 08:00–19:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-hi-restaurant",
+      "name": "Hi Restaurant",
+      "address": "V8GH+48F, Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Hi-Resturant-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Hi-Resturant-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 09:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 09:00–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-la-burger-hoi-an",
+      "name": "LA BURGER HOIAN",
+      "address": "90/1 Phan Châu Trinh, Old Town, Hội An, Đà Nẵng 51309越南",
+      "status": "conflict",
+      "reason": "90/1 Phan Châu Trinh：Tripadvisor 不同頁面至 22:00／23:00，Restaurant Guru 至 22:00；未確認現行版本。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d25430111-Reviews-La_Burger_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.ca/Restaurant_Review-g298082-d25430111-Reviews-La_Burger_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/La-Burger-Hoi-An-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d25430111-Reviews-La_Burger_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：90/1 Phan Châu Trinh：Tripadvisor 不同頁面至 22:00／23:00，Restaurant Guru 至 22:00；未確認現行版本。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-home-hoi-an",
+      "name": "HOME Hoi An",
+      "address": "Ancient Town, 14 La Hối, An Hội, Hội An, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "14 La Hối：官網共用時間 10:00–14:00、17:00–22:00；Tripadvisor 會安午市 11:30 才開，分店適用性未釐清。",
+      "sources": [
+        {
+          "url": "https://homevietnameserestaurants.com/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d25223043-Reviews-Home_Hoi_An_Home_Vietnamese_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://homevietnameserestaurants.com/",
+      "hours": "時間待核實：14 La Hối：官網共用時間 10:00–14:00、17:00–22:00；Tripadvisor 會安午市 11:30 才開，分店適用性未釐清。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-lenco-cafe-and-bar",
+      "name": "LENCO CAFE & BAR",
+      "address": "679/4 Đ. Hai Bà Trưng, Old Town, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "679/4 Hai Bà Trưng：Tripadvisor 七日表近 24 小時，但 Hoi An Local 12:00–23:30；不把疑似預設全天值當作核實。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d24966494-Reviews-Lenco_Cafe_Bar-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://hoianlocal.com/business/lenco-cafe-bar/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d24966494-Reviews-Lenco_Cafe_Bar-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：679/4 Hai Bà Trưng：Tripadvisor 七日表近 24 小時，但 Hoi An Local 12:00–23:30；不把疑似預設全天值當作核實。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-little-flower-restaurant",
+      "name": "Little Flower Restaurant",
+      "address": "186 Trần Nhân Tông, street, Hội An Đông, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "186 Trần Nhân Tông：Tripadvisor 10:30 開門，Restaurant Guru 10:00 開門。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13836637-Reviews-Little_Flower_Restaurant_Coffee-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Zalo-Restaurant-and-Coffee-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13836637-Reviews-Little_Flower_Restaurant_Coffee-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：186 Trần Nhân Tông：Tripadvisor 10:30 開門，Restaurant Guru 10:00 開門。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-claypot-hoi-an",
+      "name": "Claypot Hoi An",
+      "address": "217 Lý Thái Tổ, Hội An Tây, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Claypot-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Claypot-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [],
+        "mon": [
+          [
+            "13:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "13:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "13:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "13:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "13:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "13:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 休息；星期一 13:00–22:00；星期二 13:00–22:00；星期三 13:00–22:00；星期四 13:00–22:00；星期五 13:00–22:00；星期六 13:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：星期日 休息；星期一 13:00–22:00；星期二 13:00–22:00；星期三 13:00–22:00；星期四 13:00–22:00；星期五 13:00–22:00；星期六 13:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-the-boat-riverside-restaurant-and-bar",
+      "name": "The Boat Riverside Restaurant & Bar",
+      "address": "44 Huyền Trân Công Chúa, Hội An Đông, Đà Nẵng 51300越南",
+      "status": "conflict",
+      "reason": "44 Huyền Trân Công Chúa：Tripadvisor 有兩個同名同址商戶頁，分別每日 10:00–22:00 與 11:00–22:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d32747217-Reviews-The_Boat_Restaurants_Riverside-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d28110536-Reviews-The_Boat_Restaurants_Riverside-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d32747217-Reviews-The_Boat_Restaurants_Riverside-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：44 Huyền Trân Công Chúa：Tripadvisor 有兩個同名同址商戶頁，分別每日 10:00–22:00 與 11:00–22:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-le-cabanon-hoi-an",
+      "name": "Cabanon",
+      "address": "53 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "53 Công Nữ Ngọc Hoa：兩來源週末休息一致，但 Tripadvisor 午市 11:30 開門、Wanderlog 10:30。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d11707159-Reviews-Le_Cabanon_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/1392157/cabanon",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d11707159-Reviews-Le_Cabanon_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：53 Công Nữ Ngọc Hoa：兩來源週末休息一致，但 Tripadvisor 午市 11:30 開門、Wanderlog 10:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-blue-sea-hoi-an-restaurant",
+      "name": "Blue Sea Hoi An Restaurants",
+      "address": "43 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "地圖為 43 Nguyễn Phan Vinh，Tripadvisor 時間表對應 38 Nguyễn Phan Vinh；未核實搬遷／入口地址，不套用。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d19041739-Reviews-Blue_Sea_Hoi_An_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d19041739-Reviews-Blue_Sea_Hoi_An_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：地圖為 43 Nguyễn Phan Vinh，Tripadvisor 時間表對應 38 Nguyễn Phan Vinh；未核實搬遷／入口地址，不套用。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-noodle-house-by-streets",
+      "name": "NOODLE House by STREETS (A hospitality & tourism social enterprise initiative) - Local Noodles, Rice & Clay Pot Cuisines",
+      "address": "512 Đ. Hai Bà Trưng, Hội An Tây, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "512 Hai Bà Trưng：Tripadvisor 午市每日 11:00 開門，Hoi An Local 多數日子 11:30；保留午休資訊但不猜測。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d27490190-Reviews-Noodle_House_By_Streets-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://hoianlocal.com/business/noodle-house-by-streets/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d27490190-Reviews-Noodle_House_By_Streets-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：512 Hai Bà Trưng：Tripadvisor 午市每日 11:00 開門，Hoi An Local 多數日子 11:30；保留午休資訊但不猜測。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-restaurant-328",
+      "name": "Restaurant 328",
+      "address": "328 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "328 Cửa Đại：Tripadvisor 08:00–22:00，Restaurant Guru／Wanderlog 09:00–21:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d3589268-Reviews-Restaurant_328-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Restaurant-328-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d3589268-Reviews-Restaurant_328-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：328 Cửa Đại：Tripadvisor 08:00–22:00，Restaurant Guru／Wanderlog 09:00–21:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-banh-mi-sum",
+      "name": "Bánh Mì Sum",
+      "address": "149 Trần Hưng Đạo, Hội An, Đà Nẵng 51309越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d8106913-Reviews-Banh_Mi_Sum-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d8106913-Reviews-Banh_Mi_Sum-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 06:00–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-mr-hoa-s-kitchen-restaurant",
+      "name": "Mr Hoà's Kitchen restaurant ( Home made PIZZA) , PASTA and Vietnamese food )",
+      "address": "Tổ 6 An Bàng, Hội An Tây, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Mr-Hoas-Kitchen-restaurant-Home-made-PIZZA-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Mr-Hoas-Kitchen-restaurant-Home-made-PIZZA-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 11:00–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-passion-restaurant-and-bar",
+      "name": "Passion Restaurant & Bar (An Bang Beach Hoi An)",
+      "address": "159 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "159 Nguyễn Phan Vinh：官網每日 09:00–22:00，Tripadvisor 每日至 23:00。",
+      "sources": [
+        {
+          "url": "https://restaurantanbangbeach.com/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d12617218-Reviews-Passion_Restaurant_Bar-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://restaurantanbangbeach.com/",
+      "hours": "時間待核實：159 Nguyễn Phan Vinh：官網每日 09:00–22:00，Tripadvisor 每日至 23:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-greek-souvlaki",
+      "name": "Greek Souvlaki Hội An - Nhà hàng ẩm thực Hy Lạp",
+      "address": "7 Thái Phiên, P, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "7 Thái Phiên 分店 Tripadvisor 11:00–22:00，Viet-Biz 至 21:00；其他同名店未套用。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d11668353-Reviews-Greek_Souvlaki-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.viet-biz.com/greek-souvlaki_1q-098-407-26-93",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d11668353-Reviews-Greek_Souvlaki-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：7 Thái Phiên 分店 Tripadvisor 11:00–22:00，Viet-Biz 至 21:00；其他同名店未套用。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-maazi-hoi-an",
+      "name": "MAAZI Hoi An",
+      "address": "132A Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 560000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/MAAZI-Hoi-An-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/MAAZI-Hoi-An-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ],
+        "mon": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ],
+        "tue": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ],
+        "wed": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ],
+        "thu": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ],
+        "fri": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ],
+        "sat": [
+          [
+            "12:00",
+            "01:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 12:00–翌日 01:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 12:00–翌日 01:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-the-son-bistro",
+      "name": "The Son Bistro – Vietnamese Restaurant, Craft Beer & Bar",
+      "address": "98 Lê Lợi, Old Town, Hội An, Đà Nẵng 51300越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/The-Son-Bistro-Hoi-An-OldTown-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/The-Son-Bistro-Hoi-An-OldTown-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ],
+        "mon": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "23:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 08:00–23:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 08:00–23:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-iberico-tapas-y-vino-hoi-an",
+      "name": "IBERICO - TAPAS y VINO Hoi An",
+      "address": "100 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "100 Bạch Đằng：Tripadvisor 重複商戶頁 10:00／16:00 開門，星期四至 22:00／午夜亦不同；官網 HCMC 分店時間未套用。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.es/Restaurant_Review-g298082-d27945796-Reviews-Iberico_Tapas_Y_Vino-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.es/Restaurant_Review-g298082-d27941666-Reviews-Iberico_Vinos_Y_Tapas_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/10393212/iberico-tapas-y-vino",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.es/Restaurant_Review-g298082-d27945796-Reviews-Iberico_Tapas_Y_Vino-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：100 Bạch Đằng：Tripadvisor 重複商戶頁 10:00／16:00 開門，星期四至 22:00／午夜亦不同；官網 HCMC 分店時間未套用。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-bup-cafe",
+      "name": "Búp café",
+      "address": "132A Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 560000越南",
+      "status": "inaccessible",
+      "reason": "Búp café 的 Tripadvisor／Restaurant Guru 完整頁本輪無法讀取；Viet-Biz 為 132B Nguyễn Thái Học，地圖為 132A，現址亦未確認。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Bup-Cafe-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13813190-Reviews-Bup_Cafe-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        },
+        {
+          "url": "https://www.viet-biz.com/b%C3%BAp-caf%C3%A9-091-408-23-90",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Bup-Cafe-tp-Hoi-An",
+      "hours": "時間待核實：Búp café 的 Tripadvisor／Restaurant Guru 完整頁本輪無法讀取；Viet-Biz 為 132B Nguyễn Thái Học，地圖為 132A，現址亦未確認。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-bao-han-restaurant",
+      "name": "Bao Han Restaurant",
+      "address": "17 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d33160334-Reviews-Bao_Han_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d33160334-Reviews-Bao_Han_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:30",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:30–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 11:30–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-the-basket-boat-cafe-and-restaurant",
+      "name": "The Basket Boat Cafe & Restaurant",
+      "address": "Thôn Vạn Lăng, Hội An Đông, Đà Nẵng 560000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d19000583-Reviews-The_Basket_Boat_Cafe_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d19000583-Reviews-The_Basket_Boat_Cafe_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ],
+        "mon": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ],
+        "tue": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ],
+        "wed": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ],
+        "thu": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ],
+        "fri": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ],
+        "sat": [
+          [
+            "07:30",
+            "18:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 07:30–18:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 07:30–18:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-seashell-by-nu-eatery",
+      "name": "Seashell by Nu Eatery",
+      "address": "10 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://hoianlocal.com/business/seashell-by-nu-eatery/",
+      "sources": [
+        {
+          "url": "https://hoianlocal.com/business/seashell-by-nu-eatery/",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "12:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 12:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。採 Seashell 對應 10 Nguyễn Thị Minh Khai 頁，並與 Tripadvisor Seashell 頁對照；不套用另一 Nu Eatery 商戶的星期一休息。",
+      "note": "按 Hoi An Local 刊載時間推算，非即時店況；臨時休息請向店家確認。採 Seashell 對應 10 Nguyễn Thị Minh Khai 頁，並與 Tripadvisor Seashell 頁對照；不套用另一 Nu Eatery 商戶的星期一休息。",
+      "hours": "Hoi An Local 列示：每日 12:00–21:00（越南時間）。非即時店況。採 Seashell 對應 10 Nguyễn Thị Minh Khai 頁，並與 Tripadvisor Seashell 頁對照；不套用另一 Nu Eatery 商戶的星期一休息。"
+    },
+    {
+      "id": "hoi-an-son-hoi-an-restaurant",
+      "name": "Son Hoian",
+      "address": "232 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Son-Hoian-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Son-Hoian-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 11:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-baby-mustard-restaurant",
+      "name": "Baby Mustard",
+      "address": "Đường Biển, Hội An Tây, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "Tripadvisor／Restaurant Guru 11:00–21:00，VnGuide 11:30–22:00，且平台地址 Hai Bà Trưng 與圖釘 Đường Biển 不同；官網未能讀取。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d3680703-Reviews-Baby_Mustard_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://vnguide.vn/restaurant/baby-mustard-restaurant",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://babymustard.com/",
+          "access": "unavailable",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d3680703-Reviews-Baby_Mustard_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：Tripadvisor／Restaurant Guru 11:00–21:00，VnGuide 11:30–22:00，且平台地址 Hai Bà Trưng 與圖釘 Đường Biển 不同；官網未能讀取。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-morning-glory-mother-s-kitchen",
+      "name": "Morning Glory Mother's Kitchen",
+      "address": "14 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000, Vietnam",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d28025728-Reviews-Morning_Glory_Mother_s_Kitchen-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d28025728-Reviews-Morning_Glory_Mother_s_Kitchen-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-tiem-banh-mi-ty-ty-s-bread",
+      "name": "Tiệm Bánh mì Ty ( Ty’s Bread )",
+      "address": "14 Đường Cao Hồng Lãnh, Hội An, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "14 Cao Hồng Lãnh：Tripadvisor 07:00–20:00，Wanderlog 09:00–20:30。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d27118439-Reviews-Ti_m_Banh_Mi_Ty_Ty_s_Bread-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/8782877",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d27118439-Reviews-Ti_m_Banh_Mi_Ty_Ty_s_Bread-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：14 Cao Hồng Lãnh：Tripadvisor 07:00–20:00，Wanderlog 09:00–20:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-madame-hien-restaurant",
+      "name": "Madame Hien ( Cô Mai)",
+      "address": "02 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13975533-Reviews-Madame_Hien_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d13975533-Reviews-Madame_Hien_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 12:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 12:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-tra-que-water-wheel-restaurant-and-cooking-classes",
+      "name": "Tra Que Water Wheel Restaurant & Cooking classes",
+      "address": "Hoi An Tay, Da Nang, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Water-Wheel-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Water-Wheel-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        "mon": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 08:00–17:00",
+      "reason": "已核對對應店名／地點及完整一週時間。採 Tra Que Water Wheel；不套用另一 Tra Que Lagoon 商戶時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。採 Tra Que Water Wheel；不套用另一 Tra Que Lagoon 商戶時間。",
+      "hours": "Restaurant Guru 列示：每日 08:00–17:00（越南時間）。非即時店況。採 Tra Que Water Wheel；不套用另一 Tra Que Lagoon 商戶時間。"
+    },
+    {
+      "id": "hoi-an-hoa-hien-vietnamese-restaurant-hoian",
+      "name": "Hoa Hiên - Vietnamese Restaurant Hoian",
+      "address": "33 Trần Quang Khải, Hội An Đông, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "33 Trần Quang Khải：Tripadvisor 09:15–21:30，Wanderlog 09:00–21:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d10152024-Reviews-Hoa_Hien_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/1136855/hoa-hi%C3%AAn-restaurant",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d10152024-Reviews-Hoa_Hien_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：33 Trần Quang Khải：Tripadvisor 09:15–21:30，Wanderlog 09:00–21:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-mr-son-restaurant",
+      "name": "Mr. Sơn Restaurant",
+      "address": "Ẩm Thực 62, Khu, 02 Nguyễn Phúc Chu, P, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "02 Nguyễn Phúc Chu 食檔 62：Tripadvisor／Waze／Hoi An Local 11:00–21:30，Viet-Biz 同址 07:00–22:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d1847234-Reviews-Mr_Son-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.viet-biz.com/en/mr-s%C6%A1n-restaurant-090-565-79-10",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d1847234-Reviews-Mr_Son-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：02 Nguyễn Phúc Chu 食檔 62：Tripadvisor／Waze／Hoi An Local 11:00–21:30，Viet-Biz 同址 07:00–22:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-red-dragon-restaurant-cooking-class",
+      "name": "Red Dragon Restaurant and Cooking Class",
+      "address": "332 Cửa Đại, Hội An Đông, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d1993411-Reviews-Red_Dragon_Restaurant_Cooking_Class-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d1993411-Reviews-Red_Dragon_Restaurant_Cooking_Class-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [],
+        "mon": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "12:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "星期日 休息；星期一 12:00–22:00；星期二 12:00–22:00；星期三 12:00–22:00；星期四 12:00–22:00；星期五 12:00–22:00；星期六 12:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：星期日 休息；星期一 12:00–22:00；星期二 12:00–22:00；星期三 12:00–22:00；星期四 12:00–22:00；星期五 12:00–22:00；星期六 12:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-mi-quang-92",
+      "name": "Mì Quảng 92 - Mì quảng cá lóc, bò, mì tôm thịt",
+      "address": "112A Đ. Trần Cao Vân, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "同日先前查核：112A Trần Cao Vân 的 Wanderlog 06:30–20:00、Tripadvisor 06:00–20:30。本輪重查未取得可消除差異的新時間，Wanderlog 直接頁讀取失敗。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d27422211-Reviews-Mi_Qu_ng_92-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://wanderlog.com/place/details/7475275/",
+          "access": "unavailable",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d27422211-Reviews-Mi_Qu_ng_92-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：同日先前查核：112A Trần Cao Vân 的 Wanderlog 06:30–20:00、Tripadvisor 06:00–20:30。本輪重查未取得可消除差異的新時間，Wanderlog 直接頁讀取失敗。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-pho-tung",
+      "name": "Phở Tùng",
+      "address": "51/7 Phan Châu Trinh, Old Town, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "51/7 Phan Châu Trinh：Tripadvisor 06:00–10:30、16:30–20:00，Restaurant Guru 每日僅 06:00–12:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d5927638-Reviews-Pho_Tung-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Pho-Tung-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d5927638-Reviews-Pho_Tung-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：51/7 Phan Châu Trinh：Tripadvisor 06:00–10:30、16:30–20:00，Restaurant Guru 每日僅 06:00–12:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-all-day-banh-mi",
+      "name": "All Day Bánh Mì - Serving History in Every Bite - Hoi An",
+      "address": "25 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/9576496/all-day-banh-mi-hoi-an",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/9576496/all-day-banh-mi-hoi-an",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 09:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 09:00–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-nom-bistro",
+      "name": "Nom Cafe and Bistro",
+      "address": "98/2 Trần Phú, Old Town, Hội An, Đà Nẵng 56000越南",
+      "status": "conflict",
+      "reason": "98/2 Trần Phú：Wanderlog 08:00–21:00，Tripadvisor 08:00–22:00。",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/5885348",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d26695963-Reviews-Nom_Bistro_Breakfast_Brunch_Dining-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/5885348",
+      "hours": "時間待核實：98/2 Trần Phú：Wanderlog 08:00–21:00，Tripadvisor 08:00–22:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-hy",
+      "name": "Hỷ",
+      "address": "10/15 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng 51000越南",
+      "status": "conflict",
+      "reason": "10/15 Nguyễn Thị Minh Khai：Tripadvisor 09:00–21:30，Restaurant Guru 10:00–22:00。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d26529960-Reviews-H_Vietnamese_Restaurant_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Hy-Vietnamese-Restaurant-in-Hoi-An-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d26529960-Reviews-H_Vietnamese_Restaurant_Hoi_An-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：10/15 Nguyễn Thị Minh Khai：Tripadvisor 09:00–21:30，Restaurant Guru 10:00–22:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-spice-route-ms-vy",
+      "name": "The Spice Route by Ms Vy",
+      "address": "103 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d27461441-Reviews-The_Spice_Route-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d27461441-Reviews-The_Spice_Route-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "09:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 09:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 09:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-me-rooftop",
+      "name": "Mê Hội An Rooftop Coffee & Kitchen",
+      "address": "166 Trần Phú, Old Town, Hội An, Đà Nẵng 560000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/8985265/m%C3%AA-h%E1%BB%99i-an-rooftop-coffee--kitchen",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/8985265/m%C3%AA-h%E1%BB%99i-an-rooftop-coffee--kitchen",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ],
+        "mon": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "22:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 08:00–22:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 08:00–22:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-coffee-hub",
+      "name": "Hoi An Coffee Hub",
+      "address": "Hẻm 11 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng 56000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://restaurantguru.com/Hoi-An-Coffee-Hub-tp-Hoi-An",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/Hoi-An-Coffee-Hub-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ],
+        "mon": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "18:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 08:00–18:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Restaurant Guru 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Restaurant Guru 列示：每日 08:00–18:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-coconut-coffee",
+      "name": "Coconut Coffee Hội An",
+      "address": "Đ. Phan Bội Châu, Hội An, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/6960671/coconut-coffee",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/6960671/coconut-coffee",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "06:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 06:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Wanderlog 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Wanderlog 列示：每日 06:00–22:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-dudu-cafe",
+      "name": "Dudu Cafe Hoi An",
+      "address": "11 Trần Phú, Old Town, Hội An, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "11 Trần Phú：Tripadvisor 07:30 開門，Restaurant Guru 07:00 開門。",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g298082-d24972536-Reviews-Dudu_Cafe-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://restaurantguru.com/Dudu-Cafe-Hoi-An-tp-Hoi-An",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g298082-d24972536-Reviews-Dudu_Cafe-Hoi_An_Quang_Nam_Province.html",
+      "hours": "時間待核實：11 Trần Phú：Tripadvisor 07:30 開門，Restaurant Guru 07:00 開門。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-phin-coffee",
+      "name": "Phin Coffee Restaurant",
+      "address": "47/28 Trần Hưng Đạo, Hội An, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "official",
+      "sourceUrl": "https://phincoffeehoian.com/location/phin-coffee-restaurant/",
+      "sources": [
+        {
+          "url": "https://phincoffeehoian.com/location/phin-coffee-restaurant/",
+          "access": "web-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "mon": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "tue": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "wed": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "thu": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "fri": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ],
+        "sat": [
+          [
+            "08:00",
+            "22:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 08:00–22:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按官方刊載時間推算，臨時變動請向店家確認。 按刊載時間推算，非即時店況。",
+      "hours": "官網列示：每日 08:00–22:00（越南時間）。"
+    },
+    {
+      "id": "hoi-an-met-10",
+      "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food MET 10",
+      "address": "47 Nguyễn Phúc Chu, An Hội, Hội An, Đà Nẵng 560000越南",
+      "status": "incomplete",
+      "reason": "47 Nguyễn Phúc Chu：Restaurant Guru 列 11:30–22:45；官網有 10:00–22:00 的重複時間表但分店區塊對應不清楚，尚未確認 MET 10 的有效版本。",
+      "sources": [
+        {
+          "url": "https://restaurantguru.com/MET-Hoi-An-Vietnamese-restaurant-and-Vegetarian-Food-MET-10-tp-Hoi-An",
+          "access": "web-page-extract",
+          "role": "insufficient"
+        },
+        {
+          "url": "https://metvietnameserestaurant.com/location/",
+          "access": "web-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://restaurantguru.com/MET-Hoi-An-Vietnamese-restaurant-and-Vegetarian-Food-MET-10-tp-Hoi-An",
+      "hours": "時間待核實：47 Nguyễn Phúc Chu：Restaurant Guru 列 11:30–22:45；官網有 10:00–22:00 的重複時間表但分店區塊對應不清楚，尚未確認 MET 10 的有效版本。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-met-7",
+      "name": "MẸT Hội An - Vietnamese cuisine & Vegetarian options 7",
+      "address": "49 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "49 Nguyễn Thái Học：官網分店區塊 10:00–22:00，Trip2VN 七日表 10:00–22:30。",
+      "sources": [
+        {
+          "url": "https://metvietnameserestaurant.com/location/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://trip2vn.com/dining/directory/hoi-an/met-hoi-an-vietnamese-cuisine-vegetarian-options-7",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://metvietnameserestaurant.com/location/",
+      "hours": "時間待核實：49 Nguyễn Thái Học：官網分店區塊 10:00–22:00，Trip2VN 七日表 10:00–22:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-met-6",
+      "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food 6",
+      "address": "72b Đ. Bạch Đằng, Phường, Hội An, Đà Nẵng, 越南",
+      "status": "incomplete",
+      "reason": "72B Bạch Đằng：Wanderlog 列每日 10:00–22:30；官網重複的 10:00–22:00 時間表未能明確對應 MET 6 區塊，不自行套用或忽略。",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/9566710/m%E1%BA%B9t-h%E1%BB%99i-an-vietnamese-restaurant--vegetarian-food-6",
+          "access": "web-page-extract",
+          "role": "insufficient"
+        },
+        {
+          "url": "https://metvietnameserestaurant.com/location/",
+          "access": "indexed-page-extract",
+          "role": "insufficient"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://wanderlog.com/place/details/9566710/m%E1%BA%B9t-h%E1%BB%99i-an-vietnamese-restaurant--vegetarian-food-6",
+      "hours": "時間待核實：72B Bạch Đằng：Wanderlog 列每日 10:00–22:30；官網重複的 10:00–22:00 時間表未能明確對應 MET 6 區塊，不自行套用或忽略。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-met-9",
+      "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food MET 9",
+      "address": "56 Phan Châu Trinh, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "56 Phan Châu Trinh：官網 10:00–22:00，Tripadvisor MET 9 七日表 08:00–22:00。",
+      "sources": [
+        {
+          "url": "https://metvietnameserestaurant.com/location/",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com.vn/Attraction_Review-g298082-d34095187-Reviews-M_T_H_i_An_Vietnamese_restaurant_Vegetarian_Food_MET_9-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://metvietnameserestaurant.com/location/",
+      "hours": "時間待核實：56 Phan Châu Trinh：官網 10:00–22:00，Tripadvisor MET 9 七日表 08:00–22:00。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-bikini-bottom-express-hoi-an",
+      "name": "Bikini Bottom Express Riverside Hoi An",
+      "address": "115 Trần Quang Khải, Hội An Đông, Đà Nẵng 560000越南",
+      "status": "conflict",
+      "reason": "115 Trần Quang Khải：同一官網的今日時間 08:00–22:00，完整七日表 09:00–23:00，內部衝突。",
+      "sources": [
+        {
+          "url": "https://www.bikinibottomexpress.com/hoi-an-riverside/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.bikinibottomexpress.com/hoi-an-riverside/",
+      "hours": "時間待核實：115 Trần Quang Khải：同一官網的今日時間 08:00–22:00，完整七日表 09:00–23:00，內部衝突。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-a6-garden-smokehouse-and-craft-beer",
+      "name": "A6 Garden- Smokehouse & Craft Beer",
+      "address": "47 Đ. Phan Bội Châu, Hội An, Đà Nẵng 51000越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.com.ph/Restaurant_Review-g298082-d26355037-Reviews-A6_Garden_Smokehouse_And_Craft_Beer-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.com.ph/Restaurant_Review-g298082-d26355037-Reviews-A6_Garden_Smokehouse_And_Craft_Beer-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "mon": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "tue": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "wed": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "thu": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "fri": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ],
+        "sat": [
+          [
+            "11:00",
+            "21:30"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 11:00–21:30",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 11:00–21:30（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-em-hoi-an-em-comfort-food",
+      "name": "Êm - Comfort Food",
+      "address": "54/2 Phan Châu Trinh, Phường, Hội An, Đà Nẵng, 越南",
+      "status": "added",
+      "source": "listing",
+      "sourceUrl": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d26848559-Reviews-Em_H_i_An_em_Comfort_Food-Hoi_An_Quang_Nam_Province.html",
+      "sources": [
+        {
+          "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g298082-d26848559-Reviews-Em_H_i_An_em_Comfort_Food-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "accepted"
+        }
+      ],
+      "days": {
+        "sun": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "mon": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "tue": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "wed": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "thu": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "fri": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "sat": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ]
+      },
+      "alwaysOpen": false,
+      "display": "每日 10:00–21:00",
+      "reason": "已核對對應店名／地點及完整一週時間。",
+      "note": "按 Tripadvisor 刊載時間推算，非即時店況；臨時休息請向店家確認。",
+      "hours": "Tripadvisor 列示：每日 10:00–21:00（越南時間）。非即時店況。"
+    },
+    {
+      "id": "hoi-an-ngon-pho-hoi-vietnamese-authentic-cuisine",
+      "name": "Ngon Phố Hội",
+      "address": "21 La Hối, Phường, Hội An, Đà Nẵng 51309越南",
+      "status": "conflict",
+      "reason": "21 La Hối：官網早餐 06:30–10:00、午晚餐 11:00–22:00；Tripadvisor 七日表 06:30–22:30 無午休。",
+      "sources": [
+        {
+          "url": "https://www.thesignaturehoian.com/dining/ngon-pho-hoi/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d27982034-Reviews-Ngon_Ph_H_i_Vietnamese_Authentic_Cuisine-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.thesignaturehoian.com/dining/ngon-pho-hoi/",
+      "hours": "時間待核實：21 La Hối：官網早餐 06:30–10:00、午晚餐 11:00–22:00；Tripadvisor 七日表 06:30–22:30 無午休。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-ca-ro-ong-quan-anabas-restaurant",
+      "name": "Anabas Restaurant - Cá Rô Đồng Quán - Hoi An restaurant - 호이안 로컬 레스토랑",
+      "address": "29 Phan Châu Trinh, Old Town, Hội An, Đà Nẵng 51300越南",
+      "status": "conflict",
+      "reason": "29 Phan Châu Trinh：Wanderlog／Restaurant Guru 至 22:30，Tripadvisor 至 22:00；官網只有訂位選單，未明確列完整營業表。",
+      "sources": [
+        {
+          "url": "https://wanderlog.com/place/details/5684310/anabas-restaurant-c%C3%A1-r%C3%B4-%C4%91%E1%BB%93ng-qu%C3%A1n-hoi-an-restaurant-%ED%98%B8%EC%9D%B4%EC%95%88-%EB%A1%9C%EC%BB%AC-%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.ca/Restaurant_Review-g298082-d25232206-Reviews-Ca_Ro_D_ng_Quan_Anabas_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://anabasrestaurant.vn/",
+          "access": "web-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://wanderlog.com/place/details/5684310/anabas-restaurant-c%C3%A1-r%C3%B4-%C4%91%E1%BB%93ng-qu%C3%A1n-hoi-an-restaurant-%ED%98%B8%EC%9D%B4%EC%95%88-%EB%A1%9C%EC%BB%AC-%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91",
+      "hours": "時間待核實：29 Phan Châu Trinh：Wanderlog／Restaurant Guru 至 22:30，Tripadvisor 至 22:00；官網只有訂位選單，未明確列完整營業表。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    },
+    {
+      "id": "hoi-an-vietnamese-chopsticks-dua-viet-restaurant",
+      "name": "Vietnamese Chopsticks - Dua Viet Restaurant",
+      "address": "11 Nguyễn Tri Phương, Hội An, Đà Nẵng, 越南",
+      "status": "conflict",
+      "reason": "11 Nguyễn Tri Phương：Viet-Biz 每日 09:00–22:00，Tripadvisor 11:00–14:30、17:30–21:30。",
+      "sources": [
+        {
+          "url": "https://www.viet-biz.com/vietnamese-chopsticks-dua-viet-090-519-11-36",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        },
+        {
+          "url": "https://www.tripadvisor.com.vn/Restaurant_Review-g298082-d10166794-Reviews-Vietnamese_Chopsticks_Dua_Viet_Restaurant-Hoi_An_Quang_Nam_Province.html",
+          "access": "indexed-page-extract",
+          "role": "conflicting"
+        }
+      ],
+      "source": "listing",
+      "sourceUrl": "https://www.viet-biz.com/vietnamese-chopsticks-dua-viet-090-519-11-36",
+      "hours": "時間待核實：11 Nguyễn Tri Phương：Viet-Biz 每日 09:00–22:00，Tripadvisor 11:00–14:30、17:30–21:30。 暫不判定營業狀態。",
+      "note": "資料不足或來源不一致，未建立營業判定；請直接向店家確認。"
+    }
+  ]
+}
