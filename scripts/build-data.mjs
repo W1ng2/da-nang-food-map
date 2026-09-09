@@ -36,6 +36,8 @@ function normalizeSchedule(value) {
   if (value.weekday) ['mon', 'tue', 'wed', 'thu', 'fri'].forEach((day) => { days[day] = value.weekday })
   if (value.weekend) ['sun', 'sat'].forEach((day) => { days[day] = value.weekend })
   Object.assign(days, value.days || {})
+  // Text-only research (for example conflicting official hours) is not a closure schedule.
+  if (!Object.keys(days).length && !value.alwaysOpen) return null
   return {
     timezone: 'Asia/Ho_Chi_Minh',
     ...(Object.keys(days).length ? { days } : {}),
@@ -90,10 +92,10 @@ for (const source of sources) {
       priceHkdMin: parsedHkd.min,
       priceHkdMax: parsedHkd.max,
       signature: clean(row['餐廳名物'] || row['招牌項目']),
-      hours: clean(enrichment.hours || row['早餐／營業時間']),
-      hoursSourceUrl: clean(enrichment.hoursSourceUrl),
+      hours: clean(openingHours[id]?.hours || enrichment.hours || row['早餐／營業時間']),
+      hoursSourceUrl: clean(openingHours[id]?.sourceUrl || enrichment.hoursSourceUrl),
       schedule: normalizeSchedule(openingHours[id]),
-      enrichmentVerifiedAt: clean(enrichment.enrichmentVerifiedAt),
+      enrichmentVerifiedAt: clean(openingHours[id]?.sourceUrl ? openingHours[id].verifiedAt : enrichment.enrichmentVerifiedAt),
       bookingAdvice: clean(enrichment.bookingAdvice),
       bookingUrl: clean(enrichment.bookingUrl),
       phone: clean(enrichment.phone),
@@ -116,10 +118,12 @@ for (const source of sources) {
 const attractionRecords = [...await readJson(attractionsPath), ...await readJson(resolve(root, 'data/hoi-an-places.json'))]
 for (const attraction of attractionRecords) {
   const { markerImageFile, ...record } = attraction
+  const hours = openingHours[record.id]
   rows.push({
     ...record,
+    ...(hours?.hours ? { hours: hours.hours, hoursSourceUrl: hours.sourceUrl, enrichmentVerifiedAt: hours.verifiedAt } : {}),
     ...(markerImageFile ? { markerImageUrl: `data:image/webp;base64,${(await readFile(resolve(root, markerImageFile))).toString('base64')}` } : {}),
-    schedule: normalizeSchedule(attraction.schedule)
+    schedule: normalizeSchedule(hours ?? attraction.schedule)
   })
 }
 
