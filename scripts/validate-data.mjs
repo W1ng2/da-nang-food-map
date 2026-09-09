@@ -51,7 +51,7 @@ for (const place of places) {
   if (place.bookingUrl && !place.bookingAdvice) failures.push(`${place.name}: booking URL without advice`)
   if (place.schedule) {
     if (place.schedule.timezone !== 'Asia/Ho_Chi_Minh') failures.push(`${place.name}: invalid schedule timezone`)
-    if (!['official', 'saved'].includes(place.schedule.source)) failures.push(`${place.name}: invalid schedule source`)
+    if (!['official', 'saved', 'guide', 'listing'].includes(place.schedule.source)) failures.push(`${place.name}: invalid schedule source`)
     if (!/^\d{4}-\d{2}-\d{2}$/.test(place.schedule.verifiedAt)) failures.push(`${place.name}: invalid schedule verification date`)
     for (const intervals of Object.values(place.schedule.days || {})) {
       for (const interval of intervals) {

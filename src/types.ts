@@ -7,7 +7,7 @@ export interface OpeningSchedule {
   days?: Partial<Record<Weekday, Array<[string, string]>>>
   alwaysOpen?: boolean
   monthlyClosedDates?: number[]
-  source: 'official' | 'saved'
+  source: 'official' | 'saved' | 'guide' | 'listing'
   verifiedAt: string
   note?: string
 }

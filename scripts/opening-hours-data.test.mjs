@@ -8,6 +8,16 @@ const places = JSON.parse(readFileSync(new URL('../public/places.json', import.m
 const get = (id) => places.find((place) => place.id === id)
 
 describe('official hours enrichment reaches every data source', () => {
+  it('keeps non-official provenance and does not confuse midnight with noon', () => {
+    expect(get('michelin-quan-nhan').schedule.source).toBe('guide')
+    expect(get('michelin-quan-nhan').schedule.days.mon).toEqual([['08:00', '00:00']])
+    expect(get('cafe-dessert-gioia-gelati-gelati-are-joy').schedule.source).toBe('listing')
+    expect(get('cafe-dessert-gioia-gelati-gelati-are-joy').schedule.note).toContain('Tripadvisor')
+    for (const id of ['hoi-an-mi-quang-92', 'hoi-an-firefly', 'michelin-si-dining', 'michelin-banh-xeo-76']) {
+      expect(get(id).schedule).toBeNull()
+      expect(get(id).hours).toContain('暫不判定營業狀態')
+    }
+  })
   it('applies Hoi An restaurant hours with the explicit weekly rest day', () => {
     const mate = get('hoi-an-mate')
     expect(mate.schedule.days.sun).toEqual([])
